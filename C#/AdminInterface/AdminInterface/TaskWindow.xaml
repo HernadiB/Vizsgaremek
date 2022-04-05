@@ -1,0 +1,88 @@
+﻿<Window x:Class="AdminInterface.TaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminInterface"
+        mc:Ignorable="d"
+        Title="TaskWindow" Height="356" Width="800">
+    <StackPanel Margin="0,0,0,1">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <StackPanel Height="auto" Margin="5" Background="Silver">
+                    <Label Content="Új feladat felvétele" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Feladat neve:" Margin="2"/>
+                        <TextBox Grid.Column="2" Grid.Row="0" Margin="2" Name="tb_postTaskName"/>
+                        <Label Grid.Column="0" Grid.Row="2" Content="Feladat leírás:" Margin="2"/>
+                        <TextBox Grid.Column="2" Grid.Row="2" Margin="2" Name="tb_postTaskDescription"/>
+                        <Label Grid.Column="0" Grid.Row="4" Content="Feladat pontszáma:" Margin="2"/>
+                        <TextBox Grid.Column="2" Grid.Row="4" Margin="2" Name="tb_postTaskScore"/>
+                        <Label Grid.Column="0" Grid.Row="6" Content="Feladat szintje:" Margin="2"/>
+                        <ComboBox Grid.Column="2" Grid.Row="6" Margin="2" Name="cb_postTaskLevel" SelectionChanged="cb_putNewTaskLevel_SelectionChanged"/>
+                    </Grid>
+                    <Button Click="btn_taskhozzaad_Click" Content="Hozzáad" Name="btn_taskhozzaad" Background="DarkGray"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <StackPanel Height="auto" Margin="5" Background="DarkGray">
+                    <Label Content="Feladat módosítása" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Feladat ID:" Margin="2"/>
+                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" Name="cb_putTaskID" SelectionChanged="cb_putTaskID_SelectionChanged"/>
+                        <Label Grid.Column="0" Grid.Row="2" Content="Feladat neve:" Margin="2"/>
+                        <TextBox Grid.Column="2" Grid.Row="2" Margin="2" Name="tb_putProductCategory"/>
+                        <Label Grid.Column="0" Grid.Row="4" Content="Termék neve:" Margin="2"/>
+                        <TextBox Grid.Column="2" Grid.Row="4" Margin="2" Name="tb_putTaskName"/>
+                        <Label Grid.Column="0" Grid.Row="6" Content="Feladat leírás:" Margin="2"/>
+                        <TextBox Grid.Column="2" Grid.Row="6" Margin="2" Name="tb_putTaskDescription"/>
+                        <Label Grid.Column="0" Grid.Row="8" Content="Feladat pontszáma:" Margin="2"/>
+                        <TextBox Grid.Column="2" Grid.Row="8" Margin="2" Name="tb_putTaskScore"/>
+                        <Label Grid.Column="0" Grid.Row="10" Content="Feladat szintje:" Margin="2"/>
+                        <ComboBox Grid.Column="2" Grid.Row="10" Margin="2" Name="cb_putTaskLevel" SelectionChanged="cb_putTaskLevel_SelectionChanged"/>
+                    </Grid>
+                    <Button Click="btn_tasktmodosit_Click" Content="Módosít" Name="btn_taskmodosit" Background="Gray"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Window>
