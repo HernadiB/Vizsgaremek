@@ -10,7 +10,6 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -18,27 +17,35 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'full_name',
+        'username',
         'email',
         'password',
+        'role',
+        'profile_picture',
+        'score',
+        'team_id',
+        'level_id'
     ];
+    public $timestamps = false;
+    public function Team()
+    {
+        return $this->belongsTo(Team::class, 'team_id');
+    }
+    public function Level()
+    {
+        return $this->belongsTo(Level::class, 'level_id');
+    }
+    public function UserTasks()
+    {
+        return $this->hasMany(UserTask::class, 'user_id');
+    }
+    public function Friendships()
+    {
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    }
+    public function FriendInvitations()
+    {
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    }
 }
