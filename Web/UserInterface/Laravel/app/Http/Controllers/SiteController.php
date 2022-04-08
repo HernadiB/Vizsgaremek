@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class SiteController extends Controller
+{
+    public function Country()
+    {
+        return view('site.country', [
+            "title" => "Országos ranglista"
+        ]);
+    }
+    public function Friends()
+    {
+        return view('site.friends', [
+            "title" => "Barátaim"
+        ]);
+    }
+    public function Index()
+    {
+        return view('site.index', [
+            "title" => "Főoldal"
+        ]);
+    }
+    public function Levels()
+    {
+        return view('site.levels', [
+            "title" => "Szintek"
+        ]);
+    }
+    public function Login()
+    {
+        return view('site.login', [
+            "title" => "Bejelentkezés"
+        ]);
+    }
+    public function MyTasks()
+    {
+        return view('site.mytasks', [
+            "title" => "Feladataim"
+        ]);
+    }
+    public function Signup()
+    {
+        return view('site.signup', [
+            "title" => "Regisztráció"
+        ]);
+    }
+}

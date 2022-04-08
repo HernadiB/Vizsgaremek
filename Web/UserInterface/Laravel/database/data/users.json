@@ -1,0 +1,197 @@
+[
+    {
+        "full_name": "Vincze Vince",
+        "username": "ZombieSlice",
+        "email": "vinczevince@gmail.com",
+        "password": "8]4rPpaf",
+        "role": "admin",
+        "score": 0,
+        "team_id": 1,
+        "level_id": 1
+    },
+    {
+        "full_name": "Fábián Richárd",
+        "username": "MineGermSad",
+        "email": "fabianrichard",
+        "password": "#F9;n3G/",
+        "role": "admin",
+        "score": 0,
+        "team_id": 2,
+        "level_id": 1
+    },
+    {
+        "full_name": "Surány Norbert",
+        "username": "DeeperBreakSlash",
+        "email": "suranynorbert",
+        "password": "2{rU@H5%",
+        "role": "admin",
+        "score": 0,
+        "team_id": 3,
+        "level_id": 1
+    },
+    {
+        "full_name": "Bognár Ármin",
+        "username": "CultHill",
+        "email": "bognaradam",
+        "password": "(Sb2,RB*",
+        "role": "admin",
+        "score": 0,
+        "team_id": 4,
+        "level_id": 1
+    },
+    {
+        "full_name": "Pásztor Mihály",
+        "username": "OneDeath",
+        "email": "pasztormihaly",
+        "password": "?k35TZ*!",
+        "role": "admin",
+        "score": 0,
+        "team_id": 5,
+        "level_id": 1
+    },
+    {
+        "full_name": "Orosz Soma",
+        "username": "SandFall",
+        "email": "oroszsoma",
+        "password": "`Zf5]D6q",
+        "role": "user",
+        "score": 0,
+        "team_id": 1,
+        "level_id": 1
+    },
+    {
+        "full_name": "Sándor Benjamin",
+        "username": "BubbleEagle",
+        "email": "sandorbenjamin",
+        "password": "Fa`)zJ9+",
+        "role": "user",
+        "score": 0,
+        "team_id": 2,
+        "level_id": 1
+    },
+    {
+        "full_name": "Illés Géza",
+        "username": "FlameYour",
+        "email": "illesgeza",
+        "password": ",B5D8k#S",
+        "role": "user",
+        "score": 0,
+        "team_id": 3,
+        "level_id": 1
+    },
+    {
+        "full_name": "Lengyel Erik",
+        "username": "UnoPanda",
+        "email": "lengyelerik",
+        "password": "=W6k(Z>{",
+        "role": "user",
+        "score": 0,
+        "team_id": 4,
+        "level_id": 1
+    },
+    {
+        "full_name": "Rácz Tamás",
+        "username": "KnowledgeMelting",
+        "email": "racztamas",
+        "password": "{sL.G2#Z",
+        "role": "user",
+        "score": 0,
+        "team_id": 5,
+        "level_id": 1
+    },
+    {
+        "full_name": "Molnár Evelin",
+        "username": "KittenDonkey",
+        "email": "molnarevelin",
+        "password": "Fq4#pK%/",
+        "role": "user",
+        "score": 0,
+        "team_id": 1,
+        "level_id": 1
+    },
+    {
+        "full_name": "Lengyel Elizabet",
+        "username": "DemonicCatAttack",
+        "email": "lengyelelizabet",
+        "password": "7x@d{Drm",
+        "role": "user",
+        "score": 0,
+        "team_id": 2,
+        "level_id": 1
+    },
+    {
+        "full_name": "Bács Tamara",
+        "username": "RoofRooster",
+        "email": "bacstamara",
+        "password": ":`39SBgG",
+        "role": "user",
+        "score": 0,
+        "team_id": 3,
+        "level_id": 1
+    },
+    {
+        "full_name": "Somogyi Brigitta",
+        "username": "DeathGiraffe",
+        "email": "somogyibrigitta",
+        "password": "Xn9*8!=(",
+        "role": "user",
+        "score": 0,
+        "team_id": 4,
+        "level_id": 1
+    },
+    {
+        "full_name": "Bakos Dóra",
+        "username": "DeepestRendOmega",
+        "email": "bakosdora",
+        "password": "NF5}3wzE",
+        "role": "user",
+        "score": 0,
+        "team_id": 5,
+        "level_id": 1
+    },
+    {
+        "full_name": "Kovács Réka",
+        "username": "OneMindTwo",
+        "email": "kovacsreka",
+        "password": "vr)b6NFK",
+        "role": "user",
+        "score": 0,
+        "level_id": 1
+    },
+    {
+        "full_name": "Vass Szabina",
+        "username": "LiquidWrench",
+        "email": "vassszabina",
+        "password": "9q>GSZ-m",
+        "role": "user",
+        "score": 0,
+        "level_id": 1
+    },
+    {
+        "full_name": "Jakab Vanessza",
+        "username": "DukeMemorySickly",
+        "email": "jakabvanessza",
+        "password": "6pz;+MFb",
+        "role": "user",
+        "score": 0,
+        "level_id": 1
+    },
+    {
+        "full_name": "Veres Tímea",
+        "username": "WolfStickSlash",
+        "email": "verestimea",
+        "password": "$5N)bSy`",
+        "role": "user",
+        "score": 0,
+        "level_id": 1
+    },
+    {
+        "full_name": "Bogdán Ramóna",
+        "username": "UniverseKittyPunch",
+        "email": "bogdanramona",
+        "password": "U5pv8>#]",
+        "role": "user",
+        "score": 0,
+        "level_id": 1
+    }
+]

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 255);
             $table->string('password');
             $table->string('role', 255);
-            $table->string('profile_picture');
+            $table->string('profile_picture')->nullable();
             $table->integer('score');
             $table->timestamps();
         });

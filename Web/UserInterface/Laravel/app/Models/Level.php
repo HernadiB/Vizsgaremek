@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Level extends Model
 {
-    protected $fillable = "name";
+    public $timestamps = false;
+    protected $fillable = ["name"];
     public function Tasks()
     {
         return $this->hasMany(Task::class, 'level_id');

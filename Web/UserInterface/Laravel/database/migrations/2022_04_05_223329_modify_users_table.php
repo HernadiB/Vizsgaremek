@@ -14,7 +14,7 @@ class ModifyUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('team_id')->constrained('teams');
+            $table->foreignId('team_id')->nullable()->constrained('teams');
             $table->foreignId('level_id')->constrained('levels');
         });
     }

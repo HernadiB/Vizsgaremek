@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
+    public $timestamps = false;
     protected $fillable = ["name", "description", "score", "level_id"];
-    public function UserTasks()
+    public function Users()
     {
-        return $this->hasMany(UserTask::class, 'task_id');
+        return $this->belongsToMany(User::class, "usertasks", "task_id", "user_id");
     }
     public function Level()
     {

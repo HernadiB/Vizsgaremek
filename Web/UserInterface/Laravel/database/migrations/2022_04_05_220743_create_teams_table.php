@@ -16,7 +16,6 @@ class CreateTeamsTable extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->integer('score');
             $table->foreignId('leader_id')->constrained('users');
             $table->timestamps();
         });
