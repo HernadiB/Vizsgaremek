@@ -17,22 +17,22 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href=""><h4>Főoldal</h4></a>
+                        <a class="nav-link active" aria-current="page" href="{{route("home")}}"><h4>Főoldal</h4></a>
                     </li>
                         <li class="nav-item">
-                            <span><a href="" class="nav-link text-white">Barátaim</a></span>
+                            <span><a href="{{route("site.friends")}}" class="nav-link text-white">Barátaim</a></span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="">Országos lista</a>
+                            <a class="nav-link text-white" href="{{route("site.country")}}">Országos lista</a>
                         </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="">Feladataim</a>
+                        <a class="nav-link text-white" href="{{route("site.mytasks")}}">Feladataim</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="">Csapatom</a>
+                        <a class="nav-link text-white" href="{{route("site.myteam")}}">Csapatom</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="">Szintek-feladatok</a>
+                        <a class="nav-link text-white" href="{{route("site.levels")}}">Szintek-feladatok</a>
                     </li>
                     <li class="nav-item">
                         <button class="nav-link btn text-white" id="logout">Kijelentkezés</button>

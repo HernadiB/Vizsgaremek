@@ -48,4 +48,11 @@ class SiteController extends Controller
             "title" => "Regisztráció"
         ]);
     }
+
+    public function MyTeam()
+    {
+        return view('site.myteam', [
+            "title" => "Csapatom"
+        ]);
+    }
 }

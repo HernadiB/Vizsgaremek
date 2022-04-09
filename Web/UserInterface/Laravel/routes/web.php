@@ -20,3 +20,4 @@ Route::get('/levels', [\App\Http\Controllers\SiteController::class, 'Levels'])->
 Route::get('/login', [\App\Http\Controllers\SiteController::class, 'Login'])->name('site.login');
 Route::get('/mytasks', [\App\Http\Controllers\SiteController::class, 'MyTasks'])->name('site.mytasks');
 Route::get('/signup', [\App\Http\Controllers\SiteController::class, 'Signup'])->name('site.signup');
+Route::get('/myteam', [\App\Http\Controllers\SiteController::class, 'MyTeam'])->name('site.myteam');
