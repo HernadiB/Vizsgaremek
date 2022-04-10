@@ -11,11 +11,28 @@
         <div class="alert alert-danger mt-3">{{session("error")}}</div>
     @endif
 
-    <table class="beerkezettjelolesek">
+    <table class="adatok">
         <thead>
             <tr>
-                <th scope="col" colspan="5">Beérkezett baráti jelőlések</th>
+                <th scope="col">Pontszámom</th>
+                <th scope="col">Csapatom neve</th>
+                <th scope="col">Csapatom pontszáma</th>
+                <th scope="col">Rendfokozatom</th>
             </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Pontszámom">1234</td>
+            <td data-label="Csapatom neve">Csapat1</td>
+            <td data-label="Csapatom pontszáma">1234</td>
+            <td data-label="Rendfokozatom">Altiszt</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="beerkezettjelolesek">
+        <thead>
+            <h3 class="text-center">Beérkezett baráti jelőlések</h3>
             <tr>
                 <th scope="col">Felhasználónév</th>
                 <th scope="col">Csapat tagja</th>
@@ -69,73 +86,55 @@
 
     <table class="beerkezettfeladatok">
         <thead>
-        <tr>
-            <td scope="col" colspan="2" data-label="Pontszámom">Pontszámom</td>
-            <td scope="col" colspan="2">1234</td>
-        </tr>
-        <tr>
-            <td scope="col" colspan="2" data-label="Csapatom neve">Csapatom neve:</td>
-            <td scope="col" colspan="2">Csapat1</td>
-        </tr>
-        <tr>
-            <td scope="col" colspan="2" data-label="Csapatom pontszáma">Csapatom pontszáma:</td>
-            <td scope="col" colspan="2">1234</td>
-        </tr>
-        <tr>
-            <td scope="col" colspan="2" data-label="Rendfokozatom">Rendfokozatom:</td>
-            <td scope="col" colspan="2">Altiszt</td>
-        </tr>
-        <tr>
-            <th scope="col" colspan="4" data-label="Pontszámom">Következő szinthez elvégezendő feladatok:</th>
-        </tr>
-        <tr>
-            <th scope="col">Feladat sorszáma</th>
-            <th scope="col">Feladat megnevezése</th>
-            <th scope="col">Feladat leírása</th>
-            <th scope="col">Hozzáadás</th>
-        </tr>
+            <h3 class="text-center">Következő szinthez elvégezendő feladatok</h3>
+            <tr>
+                <th scope="col">Feladat sorszáma</th>
+                <th scope="col">Feladat megnevezése</th>
+                <th scope="col">Feladat leírása</th>
+                <th scope="col">Hozzáadás</th>
+            </tr>
         </thead>
         <tbody>
-        <tr>
-            <td data-label="Feladat sorszáma">#1</td>
-            <td data-label="Feladat megnevezése">#1 feladat megnevezése</td>
-            <td data-label="Feladat leírása">#1 feladat leírása</td>
-            <td data-label="Hozzáadás">
-                <button class="btn btn-success">Hozzáadás</button>
-            </td>
-        </tr>
-        <tr>
-            <td data-label="Feladat sorszáma">#2</td>
-            <td data-label="Feladat megnevezése">#2 feladat megnevezése</td>
-            <td data-label="Feladat leírása">#2 feladat leírása</td>
-            <td data-label="Hozzáadás">
-                <button class="btn btn-success">Hozzáadás</button>
-            </td>
-        </tr>
-        <tr>
-            <td data-label="Feladat sorszáma">#3</td>
-            <td data-label="Feladat megnevezése">#3 feladat megnevezése</td>
-            <td data-label="Feladat leírása">#3 feladat leírása</td>
-            <td data-label="Hozzáadás">
-                <button class="btn btn-success">Hozzáadás</button>
-            </td>
-        </tr>
-        <tr>
-            <td data-label="Feladat sorszáma">#4</td>
-            <td data-label="Feladat megnevezése">#4 feladat megnevezése</td>
-            <td data-label="Feladat leírása">#4 feladat leírása</td>
-            <td data-label="Hozzáadás">
-                <button class="btn btn-success">Hozzáadás</button>
-            </td>
-        </tr>
-        <tr>
-            <td data-label="Feladat sorszáma">#5</td>
-            <td data-label="Feladat megnevezése">#5 feladat megnevezése</td>
-            <td data-label="Feladat leírása">#5 feladat leírása</td>
-            <td data-label="Hozzáadás">
-                <button class="btn btn-success">Hozzáadás</button>
-            </td>
-        </tr>
+            <tr>
+                <td data-label="Feladat sorszáma">#1</td>
+                <td data-label="Feladat megnevezése">#1 feladat megnevezése</td>
+                <td data-label="Feladat leírása">#1 feladat leírása</td>
+                <td data-label="Hozzáadás">
+                    <button class="btn btn-success">Hozzáadás</button>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Feladat sorszáma">#2</td>
+                <td data-label="Feladat megnevezése">#2 feladat megnevezése</td>
+                <td data-label="Feladat leírása">#2 feladat leírása</td>
+                <td data-label="Hozzáadás">
+                    <button class="btn btn-success">Hozzáadás</button>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Feladat sorszáma">#3</td>
+                <td data-label="Feladat megnevezése">#3 feladat megnevezése</td>
+                <td data-label="Feladat leírása">#3 feladat leírása</td>
+                <td data-label="Hozzáadás">
+                    <button class="btn btn-success">Hozzáadás</button>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Feladat sorszáma">#4</td>
+                <td data-label="Feladat megnevezése">#4 feladat megnevezése</td>
+                <td data-label="Feladat leírása">#4 feladat leírása</td>
+                <td data-label="Hozzáadás">
+                    <button class="btn btn-success">Hozzáadás</button>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Feladat sorszáma">#5</td>
+                <td data-label="Feladat megnevezése">#5 feladat megnevezése</td>
+                <td data-label="Feladat leírása">#5 feladat leírása</td>
+                <td data-label="Hozzáadás">
+                    <button class="btn btn-success">Hozzáadás</button>
+                </td>
+            </tr>
         </tbody>
     </table>
 @endsection

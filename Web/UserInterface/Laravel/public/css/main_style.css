@@ -1,6 +1,5 @@
 body{
     background: linear-gradient(rgba(64, 159, 228, 1) 50%, rgba(255, 255, 255, 1) 50%);
-
 }
 
 .container{
@@ -8,40 +7,58 @@ body{
     margin-bottom: 10%;
 }
 
-table {
-    margin-top: 50px;
-    padding: 0;
-    width: 100%;
-    table-layout: fixed;
+.beerkezettjelolesek h3{
+    margin-top: 10px;
 }
 
-table tr {
+.adatok{
+    width: 50%;
+    margin: 50px auto 0px;
+}
+
+table{
+    padding: 0;
+    width: 100%;
+    table-layout: auto;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px 4px;
+    border-collapse: collapse;
+    border-radius: 0.25em;
+    overflow: hidden;
+}
+
+table tr{
     background-color: #9A9A9A;
     /*border: 1px solid #ddd;*/
     padding: .35em;
 }
 
-table th, table td {
+table th, table td{
     padding: .625em;
     text-align: center;
 }
 
-table th {
+table th{
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 800px) {
-    table {
-        border: 0;
+@media screen and (max-width: 800px){
+    table{
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+        border-collapse: collapse;
+        border-radius: 0.25em;
+        overflow: hidden;
+        font-size: .9em;
     }
 
-    table caption {
-        font-size: 1.3em;
+    table h3{
+        font-size: 1.1em;
+        position: absolute;
     }
 
-    table thead {
+    table thead{
         border: none;
         clip: rect(0 0 0 0);
         height: 1px;
@@ -50,34 +67,59 @@ table th {
         padding: 0;
         position: absolute;
         width: 1px;
+        font-size: .6em;
     }
 
-    table tr {
-        border-bottom: 3px solid #ddd;
+    table tr{
         display: block;
         margin-bottom: .625em;
         line-height: 38px;
+        box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px 4px;
+        border-radius: 0.25em;
     }
 
-    table td {
+    table tr:last-child{
+        margin-bottom: 0px;
+    }
+
+    table td{
         border-bottom: 1px solid #ddd;
         display: block;
         text-align: right;
     }
 
-    table td::before, th::before {
+    table td::before, th::before{
         content: attr(data-label);
         float: left;
         font-weight: bold;
         text-transform: uppercase;
     }
 
-    table td:last-child {
+    table td:last-child{
         border-bottom: 0;
     }
 
     .btn{
         width: 99px;
+    }
+
+    .adatok{
+        width: 60%;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .adatok tr{
+        margin-bottom: 0px;
+    }
+
+    .beerkezettjelolesek{
+        width: 80%;
+        margin: 10px auto 50px;
+    }
+
+    .beerkezettfeladatok{
+        margin-top: 10px;
     }
 }
 
@@ -85,18 +127,32 @@ table th {
     .btn{
         width: 99px;
     }
+
+    .adatok{
+        width: 40%;
+        margin-bottom: 50px;
+    }
+
+    .beerkezettjelolesek{
+        width: 90%;
+        margin: 10px auto 50px;
+    }
+
+    .beerkezettfeladatok{
+        margin-top: 10px;
+    }
 }
 
-*::-webkit-scrollbar {
-    width: 6px;
+*::-webkit-scrollbar{
+    width: 10px;
 }
 
-*::-webkit-scrollbar-track {
-    background-color: rgba(128, 128, 128, 0.8);
+*::-webkit-scrollbar-track{
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-*::-webkit-scrollbar-thumb {
-    background-color: #0275d8;
+*::-webkit-scrollbar-thumb{
+    background-color: #409FE4;
     border-radius: 20px;
-    border: 2px solid #0275d8;
+    border: 2px solid rgba(255, 255, 255, 0.9);
 }
