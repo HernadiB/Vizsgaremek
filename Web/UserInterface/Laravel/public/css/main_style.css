@@ -2,18 +2,13 @@ body{
     background: linear-gradient(rgba(64, 159, 228, 1) 50%, rgba(255, 255, 255, 1) 50%);
 }
 
-.container{
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-
 .beerkezettjelolesek h3{
     margin-top: 10px;
 }
 
 .adatok{
     width: 50%;
-    margin: 50px auto 0px;
+    margin: 100pt auto 0px;
 }
 
 table{
@@ -52,11 +47,6 @@ table th{
         border-radius: 0.25em;
         overflow: hidden;
         font-size: .8em;
-    }
-
-    table h3{
-        font-size: 1.1em;
-        position: absolute;
     }
 
     table thead{
@@ -114,14 +104,14 @@ table th{
         margin-bottom: 0px;
     }
 
-    .beerkezettjelolesek{
+    .beerkezettjelolesek, .beerkezettfeladatok{
         width: 90%;
         margin: 10px auto 50px;
     }
 
-    .beerkezettfeladatok{
-        margin: 10px auto 50px;
-        width: 90%;
+    .barataim{
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 }
 
@@ -167,6 +157,27 @@ table th{
 
     table td{
         border-bottom: 1px solid black;
+    }
+
+    .barataim{
+        width: 70%;
+        margin: 50px auto;
+    }
+
+    .barataim th:nth-child(1){
+        width: 10%;
+    }
+
+    .barataim th:nth-child(2){
+        width: 40%;
+    }
+
+    .barataim th:nth-child(3){
+        width: 30%;
+    }
+
+    .barataim th:nth-child(4){
+        width: 20%;
     }
 }
 
