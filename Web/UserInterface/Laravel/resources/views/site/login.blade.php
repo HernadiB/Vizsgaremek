@@ -9,22 +9,21 @@
 @section('content')
 <div class="form-section">
         <h2><i class="fa-solid fa-user"></i>Bejelentkezés</h2>
-
     <hr>
     <form action="">
         <div class="email">
-            <label for="email">E-mail cím</label>
-            <input type="text" name="email" required>
+            <label for="email" class="form-label">E-mail cím</label>
+            <input type="text" name="email" class="form-control" id="input" required placeholder="alfred.mihaly@example.com">
             <span></span>
         </div>
         <div class="passwd">
-            <label for="passwd">Jelszó</label>
-            <input type="password" name="passwd" required>
+            <label for="passwd" class="form-label">Jelszó</label>
+            <input type="password" name="passwd" class="form-control" id="input" required placeholder="*************">
             <span></span>
         </div>
         <button class="btn">Bejelentkezés</button>
         <div class="signup-link">
-            <p>Még nincs fiókom <a href="{{route("site.signup")}}">Regisztráció</a></p>
+            <p>Még nincs fiókom <a href="{{route("site.signup")}}">Regisztrálok</a></p>
         </div>
     </form>
 </div>

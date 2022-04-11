@@ -1,33 +1,36 @@
-*{
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
-
-body{
-    height: 100vh;
-    background: linear-gradient(
-            to bottom,
-            #409FE4 0%,
-            #409FE4 50%,
-            #ffff 50%,
-            #ffff 100%
-    );
-}
-
 .form-section{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 270px;
+    width: 350px;
     transform: translate(-50%, -50%);
     background: #ffff;;
-    box-shadow: -3px 15px 10px rgba(0,0,0,0.4);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    border-radius: 0.25em;
+}
+
+.fa-solid{
+    margin-right: 10px;
+}
+
+.form-section hr{
+    margin-right: auto;
+    margin-left: auto;
+    width: 85%;
+}
+
+.form-label{
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .form-section h2{
     text-align: center;
     padding: 20px 0 0 10px;
+}
+
+form #input{
+    width: 85%;
 }
 
 .form-section form{
@@ -48,14 +51,33 @@ form .passwd{
 }
 
 form .btn{
-    width: 80%;
+    width: 84%;
     margin-top: 20px;
     background: #409FE4;
     color: #ffff;
 }
 
 form p{
-    font-size: 12px;
+    font-size: 13px;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 50px;
+}
+
+a:hover, a:link, a:visited, a:active{
+    color: rgba(64, 159, 228, 1);
+    text-decoration: none;
+}
+
+.form-section a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 400px){
+    .form-section{
+        width: 310px;
+    }
+
+    form p{
+        margin-left: 30px;
+    }
 }
