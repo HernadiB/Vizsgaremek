@@ -104,12 +104,12 @@ table th{
         margin-bottom: 0px;
     }
 
-    .beerkezettjelolesek, .beerkezettfeladatok{
+    .beerkezettjelolesek, .beerkezettfeladatok, .csapatom, .barataim{
         width: 90%;
         margin: 10px auto 50px;
     }
 
-    .barataim{
+    .barataim, .csapatom{
         margin-top: 50px;
         margin-bottom: 50px;
     }
@@ -159,7 +159,7 @@ table th{
         border-bottom: 1px solid black;
     }
 
-    .barataim{
+    .barataim, .csapatom{
         width: 70%;
         margin: 50px auto;
     }
