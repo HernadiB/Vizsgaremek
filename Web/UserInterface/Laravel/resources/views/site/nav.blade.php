@@ -29,6 +29,9 @@
                         <a class="nav-link text-white" href="{{route("site.mytasks")}}">Feladataim</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-white" href="{{route("site.profile")}}">Profilom</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="{{route("site.myteam")}}">Csapatom</a>
                     </li>
                     <li class="nav-item">

@@ -55,4 +55,11 @@ class SiteController extends Controller
             "title" => "Csapatom"
         ]);
     }
+
+    public function Profile()
+    {
+        return view('site.profile', [
+            "title" => "Profilom"
+        ]);
+    }
 }

@@ -21,3 +21,4 @@ Route::get('/login', [\App\Http\Controllers\SiteController::class, 'Login'])->na
 Route::get('/mytasks', [\App\Http\Controllers\SiteController::class, 'MyTasks'])->name('site.mytasks');
 Route::get('/signup', [\App\Http\Controllers\SiteController::class, 'Signup'])->name('site.signup');
 Route::get('/myteam', [\App\Http\Controllers\SiteController::class, 'MyTeam'])->name('site.myteam');
+Route::get('/profile', [\App\Http\Controllers\SiteController::class, 'Profile'])->name('site.profile');
