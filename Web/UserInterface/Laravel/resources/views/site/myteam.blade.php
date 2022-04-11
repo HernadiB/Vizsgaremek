@@ -16,18 +16,18 @@
         <tbody>
         <tr>
             <td data-label="Helyezés">#1</td>
-            <td data-label="Név">#1 feladat megnevezése</td>
-            <td data-label="Pontszám">#1 feladat leírása</td>
+            <td data-label="Név">Nyári Roland</td>
+            <td data-label="Pontszám">1234</td>
         </tr>
         <tr>
             <td data-label="Helyezés">#2</td>
-            <td data-label="Név">#2 feladat megnevezése</td>
-            <td data-label="Pontszám">#2 feladat leírása</td>
+            <td data-label="Név">Hernádi Barnabás</td>
+            <td data-label="Pontszám">123</td>
         </tr>
         <tr>
             <td data-label="Helyezés">#3</td>
-            <td data-label="Név">#3 feladat megnevezése</td>
-            <td data-label="Pontszám">#3 feladat leírása</td>
+            <td data-label="Név">Biliboc Bence</td>
+            <td data-label="Pontszám">12</td>
         </tr>
         </tbody>
     </table>
