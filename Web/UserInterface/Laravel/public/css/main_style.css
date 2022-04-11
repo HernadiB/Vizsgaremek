@@ -104,12 +104,12 @@ table th{
         margin-bottom: 0px;
     }
 
-    .beerkezettjelolesek, .beerkezettfeladatok, .csapatom, .barataim{
+    .beerkezettjelolesek, .beerkezettfeladatok, .csapatom, .barataim, .orszagos{
         width: 90%;
         margin: 10px auto 50px;
     }
 
-    .barataim, .csapatom{
+    .barataim, .csapatom, .orszagos{
         margin-top: 50px;
         margin-bottom: 50px;
     }
@@ -125,12 +125,7 @@ table th{
         margin-bottom: 50px;
     }
 
-    .beerkezettjelolesek{
-        width: 90%;
-        margin: 10px auto 50px;
-    }
-
-    .beerkezettfeladatok{
+    .beerkezettjelolesek, .beerkezettfeladatok{
         width: 90%;
         margin: 10px auto 50px;
     }
@@ -159,7 +154,7 @@ table th{
         border-bottom: 1px solid black;
     }
 
-    .barataim, .csapatom{
+    .barataim, .csapatom, .orszagos{
         width: 70%;
         margin: 50px auto;
     }
