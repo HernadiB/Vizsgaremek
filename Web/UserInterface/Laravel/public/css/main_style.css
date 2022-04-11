@@ -79,15 +79,15 @@ table th{
         text-align: right;
     }
 
+    table td:last-child{
+        border-bottom: 1px solid transparent;
+    }
+
     table td::before, th::before{
         content: attr(data-label);
         float: left;
         font-weight: bold;
         text-transform: uppercase;
-    }
-
-    table td:last-child{
-        border-bottom: 0;
     }
 
     .btn{
@@ -104,12 +104,12 @@ table th{
         margin-bottom: 0px;
     }
 
-    .beerkezettjelolesek, .beerkezettfeladatok, .csapatom, .barataim, .orszagos{
+    .beerkezettjelolesek, .beerkezettfeladatok, .csapatom, .barataim, .orszagos, .feladataim{
         width: 90%;
         margin: 10px auto 50px;
     }
 
-    .barataim, .csapatom, .orszagos{
+    .barataim, .csapatom, .orszagos, .feladataim{
         margin-top: 50px;
         margin-bottom: 50px;
     }
@@ -118,6 +118,10 @@ table th{
 @media screen and (min-width: 800px) {
     .btn{
         width: 99px;
+    }
+
+    table tr:last-child td{
+        border-bottom: 1px solid transparent;
     }
 
     .adatok{
@@ -154,7 +158,7 @@ table th{
         border-bottom: 1px solid black;
     }
 
-    .barataim, .csapatom, .orszagos{
+    .barataim, .csapatom, .orszagos, .feladataim{
         width: 70%;
         margin: 50px auto;
     }
@@ -172,6 +176,22 @@ table th{
     }
 
     .barataim th:nth-child(4){
+        width: 20%;
+    }
+
+    .feladataim th:nth-child(1){
+        width: 15%;
+    }
+
+    .feladataim th:nth-child(2){
+        width: 35%;
+    }
+
+    .feladataim th:nth-child(3){
+        width: 30%;
+    }
+
+    .feladataim th:nth-child(4){
         width: 20%;
     }
 }
