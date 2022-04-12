@@ -23,8 +23,8 @@
                 <input type="text" name="szuldat" class="form-control" id="input" placeholder="2000.1.10">
             </div>
             <div class="nemek">
-                <label for="neme">Nem</label>
-                <select name="neme" id="neme" class="form-control">
+                <label for="neme" class="form-label">Nem</label>
+                <select name="neme" id="neme" class="form-select">
                     <option value="fiu">Fiú</option>
                     <option value="lány">Lány</option>
                 </select>
