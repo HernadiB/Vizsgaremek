@@ -5,7 +5,7 @@ body{
             #409FE4 50%,
             #ffff 75%,
             #ffff 100%
-    ) no-repeat;
+    ) no-repeat fixed;
 }
 
 table{
