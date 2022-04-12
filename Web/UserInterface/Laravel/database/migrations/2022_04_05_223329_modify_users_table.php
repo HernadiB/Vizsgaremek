@@ -15,7 +15,8 @@ class ModifyUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->foreignId('team_id')->nullable()->constrained('teams');
-            $table->foreignId('level_id')->constrained('levels');
+            $table->foreignId('level_id')->nullable()->constrained('levels');
+            $table->timestamps();
         });
     }
 

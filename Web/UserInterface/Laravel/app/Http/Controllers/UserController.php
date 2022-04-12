@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\SignupRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -64,6 +66,57 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
+    }
+
+    public function SignupUser(SignupRequest $request)
+    {
+        $validatedData = $request->validated();
+
+        $validatedData['password'] = bcrypt($request->password);
+        $validatedData['role'] = "user";
+        $validatedData['score'] = 0;
+
+        $user = User::create($validatedData);
+
+//        $request->session()->put("user", $user);
+//
+//        $request->session()->flash("success", "Sikeres regisztráció");
+//        auth()->login($user);
+//
+//        return redirect()->route("site.index");
+        return $user;
+    }
+
+    public function LoginUser(LoginRequest $request)
+    {
+        $loginData = $request->validated();
+
+        if(!auth()->attempt($loginData))
+        {
+//            return redirect()->route("site.login")->with("error", "Hibás adatok");
+            return ['message' => 'Hibás adatok'];
+        }
+
+//        $request->session()->regenerateToken();
+//
+//        $request->session()->put("user", auth()->user());
+//
+//        $request->session()->flash("success", "Sikeres bejelentkezés");
+//
+//        return redirect()->route("site.index");
+        return auth()->user();
+    }
+    public function ModifyUser(Request $request)
+    {
+        //
+    }
+    public function DeleteUser(Request $request)
+    {
+        //
+    }
+    public function LogoutUser(Request $request)
+    {
+        //
     }
 
     public function GetTeamMembers($teamid)

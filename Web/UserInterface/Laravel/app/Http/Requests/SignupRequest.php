@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class UserRequest extends FormRequest
+class SignupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,12 +27,11 @@ class UserRequest extends FormRequest
         return [
             "full_name" => ["required", "string", "min:1", "max:255"],
             "username" => ["required", "unique:users,username", "string", "min:1", "max:255"],
+            "birthdate" => ["required", "date"],
+            "gender" => ["required", Rule::in(["M", "F"])],
             "email" => ["required", "email", "unique:users,email", "min:5", "max:255"],
             "password" => ["required", "string", "min:5", "max:255", "confirmed"],
-            "password_confirmation" => ["required", "same:password"],
-            "role" => ["required", "string", "min:1", "max:255"],
-            "profile_picture" => ["string", "nullable", "min:1", "max:255"],
-            "score" => ["required", "integer"]
+            "profile_picture" => ["string", "nullable", "min:1", "max:255"]
         ];
     }
 
@@ -50,7 +50,7 @@ class UserRequest extends FormRequest
             "email.email" => "Az email címnek tartalmaznia kell a @ karaktert!",
             "password.required" => "A :attribute megadása kötelező!",
             "password.min" => "A :attribute legalább 5 karater legyen!",
-            "password.max" => "A :attribute legfeljebb 225 karater legyen!",
+            "password.max" => "A :attribute legfeljebb 255 karater legyen!",
             "password_confirmation.same:password" => "A megadott jelszavak nem egyeznek!",
         ];
     }

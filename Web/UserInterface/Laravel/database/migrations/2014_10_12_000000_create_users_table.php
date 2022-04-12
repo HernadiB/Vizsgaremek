@@ -17,12 +17,13 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('full_name', 255);
             $table->string('username', 255)->unique();
+            $table->date('birthdate');
+            $table->char('gender');
             $table->string('email', 255)->unique();
             $table->string('password');
             $table->string('role', 255);
             $table->string('profile_picture')->nullable();
-            $table->integer('score');
-            $table->timestamps();
+            $table->integer('score')->nullable();
         });
     }
 

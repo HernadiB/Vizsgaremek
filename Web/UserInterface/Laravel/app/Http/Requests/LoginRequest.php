@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TeamRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,24 +24,24 @@ class TeamRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => ["required", "string", "min:1", "max:255", "unique:teams"],
-            "leader_id" => ["required", "integer"]
+            'email' => 'required|email',
+            'password' => 'required|string'
         ];
     }
-
     public function messages()
     {
         return [
-            "name.required" => "A :attribute megadása kötelező!",
-            "name.min" => "A :attribute legalább 1 karater legyen!",
-            "name.max" => "A :attribute legfeljebb 255 karakter legyen!",
+            "email.required" => "Az :attribute megadása kötelező!",
+            "email.email" => "Az email címnek tartalmaznia kell a @ karaktert!",
+            "password.required" => "A :attribute megadása kötelező!",
         ];
     }
 
     public function attributes()
     {
         return [
-            "name" => "csapat neve"
+            "email" => "email cím",
+            "password" => "jelszó"
         ];
     }
 }

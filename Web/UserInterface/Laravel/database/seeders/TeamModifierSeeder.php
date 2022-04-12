@@ -6,8 +6,9 @@ use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use File;
+use Illuminate\Support\Facades\DB;
 
-class TeamSeeder extends Seeder
+class TeamModifierSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,14 +17,11 @@ class TeamSeeder extends Seeder
      */
     public function run()
     {
-
         $json = File::get("database/data/teams.json");
         $teams = json_decode($json);
 
         foreach ($teams as $key => $value) {
-            Team::create([
-                "name" => $value->name
-            ]);
+            DB::table('teams')->where('name', $value->name)->update(['leader_id' => User::where('full_name', $value->leader)->first()->id]);
         }
     }
 }

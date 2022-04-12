@@ -34,3 +34,6 @@ Route::put('tasks/{id}', [\App\Http\Controllers\TaskController::class, "update"]
 Route::get('levels', [\App\Http\Controllers\LevelController::class, "index"]);
 Route::post('levels', [\App\Http\Controllers\LevelController::class, "store"]);
 Route::put('levels/{id}', [\App\Http\Controllers\LevelController::class, "update"]);
+
+Route::post('/users/signup', [\App\Http\Controllers\UserController::class, "SignupUser"])->name("userSignup");
+Route::post('/users/login', [\App\Http\Controllers\UserController::class, "LoginUser"])->name("userLogin");
