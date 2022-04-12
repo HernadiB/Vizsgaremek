@@ -7,6 +7,7 @@
     background: #ffff;;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
     border-radius: 0.25em;
+    margin-top: 30px;
 }
 
 .fa-solid{
@@ -38,6 +39,12 @@ form #input{
     padding-bottom: 20px;
     padding-left: 40px;
     box-sizing: border-box;
+}
+
+form .nemek{
+    position: relative;
+    width: 85%;
+    margin-top: 10px;
 }
 
 form .email{

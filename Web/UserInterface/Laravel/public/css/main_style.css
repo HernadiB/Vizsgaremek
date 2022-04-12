@@ -1,15 +1,11 @@
 body{
-    background: linear-gradient(rgba(64, 159, 228, 1) 50%, rgba(255, 255, 255, 1) 50%);
-    background-repeat: no-repeat;
-}
-
-.beerkezettjelolesek h3{
-    margin-top: 10px;
-}
-
-.adatok{
-    width: 50%;
-    margin: 100pt auto 0px;
+    background: linear-gradient(
+            to bottom,
+            #409FE4 0%,
+            #409FE4 50%,
+            #ffff 75%,
+            #ffff 100%
+    ) no-repeat;
 }
 
 table{
@@ -95,16 +91,6 @@ table th{
         width: 99px;
     }
 
-    .adatok{
-        width: 60%;
-        margin-top: 100px;
-        margin-bottom: 50px;
-    }
-
-    .adatok tr{
-        margin-bottom: 0px;
-    }
-
     .beerkezettjelolesek, .beerkezettfeladatok, .csapatom, .barataim, .orszagos, .feladataim{
         width: 90%;
         margin: 10px auto 50px;
@@ -123,32 +109,6 @@ table th{
 
     table tr:last-child td{
         border-bottom: 1px solid transparent;
-    }
-
-    .adatok{
-        width: 40%;
-        margin-bottom: 50px;
-    }
-
-    .beerkezettjelolesek, .beerkezettfeladatok{
-        width: 90%;
-        margin: 10px auto 50px;
-    }
-
-    .beerkezettfeladatok th:nth-child(1){
-        width: 10%;
-    }
-
-    .beerkezettfeladatok th:nth-child(2){
-        width: 30%;
-    }
-
-    .beerkezettfeladatok th:nth-child(3){
-        width: 45%;
-    }
-
-    .beerkezettfeladatok th:nth-child(4){
-        width: 15%;
     }
 
     table th{

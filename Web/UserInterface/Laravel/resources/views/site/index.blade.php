@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{asset("css/index_style.css")}}">
 @extends('layouts.main')
 @section('title')
     {{$title}}

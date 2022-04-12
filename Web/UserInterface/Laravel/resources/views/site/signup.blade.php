@@ -8,7 +8,6 @@
 @section('content')
     <div class="form-section">
         <h2><i class="fa-solid fa-user"></i>Regisztráció</h2>
-
         <hr>
         <form action="">
             <div class="nev">
@@ -19,6 +18,18 @@
                 <label for="felhnev" class="form-label">Felhasználónév</label>
                 <input type="text" name="nev" class="form-control" id="input" placeholder="alfred.mihaly">
             </div>
+            <div class="szuldat">
+                <label for="szuldat" class="form-label">Születési dátum</label>
+                <input type="text" name="szuldat" class="form-control" id="input" placeholder="2000.1.10">
+            </div>
+            <div class="nemek">
+                <label for="neme">Nem</label>
+                <select name="neme" id="neme" class="form-control">
+                    <option value="fiu">Fiú</option>
+                    <option value="lány">Lány</option>
+                </select>
+            </div>
+
             <div class="email">
                 <label for="email" class="form-label">E-mail cím</label>
                 <input type="text" name="email" required class="form-control" id="input" placeholder="alfred.mihaly@example.com">

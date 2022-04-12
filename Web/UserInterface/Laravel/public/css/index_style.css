@@ -1,0 +1,50 @@
+.beerkezettjelolesek h3{
+    margin-top: 10px;
+}
+
+.adatok{
+    width: 50%;
+    margin: 100pt auto 0px;
+}
+
+@media screen and (max-width: 800px){
+
+    .adatok{
+        width: 60%;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .adatok tr{
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .adatok{
+        width: 40%;
+        margin-bottom: 50px;
+    }
+
+    .beerkezettjelolesek, .beerkezettfeladatok{
+        width: 90%;
+        margin: 10px auto 50px;
+    }
+
+    .beerkezettfeladatok th:nth-child(1){
+        width: 10%;
+    }
+
+    .beerkezettfeladatok th:nth-child(2){
+        width: 30%;
+    }
+
+    .beerkezettfeladatok th:nth-child(3){
+        width: 45%;
+    }
+
+    .beerkezettfeladatok th:nth-child(4){
+        width: 15%;
+    }
+
+}
