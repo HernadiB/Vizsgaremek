@@ -7,7 +7,7 @@
 
 
     <table class="feladataim">
-        <h3 class="text-center" style="margin-top: 100pt;">Aktuális feladataim</h3>
+        <h3 class="text-center" id="cimsor">Aktuális feladataim</h3>
         <thead>
         <tr>
             <th scope="col">Feladat sorszáma</th>

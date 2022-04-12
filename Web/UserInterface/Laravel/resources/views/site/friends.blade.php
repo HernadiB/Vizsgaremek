@@ -6,7 +6,7 @@
 @section('content')
 
     <table class="barataim">
-        <h3 class="text-center" style="margin-top: 100pt;">Barátaim</h3>
+        <h3 class="text-center" id="cimsor">Barátaim</h3>
         <thead>
             <tr>
                 <th scope="col">Helyezés</th>

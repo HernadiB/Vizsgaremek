@@ -5,7 +5,7 @@
 @include('site.nav')
 @section('content')
     <table class="orszagos">
-        <h3 class="text-center" style="margin-top: 100pt;">Országos Pontállás</h3>
+        <h3 class="text-center" id="cimsor" >Országos Pontállás</h3>
         <thead>
         <tr>
             <th scope="col">Helyezés</th>

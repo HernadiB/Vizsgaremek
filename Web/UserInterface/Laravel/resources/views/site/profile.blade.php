@@ -6,7 +6,7 @@
 @include('site.nav')
 @section('content')
     <div class="profil">
-        <h3 class="text-center" style="margin-top: 100pt;">Üdv Felhasználónév</h3>
+        <h3 class="text-center" id="cimsor">Üdv Felhasználónév</h3>
 
         <img src="https://picsum.photos/200" alt="Profilkép" id="profilkep" title="profilkep">
 

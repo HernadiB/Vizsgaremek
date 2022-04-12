@@ -12,19 +12,19 @@
         <form action="">
             <div class="nev">
                 <label for="nev" class="form-label">Teljes név</label>
-                <input type="text" name="nev" class="form-control" id="input" placeholder="Alfréd Mihály">
+                <input type="text" name="nev" class="form-control" id="input" placeholder="Alfréd Mihály" required>
             </div>
             <div class="felhnev">
                 <label for="felhnev" class="form-label">Felhasználónév</label>
-                <input type="text" name="nev" class="form-control" id="input" placeholder="alfred.mihaly">
+                <input type="text" name="nev" class="form-control" id="input" placeholder="alfred.mihaly" required>
             </div>
             <div class="szuldat">
                 <label for="szuldat" class="form-label">Születési dátum</label>
-                <input type="text" name="szuldat" class="form-control" id="input" placeholder="2000.1.10">
+                <input type="text" name="szuldat" class="form-control" id="input" placeholder="2000.1.10" required>
             </div>
             <div class="nemek">
                 <label for="neme" class="form-label">Nem</label>
-                <select name="neme" id="neme" class="form-select">
+                <select name="neme" id="neme" class="form-select" required>
                     <option value="fiu">Fiú</option>
                     <option value="lány">Lány</option>
                 </select>

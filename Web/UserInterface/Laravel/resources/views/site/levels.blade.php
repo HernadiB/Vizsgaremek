@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{asset("css/levels_style.css")}}">
 @extends('layouts.main')
 @section('title')
     {{$title}}

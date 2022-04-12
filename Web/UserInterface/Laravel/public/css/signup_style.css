@@ -46,6 +46,15 @@ form .nemek{
     width: 85%;
 }
 
+option{
+    background-color: white;
+    color: black;
+}
+
+option:hover{
+    background-color: purple;
+}
+
 form .email{
     position: relative;
     width: 100%;

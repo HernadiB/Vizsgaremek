@@ -33,7 +33,7 @@
 
     <table class="beerkezettjelolesek">
         <thead>
-            <h3 class="text-center">Beérkezett baráti jelőlések</h3>
+            <h3 class="text-center" id="cimsor">Beérkezett baráti jelőlések</h3>
             <tr>
                 <th scope="col">Felhasználónév</th>
                 <th scope="col">Csapat tagja</th>
