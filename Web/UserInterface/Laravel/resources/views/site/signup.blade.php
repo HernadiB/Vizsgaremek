@@ -25,8 +25,8 @@
             <div class="nemek">
                 <label for="neme" class="form-label">Nem</label>
                 <select name="neme" id="neme" class="form-select" required>
-                    <option value="fiu">Fiú</option>
-                    <option value="lány">Lány</option>
+                    <option value="fiu">Férfi</option>
+                    <option value="lány">Nő</option>
                 </select>
             </div>
 
