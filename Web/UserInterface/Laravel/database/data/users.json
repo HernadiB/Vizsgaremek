@@ -9,7 +9,11 @@
         "role": "admin",
         "score": null,
         "team_id": 1,
-        "level_id": null
+        "level_id": null,
+        "tasks": null,
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Fábián Richárd",
@@ -21,7 +25,11 @@
         "role": "admin",
         "score": null,
         "team_id": 2,
-        "level_id": null
+        "level_id": null,
+        "tasks": null,
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Surány Norbert",
@@ -33,7 +41,11 @@
         "role": "admin",
         "score": null,
         "team_id": 3,
-        "level_id": null
+        "level_id": null,
+        "tasks": null,
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Bognár Ármin",
@@ -45,7 +57,11 @@
         "role": "admin",
         "score": null,
         "team_id": 4,
-        "level_id": null
+        "level_id": null,
+        "tasks": null,
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Pásztor Mihály",
@@ -57,7 +73,11 @@
         "role": "admin",
         "score": null,
         "team_id": 5,
-        "level_id": null
+        "level_id": null,
+        "tasks": null,
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Orosz Soma",
@@ -69,7 +89,15 @@
         "role": "user",
         "score": 18,
         "team_id": 1,
-        "level_id": 1
+        "level_id": 1,
+        "tasks": {
+            "1": true,
+            "2": false,
+            "3": true
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Sándor Benjamin",
@@ -81,7 +109,15 @@
         "role": "user",
         "score": 10,
         "team_id": 2,
-        "level_id": 1
+        "level_id": 1,
+        "tasks": {
+            "1": true,
+            "5": true,
+            "4": false
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Illés Géza",
@@ -93,7 +129,15 @@
         "role": "user",
         "score": 12,
         "team_id": 3,
-        "level_id": 1
+        "level_id": 1,
+        "tasks": {
+            "3": true,
+            "4": false,
+            "5": true
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Lengyel Erik",
@@ -105,7 +149,15 @@
         "role": "user",
         "score": 23,
         "team_id": 4,
-        "level_id": 1
+        "level_id": 1,
+        "tasks": {
+            "3": false,
+            "2": false,
+            "4": true
+        },
+        "friendships": [2,3,4],
+        "sent_requests": [1,5],
+        "received_requests": [7,8]
     },
     {
         "full_name": "Rácz Tamás",
@@ -117,7 +169,15 @@
         "role": "user",
         "score": 26,
         "team_id": 5,
-        "level_id": 2
+        "level_id": 2,
+        "tasks": {
+            "6": true,
+            "7": false,
+            "8": true
+        },
+        "friendships": [4,5,6],
+        "sent_requests": [8,9],
+        "received_requests": [2,3]
     },
     {
         "full_name": "Molnár Evelin",
@@ -129,7 +189,15 @@
         "role": "user",
         "score": 17,
         "team_id": 1,
-        "level_id": 2
+        "level_id": 2,
+        "tasks": {
+            "7": false,
+            "5": true,
+            "10": true
+        },
+        "friendships": [5,7,9],
+        "sent_requests": [6,8],
+        "received_requests": [4,2]
     },
     {
         "full_name": "Lengyel Elizabet",
@@ -141,7 +209,15 @@
         "role": "user",
         "score": 15,
         "team_id": 2,
-        "level_id": 2
+        "level_id": 2,
+        "tasks": {
+            "7": true,
+            "9": false,
+            "10": false
+        },
+        "friendships": [8,10,11],
+        "sent_requests": [1,2],
+        "received_requests": [3,4]
     },
     {
         "full_name": "Bács Tamara",
@@ -153,7 +229,15 @@
         "role": "user",
         "score": 22,
         "team_id": 3,
-        "level_id": 2
+        "level_id": 2,
+        "tasks": {
+            "5": false,
+            "8": false,
+            "10": true
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Somogyi Brigitta",
@@ -165,7 +249,15 @@
         "role": "user",
         "score": 18,
         "team_id": 4,
-        "level_id": 3
+        "level_id": 3,
+        "tasks": {
+            "11": true,
+            "12": false,
+            "13": true
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Bakos Dóra",
@@ -177,7 +269,15 @@
         "role": "user",
         "score": 31,
         "team_id": 5,
-        "level_id": 3
+        "level_id": 3,
+        "tasks": {
+            "12": true,
+            "14": false,
+            "15": false
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Kovács Réka",
@@ -189,7 +289,15 @@
         "role": "user",
         "score": 9,
         "team_id": null,
-        "level_id": 3
+        "level_id": 3,
+        "tasks": {
+            "11": false,
+            "13": false,
+            "15": true
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Vass Szabina",
@@ -201,7 +309,15 @@
         "role": "user",
         "score": 11,
         "team_id": null,
-        "level_id": 4
+        "level_id": 4,
+        "tasks": {
+            "15": true,
+            "18": false,
+            "19": true
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Jakab Vanessza",
@@ -213,7 +329,15 @@
         "role": "user",
         "score": 10,
         "team_id": null,
-        "level_id": 4
+        "level_id": 4,
+        "tasks": {
+            "16": true,
+            "18": false,
+            "20": false
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Veres Tímea",
@@ -225,7 +349,15 @@
         "role": "user",
         "score": 20,
         "team_id": null,
-        "level_id": 4
+        "level_id": 4,
+        "tasks": {
+            "15": true,
+            "16": true,
+            "20": true
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     },
     {
         "full_name": "Bogdán Ramóna",
@@ -237,6 +369,14 @@
         "role": "user",
         "score": 5,
         "team_id": null,
-        "level_id": 4
+        "level_id": 4,
+        "tasks": {
+            "18": true,
+            "16": false,
+            "19": false
+        },
+        "friendships": null,
+        "sent_requests": null,
+        "received_requests": null
     }
 ]

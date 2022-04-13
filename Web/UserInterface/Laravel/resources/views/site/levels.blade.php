@@ -29,7 +29,7 @@
     </table>
     <template>
         <tr>
-            <td id="levelname" data-label="Név"></td>
+            <td id="levelname" data-label="Szint"></td>
             <td id="taskname" data-label="Név"></td>
             <td id="description" data-label="Leírás"></td>
             <td id="score" data-label="Pontszám"></td>

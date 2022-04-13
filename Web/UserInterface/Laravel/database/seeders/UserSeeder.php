@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
         $users = json_decode($json);
 
         foreach ($users as $key => $value) {
-            User::create([
+            $user = User::create([
                 "full_name" => $value->full_name,
                 "username" => $value->username,
                 "birthdate" => $value->birthdate,
@@ -32,6 +32,17 @@ class UserSeeder extends Seeder
                 "team_id" => $value->team_id,
                 "level_id" => $value->level_id
             ]);
+
+            $user->Friendships1()->sync($value->friendships);
+            $user->SentRequests()->sync($value->sent_requests);
+            $user->ReceivedRequests()->sync($value->receivedrequests);
+            if ($value->tasks != null)
+            {
+                foreach ($value->tasks as $key=>$value)
+                {
+                    $user->Tasks()->attach([$key => ['is_done' => $value]]);
+                }
+            }
         }
     }
 }

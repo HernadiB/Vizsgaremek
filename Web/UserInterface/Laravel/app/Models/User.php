@@ -38,10 +38,6 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Level::class, 'level_id');
     }
-    public function UserTasks()
-    {
-        return $this->hasMany(UserTask::class, 'user_id');
-    }
     public function Friendships1()
     {
         return $this->belongsToMany(User::class, "friendships", "user1_id", "user2_id");
