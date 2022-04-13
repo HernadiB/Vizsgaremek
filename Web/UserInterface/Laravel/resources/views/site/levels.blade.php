@@ -3,7 +3,16 @@
 @section('title')
     {{$title}}
 @endsection
+@section('js_css')
+    <script src="{{asset('js/fetch.js')}}"></script>
+    <script src="{{asset('js/levels.js')}}"></script>
+@endsection
 @include('site.nav')
+@section('script')
+    <script>
+        GetTasks();
+    </script>
+@endsection
 @section('content')
     <table class="szintek">
         <h3 id="cimsor" class="text-center" >Szintek - feladatok</h3>
@@ -16,60 +25,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td data-label="Helyezés">Tisztek</td>
-            <td data-label="Név">#1 feladat megnevezése</td>
-            <td data-label="Leírás">#1 feladat leírása</td>
-            <td data-label="Pontszám">32</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">Tisztek</td>
-            <td data-label="Név">#2 feladat megnevezése</td>
-            <td data-label="Leírás">#2 feladat leírása</td>
-            <td data-label="Pontszám">32</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">Tisztek</td>
-            <td data-label="Név">#3 feladat megnevezése</td>
-            <td data-label="Pontszám">#3 feladat leírása</td>
-            <td data-label="Leírás">32</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">Altiszt</td>
-            <td data-label="Név">#1 feladat megnevezése</td>
-            <td data-label="Pontszám">#1 feladat leírása</td>
-            <td data-label="Leírás">32</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">Altiszt</td>
-            <td data-label="Név">#2 feladat megnevezése</td>
-            <td data-label="Pontszám">#2 feladat leírása</td>
-            <td data-label="Leírás">32</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">Altiszt</td>
-            <td data-label="Név">#3 feladat megnevezése</td>
-            <td data-label="Pontszám">#3 feladat leírása</td>
-            <td data-label="Leírás">32</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">Zászlós</td>
-            <td data-label="Név">#1 feladat megnevezése</td>
-            <td data-label="Pontszám">#1 feladat leírása</td>
-            <td data-label="Leírás">32</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">Zászlós</td>
-            <td data-label="Név">#2 feladat megnevezése</td>
-            <td data-label="Pontszám">#2 feladat leírása</td>
-            <td data-label="Leírás">32</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">Zászlós</td>
-            <td data-label="Név">#3 feladat megnevezése</td>
-            <td data-label="Pontszám">#3 feladat leírása</td>
-            <td data-label="Leírás">32</td>
-        </tr>
         </tbody>
     </table>
+    <template>
+        <tr>
+            <td id="levelname" data-label="Név"></td>
+            <td id="taskname" data-label="Név"></td>
+            <td id="description" data-label="Leírás"></td>
+            <td id="score" data-label="Pontszám"></td>
+        </tr>
+    </template>
 @endsection

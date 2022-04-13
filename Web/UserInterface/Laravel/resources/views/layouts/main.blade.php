@@ -13,6 +13,7 @@
     <title>@yield("title")</title>
 </head>
 <body>
+@yield('script')
     <div class="container">
         @yield('content')
     </div>

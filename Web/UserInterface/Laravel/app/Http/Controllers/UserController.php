@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -119,10 +120,15 @@ class UserController extends Controller
         //
     }
 
+    public function GetCountryLeaderboard()
+    {
+        $users = User::all()->sortByDesc('score')->take(10);
+        return UserResource::collection($users);
+    }
+
     public function GetTeamMembers($teamid)
     {
-        $users = User::where('team_id', $teamid)->get();
-        return $users;
+        return User::where('team_id', $teamid)->get();
     }
     public function GetFriends($userid)
     {

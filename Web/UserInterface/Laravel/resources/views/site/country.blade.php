@@ -2,7 +2,16 @@
 @section('title')
     {{$title}}
 @endsection
+@section('js_css')
+    <script src="{{asset('js/fetch.js')}}"></script>
+    <script src="{{asset('js/country.js')}}"></script>
+@endsection
 @include('site.nav')
+@section('script')
+    <script>
+        GetCountryLeaderboard();
+    </script>
+@endsection
 @section('content')
     <table class="orszagos">
         <h3 class="text-center" id="cimsor" >Országos Pontállás</h3>
@@ -14,21 +23,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td data-label="Helyezés">#1</td>
-            <td data-label="Név">Biliboc Bence</td>
-            <td data-label="Pontszám">1234</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">#2</td>
-            <td data-label="Név">Hernádi Barnabás</td>
-            <td data-label="Pontszám">123</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">#3</td>
-            <td data-label="Név">Nyári Roland</td>
-            <td data-label="Pontszám">12</td>
-        </tr>
+
         </tbody>
     </table>
+    <template>
+        <tr>
+            <td id="rank" data-label="Helyezés"></td>
+            <td id="name" data-label="Név"></td>
+            <td id="score" data-label="Pontszám"></td>
+        </tr>
+    </template>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Level;
 use App\Models\Team;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -17,15 +18,15 @@ class UserResource extends JsonResource
     {
         return [
             "ID" => $this->id,
-            "FullName" => $this->fullname,
+            "FullName" => $this->full_name,
             "Username" => $this->username,
             "Email" => $this->email,
             "Password" => $this->password,
             "Role" => $this->role,
             "ProfilePicture" => $this->profilepicture,
-            "TeamID" => $this->Team->name,
+            "Team" => $this->Team->name ?? null,
             "Score" => $this->score,
-            "LevelID" => $this->Level->name,
+            "Level" => $this->Level->name
         ];
     }
 }
