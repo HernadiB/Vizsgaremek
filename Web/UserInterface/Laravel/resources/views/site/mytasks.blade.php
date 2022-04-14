@@ -4,8 +4,7 @@
 @endsection
 @include('site.nav')
 @section('content')
-
-
+@if(count(\App\Models\User::where('id', session('user.id'))->first()->ActualTasks) != 0)
     <table class="feladataim">
         <h3 class="text-center" id="cimsor">Aktuális feladataim</h3>
         <thead>
@@ -17,30 +16,23 @@
         </tr>
         </thead>
         <tbody>
+        @foreach(\App\Models\User::where('id', session('user.id'))->first()->ActualTasks as $actualTask)
         <tr>
-            <td data-label="Feladat sorszáma">#1</td>
-            <td data-label="Feladat megnevezése">#1 feladat megnevezése</td>
+            <td data-label="Feladat sorszáma">{{$actualTask->id}}</td>
+            <td data-label="Feladat megnevezése">{{$actualTask->name}}</td>
             <td data-label="Feladat">
                 <button class="btn btn-dark">Megtekint</button>
             </td>
-            <td data-label="Státusz">&#10004</td>
+            @if($actualTask->pivot->is_done == 1)
+                <td data-label="Státusz">&#10004</td>
+            @else
+                <td data-label="Státusz">&#x274C;</td>
+            @endif
         </tr>
-        <tr>
-            <td data-label="Feladat sorszáma">#2</td>
-            <td data-label="Feladat megnevezése">#2 feladat megnevezése</td>
-            <td data-label="Feladat">
-                <button class="btn btn-dark">Megtekint</button>
-            </td>
-            <td data-label="Státusz">&#x274C;</td>
-        </tr>
-        <tr>
-            <td data-label="Feladat sorszáma">#3</td>
-            <td data-label="Feladat megnevezése">#3 feladat megnevezése</td>
-            <td data-label="Feladat">
-                <button class="btn btn-dark">Megtekint</button>
-            </td>
-            <td data-label="Státusz">&#10004</td>
-        </tr>
+        @endforeach
         </tbody>
     </table>
+@else
+
+@endif
 @endsection

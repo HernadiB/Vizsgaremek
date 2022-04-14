@@ -16,4 +16,8 @@ class Team extends Model
     {
         return $this->hasOne(User::class, "leader_id");
     }
+    public function Score()
+    {
+        return User::where('team_id', $this->id)->pluck('score')->sum();
+    }
 }

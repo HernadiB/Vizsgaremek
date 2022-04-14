@@ -28,7 +28,11 @@ Route::get('/admin', [\App\Http\Controllers\SiteController::class, 'Admin'])->na
 Route::get('/admin/team', [\App\Http\Controllers\SiteController::class, 'AdminTeam'])->name('site.adminteam');
 Route::get('/admin/teammate', [\App\Http\Controllers\SiteController::class, 'AdminTeammate'])->name('site.adminteammate');
 
-
+Route::post('/users/signup', [\App\Http\Controllers\UserController::class, "SignupUser"])->name("userSignup");
+Route::post('/users/login', [\App\Http\Controllers\UserController::class, "LoginUser"])->name("userLogin");;
 Route::post('/users/update', [\App\Http\Controllers\UserController::class, "ModifyUser"])->name("userModify");
 Route::post('/users/delete', [\App\Http\Controllers\UserController::class, "DeleteUser"])->name("userDelete");
 Route::post('/users/logout', [\App\Http\Controllers\UserController::class, "LogoutUser"])->name("userLogout");
+
+Route::post('/friendinvite/accept', [\App\Http\Controllers\UserController::class, "AcceptInvitation"])->name("inviteAccept");
+Route::post('/friendinvite/reject', [\App\Http\Controllers\UserController::class, "RejectInvitation"])->name("inviteReject");

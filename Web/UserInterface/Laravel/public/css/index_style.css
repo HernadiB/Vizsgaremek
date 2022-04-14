@@ -25,25 +25,25 @@
         margin-bottom: 50px;
     }
 
-    .beerkezettjelolesek, .beerkezettfeladatok{
+    .beerkezettjelolesek, .elvegezendofeladatok{
         width: 90%;
         margin: 10px auto 50px;
     }
 
-    .beerkezettfeladatok th:nth-child(1){
-        width: 10%;
+    .elvegezendofeladatok th:nth-child(1){
+        width: 20%;
     }
 
-    .beerkezettfeladatok th:nth-child(2){
-        width: 30%;
+    .elvegezendofeladatok th:nth-child(2){
+        width: 40%;
     }
 
-    .beerkezettfeladatok th:nth-child(3){
-        width: 45%;
+    .elvegezendofeladatok th:nth-child(3){
+        width: 20%;
     }
 
-    .beerkezettfeladatok th:nth-child(4){
-        width: 15%;
+    .elvegezendofeladatok th:nth-child(4){
+        width: 20%;
     }
 
 }

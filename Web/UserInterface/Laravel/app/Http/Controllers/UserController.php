@@ -79,13 +79,12 @@ class UserController extends Controller
 
         $user = User::create($validatedData);
 
-//        $request->session()->put("user", $user);
-//
-//        $request->session()->flash("success", "Sikeres regisztráció");
-//        auth()->login($user);
-//
-//        return redirect()->route("site.index");
-        return $user;
+        $request->session()->put("user", $user);
+
+        $request->session()->flash("success", "Sikeres regisztráció");
+        auth()->login($user);
+
+        return redirect()->route("home");
     }
 
     public function LoginUser(LoginRequest $request)
@@ -94,18 +93,16 @@ class UserController extends Controller
 
         if(!auth()->attempt($loginData))
         {
-//            return redirect()->route("site.login")->with("error", "Hibás adatok");
-            return ['message' => 'Hibás adatok'];
+            return redirect()->route("site.login")->with("error", "Hibás adatok");
         }
 
-//        $request->session()->regenerateToken();
-//
-//        $request->session()->put("user", auth()->user());
-//
-//        $request->session()->flash("success", "Sikeres bejelentkezés");
-//
-//        return redirect()->route("site.index");
-        return auth()->user();
+        $request->session()->regenerateToken();
+
+        $request->session()->put("user", auth()->user());
+
+        $request->session()->flash("success", "Sikeres bejelentkezés");
+
+        return redirect()->route("home");
     }
     public function ModifyUser(Request $request)
     {
@@ -120,6 +117,22 @@ class UserController extends Controller
         //
     }
 
+    public function AcceptInvitation(Request $request)
+    {
+        $receiverUser = $request->session()->get('user');
+        $receiverUser->ReceivedRequests()->detach($request->senderUserID);
+        $receiverUser->Friendships1()->syncWithoutDetaching($request->senderUserID);
+        $request->session()->flash('success', 'Barát kérelem elfogadva');
+        return redirect()->back();
+    }
+    public function RejectInvitation(Request $request)
+    {
+        $receiverUser = $request->session()->get('user');
+        $receiverUser->ReceivedRequests()->detach($request->senderUserID);
+        $request->session()->flash('success', 'Barát kérelem elutasítva');
+        return redirect()->back();
+    }
+
     public function GetCountryLeaderboard()
     {
         $users = User::all()->sortByDesc('score')->take(10);
@@ -129,14 +142,6 @@ class UserController extends Controller
     public function GetTeamMembers($teamid)
     {
         return User::where('team_id', $teamid)->get();
-    }
-    public function GetFriends($userid)
-    {
-        $user = User::findorfail($userid);
-        $arr = [];
-        array_push($arr, $user->Friendships1);
-        array_push($arr, $user->Friendships2);
-        return $arr;
     }
     public function SentFriendRequests($userid)
     {

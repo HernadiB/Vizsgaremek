@@ -4,6 +4,7 @@
 @endsection
 @include('site.nav')
 @section('content')
+    @if(count(\App\Models\User::where('id', session('user.id'))->first()->TeamMembers) != 0)
     <table class="csapatom">
         <h3 class="text-center" id="cimsor">Csapatom</h3>
         <thead>
@@ -14,21 +15,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td data-label="Helyezés">#1</td>
-            <td data-label="Név">Nyári Roland</td>
-            <td data-label="Pontszám">1234</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">#2</td>
-            <td data-label="Név">Hernádi Barnabás</td>
-            <td data-label="Pontszám">123</td>
-        </tr>
-        <tr>
-            <td data-label="Helyezés">#3</td>
-            <td data-label="Név">Biliboc Bence</td>
-            <td data-label="Pontszám">12</td>
-        </tr>
+        @php $i = 1 @endphp
+        @foreach(\App\Models\User::where('id', session('user.id'))->first()->TeamMembers as $teamMember)
+            <tr>
+                <td data-label="Helyezés">{{$i}}</td>
+                <td data-label="Név">{{$teamMember->username}}</td>
+                <td data-label="Pontszám">{{$teamMember->score}}</td>
+            </tr>
+            @php $i++ @endphp
+        @endforeach
         </tbody>
     </table>
+    @else
+
+    @endif
 @endsection

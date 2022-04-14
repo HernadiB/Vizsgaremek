@@ -35,12 +35,12 @@ class UserSeeder extends Seeder
 
             $user->Friendships1()->sync($value->friendships);
             $user->SentRequests()->sync($value->sent_requests);
-            $user->ReceivedRequests()->sync($value->receivedrequests);
+            $user->ReceivedRequests()->sync($value->received_requests);
             if ($value->tasks != null)
             {
                 foreach ($value->tasks as $key=>$value)
                 {
-                    $user->Tasks()->attach([$key => ['is_done' => $value]]);
+                    $user->ActualTasks()->attach([$key => ['is_done' => $value]]);
                 }
             }
         }

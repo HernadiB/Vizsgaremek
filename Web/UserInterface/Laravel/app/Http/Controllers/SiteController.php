@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -14,10 +15,15 @@ class SiteController extends Controller
     }
     public function Friends()
     {
+        $friends1 = User::where('id', session('user.id'))->first()->Friendships1;
+        $friends2 = User::where('id', session('user.id'))->first()->Friendships2;
+        $allfriends = $friends1->merge($friends2)->sortByDesc('score');
         return view('site.friends', [
-            "title" => "Barátaim"
+            "title" => "Barátaim",
+            "friends" => $allfriends
         ]);
     }
+
     public function Index()
     {
         return view('site.index', [

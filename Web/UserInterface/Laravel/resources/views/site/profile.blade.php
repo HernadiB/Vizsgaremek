@@ -6,7 +6,7 @@
 @include('site.nav')
 @section('content')
     <div class="profil">
-        <h3 class="text-center" id="cimsor">Üdv Felhasználónév</h3>
+        <h3 class="text-center" id="cimsor">Üdv {{session('user.username')}}</h3>
 
         <img src="https://picsum.photos/200" alt="Profilkép" id="profilkep" title="profilkep">
 
@@ -15,19 +15,19 @@
                 <div class="nev row">
                     <label for="nev" class="col-lg-4 col-form-label">Teljes név</label>
                     <div class="col-lg-8">
-                        <input type="text" name="nev" class="form-control input" placeholder="Alfréd Mihály">
+                        <input type="text" name="nev" class="form-control input" placeholder="{{session('user.full_name')}}">
                     </div>
                 </div>
                 <div class="felhnev row">
                     <label for="felhnev" class="col-lg-4 col-form-label">Felhasználónév</label>
                     <div class="col-lg-8">
-                        <input type="text" name="nev" class="form-control input" placeholder="alfred.mihaly">
+                        <input type="text" name="nev" class="form-control input" placeholder="{{session('user.username')}}">
                     </div>
                 </div>
                 <div class="email row">
                     <label for="email" class="col-lg-4 col-form-label">E-mail cím</label>
                     <div class="col-lg-8">
-                        <input type="text" name="email" class="form-control input" placeholder="alfred.mihaly@example.com">
+                        <input type="text" name="email" class="form-control input" placeholder="{{session('user.email')}}">
                     </div>
                 </div>
                 <div class="passwd row">

@@ -26,7 +26,7 @@ class SignupRequest extends FormRequest
     {
         return [
             "full_name" => ["required", "string", "min:1", "max:255"],
-            "username" => ["required", "unique:users,username", "string", "min:1", "max:255"],
+            "username" => ["required", "unique:users", "string", "min:1", "max:255"],
             "birthdate" => ["required", "date"],
             "gender" => ["required", Rule::in(["M", "F"])],
             "email" => ["required", "email", "unique:users,email", "min:5", "max:255"],

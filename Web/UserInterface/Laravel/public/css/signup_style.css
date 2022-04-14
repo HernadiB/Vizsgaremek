@@ -30,7 +30,7 @@
     padding: 20px 0 0 10px;
 }
 
-form #input{
+form #input, #gender{
     width: 85%;
 }
 
@@ -39,11 +39,6 @@ form #input{
     padding-bottom: 20px;
     padding-left: 40px;
     box-sizing: border-box;
-}
-
-form .nemek{
-    position: relative;
-    width: 85%;
 }
 
 option{

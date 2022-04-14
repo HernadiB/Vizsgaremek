@@ -10,15 +10,16 @@
 <div class="form-section">
         <h2><i class="fa-solid fa-user"></i>Bejelentkezés</h2>
     <hr>
-    <form action="">
+    <form action="{{route('userLogin')}}" method="post">
+        @csrf
         <div class="email">
             <label for="email" class="form-label">E-mail cím</label>
-            <input type="text" name="email" class="form-control" id="input" required placeholder="alfred.mihaly@example.com">
+            <input type="text" name="email" class="form-control" id="input" placeholder="alfred.mihaly@example.com">
             <span></span>
         </div>
         <div class="passwd">
-            <label for="passwd" class="form-label">Jelszó</label>
-            <input type="password" name="passwd" class="form-control" id="input" required placeholder="*************">
+            <label for="password" class="form-label">Jelszó</label>
+            <input type="password" name="password" class="form-control" id="input" placeholder="*************">
             <span></span>
         </div>
         <button class="btn">Bejelentkezés</button>

@@ -98,7 +98,7 @@ table th{
         width: 99px;
     }
 
-    .beerkezettjelolesek, .beerkezettfeladatok, .csapatom, .barataim, .orszagos, .feladataim, .szintek{
+    .beerkezettjelolesek, .elvegezendofeladatok, .csapatom, .barataim, .orszagos, .feladataim, .szintek{
         width: 90%;
         margin: 10px auto 50px;
     }

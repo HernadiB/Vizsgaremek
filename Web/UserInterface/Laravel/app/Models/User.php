@@ -54,8 +54,16 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(User::class, "friendinvitations", "receiver_user_id","sender_user_id");
     }
-    public function Tasks()
+    public function RemainingTasks()
     {
-        return $this->belongsToMany(Task::class, "usertasks", "user_id", "task_id");
+        return $this->Level->Tasks()->whereNotIn('id', $this->belongsToMany(Task::class, "usertasks", "user_id", "task_id")->pluck('task_id'));
+    }
+    public function ActualTasks()
+    {
+        return $this->belongsToMany(Task::class, 'usertasks', 'user_id', 'task_id')->withPivot('is_done')->orderBy('id');
+    }
+    public function TeamMembers()
+    {
+        return $this->Team->Members()->orderByDesc('score');
     }
 }
