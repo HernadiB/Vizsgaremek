@@ -69,4 +69,18 @@ class SiteController extends Controller
             "title" => "Csapat alapítás"
         ]);
     }
+
+    public function Admin()
+    {
+        return view('site.admin', [
+            "title" => "Admin felület"
+        ]);
+    }
+
+    public function AdminTeam()
+    {
+        return view('site.adminteam', [
+            "title" => "Admin csapat kezelése"
+        ]);
+    }
 }
