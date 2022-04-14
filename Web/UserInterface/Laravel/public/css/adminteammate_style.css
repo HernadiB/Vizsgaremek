@@ -1,0 +1,76 @@
+#h1{
+    text-align: center;
+    margin-top: 110px;
+}
+
+.form-section{
+    width: 50%;
+    background: #C4C4C4;;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    border-radius: 0.25em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 140px;
+}
+
+.form-section form{
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.teammate .felvetel{
+    width: 200px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#melle{
+    display: inline-block;
+}
+
+.rlb{
+    margin-left: 100px;
+}
+
+@media screen and (max-width: 992px){
+    .form-section{
+        margin-top: 20px;
+        width: 310px;
+    }
+
+    .teammate .input{
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .teammate .felvetel{
+        width: 100px;
+    }
+
+}
+.form-select{
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 992px){
+    .teammate label{
+        vertical-align: middle;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .teammate .input{
+        margin-left: 40px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .teammate .row{
+        padding-right: 40px;
+    }
+}
+
+

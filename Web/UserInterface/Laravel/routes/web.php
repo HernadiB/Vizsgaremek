@@ -26,6 +26,7 @@ Route::get('/teammake', [\App\Http\Controllers\SiteController::class, 'TeamMake'
 
 Route::get('/admin', [\App\Http\Controllers\SiteController::class, 'Admin'])->name('site.admin');
 Route::get('/admin/team', [\App\Http\Controllers\SiteController::class, 'AdminTeam'])->name('site.adminteam');
+Route::get('/admin/teammate', [\App\Http\Controllers\SiteController::class, 'AdminTeammate'])->name('site.adminteammate');
 
 
 Route::post('/users/update', [\App\Http\Controllers\UserController::class, "ModifyUser"])->name("userModify");

@@ -83,4 +83,11 @@ class SiteController extends Controller
             "title" => "Admin csapat kezelése"
         ]);
     }
+
+    public function AdminTeammate()
+    {
+        return view('site.adminteammate', [
+            "title" => "Admin csapattagok kezelése"
+        ]);
+    }
 }

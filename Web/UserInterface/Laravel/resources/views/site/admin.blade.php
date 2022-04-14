@@ -8,6 +8,6 @@
         <h1 id="h1">Admin felület</h1>
     <div class="admin">
         <a href="{{route("site.adminteam")}}"> <button class="btn btn-dark " id="csapatombtn">Csapatom</button> </a>
-        <a href=""> <button class="btn btn-dark" id="csapatombtn">Csapattag felvétele</button> </a>
+        <a href="{{route("site.adminteammate")}}"> <button class="btn btn-dark" id="csapatombtn">Csapattag felvétele</button> </a>
     </div>
 @endsection
