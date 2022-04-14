@@ -45,7 +45,7 @@
                         <tr>
                             <td data-label="Név">Biliboc Bence</td>
                             <td data-label="Profil">
-                                <button class="btn btn-primary">Megtekint</button>
+                                <button class="btn btn-dark">Megtekint</button>
                             </td>
                             <td data-label="Kiválaszt">
                                 <input type="checkbox">
@@ -54,7 +54,7 @@
                         <tr>
                             <td data-label="Név">Hernádi Barnabás</td>
                             <td data-label="Profil">
-                                <button class="btn btn-primary">Megtekint</button>
+                                <button class="btn btn-dark">Megtekint</button>
                             </td>
                             <td data-label="Kiválaszt">
                                 <input type="checkbox">
@@ -64,7 +64,7 @@
                         <tr>
                             <td data-label="Név">Nyári Roland</td>
                             <td data-label="Profil">
-                                <button class="btn btn-primary">Megtekint</button>
+                                <button class="btn btn-dark">Megtekint</button>
                             </td>
                             <td data-label="Kiválaszt">
                                 <input type="checkbox">
