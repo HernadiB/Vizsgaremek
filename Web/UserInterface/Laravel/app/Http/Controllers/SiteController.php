@@ -62,4 +62,11 @@ class SiteController extends Controller
             "title" => "Profilom"
         ]);
     }
+
+    public function TeamMake()
+    {
+        return view('site.teammake', [
+            "title" => "Csapat alapítás"
+        ]);
+    }
 }

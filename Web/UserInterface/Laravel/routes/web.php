@@ -22,6 +22,8 @@ Route::get('/mytasks', [\App\Http\Controllers\SiteController::class, 'MyTasks'])
 Route::get('/signup', [\App\Http\Controllers\SiteController::class, 'Signup'])->name('site.signup');
 Route::get('/myteam', [\App\Http\Controllers\SiteController::class, 'MyTeam'])->name('site.myteam');
 Route::get('/profile', [\App\Http\Controllers\SiteController::class, 'Profile'])->name('site.profile');
+Route::get('/teammake', [\App\Http\Controllers\SiteController::class, 'TeamMake'])->name('site.teammake');
+
 
 Route::post('/users/update', [\App\Http\Controllers\UserController::class, "ModifyUser"])->name("userModify");
 Route::post('/users/delete', [\App\Http\Controllers\UserController::class, "DeleteUser"])->name("userDelete");
