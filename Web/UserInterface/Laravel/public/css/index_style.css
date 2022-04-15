@@ -7,6 +7,10 @@
     margin: 100pt auto 0px;
 }
 
+#alert{
+margin-top: 100px;
+}
+
 @media screen and (max-width: 800px){
 
     .adatok{
