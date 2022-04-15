@@ -8,9 +8,10 @@
 @endsection
 @include('site.nav')
 @section('script')
-    <script>
-        GetCountryLeaderboard();
-    </script>
+{{--    <script>--}}
+{{--        GetCountryLeaderboard();--}}
+{{--    </script>--}}
+
 @endsection
 @section('content')
     <table class="orszagos">
@@ -23,7 +24,13 @@
         </tr>
         </thead>
         <tbody>
-
+            @foreach($users as $key => $value)
+                <tr @if ($value->id == session('user.id')) style="background: grey" @endif>
+                    <td id="rank" data-label="Helyezés">#{{$key}}</td>
+                    <td id="name" data-label="Név">{{$value->username}}</td>
+                    <td id="score" data-label="Pontszám">{{$value->score}}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
     <template>

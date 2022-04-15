@@ -21,7 +21,9 @@
             <td data-label="Feladat sorszáma">{{$actualTask->id}}</td>
             <td data-label="Feladat megnevezése">{{$actualTask->name}}</td>
             <td data-label="Feladat">
-                <button class="btn btn-dark">Megtekint</button>
+                {!! Form::open(['route' => 'taskView', 'method' => 'post']) !!}
+                    <button name="taskID" value="{{$actualTask->id}}" class="btn btn-dark">Megtekint</button>
+                {!! Form::close() !!}
             </td>
             @if($actualTask->pivot->is_done == 1)
                 <td data-label="Státusz">&#10004</td>

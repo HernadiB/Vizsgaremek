@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\ModifyUserRequest;
 use App\Http\Requests\SignupRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
@@ -66,7 +67,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        $user = User::findorfail($id);
+        $user->Friendships1()->detach();
+        $user->Friendships2()->detach();
+        $user->SentRequests()->detach();
+        $user->ReceivedRequests()->detach();
+        $user->ActualTasks()->detach();
+        $user->delete();
     }
 
     public function SignupUser(SignupRequest $request)
@@ -104,17 +111,32 @@ class UserController extends Controller
 
         return redirect()->route("home");
     }
-    public function ModifyUser(Request $request)
+    public function ModifyUser(ModifyUserRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+        $validatedData['password'] = bcrypt($validatedData['password_new']);
+
+        $user = User::findorfail($request->session()->get('user.id'));
+        $user->update($validatedData);
+
+        $request->session()->put("user", $user);
+        $request->session()->flash("success", "Sikeres módosítás");
+        return redirect()->route('site.profile');
     }
     public function DeleteUser(Request $request)
     {
-        //
+        $this->destroy($request->session()->get('user.id'));
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('site.signup')->with('success', 'Fiók sikeresen törölve!');
     }
     public function LogoutUser(Request $request)
     {
-        //
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('site.login')->with('success', 'Kijelentkeztél');
     }
 
     public function AcceptInvitation(Request $request)
@@ -132,11 +154,22 @@ class UserController extends Controller
         $request->session()->flash('success', 'Barát kérelem elutasítva');
         return redirect()->back();
     }
-
-    public function GetCountryLeaderboard()
+    public function AcceptTask(Request $request)
     {
-        $users = User::all()->sortByDesc('score')->take(10);
-        return UserResource::collection($users);
+        $user = $request->session()->get('user');
+        $user->ActualTasks()->attach($request->taskID);
+        return redirect()->back()->with('success', 'Elvállalva!');
+    }
+    public function ViewTask(Request $request)
+    {
+        return redirect()->route('site.levels')->with('taskID', $request->taskID);
+    }
+    public function DeleteFriend(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $user->Friendships1()->detach($request->friendID);
+        $user->Friendships2()->detach($request->friendID);
+        return redirect()->back()->with('success', 'Törölve!');
     }
 
     public function GetTeamMembers($teamid)

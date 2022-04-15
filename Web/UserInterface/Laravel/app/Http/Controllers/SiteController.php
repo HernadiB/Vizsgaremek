@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Level;
+use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -9,8 +11,23 @@ class SiteController extends Controller
 {
     public function Country()
     {
+        $currentUser = User::where('id', session()->get('user.id'))->first();
+        $usersTop10 = User::where('role', 'user')->get()->sortByDesc('score')->take(10)->pluck('id');
+        $usersAll = User::where('role', 'user')->get()->sortByDesc('score')->pluck('id');
+        if($currentUser->role != 'admin')
+        {
+            if (!$usersTop10->contains('id', $currentUser['id']))
+            {
+                $usersTop10->push(User::where('id', $currentUser['id'])->first()->id);
+            }
+        }
+        foreach ($usersTop10 as $user)
+        {
+            $leaderboardRanks[array_search($user, $usersAll->toarray())+1] = User::where('id', $user)->first();
+        }
         return view('site.country', [
-            "title" => "Országos ranglista"
+            "title" => "Országos ranglista",
+            "users" => $leaderboardRanks
         ]);
     }
     public function Friends()
@@ -32,8 +49,10 @@ class SiteController extends Controller
     }
     public function Levels()
     {
+        $tasks = Task::all()->sortBy('level_id');
         return view('site.levels', [
-            "title" => "Szintek"
+            "title" => "Szintek",
+            "tasks" => $tasks
         ]);
     }
     public function Login()

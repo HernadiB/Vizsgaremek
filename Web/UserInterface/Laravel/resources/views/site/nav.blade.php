@@ -38,7 +38,9 @@
                         <a class="nav-link text-white" href="{{route("site.levels")}}">Szintek-feladatok</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link btn text-white" id="logout">Kijelentkezés</button>
+                        {!! Form::open(['route' => 'userLogout', 'method' => 'post']) !!}
+                            <button class="nav-link btn text-white" id="logout">Kijelentkezés</button>
+                        {!! Form::close() !!}
                     </li>
                 </ul>
             </div>

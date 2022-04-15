@@ -6,6 +6,9 @@
 @endsection
 @include('site.nav')
 @section('content')
+    @if(session("success"))
+        <div id="alert" class="alert alert-success">{{session("success")}}</div>
+    @endif
     <div class="form-section">
         <h2><i class="fa-solid fa-user"></i>Regisztráció</h2>
         <hr>

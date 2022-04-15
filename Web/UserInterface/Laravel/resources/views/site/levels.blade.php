@@ -9,9 +9,9 @@
 @endsection
 @include('site.nav')
 @section('script')
-    <script>
-        GetTasks();
-    </script>
+{{--    <script>--}}
+{{--        GetTasks();--}}
+{{--    </script>--}}
 @endsection
 @section('content')
     <table class="szintek">
@@ -25,6 +25,14 @@
         </tr>
         </thead>
         <tbody>
+            @foreach($tasks as $task)
+                <tr @if(session('taskID') == $task->id) style="background: grey" @endif>
+                    <td id="levelname" data-label="Szint">{{\App\Models\Level::where('id', $task->level_id)->first()->name}}</td>
+                    <td id="taskname" data-label="Név">{{$task->name}}</td>
+                    <td id="description" data-label="Leírás">{{$task->description}}</td>
+                    <td id="score" data-label="Pontszám">{{$task->score}}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
     <template>

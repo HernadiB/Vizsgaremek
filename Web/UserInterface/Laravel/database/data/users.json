@@ -192,7 +192,7 @@
         "level_id": 2,
         "tasks": {
             "7": false,
-            "5": true,
+            "6": true,
             "10": true
         },
         "friendships": [5,7,9],

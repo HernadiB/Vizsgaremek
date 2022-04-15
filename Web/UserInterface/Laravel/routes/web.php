@@ -36,3 +36,11 @@ Route::post('/users/logout', [\App\Http\Controllers\UserController::class, "Logo
 
 Route::post('/friendinvite/accept', [\App\Http\Controllers\UserController::class, "AcceptInvitation"])->name("inviteAccept");
 Route::post('/friendinvite/reject', [\App\Http\Controllers\UserController::class, "RejectInvitation"])->name("inviteReject");
+
+Route::post('/task/accept', [\App\Http\Controllers\UserController::class, "AcceptTask"])->name("taskAccept");
+Route::post('/task/view', [\App\Http\Controllers\UserController::class, "ViewTask"])->name("taskView");
+
+Route::post('/friend/delete', [\App\Http\Controllers\UserController::class, "DeleteFriend"])->name("friendDelete");
+
+Route::post('/leaderboard/country', [\App\Http\Controllers\UserController::class, "GetCountryLeaderboard"])->name("leaderboardCountry");
+Route::post('/leaderboard/friends', [\App\Http\Controllers\UserController::class, "GetFriendsLeaderboard"])->name("leaderboardFriends");

@@ -61,7 +61,7 @@
     },
     {
         "nev": "Csapatjáték szervezés",
-        "leiras": "Szervezz csapatjátékot mint példáu a foci, röplabda vagy kosárabda.",
+        "leiras": "Szervezz csapatjátékot mint például a foci, röplabda vagy kosárabda.",
         "pontszam": 5,
         "level": "Zászlós"
     },
@@ -72,7 +72,7 @@
         "level": "Zászlós"
     },
     {
-        "nev": "Szklamászás - ereszkedés",
+        "nev": "Sziklamászás - ereszkedés",
         "leiras": "Próbáld ki a sziklamászást és az ereszkedést.",
         "pontszam": 5,
         "level": "Zászlós"

@@ -15,16 +15,20 @@
         <thead>
             <tr>
                 <th scope="col">Pontszámom</th>
+                @if(session()->has('user.Team'))
                 <th scope="col">Csapatom neve</th>
                 <th scope="col">Csapatom pontszáma</th>
+                @endif
                 <th scope="col">Rendfokozatom</th>
             </tr>
         </thead>
         <tbody>
         <tr>
             <td data-label="Pontszámom">{{session('user')->score}}</td>
-            <td data-label="Csapatom neve">{{session('user')->Team->name}}</td>
-            <td data-label="Csapatom pontszáma">{{session('user')->Team->Score()}}</td>
+            @if(session()->has('user.Team'))
+                <td data-label="Csapatom neve">{{session('user')->Team->name}}</td>
+                <td data-label="Csapatom pontszáma">{{session('user')->Team->Score()}}</td>
+            @endif
             <td data-label="Rendfokozatom">{{\App\Models\Level::where('id', session('user')->level_id)->first()->name}}</td>
         </tr>
         </tbody>
@@ -81,10 +85,14 @@
                     <td data-label="Feladat sorszáma">{{$remainingTask->id}}</td>
                     <td data-label="Feladat megnevezése">{{$remainingTask->name}}</td>
                     <td data-label="Hozzáadás">
-                        <button class="btn btn-success">Hozzáadás</button>
+                        {!! Form::open(['route' => 'taskAccept', 'method' => 'post']) !!}
+                            <button name="taskID" value="{{$remainingTask->id}}" class="btn btn-success">Hozzáadás</button>
+                        {!! Form::close() !!}
                     </td>
                     <td data-label="Feladat részletei">
-                        <button class="btn btn-dark">Megtekint</button>
+                        {!! Form::open(['route' => 'taskView', 'method' => 'post']) !!}
+                            <button name="taskID" value="{{$remainingTask->id}}" class="btn btn-dark">Megtekint</button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
             @endforeach
