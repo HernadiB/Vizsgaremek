@@ -1,0 +1,71 @@
+#h3{
+    text-align: center;
+    margin-top: 110px;
+}
+
+#h4{
+    text-align: center;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.form-section{
+    width: 50%;
+    background-color: #C4C4C4;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    border-radius: 0.25em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.form-section form{
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+
+.baratkereses{
+    margin: 80px auto;
+    display: block;
+}
+
+.barattabla{
+    margin-top: 30px;
+    box-shadow: none;
+    background: transparent;
+}
+
+
+@media screen and (max-width: 992px){
+    .form-section{
+        margin-top: 20px;
+        width: 310px;
+    }
+
+    .baratkereses .input{
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .baratkereses label{
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .baratkereses .input{
+        margin-left: 40px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .baratkereses .row{
+        padding-right: 40px;
+    }
+}
+
+
+
