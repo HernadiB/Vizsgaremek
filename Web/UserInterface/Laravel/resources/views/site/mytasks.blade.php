@@ -12,6 +12,7 @@
             <th scope="col">Feladat sorszáma</th>
             <th scope="col">Feladat megnevezése</th>
             <th scope="col">Feladat</th>
+            <th scope="col">Elvégezve</th>
             <th scope="col">Státusz</th>
         </tr>
         </thead>
@@ -24,6 +25,10 @@
                 {!! Form::open(['route' => 'taskView', 'method' => 'post']) !!}
                     <button name="taskID" value="{{$actualTask->id}}" class="btn btn-dark">Megtekint</button>
                 {!! Form::close() !!}
+            </td>
+            <td data-label="Elvégezve">
+                <button class="btn btn-success">Kész</button>
+            </td>
             </td>
             @if($actualTask->pivot->is_done == 1)
                 <td data-label="Státusz">&#10004</td>
