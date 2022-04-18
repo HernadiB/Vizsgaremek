@@ -91,9 +91,9 @@
         "team_id": 1,
         "level_id": 1,
         "tasks": {
-            "1": true,
-            "2": false,
-            "3": true
+            "1": "finished",
+            "2": "unfinished",
+            "3": "finished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -111,9 +111,9 @@
         "team_id": 2,
         "level_id": 1,
         "tasks": {
-            "1": true,
-            "5": true,
-            "4": false
+            "1": "finished",
+            "5": "unfinished",
+            "4": "unfinished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -131,9 +131,9 @@
         "team_id": 3,
         "level_id": 1,
         "tasks": {
-            "3": true,
-            "4": false,
-            "5": true
+            "3": "finished",
+            "4": "unfinished",
+            "5": "finished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -151,9 +151,9 @@
         "team_id": 4,
         "level_id": 1,
         "tasks": {
-            "3": false,
-            "2": false,
-            "4": true
+            "3": "finished",
+            "2": "unfinished",
+            "4": "unfinished"
         },
         "friendships": [2,3,4],
         "sent_requests": [1,5],
@@ -171,9 +171,9 @@
         "team_id": 5,
         "level_id": 2,
         "tasks": {
-            "6": true,
-            "7": false,
-            "8": true
+            "6": "finished",
+            "7": "unfinished",
+            "8": "unfinished"
         },
         "friendships": [4,5,6],
         "sent_requests": [8,9],
@@ -191,9 +191,9 @@
         "team_id": 1,
         "level_id": 2,
         "tasks": {
-            "7": false,
-            "6": true,
-            "10": true
+            "7": "finished",
+            "6": "unfinished",
+            "10": "unfinished"
         },
         "friendships": [5,7,9],
         "sent_requests": [6,8],
@@ -211,9 +211,9 @@
         "team_id": 2,
         "level_id": 2,
         "tasks": {
-            "7": true,
-            "9": false,
-            "10": false
+            "7": "finished",
+            "9": "unfinished",
+            "10": "unfinished"
         },
         "friendships": [8,10,11],
         "sent_requests": [1,2],
@@ -231,9 +231,9 @@
         "team_id": 3,
         "level_id": 2,
         "tasks": {
-            "5": false,
-            "8": false,
-            "10": true
+            "5": "finished",
+            "8": "unfinished",
+            "10": "unfinished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -251,9 +251,9 @@
         "team_id": 4,
         "level_id": 3,
         "tasks": {
-            "11": true,
-            "12": false,
-            "13": true
+            "11": "finished",
+            "12": "unfinished",
+            "13": "unfinished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -271,9 +271,9 @@
         "team_id": 5,
         "level_id": 3,
         "tasks": {
-            "12": true,
-            "14": false,
-            "15": false
+            "12": "finished",
+            "14": "unfinished",
+            "15": "unfinished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -291,9 +291,9 @@
         "team_id": null,
         "level_id": 3,
         "tasks": {
-            "11": false,
-            "13": false,
-            "15": true
+            "11": "finished",
+            "13": "unfinished",
+            "15": "unfinished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -311,9 +311,9 @@
         "team_id": null,
         "level_id": 4,
         "tasks": {
-            "15": true,
-            "18": false,
-            "19": true
+            "15": "finished",
+            "18": "unfinished",
+            "19": "unfinished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -331,9 +331,9 @@
         "team_id": null,
         "level_id": 4,
         "tasks": {
-            "16": true,
-            "18": false,
-            "20": false
+            "16": "finished",
+            "18": "unfinished",
+            "20": "unfinished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -351,9 +351,9 @@
         "team_id": null,
         "level_id": 4,
         "tasks": {
-            "15": true,
-            "16": true,
-            "20": true
+            "15": "finished",
+            "16": "unfinished",
+            "20": "unfinished"
         },
         "friendships": null,
         "sent_requests": null,
@@ -362,19 +362,15 @@
     {
         "full_name": "Bogdán Ramóna",
         "username": "UniverseKittyPunch",
-        "birthdate": "2014-09-28",
+        "birthdate": "1984-09-28",
         "gender": "F",
         "email": "bogdanramona@gmail.com",
         "password": "U5pv8>#]",
         "role": "user",
-        "score": 5,
+        "score": null,
         "team_id": null,
-        "level_id": 4,
-        "tasks": {
-            "18": true,
-            "16": false,
-            "19": false
-        },
+        "level_id": null,
+        "tasks": null,
         "friendships": null,
         "sent_requests": null,
         "received_requests": null

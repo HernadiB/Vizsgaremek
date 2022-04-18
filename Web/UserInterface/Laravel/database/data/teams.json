@@ -1,22 +1,27 @@
 [
     {
         "name": "Brutal Warriors",
-        "leader": "Vincze Vince"
+        "leader": "Vincze Vince",
+        "description": "description1"
     },
     {
         "name": "Phoenix Hungary",
-        "leader": "Fábián Richárd"
+        "leader": "Fábián Richárd",
+        "description": "description2"
     },
     {
         "name": "Amazon Road",
-        "leader": "Surány Norbert"
+        "leader": "Surány Norbert",
+        "description": "description3"
     },
     {
         "name": "Magyarok nyilai",
-        "leader": "Bognár Ármin"
+        "leader": "Bognár Ármin",
+        "description": "description4"
     },
     {
         "name": "Angry Birds",
-        "leader": "Pásztor Mihály"
+        "leader": "Pásztor Mihály",
+        "description": "description5"
     }
 ]

@@ -11,6 +11,7 @@
     @if(session("error"))
         <div class="alert alert-danger">{{session("error")}}</div>
     @endif
+    @if(date_diff(date_create(session('user')->birthdate), date_create('now'))->y < 18)
     <table class="adatok">
         <thead>
             <tr>
@@ -50,16 +51,16 @@
                 <tr>
                     <td data-label="Felhasználónév">{{$receivedRequest->username}}</td>
                     <td data-label="Csapat tagja">{{\App\Models\Team::where('id', $receivedRequest->team_id)->first()->name}}</td>
+                    {!! Form::open(['route' => 'inviteAccept', 'method' => 'post']) !!}
                     <td data-label="Baráti jelölés">
-                        {!! Form::open(['route' => 'inviteAccept', 'method' => 'post']) !!}
-                            <button name="senderUserID" value="{{$receivedRequest->id}}" class="btn btn-success">Elfogad</button>
-                        {!! Form::close() !!}
+                        <button name="senderUserID" value="{{$receivedRequest->id}}" class="btn btn-success">Elfogad</button>
                     </td>
+                    {!! Form::close() !!}
+                    {!! Form::open(['route' => 'inviteReject', 'method' => 'post']) !!}
                     <td data-label="Törlés a listából">
-                        {!! Form::open(['route' => 'inviteReject', 'method' => 'post']) !!}
-                            <button name="senderUserID" value="{{$receivedRequest->id}}" class="btn btn-danger">Töröl</button>
-                        {!! Form::close() !!}
+                        <button name="senderUserID" value="{{$receivedRequest->id}}" class="btn btn-danger">Töröl</button>
                     </td>
+                    {!! Form::close() !!}
                     <td data-label="Profil">
                         <button class="btn btn-dark">Megtekint</button>
                     </td>
@@ -84,21 +85,60 @@
                 <tr>
                     <td data-label="Feladat sorszáma">{{$remainingTask->id}}</td>
                     <td data-label="Feladat megnevezése">{{$remainingTask->name}}</td>
+                    {!! Form::open(['route' => 'taskAccept', 'method' => 'post']) !!}
                     <td data-label="Hozzáadás">
-                        {!! Form::open(['route' => 'taskAccept', 'method' => 'post']) !!}
-                            <button name="taskID" value="{{$remainingTask->id}}" class="btn btn-success">Hozzáadás</button>
-                        {!! Form::close() !!}
+                        <button name="taskID" value="{{$remainingTask->id}}" class="btn btn-success">Hozzáadás</button>
                     </td>
+                    {!! Form::close() !!}
+                    {!! Form::open(['route' => 'taskView', 'method' => 'post']) !!}
                     <td data-label="Feladat részletei">
-                        {!! Form::open(['route' => 'taskView', 'method' => 'post']) !!}
-                            <button name="taskID" value="{{$remainingTask->id}}" class="btn btn-dark">Megtekint</button>
-                        {!! Form::close() !!}
+                        <button name="taskID" value="{{$remainingTask->id}}" class="btn btn-dark">Megtekint</button>
                     </td>
+                    {!! Form::close() !!}
                 </tr>
             @endforeach
             </tbody>
         </table>
     @else
         <div class="alert alert-success mt-5 mb-5 m-auto" style="width:90%">Látogass el a <a href="{{route('site.mytasks')}}">feladataim</a> oldalra! Amint befejezted azokat, tovább léphetsz a következő szintre.</div>
+    @endif
+    @else
+        @if(session()->has('user.Team'))
+            <h2 class="text-center" style="margin-top: 100px">Beérkezett feladatok felülvizsgálata</h2>
+            @if(count($taskReviews) != 0)
+                <table class="tasksToReview mt-5">
+                    <thead>
+                    <tr>
+                        <th scope="col">Felhasználónév</th>
+                        <th scope="col">Feladat</th>
+                        <th scope="col">Elfogad</th>
+                        <th scope="col">Töröl</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($taskReviews as $taskReview)
+                        <tr>
+                            <td data-label="Felhasználónév">{{\App\Models\User::where('id', $taskReview->user_id)->first()->username}}</td>
+                            <td data-label="Feladat">{{\App\Models\Task::where('id', $taskReview->task_id)->first()->name}}</td>
+                            {!! Form::open(['route' => 'taskConfirm', 'method' => 'post']) !!}
+                                <td data-label="Elfogad">
+                                    <button name="userAndTaskID" value="{{$taskReview->user_id . "." . $taskReview->task_id}}" class="btn btn-success">Elfogad</button>
+                                </td>
+                            {!! Form::close() !!}
+                            {!! Form::open(['route' => 'taskReject', 'method' => 'post']) !!}
+                                <td data-label="Töröl">
+                                    <button name="userAndTaskID" value="{{$taskReview->user_id . "." . $taskReview->task_id}}" class="btn btn-danger">Töröl</button>
+                                </td>
+                            {!! Form::close() !!}
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            @else
+                <div>Nincs beérkezett feladat</div>
+            @endif
+        @else
+            @include('site.teammake')
+        @endif
     @endif
 @endsection

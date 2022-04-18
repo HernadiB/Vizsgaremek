@@ -60,7 +60,7 @@ class User extends Authenticatable
     }
     public function ActualTasks()
     {
-        return $this->belongsToMany(Task::class, 'usertasks', 'user_id', 'task_id')->withPivot('is_done')->orderBy('id');
+        return $this->belongsToMany(Task::class, 'usertasks', 'user_id', 'task_id')->withPivot('status')->orderBy('id');
     }
     public function TeamMembers()
     {

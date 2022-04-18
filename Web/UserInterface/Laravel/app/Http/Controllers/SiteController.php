@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Level;
 use App\Models\Task;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -32,19 +33,46 @@ class SiteController extends Controller
     }
     public function Friends()
     {
-        $friends1 = User::where('id', session('user.id'))->first()->Friendships1;
-        $friends2 = User::where('id', session('user.id'))->first()->Friendships2;
+        $user = User::where('id', session('user.id'))->first();
+        $friends1 = $user->Friendships1;
+        $friends2 = $user->Friendships2;
         $allfriends = $friends1->merge($friends2)->sortByDesc('score');
+
+        $users = User::all();
+        $sentrequests = $user->SentRequests;
+        $receivedrequests = $user->ReceivedRequests;
+        $nonfriends = $users->diff($allfriends)->diff($sentrequests)->diff($receivedrequests)->where('id', '!=', $user->id);
         return view('site.friends', [
             "title" => "Barátaim",
-            "friends" => $allfriends
+            "friends" => $allfriends,
+            "nonFriends" => $nonfriends
         ]);
     }
 
     public function Index()
     {
+        $user = User::where('id', session('user.id'))->first();
+        $taskReviews = collect();
+        $usersWithoutTeam = User::where('role', 'user')->where('team_id', null)->get();
+        if ($user->role == "admin")
+        {
+            if ($user->Team != null)
+            {
+                $teamMembers = $user->Team->Members;
+                foreach ($teamMembers as $teamMember)
+                {
+                    $tasksToReview = $teamMember->ActualTasks->where('pivot.status', 'underReview');
+                    foreach ($tasksToReview as $taskToReview)
+                    {
+                        $taskReviews->push($taskToReview->pivot);
+                    }
+                }
+            }
+        }
         return view('site.index', [
-            "title" => "Főoldal"
+            "title" => "Főoldal",
+            "taskReviews" => $taskReviews,
+            "usersWithoutTeam" => $usersWithoutTeam
         ]);
     }
     public function Levels()
@@ -76,8 +104,20 @@ class SiteController extends Controller
 
     public function MyTeam()
     {
+        $user = User::where('id', session('user.id'))->first();
+        $teamLeader = null;
+        $teamMembers = null;
+        if($user->Team != null)
+        {
+            $teamLeader = $user->Team->Leader;
+            $teamMembers = $user->Team->Members;
+        }
+        $usersWithoutTeam = User::where('role', 'user')->where('team_id', null)->get();
         return view('site.myteam', [
-            "title" => "Csapatom"
+            "title" => "Csapatom",
+            "teamLeader" => $teamLeader,
+            "teamMembers" => $teamMembers,
+            "usersWithoutTeam" => $usersWithoutTeam
         ]);
     }
 

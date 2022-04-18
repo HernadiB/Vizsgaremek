@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
             {
                 foreach ($value->tasks as $key=>$value)
                 {
-                    $user->ActualTasks()->attach([$key => ['is_done' => $value]]);
+                    $user->ActualTasks()->attach([$key => ['status' => $value]]);
                 }
             }
         }

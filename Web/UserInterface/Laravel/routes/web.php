@@ -38,9 +38,17 @@ Route::post('/friendinvite/accept', [\App\Http\Controllers\UserController::class
 Route::post('/friendinvite/reject', [\App\Http\Controllers\UserController::class, "RejectInvitation"])->name("inviteReject");
 
 Route::post('/task/accept', [\App\Http\Controllers\UserController::class, "AcceptTask"])->name("taskAccept");
+Route::post('/task/finish', [\App\Http\Controllers\UserController::class, "FinishTask"])->name("taskFinish");
 Route::post('/task/view', [\App\Http\Controllers\UserController::class, "ViewTask"])->name("taskView");
 
+Route::post('/task/confirm', [\App\Http\Controllers\UserController::class, "ConfirmTask"])->name("taskConfirm");
+Route::post('/task/reject', [\App\Http\Controllers\UserController::class, "RejectTask"])->name("taskReject");
+
 Route::post('/friend/delete', [\App\Http\Controllers\UserController::class, "DeleteFriend"])->name("friendDelete");
+Route::post('/friend/invite', [\App\Http\Controllers\UserController::class, "InviteFriend"])->name("friendInvite");
+
+Route::post('/team/create', [\App\Http\Controllers\UserController::class, "CreateTeam"])->name("teamCreate");
+Route::post('/team/addmember', [\App\Http\Controllers\UserController::class, "AddMember"])->name("memberAdd");
 
 Route::post('/leaderboard/country', [\App\Http\Controllers\UserController::class, "GetCountryLeaderboard"])->name("leaderboardCountry");
 Route::post('/leaderboard/friends', [\App\Http\Controllers\UserController::class, "GetFriendsLeaderboard"])->name("leaderboardFriends");

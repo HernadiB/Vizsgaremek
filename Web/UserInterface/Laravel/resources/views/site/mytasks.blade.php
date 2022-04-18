@@ -4,6 +4,9 @@
 @endsection
 @include('site.nav')
 @section('content')
+    @if(session("success"))
+        <div id="alert" class="alert alert-success">{{session("success")}}</div>
+    @endif
 @if(count(\App\Models\User::where('id', session('user.id'))->first()->ActualTasks) != 0)
     <table class="feladataim">
         <h3 class="text-center" id="cimsor">Aktuális feladataim</h3>
@@ -21,19 +24,26 @@
         <tr>
             <td data-label="Feladat sorszáma">{{$actualTask->id}}</td>
             <td data-label="Feladat megnevezése">{{$actualTask->name}}</td>
-            <td data-label="Feladat">
-                {!! Form::open(['route' => 'taskView', 'method' => 'post']) !!}
+            {!! Form::open(['route' => 'taskView', 'method' => 'post']) !!}
+                <td data-label="Feladat">
                     <button name="taskID" value="{{$actualTask->id}}" class="btn btn-dark">Megtekint</button>
-                {!! Form::close() !!}
-            </td>
-            <td data-label="Elvégezve">
-                <button class="btn btn-success">Kész</button>
-            </td>
-            </td>
-            @if($actualTask->pivot->is_done == 1)
+                </td>
+            {!! Form::close() !!}
+            {!! Form::open(['route' => 'taskFinish', 'method' => 'post']) !!}
+                @if($actualTask->pivot->status == "unfinished")
+                    <td data-label="Elvégezve">
+                        <button name="taskID" value="{{$actualTask->id}}" class="btn btn-success">Kész</button>
+                    </td>
+                @else
+                    <td></td>
+                @endif
+            {!! Form::close() !!}
+            @if($actualTask->pivot->status == "finished")
                 <td data-label="Státusz">&#10004</td>
-            @else
+            @elseif($actualTask->pivot->status == "unfinished")
                 <td data-label="Státusz">&#x274C;</td>
+            @else
+                <td data-label="Státusz">Under review</td>
             @endif
         </tr>
         @endforeach

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\ModifyUserRequest;
 use App\Http\Requests\SignupRequest;
+use App\Http\Requests\TeamRequest;
 use App\Http\Resources\UserResource;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -160,9 +162,57 @@ class UserController extends Controller
         $user->ActualTasks()->attach($request->taskID);
         return redirect()->back()->with('success', 'Elvállalva!');
     }
+    public function FinishTask(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $user->ActualTasks()->updateExistingPivot($request->taskID, ['status' => 'underReview']);
+        return redirect()->back()->with('success', 'Feladat leadva!');
+    }
+    public function ConfirmTask(Request $request)
+    {
+        $userID = explode('.', $request->userAndTaskID)[0];
+        $taskID = explode('.', $request->userAndTaskID)[1];
+        $user = User::findorfail($userID);
+        $user->ActualTasks()->updateExistingPivot($taskID, ['status' => 'finished']);
+        return redirect()->back()->with('success', 'Elfogadva!');
+    }
+    public function RejectTask(Request $request)
+    {
+        $userID = explode('.', $request->userAndTaskID)[0];
+        $taskID = explode('.', $request->userAndTaskID)[1];
+        $user = User::findorfail($userID);
+        $user->ActualTasks()->updateExistingPivot($taskID, ['status' => 'unfinished']);
+        return redirect()->back()->with('success', 'Elutasítva!');
+    }
     public function ViewTask(Request $request)
     {
         return redirect()->route('site.levels')->with('taskID', $request->taskID);
+    }
+    public function CreateTeam(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $teamAttributes['name'] = $request->name;
+        $teamAttributes['description'] = $request->description;
+        $teamAttributes['leader_id'] = $user->id;
+        $team = Team::create($teamAttributes);
+        foreach ($request->users as $memberID)
+        {
+            $member = User::findorfail($memberID);
+            $member->Team()->associate($team->id);
+            $member->save();
+        }
+        $user->Team()->associate($team->id);
+        $user->role = "admin";
+        $user->save();
+        return redirect()->route('site.myteam');
+    }
+    public function AddMember(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $newTeamMember = User::findorfail($request->newTeamMember);
+        $newTeamMember->Team()->associate($user->Team->id);
+        $newTeamMember->save();
+        return redirect()->back()->with('Hozzáadva!');
     }
     public function DeleteFriend(Request $request)
     {
@@ -170,6 +220,12 @@ class UserController extends Controller
         $user->Friendships1()->detach($request->friendID);
         $user->Friendships2()->detach($request->friendID);
         return redirect()->back()->with('success', 'Törölve!');
+    }
+    public function InviteFriend(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $user->SentRequests()->attach($request->userID);
+        return redirect()->back()->with('success', 'Bejelölve!');
     }
 
     public function GetTeamMembers($teamid)

@@ -22,7 +22,8 @@ class TeamSeeder extends Seeder
 
         foreach ($teams as $key => $value) {
             Team::create([
-                "name" => $value->name
+                "name" => $value->name,
+                "description" => $value->description
             ]);
         }
     }
