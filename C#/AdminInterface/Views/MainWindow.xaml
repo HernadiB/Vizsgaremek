@@ -108,7 +108,7 @@
                         <Label Grid.Column="0" Grid.Row="0" Content="Rang neve:" Margin="2"/>
                         <TextBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="tb_Rang"/>
                     </Grid>
-                    <Button Click="btn_ranghozzaad_Click" Content="Hozzáad" x:Name="btn_rang" Background="#FF737B6B"/>
+                    <Button Click="btn_ranghozzaad_Click" Content="Hozzáadás" x:Name="btn_rang" Background="#FF737B6B"/>
                 </StackPanel>
                 <StackPanel Height="auto" Background="#FF9CA494" Width="260" Margin="0,5,0,0">
                     <Label Content="Rang módosítása" HorizontalAlignment="Center" FontWeight="Bold"/>
@@ -130,7 +130,7 @@
                         <Label Grid.Column="0" Grid.Row="2" Content="Rang új neve:" Margin="2"/>
                         <TextBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="tb_ranguj"/>
                     </Grid>
-                    <Button Click="btn_rangmodosit_Click" Content="Módosít" x:Name="btn_rangmodosit" Background="#FF737B6B"/>
+                    <Button Click="btn_rangmodosit_Click" Content="Módosítás" x:Name="btn_rangmodosit" Background="#FF737B6B"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="268,10,10,0" Height="171" Grid.ColumnSpan="2">
@@ -153,7 +153,7 @@
                         <Label Grid.Column="0" Grid.Row="2" Content="Csapat új neve:" Margin="2"/>
                         <TextBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="tb_csapatujnev"/>
                     </Grid>
-                    <Button Click="btncsapatnevmodosit_Click" Content="Módosít" x:Name="btn_csapatmodosit" Background="#FF1E6A94"/>
+                    <Button Click="btncsapatnevmodosit_Click" Content="Módosítás" x:Name="btn_csapatmodosit" Background="#FF1E6A94"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="2" VerticalAlignment="Top" Margin="268,10,10,0" Height="171" Grid.ColumnSpan="2">
@@ -176,7 +176,7 @@
                         <Label Grid.Column="0" Grid.Row="2" Content="Felhasználó új rangja:" Margin="2"/>
                         <TextBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="tb_felhasznaloujrang"/>
                     </Grid>
-                    <Button Click="btn_felhasznalorangmodosit_Click" Content="Módosít" x:Name="btn_felhasznalomodosit" Background="#FF7D6450"/>
+                    <Button Click="btn_felhasznalorangmodosit_Click" Content="Módosítás" x:Name="btn_felhasznalomodosit" Background="#FF7D6450"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
