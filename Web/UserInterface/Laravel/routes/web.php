@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/country', [\App\Http\Controllers\SiteController::class, 'Country'])->name('site.country');
 Route::get('/friends', [\App\Http\Controllers\SiteController::class, 'Friends'])->name('site.friends');
-Route::get('/', [\App\Http\Controllers\SiteController::class, 'Index'])->name('home');
+Route::get('/index', [\App\Http\Controllers\SiteController::class, 'Index'])->name('home');
 Route::get('/levels', [\App\Http\Controllers\SiteController::class, 'Levels'])->name('site.levels');
 Route::get('/login', [\App\Http\Controllers\SiteController::class, 'Login'])->name('site.login');
 Route::get('/mytasks', [\App\Http\Controllers\SiteController::class, 'MyTasks'])->name('site.mytasks');

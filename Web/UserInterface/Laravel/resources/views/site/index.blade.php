@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{asset("css/index_style.css")}}">
+<script src="{{asset('js/index.js')}}"></script>
 @extends('layouts.main')
 @section('title')
     {{$title}}
@@ -61,8 +62,10 @@
                         <button name="senderUserID" value="{{$receivedRequest->id}}" class="btn btn-danger">Töröl</button>
                     </td>
                     {!! Form::close() !!}
+                    <?php $receivedRequest['team_name'] = \App\Models\Team::where('id', $receivedRequest['team_id'])->first()->name ?? "-" ?>
+                    <?php $receivedRequest['level_name'] = \App\Models\Level::where('id', $receivedRequest['level_id'])->first()->name ?? "-" ?>
                     <td data-label="Profil">
-                        <button class="btn btn-dark">Megtekint</button>
+                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="ShowProfile({{$receivedRequest}})">Megtekint</button>
                     </td>
                 </tr>
             @endforeach
@@ -141,4 +144,5 @@
             @include('site.teammake')
         @endif
     @endif
+    @include('site.modal')
 @endsection
