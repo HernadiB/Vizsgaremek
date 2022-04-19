@@ -13,8 +13,8 @@ class SiteController extends Controller
     public function Country()
     {
         $currentUser = User::where('id', session()->get('user.id'))->first();
-        $usersTop10 = User::where('role', 'user')->get()->sortByDesc('score')->take(10)->pluck('id');
         $usersAll = User::where('role', 'user')->get()->sortByDesc('score')->pluck('id');
+        $usersTop10 = $usersAll->take(10);
         if($currentUser->role != 'admin')
         {
             if (!$usersTop10->contains('id', $currentUser['id']))
@@ -33,18 +33,31 @@ class SiteController extends Controller
     }
     public function Friends()
     {
-        $user = User::where('id', session('user.id'))->first();
-        $friends1 = $user->Friendships1;
-        $friends2 = $user->Friendships2;
-        $allfriends = $friends1->merge($friends2)->sortByDesc('score');
-
+        $currentUser = User::where('id', session('user.id'))->first();
+        $friends1 = $currentUser->Friendships1;
+        $friends2 = $currentUser->Friendships2;
+        $friendsAll = $friends1->merge($friends2);
+        $friendsAll = $friendsAll->push(User::where('id', $currentUser['id'])->first());
+        $friendsAll = $friendsAll->sortByDesc('score')->pluck('id');
+        $friendsTop10 = $friendsAll->take(10);
+        if($currentUser->role != 'admin')
+        {
+            if (!$friendsTop10->contains('id', $currentUser['id']))
+            {
+                $friendsTop10->push(User::where('id', $currentUser['id'])->first()->id);
+            }
+        }
+        foreach ($friendsTop10 as $user)
+        {
+            $leaderboardRanks[array_search($user, $friendsAll->toarray())+1] = User::where('id', $user)->first();
+        }
         $users = User::all();
-        $sentrequests = $user->SentRequests;
-        $receivedrequests = $user->ReceivedRequests;
-        $nonfriends = $users->diff($allfriends)->diff($sentrequests)->diff($receivedrequests)->where('id', '!=', $user->id);
+        $sentrequests = $currentUser->SentRequests;
+        $receivedrequests = $currentUser->ReceivedRequests;
+        $nonfriends = $users->diff($friends1->merge($friends2))->diff($sentrequests)->diff($receivedrequests)->where('id', '!=', $currentUser->id);
         return view('site.friends', [
             "title" => "Barátaim",
-            "friends" => $allfriends,
+            "friends" => $leaderboardRanks,
             "nonFriends" => $nonfriends
         ]);
     }

@@ -24,22 +24,20 @@
             </tr>
             </thead>
             <tbody>
-            @php $i = 1 @endphp
-            @foreach($friends as $friend)
-                <tr>
-                    <td data-label="Helyezés">{{$i}}</td>
-                    <td data-label="Név">{{$friend->username}}</td>
-                    <td data-label="Pontszám">{{$friend->score ?? "-"}}</td>
+            @foreach($friends as $key => $value)
+                <tr @if ($value->id == session('user.id')) style="background: grey" @endif>
+                    <td data-label="Helyezés">#{{$key}}</td>
+                    <td data-label="Név">{{$value->username}}</td>
+                    <td data-label="Pontszám">{{$value->score ?? "-"}}</td>
                     {!! Form::open(['route' => 'friendDelete', 'method' => 'post']) !!}
                     <td data-label="Barát törlése">
-                        <button name="friendID" value="{{$friend->id}}" class="btn btn-danger">Törlés</button>
+                        <button name="friendID" value="{{$value->id}}" class="btn btn-danger">Törlés</button>
                     </td>
                     {!! Form::close() !!}
                     <td data-label="Profil">
                         <button class="btn btn-dark">Megtekint</button>
                     </td>
                 </tr>
-                @php $i++ @endphp
             @endforeach
             </tbody>
         </table>
