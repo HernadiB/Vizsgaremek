@@ -108,5 +108,10 @@ namespace AdminInterface
         {
 
         }
+
+        private void btn_usermegjelenitid_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

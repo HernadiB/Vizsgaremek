@@ -4,11 +4,11 @@ namespace AdminInterface.Entities.Levels
 {
     public class LevelPutPost
     {
-        public string name { get; set; }
+        public string Name { get; set; }
         public LevelPutPost() { }
         public LevelPutPost(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
     }
 }
