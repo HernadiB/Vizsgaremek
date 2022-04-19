@@ -25,19 +25,20 @@ namespace AdminInterface
             InitializeComponent();
         }
 
-        private void btn_szintmegjelenit_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btn_taskmegjelenit_Click(object sender, RoutedEventArgs e)
         {
-
+            dataGridTasks.Visibility = Visibility.Visible;
+            dataGridUsers.Visibility = Visibility.Hidden;
+            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridTeams.Visibility = Visibility.Hidden;
         }
 
         private void btn_rangmegjelenit_Click(object sender, RoutedEventArgs e)
         {
-
+            dataGridTasks.Visibility = Visibility.Hidden;
+            dataGridUsers.Visibility = Visibility.Hidden;
+            dataGridRangok.Visibility = Visibility.Visible;
+            dataGridTeams.Visibility = Visibility.Hidden;
         }
 
         private void btn_ranghozzaad_Click(object sender, RoutedEventArgs e)
@@ -52,13 +53,12 @@ namespace AdminInterface
 
         private void btn_felhasznalomegjelenit_Click(object sender, RoutedEventArgs e)
         {
-
+            dataGridTasks.Visibility = Visibility.Hidden;
+            dataGridUsers.Visibility = Visibility.Visible;
+            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridTeams.Visibility = Visibility.Hidden;
         }
 
-        private void btn_taskmegjelenitid_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void btn_felhasznalorangmodosit_Click(object sender, RoutedEventArgs e)
         {
@@ -79,6 +79,34 @@ namespace AdminInterface
         {
             TaskWindow feladatkezeles = new TaskWindow();
             feladatkezeles.ShowDialog();
+        }
+
+        private void btn_taskmegjelenitid_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btncsapatnevmodosit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cb_csapatnev_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btn_csapatmegjelenit_Click(object sender, RoutedEventArgs e)
+        {
+            dataGridTasks.Visibility = Visibility.Hidden;
+            dataGridUsers.Visibility = Visibility.Hidden;
+            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridTeams.Visibility = Visibility.Visible;
+        }
+
+        private void ProfilPictureShow_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
