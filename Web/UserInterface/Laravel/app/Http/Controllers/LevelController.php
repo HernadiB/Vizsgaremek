@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LevelRequest;
+use App\Http\Resources\LevelResource;
 use App\Models\Level;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,7 @@ class LevelController extends Controller
      */
     public function index()
     {
-        return Level::all();
+        return LevelResource::collection(Level::all());
     }
 
     /**
@@ -23,11 +25,11 @@ class LevelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LevelRequest $request)
     {
-        //validate
-        $data = $request->all();
-        Level::create($data);
+        $data = $request->validated();
+        $level = Level::create($data);
+        return new LevelResource($level);
     }
 
     /**
@@ -48,12 +50,12 @@ class LevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LevelRequest $request, $id)
     {
-        //validate
-        $data = $request->all();
+        $data = $request->validated();
         $level = Level::findorfail($id);
         $level->update($data);
+        return new LevelResource($level);
     }
 
     /**

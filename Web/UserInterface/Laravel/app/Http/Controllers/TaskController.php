@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaskRequest;
 use App\Http\Resources\TaskResource;
 use App\Models\Task;
 use Illuminate\Http\Request;
@@ -24,11 +25,11 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TaskRequest $request)
     {
-        //validate
-        $data = $request->all();
-        Task::create($data);
+        $data = $request->validated();
+        $task = Task::create($data);
+        return new TaskResource($task);
     }
 
     /**
@@ -49,12 +50,12 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TaskRequest $request, $id)
     {
-        //validate
-        $data = $request->all();
+        $data = $request->validated();
         $task = Task::findorfail($id);
         $task->update($data);
+        return new TaskResource($task);
     }
 
     /**
