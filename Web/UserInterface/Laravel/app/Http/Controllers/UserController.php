@@ -84,7 +84,9 @@ class UserController extends Controller
 
         $validatedData['password'] = bcrypt($request->password);
         $validatedData['role'] = "user";
+        $validatedData['level_id'] = 1;
         $validatedData['score'] = 0;
+        $validatedData['profile_picture'] = "images/unknown.jpg";
 
         $user = User::create($validatedData);
 
@@ -116,7 +118,13 @@ class UserController extends Controller
     public function ModifyUser(ModifyUserRequest $request)
     {
         $validatedData = $request->validated();
-        $validatedData['password'] = bcrypt($validatedData['password_new']);
+        if ($validatedData['password_new'] != null)
+        {
+            $validatedData['password'] = bcrypt($validatedData['password_new']);
+        }
+        
+        $fullPath = $validatedData['profile_picture']->store('images');
+        $validatedData['profile_picture'] = $fullPath;
 
         $user = User::findorfail($request->session()->get('user.id'));
         $user->update($validatedData);

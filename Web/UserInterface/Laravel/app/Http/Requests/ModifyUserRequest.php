@@ -31,7 +31,7 @@ class ModifyUserRequest extends FormRequest
             "birthdate" => ["required", "date"],
             "gender" => ["required", Rule::in(["M", "F"])],
             "password_new" => ["nullable", "string", "min:5", "max:255", "confirmed"],
-            "profile_picture" => ["string", "nullable", "min:1", "max:255"]
+            "profile_picture" => ["nullable", "image"]
         ];
     }
 
