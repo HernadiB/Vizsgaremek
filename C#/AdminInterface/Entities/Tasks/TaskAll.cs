@@ -5,9 +5,9 @@ namespace AdminInterface.Entities.Tasks
     public class TaskAll
     {
         public List<TaskEntity> data { get; set; }
-        public TaskAll(List<TaskEntity> tasks)
+        public TaskAll(List<TaskEntity> data)
         {
-            this.data = tasks;
+            this.data = data;
         }
     }
 }

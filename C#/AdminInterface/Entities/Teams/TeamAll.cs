@@ -6,9 +6,9 @@ namespace AdminInterface.Entities.Teams
     {
         public List<TeamEntity> data { get; set; }
         public TeamAll() { }
-        public TeamAll(List<TeamEntity> teams)
+        public TeamAll(List<TeamEntity> data)
         {
-            data = teams;
+            this.data = data;
         }
     }
 }

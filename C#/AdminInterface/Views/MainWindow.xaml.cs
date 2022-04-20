@@ -88,6 +88,7 @@ namespace AdminInterface
             dataGridUsers.Visibility = Visibility.Hidden;
             dataGridRangok.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Visible;
+            dataGridTeams.ItemsSource = Teams;
         }
         private void btncsapatnevmodosit_Click(object sender, RoutedEventArgs e)
         {
@@ -142,6 +143,7 @@ namespace AdminInterface
             dataGridUsers.Visibility = Visibility.Visible;
             dataGridRangok.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Hidden;
+            dataGridUsers.ItemsSource = Users;
         }
         private void btn_felhasznalorangmodosit_Click(object sender, RoutedEventArgs e)
         {

@@ -20,13 +20,15 @@ class UserResource extends JsonResource
             "ID" => $this->id,
             "FullName" => $this->full_name,
             "Username" => $this->username,
+            "Birthdate" => $this->birthdate,
+            "Gender" => $this->gender == "F" ? "Nő" : "Férfi",
             "Email" => $this->email,
             "Password" => $this->password,
-            "Role" => $this->role,
+            "Role" => $this->role == "user" ? "Felhasználó" : "Admin",
             "ProfilePicture" => $this->profilepicture,
             "Team" => $this->Team->name ?? null,
             "Score" => $this->score,
-            "Level" => $this->Level->name
+            "Level" => $this->Level->name ?? null
         ];
     }
 }

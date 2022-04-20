@@ -6,9 +6,9 @@ namespace AdminInterface.Entities.Users
     {
         public List<UserEntity> data { get; set; }
         public UserAll() { }
-        public UserAll(List<UserEntity> users)
+        public UserAll(List<UserEntity> data)
         {
-            data = users;
+            this.data = data;
         }
     }
 }

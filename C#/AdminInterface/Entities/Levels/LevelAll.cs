@@ -6,9 +6,9 @@ namespace AdminInterface.Entities.Levels
     {
         public List<LevelEntity> data { get; set; }
         public LevelAll() { }
-        public LevelAll(List<LevelEntity> levels)
+        public LevelAll(List<LevelEntity> data)
         {
-            data = levels;
+            this.data = data;
         }
     }
 }

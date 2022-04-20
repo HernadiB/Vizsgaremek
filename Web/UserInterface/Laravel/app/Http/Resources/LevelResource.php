@@ -16,7 +16,7 @@ class LevelResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "ID" => $this->name,
+            "ID" => $this->id,
             "Name" => $this->name
         ];
     }

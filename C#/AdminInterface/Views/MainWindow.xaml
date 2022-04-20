@@ -27,9 +27,11 @@
             <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridUsers" MaxHeight="200"  VerticalScrollBarVisibility="Auto"  Margin="0,0,10,0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
-                    <DataGridTextColumn Header="Teljes név" Binding="{Binding Fullname}" Width="1*"/>
+                    <DataGridTextColumn Header="Teljes név" Binding="{Binding FullName}" Width="1*"/>
                     <DataGridTextColumn Header="Felhasználónév" Binding="{Binding Username}" Width="1*"/>
-                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="1*"/>
+                    <DataGridTextColumn Header="Születési dátum" Binding="{Binding Birthdate, StringFormat=\{0:yyyy.MM.dd\}}" Width="auto"/>
+                    <DataGridTextColumn Header="Nem" Binding="{Binding Gender}" Width="60"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="auto"/>
                     <DataGridTextColumn Header="Hozzáférés" Binding="{Binding Role}" Width="100"/>
                     <DataGridTemplateColumn Header="Profilkép" Width="1*">
                         <!--<DataGridTemplateColumn.CellTemplate>
@@ -38,9 +40,9 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>-->
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="CsapatID" Binding="{Binding TeamID}" Width="80"/>
+                    <DataGridTextColumn Header="Csapat" Binding="{Binding Team}" Width="auto"/>
                     <DataGridTextColumn Header="Pontok" Binding="{Binding Score}" Width="80"/>
-                    <DataGridTextColumn Header="SzintID" Binding="{Binding LevelID}" Width="80"/>
+                    <DataGridTextColumn Header="Szint" Binding="{Binding Level}" Width="80"/>
                 </DataGrid.Columns>
             </DataGrid>
             <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridTasks" MaxHeight="200"  VerticalScrollBarVisibility="Auto" Margin="0,0,10,0">
@@ -49,13 +51,13 @@
                     <DataGridTextColumn Header="Feladat neve" Binding="{Binding Name}" Width="2*"/>
                     <DataGridTextColumn Header="Feladat leírása" Binding="{Binding Description}" Width="5*"/>
                     <DataGridTextColumn Header="Feladat pontszáma" Binding="{Binding Score}" Width="1*"/>
-                    <DataGridTextColumn Header="Feladat szintje" Binding="{Binding LevelID}" Width="1*"/>
+                    <DataGridTextColumn Header="Feladat szintje" Binding="{Binding Level}" Width="1*"/>
                 </DataGrid.Columns>
             </DataGrid>
             <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridRangok" MaxHeight="200" VerticalScrollBarVisibility="Auto" Width="256">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="1*"/>
-                    <DataGridTextColumn Header="Rang neve" Binding="{Binding Rang}" Width="3*"/>
+                    <DataGridTextColumn Header="Rang neve" Binding="{Binding Name}" Width="3*"/>
                 </DataGrid.Columns>
             </DataGrid>
             <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridTeams" MaxHeight="200"  VerticalScrollBarVisibility="Auto" Width="500">
@@ -63,7 +65,8 @@
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
                     <DataGridTextColumn Header="Csapat név" Binding="{Binding Name}" Width="1*"/>
                     <DataGridTextColumn Header="Pontszám" Binding="{Binding Score}" Width="1*"/>
-                    <DataGridTextColumn Header="Csapatvezető" Binding="{Binding LeaderID}" Width="1*"/>
+                    <DataGridTextColumn Header="Csapatvezető" Binding="{Binding Leader}" Width="1*"/>
+                    <DataGridTextColumn Header="Leírás" Binding="{Binding Description}" Width="1*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
