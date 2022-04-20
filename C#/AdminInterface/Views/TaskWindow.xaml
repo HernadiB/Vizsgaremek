@@ -30,6 +30,8 @@
                             <RowDefinition Height="5" />
                             <RowDefinition Height="1*" />
                             <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
                         </Grid.RowDefinitions>
                         <Label Grid.Column="0" Grid.Row="0" Content="Feladat neve:" Margin="2"/>
                         <TextBox Grid.Column="2" Grid.Row="0" Margin="2" Name="tb_postTaskName"/>
@@ -38,9 +40,11 @@
                         <Label Grid.Column="0" Grid.Row="4" Content="Feladat pontszáma:" Margin="2"/>
                         <TextBox Grid.Column="2" Grid.Row="4" Margin="2" Name="tb_postTaskScore"/>
                         <Label Grid.Column="0" Grid.Row="6" Content="Feladat szintje:" Margin="2"/>
-                        <ComboBox Grid.Column="2" Grid.Row="6" Margin="2" Name="cb_postTaskLevel" SelectionChanged="cb_putNewTaskLevel_SelectionChanged"/>
+                        <ComboBox Grid.Column="2" Grid.Row="6" Margin="2" Name="cb_postTaskLevel" SelectionChanged="cb_postNewTaskLevel_SelectionChanged"/>
+                        <Label Grid.Column="0" Grid.Row="8" Content="Feladat képe:" Margin="2"/>
+                        <Button Grid.Column="2" Grid.Row="8" Margin="2" Name="btn_postTaskImage" Click="btn_posTaskImage_Click" Content="Kép kiválasztása"/>
                     </Grid>
-                    <Button Click="btn_taskhozzaad_Click" Content="Hozzáad" Name="btn_taskhozzaad" Background="DarkGray"/>
+                    <Button Click="btn_taskhozzaad_Click" Content="Hozzáadás" Name="btn_taskhozzaad" Background="DarkGray"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1">
@@ -64,6 +68,8 @@
                             <RowDefinition Height="1*" />
                             <RowDefinition Height="5" />
                             <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Label Grid.Column="0" Grid.Row="0" Content="Feladat ID:" Margin="2"/>
                         <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" Name="cb_putTaskID" SelectionChanged="cb_putTaskID_SelectionChanged"/>
@@ -75,8 +81,10 @@
                         <TextBox Grid.Column="2" Grid.Row="6" Margin="2" Name="tb_putTaskScore"/>
                         <Label Grid.Column="0" Grid.Row="8" Content="Feladat szintje:" Margin="2"/>
                         <ComboBox Grid.Column="2" Grid.Row="8" Margin="2" Name="cb_putTaskLevel" SelectionChanged="cb_putTaskLevel_SelectionChanged"/>
+                        <Label Grid.Column="0" Grid.Row="10" Content="Feladat képe:" Margin="2"/>
+                        <Button Grid.Column="2" Grid.Row="10" Margin="2" Name="btn_putTaskImage" Click="btn_putTaskImage_Click" Content="Kép kiválasztása"/>
                     </Grid>
-                    <Button Click="btn_tasktmodosit_Click" Content="Módosít" Name="btn_taskmodosit" Background="Gray"/>
+                    <Button Click="btn_taskmodosit_Click" Content="Módosítás" Name="btn_taskmodosit" Background="Gray"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

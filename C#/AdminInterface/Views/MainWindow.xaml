@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminInterface"
         mc:Ignorable="d"
-        Title="AdminInterface" Height="611" Width="1200">
+        Title="AdminInterface" Height="611" Width="1216">
     <Window.Background>
         <LinearGradientBrush EndPoint="1,0" StartPoint="1,1" SpreadMethod="Pad">
             <GradientStop Color="#FF1C92D2"/>
@@ -24,7 +24,7 @@
             <Label Content="Admin felület" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Name="label1" Grid.Column="2"/>
         </Grid>
         <Grid Width="1200" Height="200" Margin="5">
-            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridUsers" MaxHeight="200"  VerticalScrollBarVisibility="Auto">
+            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridUsers" MaxHeight="200"  VerticalScrollBarVisibility="Auto"  Margin="0,0,10,0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
                     <DataGridTextColumn Header="Teljes név" Binding="{Binding Fullname}" Width="1*"/>
@@ -43,7 +43,7 @@
                     <DataGridTextColumn Header="SzintID" Binding="{Binding LevelID}" Width="80"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridTasks" MaxHeight="200"  VerticalScrollBarVisibility="Auto">
+            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridTasks" MaxHeight="200"  VerticalScrollBarVisibility="Auto" Margin="0,0,10,0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="80"/>
                     <DataGridTextColumn Header="Feladat neve" Binding="{Binding Name}" Width="2*"/>
@@ -183,11 +183,15 @@
                             <RowDefinition Height="1*" />
                             <RowDefinition Height="5" />
                             <RowDefinition Height="1*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Content="Felhasználó régi rangja:" Margin="2"/>
-                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="cb_felhasznalonev" SelectionChanged="cb_felhasznalonev_SelectionChanged"/>
-                        <Label Grid.Column="0" Grid.Row="2" Content="Felhasználó új rangja:" Margin="2"/>
-                        <TextBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="tb_felhasznaloujrang"/>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Felhasználó ID:" Margin="2"/>
+                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" Name="cb_felhasznalorangmodoit" SelectionChanged="cb_felhasznalorangmodoit_SelectionChanged"/>
+                        <Label Grid.Column="0" Grid.Row="2" Content="Felhasználó régi rangja:" Margin="2"/>
+                        <ComboBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="cb_felhasznalonevregirang" SelectionChanged="cb_felhasznalonevregirang_SelectionChanged"/>
+                        <Label Grid.Column="0" Grid.Row="4" Content="Felhasználó új rangja:" Margin="2"/>
+                        <TextBox Grid.Column="2" Grid.Row="4" Margin="2" x:Name="tb_felhasznaloujrang"/>
                     </Grid>
                     <Button Click="btn_felhasznalorangmodosit_Click" Content="Módosítás" x:Name="btn_felhasznalomodosit" Background="#FF6A4E38"/>
                 </StackPanel>

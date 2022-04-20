@@ -10,9 +10,9 @@
         public string ProfilePicture { get; set; }
         public int Team { get; set; }
         public int Score { get; set; }
-        public int Level { get; set; }
+        public string Level { get; set; }
         public UserEntity() { }
-        public UserEntity(int id, string fullname, string username, string email, string role, string profilepicture, int team, int score, int level)
+        public UserEntity(int id, string fullname, string username, string email, string role, string profilepicture, int team, int score, string level)
         {
             ID = id;
             FullName = fullname;
