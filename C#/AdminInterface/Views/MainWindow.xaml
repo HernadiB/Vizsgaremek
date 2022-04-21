@@ -152,11 +152,11 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Label Grid.Column="0" Grid.Row="0" Content="Csapat neve:" Margin="2"/>
-                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="cb_csapatnev" SelectionChanged="cb_csapatnev_SelectionChanged"/>
+                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="cb_regicsapatnev" SelectionChanged="cb_regicsapatnev_SelectionChanged"/>
                         <Label Grid.Column="0" Grid.Row="2" Content="Csapat új neve:" Margin="2"/>
                         <TextBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="tb_csapatujnev"/>
                     </Grid>
-                    <Button Click="btncsapatnevmodosit_Click" Content="Módosítás" x:Name="btn_csapatmodosit" Background="#FF1E6A94"/>
+                    <Button Click="btn_csapatnevmodosit_Click" Content="Módosítás" x:Name="btn_csapatmodosit" Background="#FF1E6A94"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="2" VerticalAlignment="Top" Margin="275,10,3,0" Height="auto" Grid.ColumnSpan="2">
@@ -173,30 +173,6 @@
                         <TextBox Grid.Column="2" Margin="2" Name="tb_felhasznalomegjelenit"/>
                     </Grid>
                     <Button Click="btn_usermegjelenitid_Click" Content="Megjelenítés" Name="btn_usermegjelenitid" Background="#FFAB7A54"/>
-                </StackPanel>
-                <StackPanel Height="auto" Margin="5" Background="#FF956A48" Width="280">
-                    <Label Content="Felhasználó rang módosítása" HorizontalAlignment="Center" FontWeight="Bold"/>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="10" />
-                            <ColumnDefinition Width="1*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="5" />
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="5" />
-                            <RowDefinition Height="1*" />
-                        </Grid.RowDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Content="Felhasználó ID:" Margin="2"/>
-                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" Name="cb_felhasznalorangmodoit" SelectionChanged="cb_felhasznalorangmodoit_SelectionChanged"/>
-                        <Label Grid.Column="0" Grid.Row="2" Content="Felhasználó régi rangja:" Margin="2"/>
-                        <ComboBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="cb_felhasznalonevregirang" SelectionChanged="cb_felhasznalonevregirang_SelectionChanged"/>
-                        <Label Grid.Column="0" Grid.Row="4" Content="Felhasználó új rangja:" Margin="2"/>
-                        <TextBox Grid.Column="2" Grid.Row="4" Margin="2" x:Name="tb_felhasznaloujrang"/>
-                    </Grid>
-                    <Button Click="btn_felhasznalorangmodosit_Click" Content="Módosítás" x:Name="btn_felhasznalomodosit" Background="#FF6A4E38"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

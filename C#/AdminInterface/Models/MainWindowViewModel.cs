@@ -88,34 +88,6 @@ namespace AdminInterface.Models
                 throw;
             }
         }
-        public static async Task PutUserLevel(string userName, string levelNewName, string levelOldName)
-        {
-            try
-            {
-                if (userName == "")
-                {
-                    throw new Exception("Valaszd ki a módisítani kiívánt felhasználót!");
-                }
-                if (levelNewName == "")
-                {
-                    throw new Exception("Add meg a rang új nevét!");
-                }
-                if (levelOldName == "")
-                {
-                    throw new Exception("Válaszd ki a rang régi nevét");
-                }
-                LevelPutPost level = new LevelPutPost();
-                int id = AllUsers().FirstOrDefault(x => x.Level == levelOldName).ID;
-                level.Name = levelNewName;
-                int level_id = AllLevels().FirstOrDefault(x => x.Name == levelOldName).ID;
-                await restApiHandler.PutObject("api/users" + id, level);
-                MessageBox.Show($"A(z) {userName} rang sikeresen módosítva");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
 
         //------------------------------Tasks------------------------------
 
