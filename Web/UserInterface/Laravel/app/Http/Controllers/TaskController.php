@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TaskRequest;
 use App\Http\Resources\TaskResource;
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -73,5 +74,37 @@ class TaskController extends Controller
     {
         $task = Task::findorfail($taskid);
         return $task->Users;
+    }
+    public function AcceptTask(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $user->ActualTasks()->attach($request->taskID);
+        return redirect()->back()->with('success', 'Elvállalva!');
+    }
+    public function FinishTask(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $user->ActualTasks()->updateExistingPivot($request->taskID, ['status' => 'underReview']);
+        return redirect()->back()->with('success', 'Feladat leadva!');
+    }
+    public function ConfirmTask(Request $request)
+    {
+        $userID = explode('.', $request->userAndTaskID)[0];
+        $taskID = explode('.', $request->userAndTaskID)[1];
+        $user = User::findorfail($userID);
+        $user->ActualTasks()->updateExistingPivot($taskID, ['status' => 'finished']);
+        return redirect()->back()->with('success', 'Elfogadva!');
+    }
+    public function RejectTask(Request $request)
+    {
+        $userID = explode('.', $request->userAndTaskID)[0];
+        $taskID = explode('.', $request->userAndTaskID)[1];
+        $user = User::findorfail($userID);
+        $user->ActualTasks()->updateExistingPivot($taskID, ['status' => 'unfinished']);
+        return redirect()->back()->with('success', 'Elutasítva!');
+    }
+    public function ViewTask(Request $request)
+    {
+        return redirect()->route('site.levels')->with('taskID', $request->taskID);
     }
 }

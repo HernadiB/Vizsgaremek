@@ -164,64 +164,7 @@ class UserController extends Controller
         $request->session()->flash('success', 'Barát kérelem elutasítva');
         return redirect()->back();
     }
-    public function AcceptTask(Request $request)
-    {
-        $user = $request->session()->get('user');
-        $user->ActualTasks()->attach($request->taskID);
-        return redirect()->back()->with('success', 'Elvállalva!');
-    }
-    public function FinishTask(Request $request)
-    {
-        $user = $request->session()->get('user');
-        $user->ActualTasks()->updateExistingPivot($request->taskID, ['status' => 'underReview']);
-        return redirect()->back()->with('success', 'Feladat leadva!');
-    }
-    public function ConfirmTask(Request $request)
-    {
-        $userID = explode('.', $request->userAndTaskID)[0];
-        $taskID = explode('.', $request->userAndTaskID)[1];
-        $user = User::findorfail($userID);
-        $user->ActualTasks()->updateExistingPivot($taskID, ['status' => 'finished']);
-        return redirect()->back()->with('success', 'Elfogadva!');
-    }
-    public function RejectTask(Request $request)
-    {
-        $userID = explode('.', $request->userAndTaskID)[0];
-        $taskID = explode('.', $request->userAndTaskID)[1];
-        $user = User::findorfail($userID);
-        $user->ActualTasks()->updateExistingPivot($taskID, ['status' => 'unfinished']);
-        return redirect()->back()->with('success', 'Elutasítva!');
-    }
-    public function ViewTask(Request $request)
-    {
-        return redirect()->route('site.levels')->with('taskID', $request->taskID);
-    }
-    public function CreateTeam(Request $request)
-    {
-        $user = $request->session()->get('user');
-        $teamAttributes['name'] = $request->name;
-        $teamAttributes['description'] = $request->description;
-        $teamAttributes['leader_id'] = $user->id;
-        $team = Team::create($teamAttributes);
-        foreach ($request->users as $memberID)
-        {
-            $member = User::findorfail($memberID);
-            $member->Team()->associate($team->id);
-            $member->save();
-        }
-        $user->Team()->associate($team->id);
-        $user->role = "admin";
-        $user->save();
-        return redirect()->route('site.myteam');
-    }
-    public function AddMember(Request $request)
-    {
-        $user = $request->session()->get('user');
-        $newTeamMember = User::findorfail($request->newTeamMember);
-        $newTeamMember->Team()->associate($user->Team->id);
-        $newTeamMember->save();
-        return redirect()->back()->with('Hozzáadva!');
-    }
+
     public function DeleteFriend(Request $request)
     {
         $user = $request->session()->get('user');
@@ -236,10 +179,6 @@ class UserController extends Controller
         return redirect()->back()->with('success', 'Bejelölve!');
     }
 
-    public function GetTeamMembers($teamid)
-    {
-        return User::where('team_id', $teamid)->get();
-    }
     public function SentFriendRequests($userid)
     {
         $user = User::findorfail($userid);
@@ -250,9 +189,5 @@ class UserController extends Controller
         $user = User::findorfail($userid);
         return $user->ReceivedRequests;
     }
-    public function GetTasks($userid)
-    {
-        $user = User::findorfail($userid);
-        return $user->Tasks;
-    }
+
 }

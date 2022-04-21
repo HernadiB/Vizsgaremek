@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\TeamResource;
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -62,5 +63,35 @@ class TeamController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function CreateTeam(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $teamAttributes['name'] = $request->name;
+        $teamAttributes['description'] = $request->description;
+        $teamAttributes['leader_id'] = $user->id;
+        $team = Team::create($teamAttributes);
+        foreach ($request->users as $memberID)
+        {
+            $member = User::findorfail($memberID);
+            $member->Team()->associate($team->id);
+            $member->save();
+        }
+        $user->Team()->associate($team->id);
+        $user->role = "admin";
+        $user->save();
+        return redirect()->route('site.myteam');
+    }
+    public function AddMember(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $newTeamMember = User::findorfail($request->newTeamMember);
+        $newTeamMember->Team()->associate($user->Team->id);
+        $newTeamMember->save();
+        return redirect()->back()->with('Hozzáadva!');
+    }
+    public function GetTeamMembers($teamid)
+    {
+        return User::where('team_id', $teamid)->get();
     }
 }
