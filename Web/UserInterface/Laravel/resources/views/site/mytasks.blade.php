@@ -7,7 +7,7 @@
     @if(session("success"))
         <div id="alert" class="alert alert-success">{{session("success")}}</div>
     @endif
-@if(count(\App\Models\User::where('id', session('user.id'))->first()->ActualTasks) != 0)
+@if(auth()->user()->ActualTasks) != 0)
     <table class="feladataim">
         <h3 class="text-center" id="cimsor">Aktuális feladataim</h3>
         <thead>

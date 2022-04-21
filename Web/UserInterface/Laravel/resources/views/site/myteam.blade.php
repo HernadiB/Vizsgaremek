@@ -4,7 +4,7 @@
 @endsection
 @include('site.nav')
 @section('content')
-    @if(\App\Models\User::where('id', session('user.id'))->first()->Team != null)
+    @can('hasTeam', auth()->user())
         <h1 class="text-center" id="cimsor">Csapatom</h1>
         <div class="row mt-3">
             <div class="col-3 text-center">
@@ -38,10 +38,10 @@
                 </div>
             @endforeach
         </div>
-        @if(\App\Models\User::where('id', session('user.id'))->first()->role == "admin")
+        @can('addTeamMember', auth()->user())
             @include('site.adminteammate')
-        @endif
-    @else
+        @endcan
+    @elsecan
         <h1 class="text-center" style="margin-top: 100px">Még nincs csapatod :(</h1>
-    @endif
+    @endcan
 @endsection

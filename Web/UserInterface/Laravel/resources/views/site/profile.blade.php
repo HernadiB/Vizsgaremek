@@ -10,7 +10,7 @@
     @endif
     <div class="profil">
         <h3 class="text-center" id="cimsor">Üdv {{session('user.username')}}</h3>
-        <img src="{{asset(session('user.profile_picture'))}}" alt="Profilkép" style="width:200px" id="profilkep" title="profilkep">
+        <img src="{{asset(auth()->user()->profile_picture)}}" alt="Profilkép" style="width:200px" id="profilkep" title="profilkep">
 
         <div class="form-section">
             <form action="{{route('userModify')}}" method="post" role="form" class="form-inline" enctype="multipart/form-data">
@@ -18,25 +18,25 @@
                 <div class="nev row">
                     <label for="full_name" class="col-lg-4 col-form-label">Teljes név*</label>
                     <div class="col-lg-8">
-                        <input type="text" name="full_name" class="form-control input" value="{{session('user.full_name')}}">
+                        <input type="text" name="full_name" class="form-control input" value="{{auth()->user()->full_name}}">
                     </div>
                 </div>
                 <div class="felhnev row">
                     <label for="username" class="col-lg-4 col-form-label">Felhasználónév*</label>
                     <div class="col-lg-8">
-                        <input type="text" name="username" class="form-control input" value="{{session('user.username')}}">
+                        <input type="text" name="username" class="form-control input" value="{{auth()->user()->username}}">
                     </div>
                 </div>
                 <div class="email row">
                     <label for="email" class="col-lg-4 col-form-label">E-mail cím*</label>
                     <div class="col-lg-8">
-                        <input type="text" name="email" class="form-control input" value="{{session('user.email')}}">
+                        <input type="text" name="email" class="form-control input" value="{{auth()->user()->email}}">
                     </div>
                 </div>
                 <div class="szuldat row">
                     <label for="birthdate" class="col-lg-4 col-form-label">Születési dátum*</label>
                     <div class="col-lg-8">
-                        <input type="date" name="birthdate" class="form-control input" value="{{session('user.birthdate')}}" id="input">
+                        <input type="date" name="birthdate" class="form-control input" value="{{auth()->user()->birthdate}}" id="input">
                     </div>
                 </div>
                 <div class="nemek row">

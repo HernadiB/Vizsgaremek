@@ -12,30 +12,30 @@
     @if(session("error"))
         <div class="alert alert-danger">{{session("error")}}</div>
     @endif
-    @if(date_diff(date_create(session('user')->birthdate), date_create('now'))->y < 18)
+    @can(['belowEighteenIndex'], auth()->user())
     <table class="adatok">
         <thead>
             <tr>
                 <th scope="col">Pontszámom</th>
-                @if(session()->has('user.Team'))
+                @can('hasTeam', auth()->user())
                 <th scope="col">Csapatom neve</th>
                 <th scope="col">Csapatom pontszáma</th>
-                @endif
+                @endcan
                 <th scope="col">Rendfokozatom</th>
             </tr>
         </thead>
         <tbody>
         <tr>
-            <td data-label="Pontszámom">{{session('user')->score}}</td>
-            @if(session()->has('user.Team'))
-                <td data-label="Csapatom neve">{{session('user')->Team->name}}</td>
-                <td data-label="Csapatom pontszáma">{{session('user')->Team->Score()}}</td>
-            @endif
-            <td data-label="Rendfokozatom">{{\App\Models\Level::where('id', session('user')->level_id)->first()->name}}</td>
+            <td data-label="Pontszámom">{{auth()->user()->score}}</td>
+            @can('hasTeam', auth()->user())
+                <td data-label="Csapatom neve">{{auth()->user()->Team->name}}</td>
+                <td data-label="Csapatom pontszáma">{{auth()->user()->Team->Score()}}</td>
+            @endcan
+            <td data-label="Rendfokozatom">{{auth()->user()->Level->name}}</td>
         </tr>
         </tbody>
     </table>
-    @if(count(\App\Models\User::where('id', session('user.id'))->first()->ReceivedRequests) != 0)
+    @can('hasReceivedRequests', auth()->user())
         <table class="beerkezettjelolesek">
             <thead>
                 <h3 class="text-center" id="cimsor">Beérkezett baráti jelölések</h3>
@@ -48,7 +48,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach(\App\Models\User::where('id', session('user.id'))->first()->ReceivedRequests as $receivedRequest)
+            @foreach(auth()->user()->ReceivedRequests as $receivedRequest)
                 <tr>
                     <td data-label="Felhasználónév">{{$receivedRequest->username}}</td>
                     <td data-label="Csapat tagja">{{\App\Models\Team::where('id', $receivedRequest->team_id)->first()->name}}</td>
@@ -71,8 +71,8 @@
             @endforeach
             </tbody>
         </table>
-    @endif
-    @if(count(\App\Models\User::where('id', session('user.id'))->first()->RemainingTasks) != 0)
+    @endcan
+    @can('hasRemainingTasks', auth()->user())
         <table class="elvegezendofeladatok">
             <thead>
                 <h3 class="text-center">Következő szinthez elvégezendő feladatok</h3>
@@ -84,7 +84,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach(\App\Models\User::where('id', session('user.id'))->first()->RemainingTasks as $remainingTask)
+            @foreach(auth()->user()->RemainingTasks as $remainingTask)
                 <tr>
                     <td data-label="Feladat sorszáma">{{$remainingTask->id}}</td>
                     <td data-label="Feladat megnevezése">{{$remainingTask->name}}</td>
@@ -104,9 +104,9 @@
         </table>
     @else
         <div class="alert alert-success mt-5 mb-5 m-auto" style="width:90%">Látogass el a <a href="{{route('site.mytasks')}}">feladataim</a> oldalra! Amint befejezted azokat, tovább léphetsz a következő szintre.</div>
-    @endif
+    @endcan
     @else
-        @if(session()->has('user.Team'))
+        @can('hasTeam', auth()->user())
             <h2 class="text-center" style="margin-top: 100px">Beérkezett feladatok felülvizsgálata</h2>
             @if(count($taskReviews) != 0)
                 <table class="tasksToReview mt-5">
