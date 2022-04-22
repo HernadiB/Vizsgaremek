@@ -4,7 +4,6 @@ using AdminInterface.Entities.Tasks;
 using AdminInterface.Entities.Teams;
 using AdminInterface.Entities.Users;
 using AdminInterface.Models;
-using Ookii.Dialogs.Wpf;
 using AdminInterface.Views;
 using System;
 using System.Collections.Generic;
@@ -25,14 +24,14 @@ namespace AdminInterface
         {
             InitializeComponent();
             DataSources();
-            cb_regicsapatnev.SelectedIndex = 0;
-            cb_szintregi.SelectedIndex = 0;
+            cb_oldTeamName.SelectedIndex = 0;
+            cb_oldLevelName.SelectedIndex = 0;
         }
 
         public void DataSources()
         {
-            cb_szintregi.ItemsSource = Levels.Select(x => x.Name);
-            cb_regicsapatnev.ItemsSource = Teams.Select(x => x.Name);
+            cb_oldLevelName.ItemsSource = Levels.Select(x => x.Name);
+            cb_oldTeamName.ItemsSource = Teams.Select(x => x.Name);
         }
 
         private readonly List<LevelEntity> Levels = MainWindowViewModel.AllLevels();
@@ -43,45 +42,45 @@ namespace AdminInterface
 
         //------------------------------Levels------------------------------
 
-        private void btn_rangmegjelenit_Click(object sender, RoutedEventArgs e)
+        private void btn_levelDisplay_Click(object sender, RoutedEventArgs e)
         {
             dataGridTasks.Visibility = Visibility.Hidden;
             dataGridUsers.Visibility = Visibility.Hidden;
-            dataGridRangok.Visibility = Visibility.Visible;
             dataGridTeams.Visibility = Visibility.Hidden;
+            dataGridRangok.Visibility = Visibility.Visible;
             dataGridRangok.ItemsSource = Levels;
         }
-        private void btn_ranghozzaad_Click(object sender, RoutedEventArgs e)
+        private void btn_postLevel_Click(object sender, RoutedEventArgs e)
         {
-            TryCatch(async () => await MainWindowViewModel.PostLevel(tb_Rang.Text));
+            TryCatch(async () => await MainWindowViewModel.PostLevel(tb_postLevel.Text));
         }
-        private void cb_rangregi_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cb_oldLevelName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string str = (sender as ComboBox).SelectedItem.ToString();
-            tb_ranguj.Text = Levels.Where(x => x.Name == str).FirstOrDefault().Name;
+            string oldLevelName = (sender as ComboBox).SelectedItem.ToString();
+            tb_newLevelName.Text = Levels.Where(x => x.Name == oldLevelName).FirstOrDefault().Name;
         }
-        private void btn_rangmodosit_Click(object sender, RoutedEventArgs e)
+        private void btn_putLevel_Click(object sender, RoutedEventArgs e)
         {
-            TryCatch(async () => await MainWindowViewModel.PutLevel(tb_ranguj.Text, cb_szintregi.Text));
+            TryCatch(async () => await MainWindowViewModel.PutLevel(tb_newLevelName.Text, cb_oldLevelName.Text));
         }
 
 
         //------------------------------Users------------------------------
 
-        private void btn_felhasznalomegjelenit_Click(object sender, RoutedEventArgs e)
+        private void btn_userDisplay_Click(object sender, RoutedEventArgs e)
         {
             dataGridTasks.Visibility = Visibility.Hidden;
-            dataGridUsers.Visibility = Visibility.Visible;
             dataGridRangok.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Hidden;
+            dataGridUsers.Visibility = Visibility.Visible;
             dataGridUsers.ItemsSource = Users;
         }
-        private void btn_usermegjelenitid_Click(object sender, RoutedEventArgs e)
+        private void btn_userDisplayByID_Click(object sender, RoutedEventArgs e)
         {
             UserEntity user = new UserEntity();
             try
             {
-                user = MainWindowViewModel.GetUserById(int.Parse(tb_felhasznalomegjelenit.Text));
+                user = MainWindowViewModel.GetUserById(int.Parse(tb_userDisplayByID.Text));
             }
             catch (Exception ex)
             {
@@ -106,20 +105,20 @@ namespace AdminInterface
 
         //------------------------------Tasks------------------------------
 
-        private void btn_taskmegjelenit_Click(object sender, RoutedEventArgs e)
+        private void btn_taskDisplay_Click(object sender, RoutedEventArgs e)
         {
-            dataGridTasks.Visibility = Visibility.Visible;
             dataGridUsers.Visibility = Visibility.Hidden;
             dataGridRangok.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Hidden;
+            dataGridTasks.Visibility = Visibility.Visible;
             dataGridTasks.ItemsSource = Tasks;
         }
-        private void btn_taskmegjelenitid_Click(object sender, RoutedEventArgs e)
+        private void btn_taskDisplayByID_Click(object sender, RoutedEventArgs e)
         {
             TaskEntity task = new TaskEntity();
             try
             {
-                task = MainWindowViewModel.GetTaskByID(int.Parse(tb_taskmegjelenit.Text));
+                task = MainWindowViewModel.GetTaskByID(int.Parse(tb_taskDisplayByID.Text));
             }
             catch (Exception ex)
             {
@@ -133,16 +132,16 @@ namespace AdminInterface
             dataGridTasks.Visibility = Visibility.Visible;
             dataGridTasks.ItemsSource = collection;
         }
-        private void btn_taskkezeles_Click(object sender, RoutedEventArgs e)
+        private void btn_taskManage_Click(object sender, RoutedEventArgs e)
         {
-            TaskWindow feladatkezeles = new TaskWindow();
-            feladatkezeles.ShowDialog();
+            TaskWindow taskManage = new TaskWindow();
+            taskManage.ShowDialog();
         }
 
 
         //------------------------------Teams------------------------------
 
-        private void btn_csapatmegjelenit_Click(object sender, RoutedEventArgs e)
+        private void btn_teamDisplay_Click(object sender, RoutedEventArgs e)
         {
             dataGridTasks.Visibility = Visibility.Hidden;
             dataGridUsers.Visibility = Visibility.Hidden;
@@ -150,14 +149,14 @@ namespace AdminInterface
             dataGridTeams.Visibility = Visibility.Visible;
             dataGridTeams.ItemsSource = Teams;
         }
-        private void cb_regicsapatnev_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cb_oldTeamName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string str = (sender as ComboBox).SelectedItem.ToString();
-            tb_csapatujnev.Text = Teams.Where(x => x.Name == str).FirstOrDefault().Name;
+            string oldTeamName = (sender as ComboBox).SelectedItem.ToString();
+            tb_newTeamName.Text = Teams.Where(x => x.Name == oldTeamName).FirstOrDefault().Name;
         }
-        private void btn_csapatnevmodosit_Click(object sender, RoutedEventArgs e)
+        private void btn_putTeamName_Click(object sender, RoutedEventArgs e)
         {
-            TryCatch(async () => await MainWindowViewModel.PutTeam(tb_csapatujnev.Text, cb_regicsapatnev.Text));
+            TryCatch(async () => await MainWindowViewModel.PutTeam(tb_newTeamName.Text, cb_oldTeamName.Text));
         }
 
 

@@ -24,15 +24,18 @@ namespace AdminInterface
 
         public void DataSources()
         {
+            cb_postTaskLevel.ItemsSource = Levels.Select(x => x.Name);
             cb_putTaskID.ItemsSource = Tasks.Select(x => x.ID);
             cb_putTaskLevel.ItemsSource = Levels.Select(x => x.Name);
-            cb_postTaskLevel.ItemsSource = Levels.Select(x => x.Name);
         }
 
         private readonly List<LevelEntity> Levels = TaskWindowViewModel.AllLevels();
         private readonly List<TaskEntity> Tasks = TaskWindowViewModel.AllTasks();
 
-        private async void btn_taskhozzaad_Click(object sender, RoutedEventArgs e)
+
+        //------------------------------PostTask------------------------------
+
+        private async void btn_postTask_Click(object sender, RoutedEventArgs e)
         {
             TaskPutPost task = new TaskPutPost();
             try
@@ -44,14 +47,14 @@ namespace AdminInterface
                 string name = tb_postTaskName.Text;
                 string description = tb_postTaskDescription.Text;
                 int score = int.Parse(tb_postTaskScore.Text);
-                int level_id = Levels.FirstOrDefault(x => x.Name == cb_postTaskLevel.Text).ID;
+                string level = Levels.FirstOrDefault(x => x.Name == cb_postTaskLevel.Text).Name;
                 var filepath = btn_postTaskImage.DataContext;
                 string base64 = Base64.Encode(filepath as string);
                 if (name == "" || description == "" || score <= 0)
                 {
                     throw new Exception("Add meg a feladat minden tulajdonságát!");
                 }
-                task = new TaskPutPost( name, description, score, level_id, base64);
+                task = new TaskPutPost( name, description, score, level, base64);
             }
             catch (ArgumentNullException)
             {
@@ -71,8 +74,21 @@ namespace AdminInterface
             await TaskWindowViewModel.PostTask(task);
             MessageBox.Show("A feladat sikeresen eltárolva!");
         }
+        private void btn_postTaskImage_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new VistaOpenFileDialog();
+            bool? success = dialog.ShowDialog();
+            (sender as Button).DataContext = dialog.FileName;
+        }
+        private void cb_postTaskLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string postTaskLevel = (sender as ComboBox).SelectedItem.ToString();
+            cb_postTaskLevel.ItemsSource = Levels.Where(x => x.Name == postTaskLevel);
+        }
 
-        private async void btn_taskmodosit_Click(object sender, RoutedEventArgs e)
+
+        //------------------------------PutTask------------------------------
+        private async void btn_putTask_Click(object sender, RoutedEventArgs e)
         {
             int id = 0;
             TaskPutPost task;
@@ -86,14 +102,14 @@ namespace AdminInterface
                 string name = tb_putTaskName.Text;
                 string description = tb_putTaskDescription.Text;
                 int score = int.Parse(tb_putTaskScore.Text);
-                int level_id = Levels.FirstOrDefault(x => x.Name == cb_putTaskLevel.Text).ID;
+                string level = Levels.FirstOrDefault(x => x.Name == cb_putTaskLevel.Text).Name;
                 var filepath = btn_putTaskImage.DataContext;
                 string base64 = Base64.Encode(filepath as string);
                 if (name == "" || description == "" || score <= 0)
                 {
                     throw new Exception("Add meg a feladat minden tulajdonságát!");
                 }
-                task = new TaskPutPost(name, description, score, level_id, base64);
+                task = new TaskPutPost(name, description, score, level, base64);
             }
             catch (ArgumentNullException)
             {
@@ -114,12 +130,7 @@ namespace AdminInterface
             MessageBox.Show("A feladat sikeresen módosítva!");
         }
 
-        private void btn_posTaskImage_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new VistaOpenFileDialog();
-            bool? success = dialog.ShowDialog();
-            (sender as Button).DataContext = dialog.FileName;
-        }
+
 
         private void btn_putTaskImage_Click(object sender, RoutedEventArgs e)
         {
@@ -140,14 +151,8 @@ namespace AdminInterface
 
         private void cb_putTaskLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string str = (sender as ComboBox).SelectedItem.ToString();
-            cb_putTaskLevel.ItemsSource = Levels.Where(x => x.Name == str);
-        }
-
-        private void cb_postNewTaskLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string str = (sender as ComboBox).SelectedItem.ToString();
-            cb_postTaskLevel.ItemsSource = Levels.Where(x => x.Name == str);
+            string putTaskLevel = (sender as ComboBox).SelectedItem.ToString();
+            cb_putTaskLevel.ItemsSource = Levels.Where(x => x.Name == putTaskLevel);
         }
     }
 }

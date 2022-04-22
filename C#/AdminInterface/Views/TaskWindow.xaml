@@ -40,11 +40,11 @@
                         <Label Grid.Column="0" Grid.Row="4" Content="Feladat pontszáma:" Margin="2"/>
                         <TextBox Grid.Column="2" Grid.Row="4" Margin="2" Name="tb_postTaskScore"/>
                         <Label Grid.Column="0" Grid.Row="6" Content="Feladat szintje:" Margin="2"/>
-                        <ComboBox Grid.Column="2" Grid.Row="6" Margin="2" Name="cb_postTaskLevel" SelectionChanged="cb_postNewTaskLevel_SelectionChanged"/>
+                        <ComboBox Grid.Column="2" Grid.Row="6" Margin="2" Name="cb_postTaskLevel" SelectionChanged="cb_postTaskLevel_SelectionChanged"/>
                         <Label Grid.Column="0" Grid.Row="8" Content="Feladat képe:" Margin="2"/>
-                        <Button Grid.Column="2" Grid.Row="8" Margin="2" Name="btn_postTaskImage" Click="btn_posTaskImage_Click" Content="Kép kiválasztása"/>
+                        <Button Grid.Column="2" Grid.Row="8" Margin="2" Name="btn_postTaskImage" Click="btn_postTaskImage_Click" Content="Kép kiválasztása"/>
                     </Grid>
-                    <Button Click="btn_taskhozzaad_Click" Content="Hozzáadás" Name="btn_taskhozzaad" Background="DarkGray"/>
+                    <Button Click="btn_postTask_Click" Content="Hozzáadás" Name="btn_postTask" Background="DarkGray"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1">
@@ -84,7 +84,7 @@
                         <Label Grid.Column="0" Grid.Row="10" Content="Feladat képe:" Margin="2"/>
                         <Button Grid.Column="2" Grid.Row="10" Margin="2" Name="btn_putTaskImage" Click="btn_putTaskImage_Click" Content="Kép kiválasztása"/>
                     </Grid>
-                    <Button Click="btn_taskmodosit_Click" Content="Módosítás" Name="btn_taskmodosit" Background="Gray"/>
+                    <Button Click="btn_putTask_Click" Content="Módosítás" Name="btn_putTask" Background="Gray"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

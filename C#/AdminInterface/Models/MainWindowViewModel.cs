@@ -16,6 +16,7 @@ namespace AdminInterface.Models
     {
         private readonly static RestApiHandler restApiHandler = new RestApiHandler("http://localhost:8881");
 
+
         //------------------------------Levels------------------------------
 
         public static List<LevelEntity> AllLevels()
@@ -65,6 +66,7 @@ namespace AdminInterface.Models
             }
         }
 
+
         //------------------------------Users------------------------------
 
         public static List<UserEntity> AllUsers()
@@ -88,6 +90,7 @@ namespace AdminInterface.Models
                 throw;
             }
         }
+
 
         //------------------------------Tasks------------------------------
 
@@ -118,6 +121,7 @@ namespace AdminInterface.Models
             TaskWindow taskWindow = new TaskWindow();
             taskWindow.ShowDialog();
         }
+
 
         //------------------------------Teams------------------------------
 

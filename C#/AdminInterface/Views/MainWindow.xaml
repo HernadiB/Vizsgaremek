@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminInterface"
         mc:Ignorable="d"
-        Title="AdminInterface" Height="611" Width="1216">
+        Title="AdminInterface" Width="1216" Height="611">
     <Window.Background>
         <LinearGradientBrush EndPoint="1,0" StartPoint="1,1" SpreadMethod="Pad">
             <GradientStop Color="#FF1C92D2"/>
@@ -21,10 +21,10 @@
                 <ColumnDefinition Width="10" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <Label Content="Admin felület" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Name="label1" Grid.Column="2"/>
+            <Label Content="Admin felület" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" x:Name="MainWindowTitle" Grid.Column="2"/>
         </Grid>
         <Grid Width="1200" Height="200" Margin="5">
-            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridUsers" MaxHeight="200"  VerticalScrollBarVisibility="Auto"  Margin="0,0,10,0">
+            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dataGridUsers" MaxHeight="200"  VerticalScrollBarVisibility="Auto"  Margin="0,0,10,0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
                     <DataGridTextColumn Header="Teljes név" Binding="{Binding FullName}" Width="1*"/>
@@ -45,7 +45,7 @@
                     <DataGridTextColumn Header="Szint" Binding="{Binding Level}" Width="80"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridTasks" MaxHeight="200"  VerticalScrollBarVisibility="Auto" Margin="0,0,10,0">
+            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dataGridTasks" MaxHeight="200"  VerticalScrollBarVisibility="Auto" Margin="0,0,10,0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="80"/>
                     <DataGridTextColumn Header="Feladat neve" Binding="{Binding Name}" Width="2*"/>
@@ -54,13 +54,13 @@
                     <DataGridTextColumn Header="Feladat szintje" Binding="{Binding Level}" Width="1*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridRangok" MaxHeight="200" VerticalScrollBarVisibility="Auto" Width="256">
+            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dataGridRangok" MaxHeight="200" Width="256" VerticalScrollBarVisibility="Auto">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="1*"/>
                     <DataGridTextColumn Header="Rang neve" Binding="{Binding Name}" Width="3*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" Name="dataGridTeams" MaxHeight="200"  VerticalScrollBarVisibility="Auto" Width="500">
+            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dataGridTeams" MaxHeight="200" Width="500" VerticalScrollBarVisibility="Auto">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
                     <DataGridTextColumn Header="Csapat név" Binding="{Binding Name}" Width="1*"/>
@@ -78,8 +78,8 @@
                 <ColumnDefinition Width="275*" />
             </Grid.ColumnDefinitions>
             <StackPanel Margin="0,10,0,-10">
-                <Button Click="btn_taskmegjelenit_Click" Content="Feladatok megjelenítése" Name="btn_taskmegjelenit" Height="40" Margin="5" Background="#FFC4FFF9" Width="280"/>
-                <StackPanel Height="auto" Margin="5" Background="#FF6BF3E5" Width="280">
+                <Button Click="btn_taskDisplay_Click" Content="Feladatok megjelenítése" x:Name="btn_taskDisplay" Width="280" Height="40" Margin="5" Background="#FFC4FFF9"/>
+                <StackPanel Width="280" Height="auto" Margin="5" Background="#FF6BF3E5">
                     <Label Content="Feladat megjelenítése" HorizontalAlignment="Center" FontWeight="Bold"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -88,14 +88,14 @@
                             <ColumnDefinition Width="1*" />
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Content="Feladat ID:" Margin="2"/>
-                        <TextBox Grid.Column="2" Margin="2" Name="tb_taskmegjelenit"/>
+                        <TextBox Grid.Column="2" Margin="2" Name="tb_taskDisplayByID"/>
                     </Grid>
-                    <Button Click="btn_taskmegjelenitid_Click" Content="Megjelenítés" Name="btn_taskmegjelenitid" Background="#FF33C8B9"/>
+                    <Button Click="btn_taskDisplayByID_Click" Content="Megjelenítés" x:Name="btn_taskDisplayByID" Background="#FF33C8B9"/>
                 </StackPanel>
-                <Button Click="btn_taskkezeles_Click" Content="Feladatok kezelése" Name="btn_taskkezeles" Height="50" Margin="5" Background="#FF33C8B9" Width="280"/>
+                <Button Click="btn_taskManage_Click" Content="Feladatok kezelése" x:Name="btn_taskManage" Width="280" Height="50" Margin="5" Background="#FF33C8B9"/>
             </StackPanel>
             <StackPanel Margin="0,15,10,36" Grid.Column="1">
-                <Button Click="btn_rangmegjelenit_Click" Content="Rangok megjelenítése" x:Name="btn_rangmegjelenit1" Height="40" Background="#FFC6D2B9" Width="280"/>
+                <Button Click="btn_levelDisplay_Click" Content="Rangok megjelenítése" x:Name="btn_levelDisplay" Width="280" Height="40" Background="#FFC6D2B9"/>
                 <StackPanel Height="auto" Background="#FF9CA494" Width="280" Margin="0,5,0,0">
                     <Label Content="Új rang felvétele" HorizontalAlignment="Center" FontWeight="Bold"/>
                     <Grid>
@@ -109,11 +109,11 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <Label Grid.Column="0" Grid.Row="0" Content="Rang neve:" Margin="2"/>
-                        <TextBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="tb_Rang"/>
+                        <TextBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="tb_postLevel"/>
                     </Grid>
-                    <Button Click="btn_ranghozzaad_Click" Content="Hozzáadás" x:Name="btn_rang" Background="#FF737B6B"/>
+                    <Button Click="btn_postLevel_Click" Content="Hozzáadás" x:Name="btn_postLevel" Background="#FF737B6B"/>
                 </StackPanel>
-                <StackPanel Height="auto" Background="#FF9CA494" Width="280" Margin="0,5,0,0">
+                <StackPanel Width="280" Height="auto" Background="#FF9CA494" Margin="0,5,0,0">
                     <Label Content="Rang módosítása" HorizontalAlignment="Center" FontWeight="Bold"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -129,16 +129,16 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Label Grid.Column="0" Grid.Row="0" Content="Rang régi neve:" Margin="2"/>
-                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="cb_szintregi" SelectionChanged="cb_rangregi_SelectionChanged"/>
+                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="cb_oldLevelName" SelectionChanged="cb_oldLevelName_SelectionChanged"/>
                         <Label Grid.Column="0" Grid.Row="2" Content="Rang új neve:" Margin="2"/>
-                        <TextBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="tb_ranguj"/>
+                        <TextBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="tb_newLevelName"/>
                     </Grid>
-                    <Button Click="btn_rangmodosit_Click" Content="Módosítás" x:Name="btn_rangmodosit" Background="#FF737B6B"/>
+                    <Button Click="btn_putLevel_Click" Content="Módosítás" x:Name="btn_putLevel" Background="#FF737B6B"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="278,10,0,0" Height="171" Grid.ColumnSpan="2">
-                <Button Click="btn_csapatmegjelenit_Click" Content="Csapatok megjelenítése" x:Name="btn_csapatmegjelenit" Height="40" Margin="5" Background="#FF31B6FF" Width="280"/>
-                <StackPanel Height="auto" Margin="5" Background="#FF2B96D0" Width="280">
+            <StackPanel Grid.Column="2" VerticalAlignment="Top" Margin="0,10,0,0" Height="171">
+                <Button Click="btn_teamDisplay_Click" Content="Csapatok megjelenítése" x:Name="btn_teamDisplay" Width="280" Height="40" Margin="5" Background="#FF31B6FF"/>
+                <StackPanel Width="280" Height="auto" Margin="5" Background="#FF2B96D0">
                     <Label Content="Csapat név módosítása" HorizontalAlignment="Center" FontWeight="Bold"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -152,15 +152,15 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Label Grid.Column="0" Grid.Row="0" Content="Csapat neve:" Margin="2"/>
-                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="cb_regicsapatnev" SelectionChanged="cb_regicsapatnev_SelectionChanged"/>
+                        <ComboBox Grid.Column="2" Grid.Row="0" Margin="2" x:Name="cb_oldTeamName" SelectionChanged="cb_oldTeamName_SelectionChanged"/>
                         <Label Grid.Column="0" Grid.Row="2" Content="Csapat új neve:" Margin="2"/>
-                        <TextBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="tb_csapatujnev"/>
+                        <TextBox Grid.Column="2" Grid.Row="2" Margin="2" x:Name="tb_newTeamName"/>
                     </Grid>
-                    <Button Click="btn_csapatnevmodosit_Click" Content="Módosítás" x:Name="btn_csapatmodosit" Background="#FF1E6A94"/>
+                    <Button Click="btn_putTeamName_Click" Content="Módosítás" x:Name="btn_putTeamName" Background="#FF1E6A94"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Grid.Column="2" VerticalAlignment="Top" Margin="275,10,3,0" Height="auto" Grid.ColumnSpan="2">
-                <Button Click="btn_felhasznalomegjelenit_Click" Content="Felhasználók megjelenítése" x:Name="btn_felhasznalomegjelenit" Height="40" Margin="5" Background="#FFEFC5A3" Width="280"/>
+            <StackPanel Grid.Column="3" VerticalAlignment="Top" Margin="0,10,3,0" Height="auto">
+                <Button Click="btn_userDisplay_Click" Content="Felhasználók megjelenítése" x:Name="btn_userDisplay" Margin="5" Height="40" Background="#FFEFC5A3" Width="280"/>
                 <StackPanel Height="auto" Margin="5" Background="#FFBE9778" Width="280">
                     <Label Content="Felhasználó megjelenítése" HorizontalAlignment="Center" FontWeight="Bold"/>
                     <Grid>
@@ -170,9 +170,9 @@
                             <ColumnDefinition Width="1*" />
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Content="Felhasználó ID:" Margin="2"/>
-                        <TextBox Grid.Column="2" Margin="2" Name="tb_felhasznalomegjelenit"/>
+                        <TextBox Grid.Column="2" Margin="2" Name="tb_userDisplayByID"/>
                     </Grid>
-                    <Button Click="btn_usermegjelenitid_Click" Content="Megjelenítés" Name="btn_usermegjelenitid" Background="#FFAB7A54"/>
+                    <Button Click="btn_userDisplayByID_Click" Content="Megjelenítés" Name="btn_userDisplayByID" Background="#FFAB7A54"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
