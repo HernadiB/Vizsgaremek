@@ -39,7 +39,7 @@
                 @elseif($actualTask->pivot->status == "unfinished")
                     <td data-label="Státusz">&#x274C;</td>
                 @else
-                    <td data-label="Státusz">Under review</td>
+                    <td data-label="Státusz">&#xF421;</td>
                 @endif
             </tr>
             @endforeach
