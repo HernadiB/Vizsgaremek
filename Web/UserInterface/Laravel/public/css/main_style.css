@@ -96,12 +96,12 @@ table th{
         width: 99px;
     }
 
-    .beerkezettjelolesek, .elvegezendofeladatok, .csapatom, .barataim, .feladataim, .szintek{
+    .beerkezettjelolesek, .elvegezendofeladatok, .csapatom, .barataim, .feladataim{
         width: 90%;
         margin: 10px auto 50px;
     }
 
-    .orszagos{
+    .orszagos, .szintek{
         width: 70%;
         margin: 10px auto 50px;
     }
