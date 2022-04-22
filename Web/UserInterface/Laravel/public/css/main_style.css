@@ -17,7 +17,7 @@ table{
     border-collapse: collapse;
     border-radius: 0.25em;
     overflow: hidden;
-    background-color: #C4C4C4;
+    /*background-color: #C4C4C4;*/
 }
 
 table tr{
@@ -40,8 +40,6 @@ table th{
 #cimsor{
     color: #000000;
 }
-
-
 
 @media screen and (max-width: 800px){
     table{
@@ -98,8 +96,13 @@ table th{
         width: 99px;
     }
 
-    .beerkezettjelolesek, .elvegezendofeladatok, .csapatom, .barataim, .orszagos, .feladataim, .szintek{
+    .beerkezettjelolesek, .elvegezendofeladatok, .csapatom, .barataim, .feladataim, .szintek{
         width: 90%;
+        margin: 10px auto 50px;
+    }
+
+    .orszagos{
+        width: 70%;
         margin: 10px auto 50px;
     }
 
