@@ -31,15 +31,15 @@
                             <button name="taskID" value="{{$actualTask->id}}" class="btn btn-success">Kész</button>
                         </td>
                     @else
-                        <td></td>
+                        <td data-label="Elvégezve">Feldolgozás alatt</td>
                     @endif
                 {!! Form::close() !!}
                 @if($actualTask->pivot->status == "finished")
-                    <td data-label="Státusz">&#10004</td>
+                    <td data-label="Státusz">&#10004;</td>
                 @elseif($actualTask->pivot->status == "unfinished")
                     <td data-label="Státusz">&#x274C;</td>
                 @else
-                    <td data-label="Státusz">&#xF421;</td>
+                    <td data-label="Státusz">&#x23F3;</td>
                 @endif
             </tr>
             @endforeach
