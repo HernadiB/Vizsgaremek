@@ -5,9 +5,13 @@
     width: 350px;
     margin-bottom: 50px;
     transform: translate(-50%, -50%);
-    background: #ffff;;
+    background: white;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
     border-radius: 0.25em;
+}
+
+.fa-solid{
+    margin-right: 10px;
 }
 
 .form-section hr{
@@ -16,16 +20,12 @@
     width: 85%;
 }
 
-.fa-solid{
-    margin-right: 10px;
-}
-
 .form-label{
     margin-top: 10px;
     margin-bottom: 0;
 }
 
-form #input{
+form .input{
     width: 85%;
 }
 
@@ -39,16 +39,6 @@ form #input{
     padding-bottom: 20px;
     padding-left: 40px;
     box-sizing: border-box;
-}
-
-form .email{
-    position: relative;
-    width: 100%;
-}
-
-form .passwd{
-    position: relative;
-    width: 100%;
 }
 
 form .btn{
@@ -75,7 +65,7 @@ a:hover, a:link, a:visited, a:active{
 
 @media screen and (max-width: 400px){
     .form-section{
-        width: 310px;
+        width: 85%;
     }
 
     form p{

@@ -14,12 +14,12 @@
         @csrf
         <div class="email">
             <label for="email" class="form-label">E-mail cím</label>
-            <input type="text" name="email" class="form-control" id="input" placeholder="alfred.mihaly@example.com">
+            <input type="text" name="email" class="form-control input" placeholder="alfred.mihaly@example.com">
             <span></span>
         </div>
         <div class="passwd">
             <label for="password" class="form-label">Jelszó</label>
-            <input type="password" name="password" class="form-control" id="input" placeholder="*************">
+            <input type="password" name="password" class="form-control input" placeholder="*************">
             <span></span>
         </div>
         <button class="btn">Bejelentkezés</button>

@@ -14,19 +14,19 @@
             @csrf
             <div class="nev">
                 <label for="full_name" class="form-label">Teljes név</label>
-                <input type="text" name="full_name" class="form-control" id="input" placeholder="Alfréd Mihály">
+                <input type="text" name="full_name" class="form-control input" placeholder="Alfréd Mihály">
             </div>
             <div class="felhnev">
                 <label for="username" class="form-label">Felhasználónév</label>
-                <input type="text" name="username" class="form-control" id="input" placeholder="alfred.mihaly">
+                <input type="text" name="username" class="form-control input" placeholder="alfred.mihaly">
             </div>
             <div class="szuldat">
                 <label for="birthdate" class="form-label">Születési dátum</label>
-                <input type="date" name="birthdate" class="form-control" id="input">
+                <input type="date" name="birthdate" class="form-control input">
             </div>
             <div class="nemek">
                 <label for="gender" class="form-label">Nem</label>
-                <select name="gender" id="gender" class="form-select">
+                <select name="gender" class="form-select input">
                     <option value="M">Férfi</option>
                     <option value="F">Nő</option>
                 </select>
@@ -34,17 +34,17 @@
 
             <div class="email">
                 <label for="email" class="form-label">E-mail cím</label>
-                <input type="text" name="email" class="form-control" id="input" placeholder="alfred.mihaly@example.com">
+                <input type="text" name="email" class="form-control input" placeholder="alfred.mihaly@example.com">
                 <span></span>
             </div>
             <div class="passwd">
                 <label for="password" class="form-label">Jelszó</label>
-                <input type="password" name="password" class="form-control" id="input" placeholder="*************">
+                <input type="password" name="password" class="form-control input" placeholder="*************">
                 <span></span>
             </div>
             <div class="passwd">
                 <label for="password_confirmation" class="form-label">Jelszó megerősítése</label>
-                <input type="password" name="password_confirmation" class="form-control" id="input" placeholder="*************">
+                <input type="password" name="password_confirmation" class="form-control input" placeholder="*************">
                 <span></span>
             </div>
             <button class="btn">Regisztráció</button>

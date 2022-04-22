@@ -17,7 +17,7 @@ Route::get('/country', [\App\Http\Controllers\SiteController::class, 'Country'])
 Route::get('/friends', [\App\Http\Controllers\SiteController::class, 'Friends'])->middleware('auth')->name('site.friends');
 Route::get('/index', [\App\Http\Controllers\SiteController::class, 'Index'])->middleware('auth')->name('home');
 Route::get('/levels', [\App\Http\Controllers\SiteController::class, 'Levels'])->name('site.levels');
-Route::get('/login', [\App\Http\Controllers\SiteController::class, 'Login'])->name('site.login');
+Route::get('/', [\App\Http\Controllers\SiteController::class, 'Login'])->name('site.login');
 Route::get('/mytasks', [\App\Http\Controllers\SiteController::class, 'MyTasks'])->middleware('auth', 'can:userIsBelowEighteen')->name('site.mytasks');
 Route::get('/signup', [\App\Http\Controllers\SiteController::class, 'Signup'])->name('site.signup');
 Route::get('/myteam', [\App\Http\Controllers\SiteController::class, 'MyTeam'])->middleware('auth', 'can:hasTeam')->name('site.myteam');
