@@ -1,6 +1,24 @@
-#h1{
+h1{
     text-align: center;
     margin-top: 50px;
+}
+
+.admin{
+    display: flex;
+    justify-content: center;
+}
+
+#buttons{
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: max-content;
+}
+
+#csapatombtn{
+    margin-right: 20px;
+    width: 200px;
+    margin-top: 40px;
+    margin-bottom: auto;
 }
 
 .form-section{
@@ -72,5 +90,4 @@
         padding-right: 40px;
     }
 }
-
 

@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="{{asset("css/levels_style.css")}}">
 @extends('layouts.main')
 @section('title')
     {{$title}}
@@ -6,8 +5,8 @@
 @section('js_css')
     <script src="{{asset('js/fetch.js')}}"></script>
     <script src="{{asset('js/levels.js')}}"></script>
+    <link rel="stylesheet" href="{{asset("css/levels_style.css")}}">
 @endsection
-@include('site.nav')
 @section('script')
 {{--    <script>--}}
 {{--        GetTasks();--}}

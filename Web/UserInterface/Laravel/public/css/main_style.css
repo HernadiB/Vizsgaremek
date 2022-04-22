@@ -6,6 +6,7 @@ body{
             #ffff 75%,
             #ffff 100%
     ) no-repeat fixed;
+    padding-top: 100px;
 }
 
 table{
@@ -37,7 +38,6 @@ table th{
 }
 
 #cimsor{
-    margin-top: 100pt;
     color: #000000;
 }
 

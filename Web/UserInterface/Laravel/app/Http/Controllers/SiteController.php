@@ -6,6 +6,7 @@ use App\Models\Level;
 use App\Models\Task;
 use App\Models\Team;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -13,6 +14,10 @@ class SiteController extends Controller
     public function Country()
     {
         $currentUser = User::where('id', session()->get('user.id'))->first();
+//        $usersAll = DB::table('users')
+//            ->whereRaw(DATEDIFF(year, birthdate, now) < 18)
+//            ->get();
+//        $usersAll = User::where(date_diff(date_create('birthdate'), date_create('now'))->y, '<', 18)->get()->sortByDesc('score')->pluck('id');
         $usersAll = User::where('role', 'user')->get()->sortByDesc('score')->pluck('id');
         $usersTop10 = $usersAll->take(10);
         if($currentUser->role != 'admin')
@@ -138,34 +143,6 @@ class SiteController extends Controller
     {
         return view('site.profile', [
             "title" => "Profilom"
-        ]);
-    }
-
-    public function TeamMake()
-    {
-        return view('site.teammake', [
-            "title" => "Csapat alapítás"
-        ]);
-    }
-
-    public function Admin()
-    {
-        return view('site.admin', [
-            "title" => "Admin felület"
-        ]);
-    }
-
-    public function AdminTeam()
-    {
-        return view('site.adminteam', [
-            "title" => "Admin csapat kezelése"
-        ]);
-    }
-
-    public function AdminTeammate()
-    {
-        return view('site.adminteammate', [
-            "title" => "Admin csapattagok kezelése"
         ]);
     }
 }

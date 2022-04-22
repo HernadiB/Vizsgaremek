@@ -1,16 +1,11 @@
-<link rel="stylesheet" href="{{asset("css/friends_style.css")}}">
 @extends('layouts.main')
+@section('js_css')
+    <link rel="stylesheet" href="{{asset("css/friends_style.css")}}">
+@endsection
 @section('title')
     {{$title}}
 @endsection
-@include('site.nav')
 @section('content')
-    @if(session("success"))
-        <div id="alert" class="alert alert-success">{{session("success")}}</div>
-    @endif
-    @if(session("error"))
-        <div class="alert alert-danger">{{session("error")}}</div>
-    @endif
     @if(count($friends) != 0)
         <h3 class="text-center">Barátaim</h3>
         <table class="barataim">

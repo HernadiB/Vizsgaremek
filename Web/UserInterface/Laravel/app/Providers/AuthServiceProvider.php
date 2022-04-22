@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('belowEighteenIndex', function (User $user){
+        Gate::define('userIsBelowEighteen', function (User $user){
             return date_diff(date_create($user->birthdate), date_create('now'))->y < 18;
         });
         Gate::define('hasReceivedRequests', function (User $user){
@@ -38,7 +38,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('hasTeam', function (User $user){
             return $user->Team != null;
         });
-        Gate::define('addTeamMember', function (User $user){
+        Gate::define('isAdmin', function (User $user){
             return $user->role == "admin";
         });
     }

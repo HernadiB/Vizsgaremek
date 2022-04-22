@@ -6,7 +6,6 @@
     <script src="{{asset('js/fetch.js')}}"></script>
     <script src="{{asset('js/country.js')}}"></script>
 @endsection
-@include('site.nav')
 @section('script')
 {{--    <script>--}}
 {{--        GetCountryLeaderboard();--}}

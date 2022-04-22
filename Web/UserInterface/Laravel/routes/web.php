@@ -18,15 +18,10 @@ Route::get('/friends', [\App\Http\Controllers\SiteController::class, 'Friends'])
 Route::get('/index', [\App\Http\Controllers\SiteController::class, 'Index'])->name('home');
 Route::get('/levels', [\App\Http\Controllers\SiteController::class, 'Levels'])->name('site.levels');
 Route::get('/login', [\App\Http\Controllers\SiteController::class, 'Login'])->name('site.login');
-Route::get('/mytasks', [\App\Http\Controllers\SiteController::class, 'MyTasks'])->name('site.mytasks');
+Route::get('/mytasks', [\App\Http\Controllers\SiteController::class, 'MyTasks'])->middleware('can:userIsBelowEighteen')->name('site.mytasks');
 Route::get('/signup', [\App\Http\Controllers\SiteController::class, 'Signup'])->name('site.signup');
-Route::get('/myteam', [\App\Http\Controllers\SiteController::class, 'MyTeam'])->name('site.myteam');
+Route::get('/myteam', [\App\Http\Controllers\SiteController::class, 'MyTeam'])->middleware('can:hasTeam')->name('site.myteam');
 Route::get('/profile', [\App\Http\Controllers\SiteController::class, 'Profile'])->name('site.profile');
-Route::get('/teammake', [\App\Http\Controllers\SiteController::class, 'TeamMake'])->name('site.teammake');
-
-Route::get('/admin', [\App\Http\Controllers\SiteController::class, 'Admin'])->name('site.admin');
-Route::get('/admin/team', [\App\Http\Controllers\SiteController::class, 'AdminTeam'])->name('site.adminteam');
-Route::get('/admin/teammate', [\App\Http\Controllers\SiteController::class, 'AdminTeammate'])->name('site.adminteammate');
 
 Route::post('/users/signup', [\App\Http\Controllers\UserController::class, "SignupUser"])->name("userSignup");
 Route::post('/users/login', [\App\Http\Controllers\UserController::class, "LoginUser"])->name("userLogin");;

@@ -1,15 +1,13 @@
-<link rel="stylesheet" href="{{asset("css/profile_style.css")}}">
 @extends('layouts.main')
 @section('title')
     {{$title}}
 @endsection
-@include('site.nav')
+@section('js_css')
+    <link rel="stylesheet" href="{{asset("css/profile_style.css")}}">
+@endsection
 @section('content')
-    @if(session("success"))
-        <div id="alert" class="alert alert-success">{{session("success")}}</div>
-    @endif
     <div class="profil">
-        <h3 class="text-center" id="cimsor">Üdv {{session('user.username')}}</h3>
+        <h3 class="text-center" id="cimsor">Üdv {{auth()->user()->username}}</h3>
         <img src="{{asset(auth()->user()->profile_picture)}}" alt="Profilkép" style="width:200px" id="profilkep" title="profilkep">
 
         <div class="form-section">

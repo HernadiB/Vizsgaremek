@@ -1,6 +1,5 @@
 #h3{
     text-align: center;
-    margin-top: 110px;
 }
 
 #h4{
@@ -11,7 +10,7 @@
 
 .form-section{
     width: 50%;
-    background: #C4C4C4;;
+    background: #C4C4C4;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
     border-radius: 0.25em;
     margin-left: auto;
@@ -42,7 +41,6 @@
     box-shadow: none;
     background-color: #94DEA4;
 }
-
 
 @media screen and (max-width: 992px){
     .form-section{
@@ -77,8 +75,4 @@
     .csapatalap .row{
         padding-right: 40px;
     }
-
-
 }
-
-

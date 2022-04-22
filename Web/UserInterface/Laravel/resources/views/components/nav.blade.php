@@ -25,15 +25,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{route("site.country")}}">Országos lista</a>
                         </li>
+                    @can('userIsBelowEighteen')
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{route("site.mytasks")}}">Feladataim</a>
                     </li>
+                    @endcan
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{route("site.profile")}}">Profilom</a>
                     </li>
+                    @can('hasTeam')
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{route("site.myteam")}}">Csapatom</a>
                     </li>
+                    @endcan
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{route("site.levels")}}">Szintek-feladatok</a>
                     </li>

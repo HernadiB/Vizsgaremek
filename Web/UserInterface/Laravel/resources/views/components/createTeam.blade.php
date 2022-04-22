@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="{{asset("css/teammake_style.css")}}">
-
+<link rel="stylesheet" href="{{asset('css/createteam_style.css')}}">
 <div class="csapatalap">
     <h3 id="h3">Mivel elmúltál 18 éves, sajnos véget ért számodra ez a kaland. Ha folytatni szeretnéd, alapíts egy csapatot</h3>
 
