@@ -36,11 +36,10 @@
     background: transparent;
 }
 
-
 @media screen and (max-width: 992px){
     .form-section{
         margin-top: 20px;
-        width: 310px;
+        width: 60%;
     }
 
     .baratkereses .input{
