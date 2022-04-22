@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{asset('css/createteam_style.css')}}">
 <div class="csapatalap">
-    <h3 id="h3">Mivel elmúltál 18 éves, sajnos véget ért számodra ez a kaland. Ha folytatni szeretnéd, alapíts egy csapatot</h3>
+    <h3 id="h3">Mivel elmúltál 18 éves, sajnos véget ért számodra ez a kaland. Ha folytatni szeretnéd, alapíts egy csapatot!</h3>
 
     <div class="form-section">
         <form action="{{route('teamCreate')}}" method="post" role="form" class="form-inline">
@@ -12,7 +12,7 @@
                     <input type="text" name="name" class="form-control input" placeholder="BeastProgrammer">
                 </div>
             </div>
-            <div class="row">
+            <div class="leiras row">
                 <label for="description" class="col-lg-4 col-form-label">Leírás</label>
                 <div class="col-lg-8">
                     <input type="text" name="description" class="form-control input" placeholder="...">
@@ -28,11 +28,11 @@
             <div class="table">
                 <table class="csapattabla">
                     <thead>
-                    <tr>
-                        <th scope="col">Név</th>
-                        <th scope="col">Profil</th>
-                        <th scope="col">Kiválaszt</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Név</th>
+                            <th scope="col">Profil</th>
+                            <th scope="col">Kiválaszt</th>
+                        </tr>
                     </thead>
                     <tbody>
                     @foreach($usersWithoutTeam as $user)
