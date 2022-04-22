@@ -136,8 +136,21 @@
                     <Button Click="btn_putLevel_Click" Content="Módosítás" x:Name="btn_putLevel" Background="#FF737B6B"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Grid.Column="2" VerticalAlignment="Top" Margin="0,10,0,0" Height="171">
-                <Button Click="btn_teamDisplay_Click" Content="Csapatok megjelenítése" x:Name="btn_teamDisplay" Width="280" Height="40" Margin="5" Background="#FF31B6FF"/>
+            <StackPanel Grid.Column="2" VerticalAlignment="Top" Margin="0,10,0,0" Height="260">
+                <Button Click="btn_teamDisplay_Click" Content="Csapatok megjelenítése" x:Name="btn_teamDisplay" Width="280" Height="40" Margin="0,5,0,0" Background="#FF31B6FF"/>
+                <StackPanel Width="280" Height="auto" Margin="5" Background="#2A9DFA">
+                    <Label Content="Csapat megjelenítése" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Csapat ID:" Margin="2"/>
+                        <TextBox Grid.Column="2" Margin="2" Name="tb_teamDisplayByID"/>
+                    </Grid>
+                    <Button Click="btn_teamDisplayByID_Click" Content="Megjelenítés" x:Name="btn_teamDisplayByID" Background="#0C8EF7"/>
+                </StackPanel>
                 <StackPanel Width="280" Height="auto" Margin="5" Background="#FF2B96D0">
                     <Label Content="Csapat név módosítása" HorizontalAlignment="Center" FontWeight="Bold"/>
                     <Grid>

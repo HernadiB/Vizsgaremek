@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TeamRequest;
 use App\Http\Resources\TeamResource;
 use App\Models\Team;
 use App\Models\User;
@@ -49,9 +50,12 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TeamRequest $request, $id)
     {
-        //
+        $team = Team::findorfail($id);
+        $data = $request->validated();
+        $team->update($data);
+        return new TeamResource($team);
     }
 
     /**

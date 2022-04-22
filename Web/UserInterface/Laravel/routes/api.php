@@ -27,8 +27,10 @@ Route::get('/users/country', [\App\Http\Controllers\UserController::class, "GetC
 
 Route::get('/teams', [\App\Http\Controllers\TeamController::class, "index"]);
 Route::get('/teams/{id}', [\App\Http\Controllers\TeamController::class, "show"]);
+Route::put('/teams/{id}', [\App\Http\Controllers\TeamController::class, "update"]);
 
 Route::get('tasks', [\App\Http\Controllers\TaskController::class, "index"]);
+Route::get('tasks/{id}', [\App\Http\Controllers\TaskController::class, "show"]);
 Route::post('tasks', [\App\Http\Controllers\TaskController::class, "store"]);
 Route::put('tasks/{id}', [\App\Http\Controllers\TaskController::class, "update"]);
 

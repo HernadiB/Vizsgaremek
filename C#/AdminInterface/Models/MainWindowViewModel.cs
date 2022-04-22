@@ -57,7 +57,7 @@ namespace AdminInterface.Models
                 LevelPutPost level = new LevelPutPost();
                 level.Name = levelNewName;
                 int id = AllLevels().FirstOrDefault(x => x.Name == levelOldName).ID;
-                await restApiHandler.PutObject("api/levels" + id, level);
+                await restApiHandler.PutObject("api/levels/" + id, level);
                 MessageBox.Show($"A(z) {levelOldName} rang sikeresen módosítva");
             }
             catch (Exception)
@@ -130,6 +130,22 @@ namespace AdminInterface.Models
             TeamAll teamAll = restApiHandler.GetObject<TeamAll>("api/teams");
             return teamAll.data;
         }
+        public static TeamEntity GetTeamByID(int id)
+        {
+            try
+            {
+                TeamByID team = restApiHandler.GetObject<TeamByID>("api/teams/" + id);
+                if (team == null)
+                {
+                    throw new Exception("Nincs ilyen csapat ilyen ID-val!");
+                }
+                return team.data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public static async Task PutTeam(string teamNewName, string teamOldName)
         {
             try
@@ -142,11 +158,11 @@ namespace AdminInterface.Models
                 {
                     throw new Exception("Válaszd ki a csapat régi nevét");
                 }
-                TeamPostPut team = new TeamPostPut();
+                TeamPutPost team = new TeamPutPost();
                 team.Name = teamNewName;
-                int id = AllLevels().FirstOrDefault(x => x.Name == teamOldName).ID;
-                await restApiHandler.PutObject("api/levels" + id, team);
-                MessageBox.Show($"A(z) {teamOldName} csapat sikeresen módosítva");
+                int id = AllTeams().FirstOrDefault(x => x.Name == teamOldName).ID;
+                await restApiHandler.PutObject("api/teams/" + id, team);
+                MessageBox.Show($"A(z) {teamOldName} csapat neve sikeresen módosítva");
             }
             catch (Exception)
             {

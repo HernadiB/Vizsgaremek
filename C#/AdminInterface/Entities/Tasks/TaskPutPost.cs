@@ -2,19 +2,18 @@
 {
     public class TaskPutPost
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int Score { get; set; }
-        public string Level { get; set; }
-        public string Image { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public int score { get; set; }
+        public int level_id { get; set; }
+        public string image { get; set; }
         public TaskPutPost() { }
-        public TaskPutPost(string name, string description, int score, string level, string image)
+        public TaskPutPost(string name, string description, int score, int level_id)
         {
-            this.Name = name;
-            this.Description = description;
-            this.Score = score;
-            this.Level = level;
-            this.Image = image;
+            this.name = name;
+            this.description = description;
+            this.score = score;
+            this.level_id = level_id;
         }
     }
 }

@@ -149,6 +149,26 @@ namespace AdminInterface
             dataGridTeams.Visibility = Visibility.Visible;
             dataGridTeams.ItemsSource = Teams;
         }
+
+        private void btn_teamDisplayByID_Click(object sender, RoutedEventArgs e)
+        {
+            TeamEntity team = new TeamEntity();
+            try
+            {
+                team = MainWindowViewModel.GetTeamByID(int.Parse(tb_teamDisplayByID.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            ObservableCollection<TeamEntity> collection = new ObservableCollection<TeamEntity>() { team };
+            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridUsers.Visibility = Visibility.Hidden;
+            dataGridTasks.Visibility = Visibility.Hidden;
+            dataGridTeams.Visibility = Visibility.Visible;
+            dataGridTeams.ItemsSource = collection;
+        }
         private void cb_oldTeamName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string oldTeamName = (sender as ComboBox).SelectedItem.ToString();
@@ -171,5 +191,6 @@ namespace AdminInterface
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }
