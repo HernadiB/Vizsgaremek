@@ -5,7 +5,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <nav class="navbar navbar-light fixed-top text-white" >
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{route("home")}}">Országos Pontgyűjtő</a>
+        <a class="navbar-brand" @auth href="{{route("home")}} @else href="{{route("site.login")}} @endauth">Országos Pontgyűjtő</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,36 +16,59 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route("home")}}"><h4>Főoldal</h4></a>
-                    </li>
+                    @auth
                         <li class="nav-item">
-                            <span><a href="{{route("site.friends")}}" class="nav-link text-white">Barátaim</a></span>
+                            <a class="nav-link active" aria-current="page" href="{{route("home")}}"><h4>Főoldal</h4></a>
                         </li>
+                    @endauth
+                    @auth
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{route("site.country")}}">Országos lista</a>
+                            <a href="{{route("site.friends")}}" class="nav-link text-white">Barátaim</a>
                         </li>
-                    @can('userIsBelowEighteen')
+                    @endauth
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{route("site.mytasks")}}">Feladataim</a>
+                        <a class="nav-link text-white" href="{{route("site.country")}}">Országos lista</a>
                     </li>
-                    @endcan
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{route("site.profile")}}">Profilom</a>
-                    </li>
-                    @can('hasTeam')
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{route("site.myteam")}}">Csapatom</a>
-                    </li>
-                    @endcan
+                    @auth
+                        @can('userIsBelowEighteen')
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{route("site.mytasks")}}">Feladataim</a>
+                        </li>
+                        @endcan
+                    @endauth
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{route("site.profile")}}">Profilom</a>
+                        </li>
+                    @endauth
+                    @auth
+                        @can('hasTeam')
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{route("site.myteam")}}">Csapatom</a>
+                        </li>
+                        @endcan
+                    @endauth
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{route("site.levels")}}">Szintek-feladatok</a>
                     </li>
-                    <li class="nav-item">
+                    @auth
                         {!! Form::open(['route' => 'userLogout', 'method' => 'post']) !!}
+                        <li class="nav-item">
                             <button class="nav-link btn text-white" id="logout">Kijelentkezés</button>
+                        </li>
                         {!! Form::close() !!}
-                    </li>
+                    @else
+                        @if(!(Route::current()->uri() == "login"))
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{route('site.login')}}">Bejelentkezés</a>
+                            </li>
+                        @endif
+                        @if(!(Route::current()->uri() == "signup"))
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{route('site.signup')}}">Regisztráció</a>
+                            </li>
+                        @endif
+                    @endauth
                 </ul>
             </div>
         </div>

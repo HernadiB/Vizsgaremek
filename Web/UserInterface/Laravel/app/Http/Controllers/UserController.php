@@ -178,16 +178,4 @@ class UserController extends Controller
         $user->SentRequests()->attach($request->userID);
         return redirect()->back()->with('success', 'Bejelölve!');
     }
-
-    public function SentFriendRequests($userid)
-    {
-        $user = User::findorfail($userid);
-        return $user->SentRequests;
-    }
-    public function ReceivedFriendRequests($userid)
-    {
-        $user = User::findorfail($userid);
-        return $user->ReceivedRequests;
-    }
-
 }

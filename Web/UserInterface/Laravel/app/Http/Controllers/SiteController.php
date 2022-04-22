@@ -122,19 +122,16 @@ class SiteController extends Controller
 
     public function MyTeam()
     {
-        $user = User::where('id', session('user.id'))->first();
-        $teamLeader = null;
-        $teamMembers = null;
+        $user = auth()->user();
+        $team = null;
         if($user->Team != null)
         {
-            $teamLeader = $user->Team->Leader;
-            $teamMembers = $user->Team->Members;
+            $team = $user->Team;
         }
         $usersWithoutTeam = User::where('role', 'user')->where('team_id', null)->get();
         return view('site.myteam', [
             "title" => "Csapatom",
-            "teamLeader" => $teamLeader,
-            "teamMembers" => $teamMembers,
+            "team" => $team,
             "usersWithoutTeam" => $usersWithoutTeam
         ]);
     }

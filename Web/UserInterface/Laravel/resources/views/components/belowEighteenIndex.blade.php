@@ -6,7 +6,7 @@
             <th scope="col">Csapatom neve</th>
             <th scope="col">Csapatom pontszáma</th>
         @endcan
-        <th scope="col">Rendfokozatom</th>
+        <th scope="col">Szintem</th>
     </tr>
     </thead>
     <tbody>
@@ -16,7 +16,7 @@
             <td data-label="Csapatom neve">{{auth()->user()->Team->name}}</td>
             <td data-label="Csapatom pontszáma">{{auth()->user()->Team->Score()}}</td>
         @endcan
-        <td data-label="Rendfokozatom">{{auth()->user()->Level->name}}</td>
+        <td data-label="Szintem">{{auth()->user()->Level->name}}</td>
     </tr>
     </tbody>
 </table>
