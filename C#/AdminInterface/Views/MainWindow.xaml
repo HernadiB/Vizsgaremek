@@ -54,7 +54,7 @@
                     <DataGridTextColumn Header="Feladat szintje" Binding="{Binding Level}" Width="1*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dataGridRangok" MaxHeight="200" Width="256" VerticalScrollBarVisibility="Auto">
+            <DataGrid Visibility="Hidden" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dataGridLevels" MaxHeight="200" Width="256" VerticalScrollBarVisibility="Auto">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="1*"/>
                     <DataGridTextColumn Header="Rang neve" Binding="{Binding Name}" Width="3*"/>

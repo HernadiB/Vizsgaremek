@@ -47,8 +47,8 @@ namespace AdminInterface
             dataGridTasks.Visibility = Visibility.Hidden;
             dataGridUsers.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Hidden;
-            dataGridRangok.Visibility = Visibility.Visible;
-            dataGridRangok.ItemsSource = Levels;
+            dataGridLevels.Visibility = Visibility.Visible;
+            dataGridLevels.ItemsSource = Levels;
         }
         private void btn_postLevel_Click(object sender, RoutedEventArgs e)
         {
@@ -70,7 +70,7 @@ namespace AdminInterface
         private void btn_userDisplay_Click(object sender, RoutedEventArgs e)
         {
             dataGridTasks.Visibility = Visibility.Hidden;
-            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridLevels.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Hidden;
             dataGridUsers.Visibility = Visibility.Visible;
             dataGridUsers.ItemsSource = Users;
@@ -88,7 +88,7 @@ namespace AdminInterface
                 return;
             }
             ObservableCollection<UserEntity> collection = new ObservableCollection<UserEntity>() { user };
-            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridLevels.Visibility = Visibility.Hidden;
             dataGridTasks.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Hidden;
             dataGridUsers.Visibility = Visibility.Visible;
@@ -108,7 +108,7 @@ namespace AdminInterface
         private void btn_taskDisplay_Click(object sender, RoutedEventArgs e)
         {
             dataGridUsers.Visibility = Visibility.Hidden;
-            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridLevels.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Hidden;
             dataGridTasks.Visibility = Visibility.Visible;
             dataGridTasks.ItemsSource = Tasks;
@@ -126,7 +126,7 @@ namespace AdminInterface
                 return;
             }
             ObservableCollection<TaskEntity> collection = new ObservableCollection<TaskEntity>() { task };
-            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridLevels.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Hidden;
             dataGridUsers.Visibility = Visibility.Hidden;
             dataGridTasks.Visibility = Visibility.Visible;
@@ -145,7 +145,7 @@ namespace AdminInterface
         {
             dataGridTasks.Visibility = Visibility.Hidden;
             dataGridUsers.Visibility = Visibility.Hidden;
-            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridLevels.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Visible;
             dataGridTeams.ItemsSource = Teams;
         }
@@ -163,7 +163,7 @@ namespace AdminInterface
                 return;
             }
             ObservableCollection<TeamEntity> collection = new ObservableCollection<TeamEntity>() { team };
-            dataGridRangok.Visibility = Visibility.Hidden;
+            dataGridLevels.Visibility = Visibility.Hidden;
             dataGridUsers.Visibility = Visibility.Hidden;
             dataGridTasks.Visibility = Visibility.Hidden;
             dataGridTeams.Visibility = Visibility.Visible;
