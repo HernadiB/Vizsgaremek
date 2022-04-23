@@ -1,7 +1,3 @@
-## Üdvözöljük
-
-Űrlapok tesztelése elérhető ezen a linken: [Tesztjegyzőkönyvek](https://drive.google.com/drive/folders/164-jEiP4vM80p7J3rR_Jao7seB0O4jZ9?usp=sharing).
-
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
