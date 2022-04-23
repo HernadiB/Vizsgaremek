@@ -120,6 +120,13 @@ class SiteController extends Controller
         ]);
     }
 
+    public function Settings()
+    {
+        return view('site.settings', [
+            "title" => "Beállítások"
+        ]);
+    }
+
     public function MyTeam()
     {
         $user = auth()->user();

@@ -49,6 +49,11 @@
                         <a class="nav-link text-white" href="{{route("site.levels")}}">Szintek-feladatok</a>
                     </li>
                     @auth
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{route("site.settings")}}">Beállítások</a>
+                        </li>
+                    @endauth
+                    @auth
                         {!! Form::open(['route' => 'userLogout', 'method' => 'post']) !!}
                         <li class="nav-item">
                             <button class="nav-link btn text-white" id="logout">Kijelentkezés</button>
