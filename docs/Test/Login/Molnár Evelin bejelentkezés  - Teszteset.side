@@ -1,0 +1,325 @@
+{
+  "id": "31830c38-59c8-40a9-bbc6-bf9dfae1ba34",
+  "version": "2.0",
+  "name": "BRB-Pontgyujto bejelentkezes felulet",
+  "url": "http://localhost:8881",
+  "tests": [{
+    "id": "ce7c4002-47b3-4b40-82b2-15431c6fdbc1",
+    "name": "Lengyel Erik",
+    "commands": [{
+      "id": "508e757e-a5af-4d8d-97b9-b51b50ec9aa9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ae8d207-cfa1-4e0b-ab4d-5732fdec1ab4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dfac80f8-a610-4e3d-a63a-164fef092d6d",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16fbaf5c-899d-421a-b19c-b48227510ae9",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "lengyelerik@gmail.com"
+    }, {
+      "id": "7daa396b-c155-46f1-8b77-4e5b78aa5625",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ddbc1d2-789e-423b-a1fc-0e8cb7f7c02d",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "=W6k(Z>{"
+    }, {
+      "id": "e2c286eb-a8a4-4d1a-bcba-4e5fc71f4ad7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(4)",
+      "targets": [
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Bejelentkezés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "3d358900-1303-4580-b557-6e35aa4c19a2",
+    "name": "Rácz Tamás",
+    "commands": [{
+      "id": "f8e5c4d2-96e4-4178-a35f-ec4465b56098",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8881/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b3c5508-ebd1-484e-9700-fb3cb1474b7a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e7e141a-39df-4ff1-a7ea-befe29ec45d2",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb87314d-cdd4-4ed8-a21d-b21736f4405a",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "racztamas@gmail.com"
+    }, {
+      "id": "4577680f-fd9e-454f-91a8-1abce126d893",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "286426c8-d449-4e71-b678-662ef1b67c67",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "{sL.G2#Z"
+    }, {
+      "id": "46287d98-ef9e-4dcc-83e3-d185f52e3981",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(4)",
+      "targets": [
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Bejelentkezés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "569fc63d-d44b-4bc4-b45d-f0f091ca3fa2",
+    "name": "Molnár Evelin",
+    "commands": [{
+      "id": "f9395c86-a412-4f96-9747-cfcfd832b684",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8881/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "669f1a88-72b3-41e8-8383-0b9fa9493696",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b725082-3ca6-4d6a-9112-c817cc541516",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2859c166-912a-40b4-a414-faef17da9da9",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "molnarevelin@gmail.com"
+    }, {
+      "id": "0026756c-9af8-437e-a7cb-aa8f67451e03",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee2c47f8-51c6-4596-96c1-57a913b54df9",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Fq4#pK%/"
+    }, {
+      "id": "b3d2e58e-2099-46b8-8353-b0df1d7e2e8b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(4)",
+      "targets": [
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Bejelentkezés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "7dbb42c0-f3d9-49c9-89f3-18f117612c11",
+    "name": "Lengyel Elizabet",
+    "commands": [{
+      "id": "9279dcfc-eef1-4b32-a49d-b74369f7b89e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8881/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e2b31a1-0b3d-4a58-9ac9-0a241b0b8b8b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "972b51e3-a81a-4026-a67f-89a8932d7ece",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "21ea43d5-817f-472d-a4f0-003ea5d28278",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "lengyelelizabet@gmail.com"
+    }, {
+      "id": "4af41545-83f8-44e6-82b7-02db48e9fd89",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91d8efd9-e2a2-4ddd-affe-2609ad6d5022",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "7x@d{Drm"
+    }, {
+      "id": "25fa4fdb-f157-436a-8e8e-358d55cffc41",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(4)",
+      "targets": [
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Bejelentkezés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "884f1beb-cb3f-4018-b59a-922035b77ac7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ce7c4002-47b3-4b40-82b2-15431c6fdbc1"]
+  }],
+  "urls": ["http://localhost:8881/"],
+  "plugins": []
+}
