@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 255)->unique();
             $table->string('password');
             $table->string('role', 255);
-            $table->string('profile_picture')->nullable();
+            $table->string('profile_picture')->default('images/profile_pictures/unknown.jpg');
             $table->integer('score')->nullable();
         });
     }

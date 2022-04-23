@@ -44,17 +44,21 @@ namespace AdminInterface
                 {
                     throw new Exception("Válassz ki egy feladat szintet!");
                 }
+                if (int.Parse(tb_postTaskScore.Text) < 1)
+                {
+                    throw new Exception("A pontszám csak 0 fölötti érték lehet!");
+                }
                 string name = tb_postTaskName.Text;
                 string description = tb_postTaskDescription.Text;
                 int score = int.Parse(tb_postTaskScore.Text);
                 int level_id = Levels.FirstOrDefault(x => x.Name == cb_postTaskLevel.Text).ID;
-                //var filepath = btn_postTaskImage.DataContext;
-                //string base64 = Base64.Encode(filepath as string);
-                if (name == "" || description == "" || score <= 0)
+                var filepath = btn_postTaskImage.DataContext;
+                string base64 = Base64.Encode(filepath as string);
+                if (name == "" || description == "")
                 {
                     throw new Exception("Add meg a feladat minden tulajdonságát!");
                 }
-                task = new TaskPutPost( name, description, score, level_id);
+                task = new TaskPutPost(name, description, score, level_id, base64);
             }
             catch (ArgumentNullException)
             {
@@ -80,11 +84,6 @@ namespace AdminInterface
             bool? success = dialog.ShowDialog();
             (sender as Button).DataContext = dialog.FileName;
         }
-        //private void cb_postTaskLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    string postTaskLevel = (sender as ComboBox).SelectedItem.ToString();
-        //    cb_postTaskLevel.ItemsSource = Levels.Where(x => x.Name == postTaskLevel);
-        //}
 
 
         //------------------------------PutTask------------------------------
@@ -99,17 +98,25 @@ namespace AdminInterface
                 {
                     throw new Exception("Válassz ki egy feladat szintet!");
                 }
+                if (int.Parse(tb_putTaskScore.Text) < 1)
+                {
+                    throw new Exception("A pontszám csak 0 fölötti érték lehet!");
+                }
                 string name = tb_putTaskName.Text;
                 string description = tb_putTaskDescription.Text;
                 int score = int.Parse(tb_putTaskScore.Text);
                 int level_id = Levels.FirstOrDefault(x => x.Name == cb_putTaskLevel.Text).ID;
-                //var filepath = btn_putTaskImage.DataContext;
-                //string base64 = Base64.Encode(filepath as string);
-                if (name == "" || description == "" || score <= 0)
+                var filepath = btn_putTaskImage.DataContext;
+                string base64 = "unmodified";
+                if (filepath is not null and not "")
+                {
+                    base64 = Base64.Encode(filepath as string);
+                }
+                if (name == "" || description == "")
                 {
                     throw new Exception("Add meg a feladat minden tulajdonságát!");
                 }
-                task = new TaskPutPost(name, description, score, level_id);
+                task = new TaskPutPost(name, description, score, level_id, base64);
             }
             catch (ArgumentNullException)
             {
@@ -148,11 +155,5 @@ namespace AdminInterface
             tb_putTaskScore.Text = task.Score.ToString();
             cb_putTaskLevel.SelectedItem = task.Level;
         }
-
-        //private void cb_putTaskLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    string putTaskLevel = (sender as ComboBox).SelectedItem.ToString();
-        //    cb_putTaskLevel.ItemsSource = Levels.Where(x => x.Name == putTaskLevel);
-        //}
     }
 }

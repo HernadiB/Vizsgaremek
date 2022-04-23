@@ -17,6 +17,7 @@ class CreateTasksTable extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('description', 255);
+            $table->string('image')->default('images/tasks/task.png');
             $table->integer('score');
             $table->foreignId('level_id')->constrained('levels');
             $table->timestamps();

@@ -8,12 +8,13 @@
         public int level_id { get; set; }
         public string image { get; set; }
         public TaskPutPost() { }
-        public TaskPutPost(string name, string description, int score, int level_id)
+        public TaskPutPost(string name, string description, int score, int level_id, string image)
         {
             this.name = name;
             this.description = description;
             this.score = score;
             this.level_id = level_id;
+            this.image = image;
         }
     }
 }

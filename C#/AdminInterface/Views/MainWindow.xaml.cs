@@ -94,11 +94,12 @@ namespace AdminInterface
             dataGridUsers.Visibility = Visibility.Visible;
             dataGridUsers.ItemsSource = collection;
         }
-        private void ProfilPictureShow_Click(object sender, RoutedEventArgs e)
+
+        private void ProfilePictureShow_Click(object sender, RoutedEventArgs e)
         {
             string base64 = (sender as Button).DataContext as string;
             BitmapImage bitmapImage = Base64.Decode(base64);
-            ShowProfilePictureWindow window = new ShowProfilePictureWindow(bitmapImage);
+            ShowPictureWindow window = new ShowPictureWindow(bitmapImage);
             window.ShowDialog();
         }
 
@@ -132,6 +133,15 @@ namespace AdminInterface
             dataGridTasks.Visibility = Visibility.Visible;
             dataGridTasks.ItemsSource = collection;
         }
+
+        private void TaskPictureShow_Click(object sender, RoutedEventArgs e)
+        {
+            string base64 = (sender as Button).DataContext as string;
+            BitmapImage bitmapImage = Base64.Decode(base64);
+            ShowPictureWindow window = new ShowPictureWindow(bitmapImage);
+            window.ShowDialog();
+        }
+
         private void btn_taskManage_Click(object sender, RoutedEventArgs e)
         {
             TaskWindow taskManage = new TaskWindow();
@@ -191,6 +201,5 @@ namespace AdminInterface
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

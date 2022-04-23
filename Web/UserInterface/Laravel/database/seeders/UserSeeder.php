@@ -28,7 +28,6 @@ class UserSeeder extends Seeder
                 "email" => $value->email,
                 "password" => bcrypt($value->password),
                 "role" => $value->role,
-                "profile_picture" => "images/unknown.jpg",
                 "score" => $value->score,
                 "team_id" => $value->team_id,
                 "level_id" => $value->level_id

@@ -25,7 +25,8 @@ class UserResource extends JsonResource
             "Email" => $this->email,
             "Password" => $this->password,
             "Role" => $this->role == "user" ? "Felhasználó" : "Admin",
-            "ProfilePicture" => $this->profilepicture,
+            "ProfilePicture" => $this->profile_picture,
+            "Base64" => base64_encode(file_get_contents(public_path($this->profile_picture))),
             "Team" => $this->Team->name ?? null,
             "Score" => $this->score,
             "Level" => $this->Level->name ?? null

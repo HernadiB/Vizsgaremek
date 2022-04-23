@@ -34,11 +34,11 @@
                     <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="auto"/>
                     <DataGridTextColumn Header="Hozzáférés" Binding="{Binding Role}" Width="100"/>
                     <DataGridTemplateColumn Header="Profilkép" Width="1*">
-                        <!--<DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Click="ProfilePictureShow_Click" DataContext="{Binding ProfilePicture}" Name="ProfilkepShow">Profilkép</Button>
+                                <Button Click="ProfilePictureShow_Click" DataContext="{Binding Base64}" Name="ProfilePictureShow">Profilkép</Button>
                             </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>-->
+                        </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="Csapat" Binding="{Binding Team}" Width="auto"/>
                     <DataGridTextColumn Header="Pontok" Binding="{Binding Score}" Width="80"/>
@@ -50,6 +50,13 @@
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="80"/>
                     <DataGridTextColumn Header="Feladat neve" Binding="{Binding Name}" Width="2*"/>
                     <DataGridTextColumn Header="Feladat leírása" Binding="{Binding Description}" Width="5*"/>
+                    <DataGridTemplateColumn Header="Feladat képe" Width="1*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="TaskPictureShow_Click" DataContext="{Binding Base64}" Name="TaskPictureShow">Megtekint</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="Feladat pontszáma" Binding="{Binding Score}" Width="1*"/>
                     <DataGridTextColumn Header="Feladat szintje" Binding="{Binding Level}" Width="1*"/>
                 </DataGrid.Columns>

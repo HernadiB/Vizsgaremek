@@ -86,7 +86,7 @@ class UserController extends Controller
         $validatedData['role'] = "user";
         $validatedData['level_id'] = 1;
         $validatedData['score'] = 0;
-        $validatedData['profile_picture'] = "images/unknown.jpg";
+        $validatedData['profile_picture'] = "images/profile_pictures/unknown.jpg";
 
         $user = User::create($validatedData);
 

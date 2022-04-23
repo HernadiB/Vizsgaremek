@@ -26,6 +26,7 @@ class TaskRequest extends FormRequest
         return [
             "name" => ["required", "string", "min:1", "max:255"],
             "description" => ["required", "string", "min:1", "max:255"],
+            "image" => ["required", "string"],
             "score" => ["required", "integer"],
             "level_id" => ["required", "integer"]
         ];

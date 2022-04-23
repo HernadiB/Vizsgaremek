@@ -22,7 +22,6 @@ Route::get('/users', [\App\Http\Controllers\UserController::class, "index"]);
 Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, "show"])->whereNumber('id');
 Route::put('/users/{id}', [\App\Http\Controllers\UserController::class, "update"]);
 Route::delete('/users/{id}', [\App\Http\Controllers\UserController::class, "destroy"]);
-Route::get('/users/{id}/teammembers', [\App\Http\Controllers\UserController::class, "GetTeamMembers"]);
 Route::get('/users/country', [\App\Http\Controllers\UserController::class, "GetCountryLeaderboard"]);
 
 Route::get('/teams', [\App\Http\Controllers\TeamController::class, "index"]);

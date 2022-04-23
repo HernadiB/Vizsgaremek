@@ -11,12 +11,12 @@ namespace AdminInterface.Entities.Users
         public string Gender { get; set; }
         public string Email { get; set; }
         public string Role { get; set; }
-        public string ProfilePicture { get; set; }
+        public string Base64 { get; set; }
         public string Team { get; set; }
         public int? Score { get; set; }
         public string Level { get; set; }
         public UserEntity() { }
-        public UserEntity(int id, string fullname, string username, DateTime birthdate, string gender, string email, string role, string profilepicture, string team, int score, string level)
+        public UserEntity(int id, string fullname, string username, DateTime birthdate, string gender, string email, string role, string base64, string team, int score, string level)
         {
             ID = id;
             FullName = fullname;
@@ -25,7 +25,7 @@ namespace AdminInterface.Entities.Users
             Gender = (gender == "F") ? "Nő" : "Férfi";
             Email = email;
             Role = role;
-            ProfilePicture = profilepicture;
+            Base64 = base64;
             Team = team;
             Score = score;
             Level = level;

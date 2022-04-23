@@ -7,6 +7,8 @@ use App\Http\Resources\TaskResource;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class TaskController extends Controller
 {
@@ -29,6 +31,10 @@ class TaskController extends Controller
     public function store(TaskRequest $request)
     {
         $data = $request->validated();
+        $filename = Str::random(15).'.jpg';
+        $fullPath = 'images/tasks/' . $filename;
+        Storage::put($fullPath, base64_decode($request['image']));
+        $data['image'] = $fullPath;
         $task = Task::create($data);
         return new TaskResource($task);
     }
@@ -53,8 +59,25 @@ class TaskController extends Controller
      */
     public function update(TaskRequest $request, $id)
     {
-        $data = $request->validated();
         $task = Task::findorfail($id);
+        $oldImage = null;
+        $imageNotModified = false;
+        if ($request['image'] == "unmodified")
+        {
+            $oldImage = $task->image;
+            $imageNotModified = true;
+        }
+        $data = $request->validated();
+        if ($imageNotModified)
+        {
+            $data['image'] = $oldImage;
+            $task->update($data);
+            return new TaskResource($task);
+        }
+        $filename = Str::random(15).'.jpg';
+        $fullPath = 'images/tasks/' . $filename;
+        Storage::put($fullPath, base64_decode($request['image']));
+        $data['image'] = $fullPath;
         $task->update($data);
         return new TaskResource($task);
     }
