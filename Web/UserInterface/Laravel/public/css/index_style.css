@@ -3,7 +3,7 @@
 }
 
 .adatok{
-    width: 50%;
+    width: 70%;
     margin: 40px auto;
 }
 
@@ -21,7 +21,7 @@
 }
 @media screen and (min-width: 800px) {
     .adatok{
-        width: 40%;
+        width: 70%;
         margin-bottom: 50px;
     }
 

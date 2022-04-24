@@ -15,7 +15,7 @@
                 <th scope="col">Státusz</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="table-content">
             @foreach(\App\Models\User::where('id', session('user.id'))->first()->ActualTasks as $actualTask)
             <tr>
                 <td data-label="Feladat sorszáma">{{$actualTask->id}}</td>

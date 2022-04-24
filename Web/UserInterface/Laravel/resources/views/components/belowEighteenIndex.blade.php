@@ -9,7 +9,7 @@
         <th scope="col">Szintem</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody class="table-content">
     <tr>
         <td data-label="Pontszámom">{{auth()->user()->score}}</td>
         @can('hasTeam', auth()->user())
@@ -22,7 +22,7 @@
 </table>
 @can('hasReceivedRequests', auth()->user())
     <table class="beerkezettjelolesek">
-        <thead>
+        <thead class="table-header">
         <h3 class="text-center" id="cimsor">Beérkezett baráti jelölések</h3>
         <tr>
             <th scope="col">Felhasználónév</th>
@@ -32,7 +32,7 @@
             <th scope="col">Profil</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="table-content">
         @foreach(auth()->user()->ReceivedRequests as $receivedRequest)
             <tr>
                 <td data-label="Felhasználónév">{{$receivedRequest->username}}</td>
@@ -59,7 +59,7 @@
 @endcan
 @can('hasRemainingTasks', auth()->user())
     <table class="elvegezendofeladatok">
-        <thead>
+        <thead class="table-header">
         <h3 class="text-center">Következő szinthez elvégezendő feladatok</h3>
         <tr>
             <th scope="col">Feladat sorszáma</th>
@@ -68,7 +68,7 @@
             <th scope="col">Feladat részletei</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="table-content">
         @foreach(auth()->user()->RemainingTasks as $remainingTask)
             <tr>
                 <td data-label="Feladat sorszáma">{{$remainingTask->id}}</td>

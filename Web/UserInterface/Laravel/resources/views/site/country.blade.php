@@ -22,7 +22,7 @@
             <th scope="col">Pontszám</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="table-content">
             @foreach($users as $key => $value)
                 <tr @if ($value->id == session('user.id')) style="background: grey" @endif>
                     <td id="rank" data-label="Helyezés">#{{$key}}</td>

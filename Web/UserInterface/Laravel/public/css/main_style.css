@@ -1,9 +1,10 @@
 body{
-    background: linear-gradient(-45deg, #03045E, #023E8A, #0077B6, #0096C7, #00B4D8, #48CAE4) no-repeat;
+    background: linear-gradient(-45deg, #03045E, #023E8A, #0077B6, #0096C7, #00B4D8, #48CAE4) no-repeat fixed;
     animation: gradient 25s ease infinite;
     background-size: 400% 400%;
     padding-top: 100px;
     height: 100vh;
+    margin-bottom: 100px;
 }
 
 @keyframes gradient{
@@ -31,10 +32,12 @@ table{
 
 table .table-header{
     background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 table .table-content{
     border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 table tr{

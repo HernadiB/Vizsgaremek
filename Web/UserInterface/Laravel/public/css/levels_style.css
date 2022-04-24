@@ -1,0 +1,13 @@
+@media screen and (min-width: 800px){
+    .szintek{
+        overflow-y: auto;
+        height: 500px;
+        display: block;
+    }
+
+    .szintek .table-header{
+        position: sticky;
+        top: 0;
+    }
+}
+

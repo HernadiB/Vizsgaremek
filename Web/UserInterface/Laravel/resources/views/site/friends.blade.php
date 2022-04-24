@@ -18,7 +18,7 @@
                 <th scope="col">Profil</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="table-content">
             @foreach($friends as $key => $value)
                 <tr @if ($value->id == auth()->user()->id) style="background: grey" @endif>
                     <td data-label="Helyezés">#{{$key}}</td>
@@ -43,7 +43,6 @@
     @else
         <div class="alert alert-success mt-5 m-auto">Még nincsenek barátaid. Jelölj be néhányat!</div>
     @endif
-    <div class="baratkereses">
         <div class="form-section">
             <h4 id="h4">Barátok keresése</h4>
 {{--                <div class="nev row">--}}
@@ -52,16 +51,15 @@
 {{--                        <input type="text" name="nev" class="form-control input" placeholder="Alfréd Mihály">--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-            <div class="table">
                 <table class="barattabla">
-                    <thead>
+                    <thead class="table-header">
                     <tr>
                         <th scope="col">Név</th>
                         <th scope="col">Bejelöl</th>
                         <th scope="col">Profil</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="table-content">
                     @foreach($nonFriends as $user)
                         <tr>
                             <td data-label="Név">{{$user->username}}</td>
@@ -78,7 +76,5 @@
                     @endforeach
                     </tbody>
                 </table>
-            </div>
         </div>
-    </div>
 @endsection

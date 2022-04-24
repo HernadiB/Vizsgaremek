@@ -10,7 +10,7 @@
                 <th scope="col">Töröl</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="table-content">
             @foreach($taskReviews as $taskReview)
                 <tr>
                     <td data-label="Felhasználónév">{{\App\Models\User::where('id', $taskReview->user_id)->first()->username}}</td>
