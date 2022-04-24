@@ -2,7 +2,7 @@
     <h2 class="text-center" style="margin-top: 100px">Beérkezett feladatok felülvizsgálata</h2>
     @if(count($taskReviews) != 0)
         <table class="tasksToReview mt-5">
-            <thead>
+            <thead class="table-header">
             <tr>
                 <th scope="col">Felhasználónév</th>
                 <th scope="col">Feladat</th>

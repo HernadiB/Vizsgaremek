@@ -1,5 +1,5 @@
 <table class="adatok">
-    <thead>
+    <thead class="table-header">
     <tr>
         <th scope="col">Pontszámom</th>
         @can('hasTeam', auth()->user())

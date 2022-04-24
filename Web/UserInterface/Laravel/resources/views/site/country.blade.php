@@ -15,7 +15,7 @@
 @section('content')
     <table class="orszagos">
         <h3 class="text-center" id="cimsor" >Országos Pontállás</h3>
-        <thead>
+        <thead class="table-header">
         <tr>
             <th scope="col">Helyezés</th>
             <th scope="col">Név</th>

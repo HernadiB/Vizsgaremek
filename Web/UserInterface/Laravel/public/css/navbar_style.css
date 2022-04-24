@@ -1,8 +1,9 @@
 .navbar{
-    background-color: #9A9A9A;
+    background-color: rgba(154, 154, 154, 0.9);
+    box-shadow: black 0px 0px 10px 1px;
 }
 .offcanvas-body, .offcanvas-header{
-    background-color: #327AAF;
+    background-color: #0077B6;
 }
 h4{
     color: white;

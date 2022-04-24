@@ -1,27 +1,44 @@
 body{
-    background: linear-gradient(
-            to bottom,
-            #409FE4 0%,
-            #409FE4 50%,
-            #ffff 75%,
-            #ffff 100%
-    ) no-repeat fixed;
+    background: linear-gradient(-45deg, #03045E, #023E8A, #0077B6, #0096C7, #00B4D8, #48CAE4) no-repeat;
+    animation: gradient 25s ease infinite;
+    background-size: 400% 400%;
     padding-top: 100px;
+    height: 100vh;
+}
+
+@keyframes gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }
 
 table{
     padding: 0;
     width: 100%;
-    table-layout: auto;
+    table-layout: fixed;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
     border-collapse: collapse;
     border-radius: 0.25em;
     overflow: hidden;
-    background-color: #C4C4C4;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+table .table-header{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+table .table-content{
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 table tr{
-    background-color: #C4C4C4;
+    /*background-color: #C4C4C4;*/
     /*border: 1px solid #ddd;*/
     padding: .35em;
 }
@@ -61,6 +78,7 @@ table th{
         position: absolute;
         width: 1px;
         font-size: .6em;
+        background-color: rgba(0, 119, 182, 0.3);
     }
 
     table tr{
@@ -178,5 +196,5 @@ table th{
 *::-webkit-scrollbar-thumb{
     background-color: #409FE4;
     border-radius: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(50, 122, 175, 0.5);
 }

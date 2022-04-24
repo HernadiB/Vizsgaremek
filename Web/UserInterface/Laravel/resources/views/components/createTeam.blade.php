@@ -27,7 +27,7 @@
 
             <div class="table">
                 <table class="csapattabla">
-                    <thead>
+                    <thead class="table-header">
                         <tr>
                             <th scope="col">Név</th>
                             <th scope="col">Profil</th>

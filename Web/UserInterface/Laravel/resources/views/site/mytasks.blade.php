@@ -6,7 +6,7 @@
     @if(count(auth()->user()->ActualTasks) != 0)
         <table class="feladataim">
             <h3 class="text-center" id="cimsor">Aktuális feladataim</h3>
-            <thead>
+            <thead class="table-header">
             <tr>
                 <th scope="col">Feladat sorszáma</th>
                 <th scope="col">Feladat megnevezése</th>

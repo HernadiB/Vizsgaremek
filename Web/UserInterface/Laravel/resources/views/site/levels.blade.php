@@ -15,7 +15,7 @@
 @section('content')
     <table class="szintek">
         <h3 id="cimsor" class="text-center" >Szintek - feladatok</h3>
-        <thead>
+        <thead class="table-header">
         <tr>
             <th scope="col">Szint neve</th>
             <th scope="col">Feladat megnevezése</th>
@@ -23,7 +23,7 @@
             <th scope="col">Kapható pontok</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="table-content">
             @foreach($tasks as $task)
                 <tr @if(session('taskID') == $task->id) style="background: grey" @endif>
                     <td id="levelname" data-label="Szint">{{\App\Models\Level::where('id', $task->level_id)->first()->name}}</td>

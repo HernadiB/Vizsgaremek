@@ -9,7 +9,7 @@
     @if(count($friends) != 0)
         <h3 class="text-center">Barátaim</h3>
         <table class="barataim">
-            <thead>
+            <thead class="table-header">
             <tr>
                 <th scope="col">Helyezés</th>
                 <th scope="col">Név</th>
