@@ -20,43 +20,7 @@
     </tr>
     </tbody>
 </table>
-@can('hasReceivedRequests', auth()->user())
-    <table class="beerkezettjelolesek">
-        <thead class="table-header">
-        <h3 class="text-center" id="cimsor">Beérkezett baráti jelölések</h3>
-        <tr>
-            <th scope="col">Felhasználónév</th>
-            <th scope="col">Csapat tagja</th>
-            <th scope="col">Baráti jelölés</th>
-            <th scope="col">Törlés a listából</th>
-            <th scope="col">Profil</th>
-        </tr>
-        </thead>
-        <tbody class="table-content">
-        @foreach(auth()->user()->ReceivedRequests as $receivedRequest)
-            <tr>
-                <td data-label="Felhasználónév">{{$receivedRequest->username}}</td>
-                <td data-label="Csapat tagja">{{\App\Models\Team::where('id', $receivedRequest->team_id)->first()->name}}</td>
-                {!! Form::open(['route' => 'inviteAccept', 'method' => 'post']) !!}
-                <td data-label="Baráti jelölés">
-                    <button name="senderUserID" value="{{$receivedRequest->id}}" class="btn btn-success">Elfogad</button>
-                </td>
-                {!! Form::close() !!}
-                {!! Form::open(['route' => 'inviteReject', 'method' => 'post']) !!}
-                <td data-label="Törlés a listából">
-                    <button name="senderUserID" value="{{$receivedRequest->id}}" class="btn btn-danger">Töröl</button>
-                </td>
-                {!! Form::close() !!}
-                <?php $receivedRequest['team_name'] = \App\Models\Team::where('id', $receivedRequest['team_id'])->first()->name ?? "-" ?>
-                <?php $receivedRequest['level_name'] = \App\Models\Level::where('id', $receivedRequest['level_id'])->first()->name ?? "-" ?>
-                <td data-label="Profil">
-                    <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="ShowProfile({{$receivedRequest}})">Megtekint</button>
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-@endcan
+@include('components.receivedRequests')
 @can('hasRemainingTasks', auth()->user())
     <table class="elvegezendofeladatok">
         <thead class="table-header">

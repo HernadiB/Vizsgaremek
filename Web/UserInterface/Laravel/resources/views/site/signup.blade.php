@@ -7,6 +7,11 @@
     <script src="https://kit.fontawesome.com/a47f91ad4b.js" crossorigin="anonymous"></script>
 @endsection
 @section('content')
+    @if($errors->any)
+        @foreach($errors->all() as $e)
+            <div class="alert alert-danger">{{$e}}</div>
+        @endforeach
+    @endif
     <div class="form-section">
         <h2><i class="fa-solid fa-user"></i>Regisztráció</h2>
         <hr>

@@ -39,7 +39,7 @@
                         <tr>
                             <td data-label="Név">{{$user->username}}</td>
                             <td data-label="Profil">
-                                <button class="btn btn-dark">Megtekint</button>
+                                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetUserByID({{$user->id}})">Megtekint</button>
                             </td>
                             <td data-label="Kiválaszt">
                                 <input name="users[]" value="{{$user->id}}" type="checkbox">

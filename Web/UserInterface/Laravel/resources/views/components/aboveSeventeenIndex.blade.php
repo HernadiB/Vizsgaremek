@@ -1,3 +1,4 @@
+@include('components.receivedRequests')
 @can('hasTeam', auth()->user())
     <h2 class="text-center" style="margin-top: 100px">Beérkezett feladatok felülvizsgálata</h2>
     @if(count($taskReviews) != 0)

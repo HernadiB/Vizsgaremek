@@ -20,13 +20,17 @@ class SiteController extends Controller
 //        $usersAll = User::where(date_diff(date_create('birthdate'), date_create('now'))->y, '<', 18)->get()->sortByDesc('score')->pluck('id');
         $usersAll = User::where('role', 'user')->get()->sortByDesc('score')->pluck('id');
         $usersTop10 = $usersAll->take(10);
-        if($currentUser->role != 'admin')
+        if(auth()->check())
         {
-            if (!$usersTop10->contains('id', $currentUser['id']))
+            if($currentUser->role != 'admin')
             {
-                $usersTop10->push(User::where('id', $currentUser['id'])->first()->id);
+                if (!$usersTop10->contains('id', $currentUser['id']))
+                {
+                    $usersTop10->push(User::where('id', $currentUser['id'])->first()->id);
+                }
             }
         }
+
         foreach ($usersTop10 as $user)
         {
             $leaderboardRanks[array_search($user, $usersAll->toarray())+1] = User::where('id', $user)->first();

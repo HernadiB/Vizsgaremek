@@ -11,7 +11,7 @@
                 <th scope="col">Feladat sorszáma</th>
                 <th scope="col">Feladat megnevezése</th>
                 <th scope="col">Feladat</th>
-                <th scope="col">Elvégezve</th>
+                <th scope="col">Beadás</th>
                 <th scope="col">Státusz</th>
             </tr>
             </thead>
@@ -27,11 +27,11 @@
                 {!! Form::close() !!}
                 {!! Form::open(['route' => 'taskFinish', 'method' => 'post']) !!}
                     @if($actualTask->pivot->status == "unfinished")
-                        <td data-label="Elvégezve">
-                            <button name="taskID" value="{{$actualTask->id}}" class="btn btn-success">Kész</button>
+                        <td data-label="Beadás">
+                            <button name="taskID" value="{{$actualTask->id}}" class="btn btn-success">Beadom!</button>
                         </td>
                     @else
-                        <td data-label="Elvégezve">Feldolgozás alatt</td>
+                        <td></td>
                     @endif
                 {!! Form::close() !!}
                 @if($actualTask->pivot->status == "finished")

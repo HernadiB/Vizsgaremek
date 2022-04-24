@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('js_css')
     <link rel="stylesheet" href="{{asset("css/friends_style.css")}}">
+    <script src="{{asset('js/modal.js')}}"></script>
+    <script src="{{asset('js/fetch.js')}}"></script>
 @endsection
 @section('title')
     {{$title}}
@@ -34,7 +36,7 @@
                         <td></td>
                     @endif
                     <td data-label="Profil">
-                        <button class="btn btn-dark">Megtekint</button>
+                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetUserByID({{$value->id}})">Megtekint</button>
                     </td>
                 </tr>
             @endforeach
@@ -70,11 +72,12 @@
                             </td>
                             {!! Form::close() !!}
                             <td data-label="Profil">
-                                <button class="btn btn-dark">Megtekint</button>
+                                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetUserByID({{$user->id}})">Megtekint</button>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
         </div>
+    @include('components.modal')
 @endsection

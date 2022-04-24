@@ -178,4 +178,16 @@ class UserController extends Controller
         $user->SentRequests()->attach($request->userID);
         return redirect()->back()->with('success', 'Bejelölve!');
     }
+    public function GetCountryLeaderboard()
+    {
+        $usersAll = User::where('role', 'user')->get()->sortByDesc('score');
+        $usersTop10 = $usersAll->take(10);
+        $rank = 1;
+        foreach ($usersTop10 as $user)
+        {
+            $leaderboardRanks[$rank] = $user;
+            $rank++;
+        }
+        return $leaderboardRanks;
+    }
 }
