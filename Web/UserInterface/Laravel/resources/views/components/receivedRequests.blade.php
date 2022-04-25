@@ -1,7 +1,7 @@
 @can('hasReceivedRequests', auth()->user())
-    <table class="beerkezettjelolesek">
+    <table class="recievedRequests">
         <thead class="table-header">
-        <h3 class="text-center" id="cimsor">Beérkezett baráti jelölések</h3>
+        <h3 class="text-center title">Beérkezett baráti jelölések</h3>
         <tr>
             <th scope="col">Felhasználónév</th>
             <th scope="col">Csapat tagja</th>

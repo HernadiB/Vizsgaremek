@@ -10,8 +10,8 @@
 @endsection
 @section('content')
     @if(count($friends) != 0)
-        <h3 class="text-center">Barátaim</h3>
-        <table class="barataim">
+        <h3 class="title">Barátaim</h3>
+        <table class="friends">
             <thead class="table-header">
             <tr>
                 <th scope="col">Helyezés</th>
@@ -46,15 +46,15 @@
     @else
         <div class="alert alert-success mt-5 m-auto">Még nincsenek barátaid. Jelölj be néhányat!</div>
     @endif
+    <h4 class="title">Barátok keresése</h4>
         <div class="form-section">
-            <h4 id="h4">Barátok keresése</h4>
 {{--                <div class="nev row">--}}
 {{--                    <label for="nev" class="col-lg-4 col-form-label">Felhasználó neve</label>--}}
 {{--                    <div class="col-lg-8">--}}
 {{--                        <input type="text" name="nev" class="form-control input" placeholder="Alfréd Mihály">--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-                <table class="barattabla">
+                <table class="searchFriends">
                     <thead class="table-header">
                     <tr>
                         <th scope="col">Név</th>
@@ -66,7 +66,6 @@
                     @foreach($nonFriends as $user)
                         <tr>
                             <td data-label="Név">{{$user->username}}</td>
-
                             {!! Form::open(['route' => 'friendInvite', 'method' => 'post']) !!}
                             <td data-label="Bejelöl">
                                 <button name="userID" value="{{$user->id}}" class="btn btn-success">Bejelöl</button>

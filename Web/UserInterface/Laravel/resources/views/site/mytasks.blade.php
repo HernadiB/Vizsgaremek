@@ -4,8 +4,8 @@
 @endsection
 @section('content')
     @if(count(auth()->user()->ActualTasks) != 0)
-        <table class="feladataim">
-            <h3 class="text-center" id="cimsor">Aktuális feladataim</h3>
+        <table class="tasks">
+            <h3 class="title">Aktuális feladataim</h3>
             <thead class="table-header">
             <tr>
                 <th scope="col">Feladat sorszáma</th>

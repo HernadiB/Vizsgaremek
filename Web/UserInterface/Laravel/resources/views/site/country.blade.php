@@ -3,12 +3,13 @@
     {{$title}}
 @endsection
 @section('js_css')
+    <link rel="stylesheet" href="{{asset("css/country_style.css")}}">
     <script src="{{asset('js/fetch.js')}}"></script>
     <script src="{{asset('js/country.js')}}"></script>
 @endsection
 @section('content')
-    <table class="orszagos">
-        <h3 class="text-center" id="cimsor" >Országos Pontállás</h3>
+    <table class="country">
+        <h3 class="title">Országos Pontállás</h3>
         <thead class="table-header">
         <tr>
             <th scope="col">Helyezés</th>
@@ -19,7 +20,7 @@
         <tbody class="table-content">
         @auth
             @foreach($users as $key => $value)
-                <tr @if ($value->id == session('user.id')) style="background: grey" @endif>
+                <tr @if ($value->id == session('user.id')) class="myUser" @endif>
                     <td id="rank" data-label="Helyezés">#{{$key}}</td>
                     <td id="name" data-label="Név">{{$value->username}}</td>
                     <td id="score" data-label="Pontszám">{{$value->score}}</td>

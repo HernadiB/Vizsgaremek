@@ -1,13 +1,17 @@
-@media screen and (min-width: 800px){
-    .szintek{
+.myTask{
+    background-color: grey;
+}
+
+/*@media screen and (min-width: 800px){
+    .levels{
         overflow-y: auto;
         height: 500px;
         display: block;
     }
 
-    .szintek .table-header{
+    .levels .table-header{
         position: sticky;
         top: 0;
     }
-}
+}*/
 

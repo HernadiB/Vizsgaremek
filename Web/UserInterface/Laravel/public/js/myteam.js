@@ -1,14 +1,14 @@
 function CsapatomShow()
 {
-    let csapat = document.querySelector('div#csapat');
-    let csapatFelvetel = document.querySelector('div#csapatfelvetel');
-    csapat.classList.remove('d-none');
-    csapatFelvetel.classList.add('d-none')
+    let team = document.querySelector('div.team');
+    let addTeammate = document.querySelector('div.addTeammate');
+    team.classList.remove('d-none');
+    addTeammate.classList.add('d-none')
 }
 function CsapattagFelvetelShow()
 {
-    let csapat = document.querySelector('div#csapat');
-    let csapatFelvetel = document.querySelector('div#csapatfelvetel');
-    csapat.classList.add('d-none');
-    csapatFelvetel.classList.remove('d-none')
+    let team = document.querySelector('div.team');
+    let addTeammate = document.querySelector('div.addTeammate');
+    team.classList.add('d-none');
+    addTeammate.classList.remove('d-none')
 }

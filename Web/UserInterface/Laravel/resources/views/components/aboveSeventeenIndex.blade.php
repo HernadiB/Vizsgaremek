@@ -1,6 +1,6 @@
 @include('components.receivedRequests')
 @can('hasTeam', auth()->user())
-    <h2 class="text-center" style="margin-top: 100px">Beérkezett feladatok felülvizsgálata</h2>
+    <h3 class="title">Beérkezett feladatok felülvizsgálata</h3>
     @if(count($taskReviews) != 0)
         <table class="tasksToReview mt-5">
             <thead class="table-header">
@@ -31,7 +31,7 @@
             </tbody>
         </table>
     @else
-        <div>Nincs beérkezett feladat</div>
+        <div class="title">Nincs beérkezett feladat</div>
     @endif
 @else
     @include('components.createTeam')

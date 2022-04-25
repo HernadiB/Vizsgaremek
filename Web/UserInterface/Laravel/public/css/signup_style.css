@@ -1,12 +1,11 @@
 .form-section{
     position: relative;
     width: 350px;
-    background: white;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    background: var(--background-white);
+    box-shadow: var(--box-shadow);
     border-radius: 0.25em;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
 }
 
 .fa-solid{
@@ -21,7 +20,6 @@
 
 .form-label{
     margin-top: 10px;
-    margin-bottom: 0;
 }
 
 .form-section h2{
@@ -41,12 +39,8 @@ form .input{
 }
 
 option{
-    background-color: white;
+    background-color: var(--background-white);
     color: black;
-}
-
-option:hover{
-    background-color: purple;
 }
 
 form .email{
@@ -62,8 +56,8 @@ form .passwd{
 form .btn{
     width: 85%;
     margin-top: 20px;
-    background: #409FE4;
-    color: #ffff;
+    background: var(--blue-color);
+    color: white;
 }
 
 form p{
@@ -73,7 +67,7 @@ form p{
 }
 
 a:hover, a:link, a:visited, a:active{
-    color: rgba(64, 159, 228, 1);
+    color: var(--blue-color);
     text-decoration: none;
 }
 
@@ -81,7 +75,7 @@ a:hover, a:link, a:visited, a:active{
     text-decoration: underline;
 }
 
-@media screen and (max-width: 400px){
+@media (max-width: 400px){
     .form-section{
         width: 85%;
     }

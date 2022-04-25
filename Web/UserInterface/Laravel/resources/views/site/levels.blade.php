@@ -14,8 +14,8 @@
 {{--    </script>--}}
 @endsection
 @section('content')
-    <table class="szintek">
-        <h3 id="cimsor" class="text-center" >Szintek - feladatok</h3>
+    <table class="levels">
+        <h3 class="title">Szintek - feladatok</h3>
         <thead class="table-header">
         <tr>
             <th scope="col">Szint neve</th>
@@ -27,12 +27,12 @@
         </thead>
         <tbody class="table-content">
             @foreach($tasks as $task)
-                <tr @if(session('taskID') == $task->id) style="background: grey" @endif>
+                <tr @if(session('taskID') == $task->id) class="myTask" @endif>
                     <td id="levelname" data-label="Szint">{{\App\Models\Level::where('id', $task->level_id)->first()->name}}</td>
                     <td id="taskname" data-label="Név">{{$task->name}}</td>
                     <td id="description" data-label="Leírás">{{$task->description}}</td>
                     <td id="image" data-label="Kép">
-                        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="ShowTaskImage('{{$task->image}}')">Megtekint</button>
+                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="ShowTaskImage('{{$task->image}}')">Megtekint</button>
                     </td>
                     <td id="score" data-label="Pontszám">{{$task->score}}</td>
                 </tr>

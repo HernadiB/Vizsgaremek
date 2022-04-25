@@ -10,9 +10,14 @@
 @endsection
 @section('content')
     @can('isAdmin', auth()->user())
-        <div id="buttons">
-            <button class="btn btn-dark" id="csapatombtn" onclick="CsapatomShow()">Csapatom</button>
-            <button class="btn btn-dark" id="csapatombtn" onclick="CsapattagFelvetelShow()">Csapattag felvétele</button>
+        <div class="buttons">
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-dark" class="btn_myTeam my-3 " onclick="CsapatomShow()">Csapatom</button>
+                    <button class="btn btn-dark" class="btn_myTeam my-3" onclick="CsapattagFelvetelShow()">Csapattag felvétele</button>
+                </div>
+
+            </div>
         </div>
     @endcan
     @include('components.teamMembers')

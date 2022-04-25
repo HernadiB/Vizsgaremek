@@ -3,10 +3,9 @@
     top: 50%;
     left: 50%;
     width: 350px;
-    margin-bottom: 50px;
     transform: translate(-50%, -50%);
-    background: white;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    background-color: var(--background-white);
+    box-shadow: var(--box-shadow);
     border-radius: 0.25em;
 }
 
@@ -22,7 +21,6 @@
 
 .form-label{
     margin-top: 10px;
-    margin-bottom: 0;
 }
 
 form .input{
@@ -42,10 +40,10 @@ form .input{
 }
 
 form .btn{
-    width: 84%;
+    width: 85%;
     margin-top: 20px;
-    background: #409FE4;
-    color: #ffff;
+    background-color: var(--blue-color);
+    color: white;
 }
 
 form p{
@@ -55,7 +53,7 @@ form p{
 }
 
 a:hover, a:link, a:visited, a:active{
-    color: rgba(64, 159, 228, 1);
+    color: var(--blue-color);
     text-decoration: none;
 }
 
@@ -63,7 +61,7 @@ a:hover, a:link, a:visited, a:active{
     text-decoration: underline;
 }
 
-@media screen and (max-width: 400px){
+@media (max-width: 400px){
     .form-section{
         width: 85%;
     }

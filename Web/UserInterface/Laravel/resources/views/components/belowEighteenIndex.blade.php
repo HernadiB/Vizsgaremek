@@ -1,4 +1,4 @@
-<table class="adatok">
+<table class="data">
     <thead class="table-header">
     <tr>
         <th scope="col">Pontszámom</th>
@@ -22,9 +22,9 @@
 </table>
 @include('components.receivedRequests')
 @can('hasRemainingTasks', auth()->user())
-    <table class="elvegezendofeladatok">
+    <table class="tasksToDo">
         <thead class="table-header">
-        <h3 class="text-center">Következő szinthez elvégezendő feladatok</h3>
+        <h3 class="title">Következő szinthez elvégezendő feladatok</h3>
         <tr>
             <th scope="col">Feladat sorszáma</th>
             <th scope="col">Feladat megnevezése</th>

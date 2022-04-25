@@ -1,5 +1,14 @@
+:root{
+    --main-background: linear-gradient(-45deg, #03045E, #023E8A, #0077B6, #0096C7, #00B4D8, #48CAE4) no-repeat fixed;
+    --background-white: white;
+    --box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    --font-black: black;
+    --blue-color: #0077B6;
+    --my-user-background: grey;
+}
+
 body{
-    background: linear-gradient(-45deg, #03045E, #023E8A, #0077B6, #0096C7, #00B4D8, #48CAE4) no-repeat fixed;
+    background: var(--main-background);
     animation: gradient 25s ease infinite;
     background-size: 400% 400%;
     padding-top: 100px;
@@ -28,10 +37,12 @@ table{
     border-radius: 0.25em;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.8);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table .table-header{
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgb(183, 201, 213);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -41,8 +52,6 @@ table .table-content{
 }
 
 table tr{
-    /*background-color: #C4C4C4;*/
-    /*border: 1px solid #ddd;*/
     padding: .35em;
 }
 
@@ -57,11 +66,37 @@ table th{
     text-transform: uppercase;
 }
 
-#cimsor{
-    color: #000000;
+.title{
+    margin-top: 50px;
+    text-align: center;
+    color: var(--font-black);
 }
 
-@media screen and (max-width: 800px){
+#loading {
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #9c41f2;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;
+}
+
+#loading.display {
+    visibility: visible;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 800px){
     table{
         border: none;
         box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
@@ -71,7 +106,8 @@ table th{
         font-size: .8em;
     }
 
-    table thead{
+    table .table-header{
+        width: 90%;
         border: none;
         clip: rect(0 0 0 0);
         height: 1px;
@@ -117,23 +153,23 @@ table th{
         width: 99px;
     }
 
-    .beerkezettjelolesek, .elvegezendofeladatok, .csapatom, .barataim, .feladataim{
-        width: 90%;
+    .recievedRequests, .tasksToDo, .csapatom, .friends{
+        min-width: 90%;
         margin: 10px auto 50px;
     }
 
-    .orszagos, .szintek{
+    .orszagos, .levels{
         width: 70%;
         margin: 10px auto 50px;
     }
 
-    .barataim, .csapatom, .orszagos, .feladataim, .szintek{
+    .friends, .csapatom, .country, .tasks, .levels{
         margin-top: 50px;
         margin-bottom: 50px;
     }
 }
 
-@media screen and (min-width: 800px) {
+@media (min-width: 800px) {
     .btn{
         width: 99px;
     }
@@ -150,48 +186,48 @@ table th{
         border-bottom: 1px solid black;
     }
 
-    .barataim, .csapatom, .orszagos, .feladataim, .szintek{
-        width: 70%;
+    .friends, .csapatom, .country, .levels{
+        width: 90%;
         margin: 50px auto;
     }
 
-    .barataim th:nth-child(1){
+    .friends th:nth-child(1){
         width: 10%;
     }
 
-    .barataim th:nth-child(2){
+    .friends th:nth-child(2){
         width: 30%;
     }
 
-    .barataim th:nth-child(3){
+    .friends th:nth-child(3){
         width: 20%;
     }
 
-    .barataim th:nth-child(4){
+    .friends th:nth-child(4){
         width: 20%;
     }
 
-    .barataim th:nth-child(5){
+    .friends th:nth-child(5){
         width: 20%;
     }
 
-    .feladataim th:nth-child(1){
+    .tasks th:nth-child(1){
         width: 15%;
     }
 
-    .feladataim th:nth-child(2){
+    .tasks th:nth-child(2){
         width: 30%;
     }
 
-    .feladataim th:nth-child(3){
+    .tasks th:nth-child(3){
         width: 20%;
     }
 
-    .feladataim th:nth-child(4){
+    .tasks th:nth-child(4){
         width: 20%;
     }
 
-    .feladataim th:nth-child(5){
+    .tasks th:nth-child(5){
         width: 10%;
     }
 }
@@ -208,26 +244,4 @@ table th{
     background-color: #409FE4;
     border-radius: 20px;
     border: 2px solid rgba(50, 122, 175, 0.5);
-}
-
-#loading {
-    width: 2rem;
-    height: 2rem;
-    border: 5px solid #f3f3f3;
-    border-top: 6px solid #9c41f2;
-    border-radius: 100%;
-    margin: auto;
-    visibility: hidden;
-    animation: spin 1s infinite linear;
-}
-#loading.display {
-    visibility: visible;
-}
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }

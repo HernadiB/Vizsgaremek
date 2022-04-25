@@ -1,48 +1,44 @@
-.beerkezettjelolesek h3{
+.recievedRequests .title{
     margin-top: 10px;
 }
 
-.adatok{
-    width: 70%;
-    margin: 40px auto;
+.data{
+    max-width: 60%;
 }
 
-@media screen and (max-width: 800px){
+@media (max-width: 800px){
 
-    .adatok{
-        width: 60%;
-        margin-top: 100px;
-        margin-bottom: 50px;
+    .data{
+        margin: 50px auto 0px;
     }
 
-    .adatok tr{
-        margin-bottom: 0px;
+    .recievedRequests, .tasksToDo{
+        max-width: 85%;
     }
 }
-@media screen and (min-width: 800px) {
-    .adatok{
-        width: 70%;
-        margin-bottom: 50px;
+@media (min-width: 800px) {
+    .data{
+        margin: 50px auto 0px;
     }
 
-    .beerkezettjelolesek, .elvegezendofeladatok{
-        width: 90%;
+    .recievedRequests, .tasksToDo{
+        max-width: 85%;
         margin: 10px auto 50px;
     }
 
-    .elvegezendofeladatok th:nth-child(1){
+    .tasksToDo th:nth-child(1){
         width: 20%;
     }
 
-    .elvegezendofeladatok th:nth-child(2){
+    .tasksToDo th:nth-child(2){
         width: 40%;
     }
 
-    .elvegezendofeladatok th:nth-child(3){
+    .tasksToDo th:nth-child(3){
         width: 20%;
     }
 
-    .elvegezendofeladatok th:nth-child(4){
+    .tasksToDo th:nth-child(4){
         width: 20%;
     }
 

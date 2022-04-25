@@ -1,24 +1,33 @@
-h1{
-    text-align: center;
-    margin-top: 50px;
-}
-
 .admin{
     display: flex;
     justify-content: center;
 }
 
-#buttons{
-    margin: 0 auto;
-    margin-bottom: 30px;
-    width: max-content;
+.buttons{
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#csapatombtn{
-    margin-right: 20px;
+.leader{
+    text-decoration: none;
+    color: var(--font-black);
+}
+
+.teamMember{
+    text-decoration: none;
+    color: var(--font-black);
+}
+
+.title{
+    margin-bottom: 20px;
+}
+
+.btn_myTeam{
+    margin-right: auto;
     width: 200px;
     margin-top: 40px;
     margin-bottom: auto;
+    margin-left: auto;
 }
 
 .card {
@@ -33,10 +42,10 @@ h1{
 
 .form-section{
     width: 50%;
-    background: #C4C4C4;;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
-    border-radius: 0.25em;
+    background: var(--my-user-background);
+    box-shadow: var(--box-shadow);
     margin-left: auto;
+    border-radius: 0.25em;
     margin-right: auto;
     margin-top: 40px;
 }
@@ -46,7 +55,11 @@ h1{
     box-sizing: border-box;
 }
 
-.teammate .felvetel{
+.form-select{
+    margin-top: 10px;
+}
+
+.teammate .addTeamMember{
     width: 200px;
     margin-top: 40px;
     margin-left: auto;
@@ -54,15 +67,7 @@ h1{
     display: block;
 }
 
-#melle{
-    display: inline-block;
-}
-
-.rlb{
-    margin-left: 100px;
-}
-
-@media screen and (max-width: 992px){
+@media (max-width: 992px){
     .form-section{
         margin-top: 20px;
         width: 310px;
@@ -73,31 +78,9 @@ h1{
         width: 100%;
     }
 
-    .teammate .felvetel{
+    .teammate .addTeamMember{
         width: 100px;
     }
 
-}
-.form-select{
-    margin-top: 10px;
-}
-
-@media screen and (min-width: 992px){
-    .teammate label{
-        vertical-align: middle;
-        margin-top: 10px;
-        margin-bottom: 0;
-    }
-
-    .teammate .input{
-        margin-left: 40px;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    .teammate .row{
-        padding-right: 40px;
-    }
 }
 

@@ -36,7 +36,6 @@
                     <option value="F">Nő</option>
                 </select>
             </div>
-
             <div class="email">
                 <label for="email" class="form-label">E-mail cím</label>
                 <input type="text" name="email" class="form-control input" placeholder="alfred.mihaly@example.com">
