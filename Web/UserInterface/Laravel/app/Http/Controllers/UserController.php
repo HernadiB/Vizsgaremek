@@ -123,7 +123,7 @@ class UserController extends Controller
             $validatedData['password'] = bcrypt($validatedData['password_new']);
         }
         
-        $fullPath = $validatedData['profile_picture']->store('images');
+        $fullPath = $validatedData['profile_picture']->store('images/profile_pictures');
         $validatedData['profile_picture'] = $fullPath;
 
         $user = User::findorfail($request->session()->get('user.id'));

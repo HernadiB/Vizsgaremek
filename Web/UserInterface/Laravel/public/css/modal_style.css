@@ -1,0 +1,30 @@
+.profImg{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: auto auto 20px;
+    border-radius: 50%;
+    display: block;
+}
+
+.teamRole{
+    margin-bottom: 40px;
+
+}
+
+.modal-header{
+    background: #000000;
+}
+
+.modal-title{
+    color: #fff;
+}
+
+.modal-body{
+    background: grey;
+    border: none;
+}
+
+.modal-footer{
+    background: #000000;
+}
