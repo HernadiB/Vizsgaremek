@@ -4,9 +4,7 @@
     <script src="{{asset('js/modal.js')}}"></script>
     <script src="{{asset('js/fetch.js')}}"></script>
 @endsection
-@section('title')
-    {{$title}}
-@endsection
+@section('title',$title)
 @section('content')
     @can(['userIsBelowEighteen'], auth()->user())
         @include('components.belowEighteenIndex')

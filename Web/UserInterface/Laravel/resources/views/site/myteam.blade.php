@@ -1,7 +1,5 @@
 @extends('layouts.main')
-@section('title')
-    {{$title}}
-@endsection
+@section('title', $title)
 @section('js_css')
     <script src="{{asset('js/modal.js')}}"></script>
     <script src="{{asset('js/fetch.js')}}"></script>

@@ -1,7 +1,5 @@
 @extends('layouts.main')
-@section('title')
-    {{$title}}
-@endsection
+@section('title', $title)
 @section('js_css')
     <link rel="stylesheet" href="{{asset("css/profile_style.css")}}">
 @endsection

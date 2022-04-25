@@ -1,7 +1,5 @@
 @extends('layouts.main')
-@section('title')
-    {{$title}}
-@endsection
+@section('title', $title)
 @section('content')
     @if(count(auth()->user()->ActualTasks) != 0)
         <table class="tasks">

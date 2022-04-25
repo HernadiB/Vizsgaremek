@@ -1,7 +1,5 @@
 @extends('layouts.main')
-@section('title')
-    {{$title}}
-@endsection
+@section('title', $title)
 @section('js_css')
     <link rel="stylesheet" href="{{asset("css/login_style.css")}}">
     <script src="https://kit.fontawesome.com/a47f91ad4b.js" crossorigin="anonymous"></script>

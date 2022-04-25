@@ -5,9 +5,7 @@
     <script src="{{asset('js/modal.js')}}"></script>
     <script src="{{asset('js/fetch.js')}}"></script>
 @endsection
-@section('title')
-    {{$title}}
-@endsection
+@section('title', $title)
 @section('content')
     @if(count($friends) != 0)
         <h3 class="title">Barátaim</h3>

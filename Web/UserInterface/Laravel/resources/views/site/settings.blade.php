@@ -13,11 +13,11 @@
             @csrf
             <div class="toggler">
                 <div class="form-check form-switch">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Smooth Háttér Ki/Be</label>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Smooth Háttér Be/Ki</label>
                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                 </div>
                 <div class="form-check form-switch">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Dark mode Ki/Be</label>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Dark mode Be/Ki</label>
                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                 </div>
                 <div class="form-check form-switch">

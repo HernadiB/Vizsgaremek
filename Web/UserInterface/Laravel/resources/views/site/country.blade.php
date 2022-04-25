@@ -1,7 +1,5 @@
 @extends('layouts.main')
-@section('title')
-    {{$title}}
-@endsection
+@section('title',$title)
 @section('js_css')
     <link rel="stylesheet" href="{{asset("css/country_style.css")}}">
     <script src="{{asset('js/fetch.js')}}"></script>
