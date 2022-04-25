@@ -1,0 +1,51 @@
+.form-section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    margin-bottom: 50px;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    border-radius: 0.25em;
+}
+
+.form-section hr{
+    margin-right: auto;
+    margin-left: auto;
+    width: 85%;
+}
+
+.form-section h2{
+    text-align: center;
+    padding: 20px 0 0 10px;
+}
+
+.form-section form{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.toggler{
+    margin: auto;
+}
+
+.form-switch.form-check{
+    margin-bottom: 25px;
+    background: #f1f1f1;
+    margin-right: 45px;
+    border-radius: 50px ;
+}
+
+@media screen and (max-width: 400px){
+    .form-section{
+        width: 85%;
+    }
+
+    form p{
+        margin-left: 30px;
+    }
+}
+
