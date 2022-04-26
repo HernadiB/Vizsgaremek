@@ -30,8 +30,8 @@ class SignupRequest extends FormRequest
             "birthdate" => ["required", "date"],
             "gender" => ["required", Rule::in(["M", "F"])],
             "email" => ["required", "email", "unique:users,email", "min:5", "max:255"],
-            "password" => ["required", "string", "min:5", "max:255", "confirmed"],
-            "profile_picture" => ["string", "nullable", "min:1", "max:255"]
+            "password" => ["required", "string", "min:5", "max:255"],
+            "same_password" => ["required", "string", "min:5", "max:255", "same:password"]
         ];
     }
 
@@ -51,7 +51,7 @@ class SignupRequest extends FormRequest
             "password.required" => "A :attribute megadása kötelező!",
             "password.min" => "A :attribute legalább 5 karater legyen!",
             "password.max" => "A :attribute legfeljebb 255 karater legyen!",
-            "password_confirmation.same:password" => "A megadott jelszavak nem egyeznek!",
+            "same_password.required" => "A megadott jelszavak nem egyeznek!",
         ];
     }
 

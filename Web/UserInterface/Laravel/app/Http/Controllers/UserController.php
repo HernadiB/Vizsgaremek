@@ -92,7 +92,7 @@ class UserController extends Controller
 
         $request->session()->put("user", $user);
 
-        $request->session()->flash("success", "Sikeres regisztráció");
+        $request->session()->flash("success", "Sikeres regisztráció!");
         auth()->login($user);
 
         return redirect()->route("home");
@@ -104,12 +104,12 @@ class UserController extends Controller
 
         if(!User::all()->contains('email', $loginData['email']))
         {
-            return redirect()->back()->with("error", "Adatbázisban nem található ilyen email.");
+            return redirect()->back()->with("error", "Adatbázisban nem található ilyen email!");
         }
 
         if(!auth()->attempt($loginData))
         {
-            return redirect()->route("site.login")->with("error", "Hibás jelszó");
+            return redirect()->route("site.login")->with("error", "Hibás jelszó!");
         }
 
         $request->session()->regenerateToken();
@@ -135,7 +135,7 @@ class UserController extends Controller
         $user->update($validatedData);
 
         $request->session()->put("user", $user);
-        $request->session()->flash("success", "Sikeres módosítás");
+        $request->session()->flash("success", "Sikeres módosítás!");
         return redirect()->route('site.profile');
     }
     public function DeleteUser(Request $request)
@@ -151,7 +151,7 @@ class UserController extends Controller
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('site.login')->with('success', 'Kijelentkeztél');
+        return redirect()->route('site.login')->with('success', 'Sikeres kijelentkezés!');
     }
 
     public function AcceptInvitation(Request $request)
@@ -159,14 +159,14 @@ class UserController extends Controller
         $receiverUser = $request->session()->get('user');
         $receiverUser->ReceivedRequests()->detach($request->senderUserID);
         $receiverUser->Friendships1()->syncWithoutDetaching($request->senderUserID);
-        $request->session()->flash('success', 'Barát kérelem elfogadva');
+        $request->session()->flash('success', 'Barát kérelem elfogadva!');
         return redirect()->back();
     }
     public function RejectInvitation(Request $request)
     {
         $receiverUser = $request->session()->get('user');
         $receiverUser->ReceivedRequests()->detach($request->senderUserID);
-        $request->session()->flash('success', 'Barát kérelem elutasítva');
+        $request->session()->flash('success', 'Barát kérelem elutasítva!');
         return redirect()->back();
     }
 
