@@ -25,11 +25,11 @@ class ModifyUserRequest extends FormRequest
     public function rules()
     {
         return [
-            "full_name" => ["required", "string", "min:1", "max:255"],
-            "username" => ["required", Rule::unique('users')->ignore($this->session()->get('user.id')), "string", "min:1", "max:255"],
-            "email" => ["required", "email", Rule::unique('users')->ignore($this->session()->get('user.id')), "min:5", "max:255"],
-            "birthdate" => ["required", "date"],
-            "gender" => ["required", Rule::in(["M", "F"])],
+            "full_name" => ["nullable", "string", "min:1", "max:255"],
+            "username" => ["nullable", Rule::unique('users')->ignore($this->session()->get('user.id')), "string", "min:1", "max:255"],
+            "email" => ["nullable", "email", Rule::unique('users')->ignore($this->session()->get('user.id')), "min:5", "max:255"],
+            "birthdate" => ["nullable", "date"],
+            "gender" => ["nullable", Rule::in(["M", "F"])],
             "password_new" => ["nullable", "string", "min:5", "max:255", "confirmed"],
             "profile_picture" => ["nullable", "image"]
         ];
@@ -38,20 +38,17 @@ class ModifyUserRequest extends FormRequest
     public function messages()
     {
         return [
-            "full_name.required" => "A :attribute megadása kötelező!",
             "full:name.min" => "A :attribute legalább 1 karater legyen!",
             "full_name.max" => "A :attribute legfeljebb 255 karakter legyen!",
-            "username.required" => "A :attribute megadása kötelező!",
             "username.min" => "A :attribute legalább 1 karater legyen!",
             "username.max" => "A :attribute legfeljebb 255 karakter legyen!",
             "username.unique" => "Ez az :attribute már szerepel az adatbázisban!",
-            "email.required" => "Az :attribute megadása kötelező!",
             "email.unique" => "Ez az :attribute már szerepel az adatbázisban!",
-            "email.email" => "Az email címnek tartalmaznia kell a @ karaktert!",
-            "password.required" => "A :attribute megadása kötelező!",
-            "password.min" => "A :attribute legalább 5 karater legyen!",
-            "password.max" => "A :attribute legfeljebb 255 karater legyen!",
-            "password_confirmation.same:password" => "A megadott jelszavak nem egyeznek!",
+            "email.email" => "Az :attributenek tartalmaznia kell a @ karaktert!",
+            "profile_picture.image" => "A :attribute formátuma nem megfelelő!",
+            "password_new.min" => "A :attribute legalább 5 karater legyen!",
+            "password_new.max" => "A :attribute legfeljebb 255 karater legyen!",
+            "password.confirmed" => "A megadott jelszavak nem egyeznek!",
         ];
     }
 
@@ -61,11 +58,8 @@ class ModifyUserRequest extends FormRequest
             "full_name" => "teljes név",
             "username" => "felhasználónév",
             "email" => "email cím",
-            "password" => "jelszó",
-            "password_confirmation" => "jelszó megerősítés",
-            "role" => "role",
+            "password_new" => "jelszó",
             "profile_picture" => "profilkép",
-            "score" => "pontszám",
         ];
     }
 }

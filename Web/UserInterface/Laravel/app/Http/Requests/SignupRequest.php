@@ -46,7 +46,7 @@ class SignupRequest extends FormRequest
             "username.unique" => "Ez az :attribute már szerepel az adatbázisban!",
             "email.required" => "Az :attribute megadása kötelező!",
             "email.unique" => "Ez az :attribute már szerepel az adatbázisban!",
-            "email.email" => "Az email címnek tartalmaznia kell a @ karaktert!",
+            "email.email" => "Az :attributeek tartalmaznia kell a @ karaktert!",
             "password.required" => "A :attribute megadása kötelező!",
             "password.min" => "A :attribute legalább 5 karater legyen!",
             "password.max" => "A :attribute legfeljebb 255 karater legyen!",

@@ -104,7 +104,7 @@ class UserController extends Controller
 
         if(!User::all()->contains('email', $loginData['email']))
         {
-            return redirect()->back()->with("error", "Adatbázisban nem található ilyen email!");
+            return redirect()->back()->with("error", "Az adatbázisban nem található ilyen email!");
         }
 
         if(!auth()->attempt($loginData))
@@ -116,7 +116,7 @@ class UserController extends Controller
 
         $request->session()->put("user", auth()->user());
 
-        $request->session()->flash("success", "Sikeres bejelentkezés");
+        $request->session()->flash("success", "Sikeres bejelentkezés!");
 
         return redirect()->route("home");
     }
