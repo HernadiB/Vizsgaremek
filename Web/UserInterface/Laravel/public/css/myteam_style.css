@@ -25,12 +25,12 @@
     margin-right: auto;
 }
 
-.btn_myTeam{
+.myTeam{
     width: 400px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background: white;
     color: white;
 }
 
