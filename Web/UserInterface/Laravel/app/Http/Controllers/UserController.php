@@ -102,9 +102,14 @@ class UserController extends Controller
     {
         $loginData = $request->validated();
 
+        if(!User::all()->contains('email', $loginData['email']))
+        {
+            return redirect()->back()->with("error", "Adatbázisban nem található ilyen email.");
+        }
+
         if(!auth()->attempt($loginData))
         {
-            return redirect()->route("site.login")->with("error", "Hibás adatok");
+            return redirect()->route("site.login")->with("error", "Hibás jelszó");
         }
 
         $request->session()->regenerateToken();
@@ -126,7 +131,7 @@ class UserController extends Controller
         $fullPath = $validatedData['profile_picture']->store('images/profile_pictures');
         $validatedData['profile_picture'] = $fullPath;
 
-        $user = User::findorfail($request->session()->get('user.id'));
+        $user = auth()->user();
         $user->update($validatedData);
 
         $request->session()->put("user", $user);

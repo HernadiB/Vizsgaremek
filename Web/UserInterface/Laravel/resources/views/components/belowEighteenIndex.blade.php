@@ -6,7 +6,7 @@
             <th scope="col">Csapatom neve</th>
             <th scope="col">Csapatom pontszáma</th>
         @endcan
-        <th scope="col">Szintem</th>
+        <th scope="col">Rangom</th>
     </tr>
     </thead>
     <tbody class="table-content">

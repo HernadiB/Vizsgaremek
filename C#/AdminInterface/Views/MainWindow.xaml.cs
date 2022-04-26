@@ -99,7 +99,7 @@ namespace AdminInterface
         {
             string base64 = (sender as Button).DataContext as string;
             BitmapImage bitmapImage = Base64.Decode(base64);
-            ShowPictureWindow window = new ShowPictureWindow(bitmapImage);
+            ShowPictureWindow window = new ShowPictureWindow(bitmapImage, "Felhasználó profilképe");
             window.ShowDialog();
         }
 
@@ -138,7 +138,7 @@ namespace AdminInterface
         {
             string base64 = (sender as Button).DataContext as string;
             BitmapImage bitmapImage = Base64.Decode(base64);
-            ShowPictureWindow window = new ShowPictureWindow(bitmapImage);
+            ShowPictureWindow window = new ShowPictureWindow(bitmapImage, "Feladathoz tartozó kép");
             window.ShowDialog();
         }
 

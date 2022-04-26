@@ -19,9 +19,10 @@ namespace AdminInterface.Views
     /// </summary>
     public partial class ShowPictureWindow : Window
     {
-        public ShowPictureWindow(BitmapImage image)
+        public ShowPictureWindow(BitmapImage image, string title)
         {
             InitializeComponent();
+            this.Title = title;
             img_picture.Source = image;
         }
     }

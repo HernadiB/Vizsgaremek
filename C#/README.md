@@ -15,4 +15,4 @@ ___
 ___
 - Felhasználók megjelenítése :white_check_mark:
 - Felhasználó keresése ID alapján :white_check_mark:
-- Felhasználó profilképének megjelenítése :x:
+- Felhasználó profilképének megjelenítése :white_check_mark:
