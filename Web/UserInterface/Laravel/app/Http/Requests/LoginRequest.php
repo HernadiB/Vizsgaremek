@@ -31,9 +31,8 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            "email.required" => "Az :attribute megadása kötelező!",
-            "email.email" => "Az email címnek tartalmaznia kell a @ karaktert!",
-            "password.required" => "A :attribute megadása kötelező!",
+            "required" => "A(z) :attribute megadása kötelező!",
+            "email" => "Az email címnek tartalmaznia kell a @ karaktert!"
         ];
     }
 

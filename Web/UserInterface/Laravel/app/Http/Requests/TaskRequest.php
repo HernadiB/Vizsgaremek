@@ -35,22 +35,21 @@ class TaskRequest extends FormRequest
     public function messages()
     {
         return [
-            "name.required" => "A feladat nevének megadása kötelező!",
-            "name.min" => "A :attribute legalább 1 karater legyen!",
-            "name.max" => "A :attribute legfeljebb 255 karakter legyen!",
-            "description.required" => "A :attribute megadása kötelező!",
-            "description.min" => "A :attribute legalább 1 karater legyen!",
-            "description.max" => "A :attribute legfeljebb 255 karakter legyen!",
-            "score.required" => "Az :attribute megadása kötelező!",
+            "required" => "A(z) :attribute megadása kötelező!",
+            "min" => "A(z) :attribute legalább :min karater legyen!",
+            "max" => "A(z) :attribute legfeljebb :max karakter legyen!",
+            "integer" => "A(z) :attribute értéke szám legyen!"
         ];
     }
 
     public function attributes()
     {
         return [
-            "name" => "feladat neve",
-            "description" => "feladat leírása",
-            "score" => "csapat pontszáma",
+            "name" => "megnevezés",
+            "description" => "leírás",
+            "image" => "kép",
+            "score" => "pontszám",
+            "level_id" => "szint ID"
         ];
     }
 }

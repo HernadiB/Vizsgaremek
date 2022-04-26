@@ -37,19 +37,13 @@ class SignupRequest extends FormRequest
     public function messages()
     {
         return [
-            "full_name.required" => "A :attribute megadása kötelező!",
-            "full:name.min" => "A :attribute legalább 1 karater legyen!",
-            "full_name.max" => "A :attribute legfeljebb 255 karakter legyen!",
-            "username.required" => "A :attribute megadása kötelező!",
-            "username.min" => "A :attribute legalább 1 karater legyen!",
-            "username.max" => "A :attribute legfeljebb 255 karakter legyen!",
-            "username.unique" => "Ez az :attribute már szerepel az adatbázisban!",
-            "email.required" => "Az :attribute megadása kötelező!",
-            "email.unique" => "Ez az :attribute már szerepel az adatbázisban!",
-            "email.email" => "Az :attributeek tartalmaznia kell a @ karaktert!",
-            "password.required" => "A :attribute megadása kötelező!",
-            "password.min" => "A :attribute legalább 5 karater legyen!",
-            "password.max" => "A :attribute legfeljebb 255 karater legyen!",
+            "required" => "A(z) :attribute megadása kötelező!",
+            "min" => "A(z) :attribute legalább :min karater legyen!",
+            "max" => "A(z) :attribute legfeljebb :max karakter legyen!",
+            "unique" => "Ez a(z) :attribute már szerepel az adatbázisban!",
+            "date" => "A(z) :attribute formátuma nem megfelelő",
+            "in" => "A(z) :attribute a következő értékek egyike kell, hogy legyen: :values",
+            "email" => "Az emailnek tartalmaznia kell a @ karaktert!",
             "password.confirmed" => "A megadott jelszavak nem egyeznek!",
         ];
     }
@@ -59,6 +53,8 @@ class SignupRequest extends FormRequest
         return [
             "full_name" => "teljes név",
             "username" => "felhasználónév",
+            "birthdate" => "születési dátum",
+            "gender" => "nem",
             "email" => "email cím",
             "password" => "jelszó",
         ];

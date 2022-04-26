@@ -123,13 +123,15 @@ class UserController extends Controller
     public function ModifyUser(ModifyUserRequest $request)
     {
         $validatedData = $request->validated();
-        if ($validatedData['password_new'] != null)
+        if(array_key_exists('password_new', $validatedData))
         {
             $validatedData['password'] = bcrypt($validatedData['password_new']);
         }
-        
-        $fullPath = $validatedData['profile_picture']->store('images/profile_pictures');
-        $validatedData['profile_picture'] = $fullPath;
+        if(array_key_exists('profile_picture', $validatedData))
+        {
+            $fullPath = $validatedData['profile_picture']->store('images/profile_pictures');
+            $validatedData['profile_picture'] = $fullPath;
+        }
 
         $user = auth()->user();
         $user->update($validatedData);

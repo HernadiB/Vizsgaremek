@@ -33,16 +33,20 @@ class TeamRequest extends FormRequest
     public function messages()
     {
         return [
-            "name.required" => "A :attribute megadása kötelező!",
-            "name.min" => "A :attribute legalább 1 karater legyen!",
-            "name.max" => "A :attribute legfeljebb 255 karakter legyen!",
+            "required" => "A(z) :attribute megadása kötelező!",
+            "min" => "A(z) :attribute legalább 1 karater legyen!",
+            "max" => "A(z) :attribute legfeljebb 255 karakter legyen!",
+            "unique" => "Ez a(z) :attribute már szerepel az adatbázisban!",
+            "integer" => "A(z) :attribute értéke szám legyen!"
         ];
     }
 
     public function attributes()
     {
         return [
-            "name" => "csapat neve"
+            "name" => "név",
+            "description" => "leírás",
+            "leader_id" => "vezető ID"
         ];
     }
 }

@@ -61,9 +61,7 @@
                         <input type="password" name="password_new_confirmation"  class="form-control input" placeholder="*************">
                     </div>
                 </div>
-                @foreach($errors->all() as $error)
-                    <div class="alert alert-danger">{{$error}}</div>
-                @endforeach
+                @include('components.validationErrors')
                 <button class="btn btn-dark btn_save">Mentés</button>
             </form>
         </div>
