@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminInterface"
         mc:Ignorable="d"
-        Title="AdminInterface" Width="1216" Height="611">
+        Title="Országos Pontgyűjtő Admin" Width="1216" Height="611">
     <Window.Background>
         <LinearGradientBrush EndPoint="1,0" StartPoint="1,1" SpreadMethod="Pad">
             <GradientStop Color="#FF1C92D2"/>

@@ -25,10 +25,6 @@
                     <label class="form-check-label" for="flexSwitchCheckDefault">Időjárás jelentő a főoldalon</label>
                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                 </div>
-                <div class="form-check form-switch">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">NEU áramfejlesztő lekapcsolása</label>
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                </div>
             </div>
         </form>
     </div>
