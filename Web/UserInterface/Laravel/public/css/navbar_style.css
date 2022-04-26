@@ -3,8 +3,5 @@
     box-shadow: black 0px 0px 10px 1px;
 }
 .offcanvas-body, .offcanvas-header{
-    background-color: #0077B6;
-}
-h4{
-    color: white;
+    background-color: var(--blue-color);
 }

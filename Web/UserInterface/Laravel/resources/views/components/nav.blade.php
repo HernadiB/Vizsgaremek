@@ -1,6 +1,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="{{asset("css/navbar_style.css")}}">
-<nav class="navbar navbar-light fixed-top text-white" >
+<nav class="navbar navbar-light fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" @auth href="{{route("home")}} @else href="{{route("site.login")}} @endauth">Országos Pontgyűjtő</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -15,12 +15,12 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     @auth
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{route("home")}}"><h4>Főoldal</h4></a>
+                            <a class="nav-link active text-white" aria-current="page" href="{{route("home")}}"><h4>Főoldal</h4></a>
                         </li>
                     @endauth
                     @auth
                         <li class="nav-item">
-                            <a href="{{route("site.friends")}}" class="nav-link text-white">Barátaim</a>
+                            <a class="nav-link text-white" href="{{route("site.friends")}}">Barátaim</a>
                         </li>
                     @endauth
                     <li class="nav-item">
@@ -56,7 +56,7 @@
                     @auth
                         {!! Form::open(['route' => 'userLogout', 'method' => 'post']) !!}
                         <li class="nav-item">
-                            <button class="nav-link btn text-white" id="logout">Kijelentkezés</button>
+                            <button class="nav-link btn text-white">Kijelentkezés</button>
                         </li>
                         {!! Form::close() !!}
                     @else

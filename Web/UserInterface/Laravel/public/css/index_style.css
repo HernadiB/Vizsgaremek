@@ -23,7 +23,7 @@
 
     .recievedRequests, .tasksToDo{
         max-width: 85%;
-        margin: 10px auto 50px;
+        margin: 50px auto 50px;
     }
 
     .tasksToDo th:nth-child(1){

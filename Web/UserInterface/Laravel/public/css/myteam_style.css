@@ -1,49 +1,57 @@
-.admin{
-    display: flex;
-    justify-content: center;
+/*.admin{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+.leader{
+    text-decoration: none;
 }
 
-.buttons{
+.card{
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.leader{
-    text-decoration: none;
+.leaderDecription{
+    margin-top: 50px;
+    text-align: center;
     color: var(--font-black);
 }
 
 .teamMember{
     text-decoration: none;
-    color: var(--font-black);
-}
-
-.title{
-    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn_myTeam{
-    margin-right: auto;
-    width: 200px;
-    margin-top: 40px;
-    margin-bottom: auto;
+    width: 400px;
+    margin-top: 20px;
     margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: white;
 }
 
-.card {
+.card{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+.card-body{
+    color: black;
+}
+
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.07);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
 .form-section{
     width: 50%;
     background: var(--my-user-background);
-    box-shadow: var(--box-shadow);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
     margin-left: auto;
     border-radius: 0.25em;
     margin-right: auto;

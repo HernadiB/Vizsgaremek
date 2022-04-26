@@ -11,13 +11,13 @@
         <h3 class="title">Barátaim</h3>
         <table class="friends">
             <thead class="table-header">
-            <tr>
-                <th scope="col">Helyezés</th>
-                <th scope="col">Név</th>
-                <th scope="col">Pontszám</th>
-                <th scope="col">Barát törlése</th>
-                <th scope="col">Profil</th>
-            </tr>
+                <tr>
+                    <th scope="col">Helyezés</th>
+                    <th scope="col">Név</th>
+                    <th scope="col">Pontszám</th>
+                    <th scope="col">Barát törlése</th>
+                    <th scope="col">Profil</th>
+                </tr>
             </thead>
             <tbody class="table-content">
             @foreach($friends as $key => $value)
@@ -54,11 +54,11 @@
 {{--                </div>--}}
                 <table class="searchFriends">
                     <thead class="table-header">
-                    <tr>
-                        <th scope="col">Név</th>
-                        <th scope="col">Bejelöl</th>
-                        <th scope="col">Profil</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Név</th>
+                            <th scope="col">Bejelöl</th>
+                            <th scope="col">Profil</th>
+                        </tr>
                     </thead>
                     <tbody class="table-content">
                     @foreach($nonFriends as $user)

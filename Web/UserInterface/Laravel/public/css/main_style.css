@@ -1,15 +1,44 @@
+/*:root{*/
+/*    --main-background: linear-gradient(-45deg, #03045E, #023E8A, #0077B6, #0096C7, #00B4D8, #48CAE4) no-repeat fixed;*/
+/*    --background-white: white;*/
+/*    --font-black: black;*/
+/*    --blue-color: #0077B6;*/
+/*    --my-user-background: grey;*/
+/*    --table-header-background: rgb(183, 201, 213);*/
+/*    --table-content-background: rgba(255, 255, 255, 0.8);*/
+/*    --table-font-color: black;*/
+/*    !*--table-border: 1px solid rgba(255, 255, 255, 0.3);*!*/
+/*    --scroll-thumb: #0077B6;*/
+/*    --team-btn-color: black;*/
+/*    --team-btn-text-color: white;*/
+/*}*/
+
 :root{
-    --main-background: linear-gradient(-45deg, #03045E, #023E8A, #0077B6, #0096C7, #00B4D8, #48CAE4) no-repeat fixed;
+    --main-background: linear-gradient(-45deg, #7A7A7A, #575757, #464646, #343434, #232323, #111111) no-repeat fixed;
     --background-white: white;
-    --box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
-    --font-black: black;
-    --blue-color: #0077B6;
-    --my-user-background: grey;
+    --font-black: white;
+    --blue-color: #575757;
+    --my-user-background: #7A7A7A;
+    --table-header-background: #343434;
+    --table-content-background: #7A7A7A;
+    /*--table-border: 1px solid rgba(255, 255, 255, 1);*/
+    --scroll-thumb: black;
+    --team-btn-color: white;
+    --team-btn-text-color: black;
 }
+
+/*.simpleBg{*/
+/*    --main-background: #03045E;*/
+/*}*/
+
+/*.darkSimpleBg{*/
+/*    --simple-background: #464646FF;*/
+/*}*/
 
 body{
     background: var(--main-background);
-    animation: gradient 25s ease infinite;
+    /*background-color: var(--simple-background);*/
+    animation: gradient 15s ease infinite;
     background-size: 400% 400%;
     padding-top: 100px;
     height: 100vh;
@@ -36,24 +65,24 @@ table{
     border-collapse: collapse;
     border-radius: 0.25em;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.8);
     margin-left: auto;
     margin-right: auto;
+    color: var(--font-black);
 }
 
 table .table-header{
-    background-color: rgb(183, 201, 213);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: var(--table-header-background);
+    /*border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
 }
 
 table .table-content{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: rgba(255, 255, 255, 0.8);
+    /*border: var(--table-border);*/
+    background-color: var(--table-content-background);
 }
 
-table tr{
-    padding: .35em;
-}
+/*table tr{*/
+/*    padding: .35em;*/
+/*}*/
 
 table th, table td{
     padding: .625em;
@@ -76,7 +105,7 @@ table th{
     width: 2rem;
     height: 2rem;
     border: 5px solid #f3f3f3;
-    border-top: 6px solid #9c41f2;
+    border-top: 6px solid #0077B6;
     border-radius: 100%;
     margin: auto;
     visibility: hidden;
@@ -107,7 +136,7 @@ table th{
     }
 
     table .table-header{
-        width: 90%;
+        /*width: 90%;*/
         border: none;
         clip: rect(0 0 0 0);
         height: 1px;
@@ -115,9 +144,8 @@ table th{
         overflow: hidden;
         padding: 0;
         position: absolute;
-        width: 1px;
         font-size: .6em;
-        background-color: rgba(0, 119, 182, 0.3);
+        /*background-color: rgba(0, 119, 182, 0.3);*/
     }
 
     table tr{
@@ -153,7 +181,7 @@ table th{
         width: 99px;
     }
 
-    .recievedRequests, .tasksToDo, .csapatom, .friends{
+    .recievedRequests, .tasksToDo, .friends{
         min-width: 90%;
         margin: 10px auto 50px;
     }
@@ -163,7 +191,7 @@ table th{
         margin: 10px auto 50px;
     }
 
-    .friends, .csapatom, .country, .tasks, .levels{
+    .friends, .country, .tasks, .levels{
         margin-top: 50px;
         margin-bottom: 50px;
     }
@@ -174,10 +202,6 @@ table th{
         width: 99px;
     }
 
-    table tr:last-child td{
-        border-bottom: 1px solid transparent;
-    }
-
     table th{
         border-bottom: 1px solid black;
     }
@@ -186,7 +210,7 @@ table th{
         border-bottom: 1px solid black;
     }
 
-    .friends, .csapatom, .country, .levels{
+    .friends, .csapatom, .country, .levels, .tasks{
         width: 90%;
         margin: 50px auto;
     }
@@ -233,7 +257,7 @@ table th{
 }
 
 *::-webkit-scrollbar{
-    width: 10px;
+    width: 5px;
 }
 
 *::-webkit-scrollbar-track{
@@ -241,7 +265,6 @@ table th{
 }
 
 *::-webkit-scrollbar-thumb{
-    background-color: #409FE4;
+    background-color: var(--scroll-thumb);
     border-radius: 20px;
-    border: 2px solid rgba(50, 122, 175, 0.5);
 }

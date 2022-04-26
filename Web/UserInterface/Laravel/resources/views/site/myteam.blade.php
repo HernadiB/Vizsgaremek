@@ -8,13 +8,12 @@
 @endsection
 @section('content')
     @can('isAdmin', auth()->user())
-        <div class="buttons">
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-dark" class="btn_myTeam my-3 " onclick="CsapatomShow()">Csapatom</button>
-                    <button class="btn btn-dark" class="btn_myTeam my-3" onclick="CsapattagFelvetelShow()">Csapattag felvétele</button>
-                </div>
-
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <button class="btn btn-dark text-white btn_myTeam" onclick="CsapatomShow()">Csapatom</button>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <button class="btn btn-dark text-white btn_myTeam" onclick="CsapattagFelvetelShow()">Csapattag felvétele</button>
             </div>
         </div>
     @endcan
