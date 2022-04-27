@@ -1,7 +1,7 @@
 .form-section{
     width: 50%;
     background-color: var(--my-user-background);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 4px;
     border-radius: 0.25em;
     margin-left: auto;
     margin-right: auto;
@@ -17,7 +17,7 @@
     border-radius: 50%;
     display: block;
     margin: 30px auto;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 4px;
     object-fit: cover;
     height: 150px;
     width: 150px;

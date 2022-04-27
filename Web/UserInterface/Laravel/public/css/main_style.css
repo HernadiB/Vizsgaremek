@@ -38,13 +38,13 @@ body{
 
 @keyframes gradient{
     0%{
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
     50%{
         background-position: 100% 50%;
     }
     100%{
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
 }
 
@@ -52,7 +52,7 @@ table{
     padding: 0;
     width: 100%;
     table-layout: fixed;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 4px;
     border-collapse: collapse;
     border-radius: 0.25em;
     overflow: hidden;
@@ -113,7 +113,7 @@ table th{
 @media (max-width: 800px){
     table{
         border: none;
-        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 4px;
         border-collapse: collapse;
         border-radius: 0.25em;
         overflow: hidden;
@@ -137,12 +137,12 @@ table th{
         display: block;
         margin-bottom: .625em;
         line-height: 38px;
-        box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px 4px;
+        box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px 4px;
         border-radius: 0.25em;
     }
 
     table tr:last-child{
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
     table td{
