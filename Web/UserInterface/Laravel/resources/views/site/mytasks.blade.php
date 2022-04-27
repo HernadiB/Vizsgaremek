@@ -29,7 +29,7 @@
                             <button name="taskID" value="{{$actualTask->id}}" class="btn btn-success">Beadom!</button>
                         </td>
                     @else
-                        <td></td>
+                        <td data-label="Beadás">-</td>
                     @endif
                 {!! Form::close() !!}
                 @if($actualTask->pivot->status == "finished")

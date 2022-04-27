@@ -35,7 +35,7 @@
                         </td>
                     {!! Form::close() !!}
                     @else
-                        <td></td>
+                        <td data-label="Barát törlése">-</td>
                     @endif
                     <td data-label="Profil">
                         <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetUserByID({{$value->id}})">Megtekint</button>
@@ -49,51 +49,64 @@
     @endif
     <h4 class="title">Barátok keresése</h4>
         <div class="form-section">
-            <div class="row d-flex">
-                <input type="search" id="searchbar" class="form-control mb-4 m-auto w-50" placeholder="Keresés..." aria-label="Search" />
-
-{{--                <button class="btn btn-light float-right" style="height: 35px; width: 200px" onclick="FiltersVisible()">Részletes szűrő</button>--}}
-            </div>
-            <div class="row mb-4">
-                <div class="form-group">
-                    <select name="gender" id="gender">
-                        <option disabled hidden selected value> -- Válassz nemet -- </option>
-                        @foreach($genders as $key=>$value)
-                            <option value="{{$key}}">{{$value}}</option>
-                        @endforeach
-                    </select>
-                    <select name="role" id="role">
-                        <option disabled hidden selected value> -- Válassz hozzáférést -- </option>
-                        @foreach($roles as $role)
-                            <option value="{{$role}}">{{$role}}</option>
-                        @endforeach
-                    </select>
-                    <select name="team" id="team">
-                        <option disabled hidden selected value> -- Válassz csapatot -- </option>
-                        @foreach($teams as $key=>$value)
-                            <option value="{{$key}}">{{$value}}</option>
-                        @endforeach
-                    </select>
-                    <select name="level" id="level">
-                        <option disabled hidden selected value> -- Válassz rangot -- </option>
-                        @foreach($levels as $key=>$value)
-                            <option value="{{$key}}">{{$value}}</option>
-                        @endforeach
-                    </select>
-                    {!! Form::button('Szűrés', ['class' => 'btn btn-light mt-2 d-block', 'onclick' => 'NonFriendsFiltered()']) !!}
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <input type="search" class="form-control search mt-3" placeholder="Keresés..." aria-label="Search" />
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <button class="btn btnDetailedFilter btn-light w-100 mt-3" onclick="FiltersVisible()">Részletes szűrő</button>
                 </div>
             </div>
-                <table class="searchFriends">
-                    <thead class="table-header">
-                        <tr>
-                            <th scope="col">Név</th>
-                            <th scope="col">Bejelöl</th>
-                            <th scope="col">Profil</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-content" id="nonFriendsTable">
-                    </tbody>
-                </table>
+            <div class="form-group filters d-none">
+                <div class="row">
+                   <div class="col-lg-6">
+                       <select name="gender" id="gender" class="form-select">
+                           <option selected value> -- Válassz nemet -- </option>
+                           @foreach($genders as $key=>$value)
+                               <option value="{{$key}}">{{$value}}</option>
+                           @endforeach
+                       </select>
+                   </div>
+                    <div class="col-lg-6">
+                        <select name="role" id="role" class="form-select">
+                            <option selected value> -- Válassz hozzáférést -- </option>
+                            @foreach($roles as $role)
+                                <option value="{{$role}}">{{$role}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <select name="team" id="team" class="form-select">
+                            <option selected value> -- Válassz csapatot -- </option>
+                            @foreach($teams as $key=>$value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <select name="level" id="level" class="form-select">
+                            <option selected value> -- Válassz rangot -- </option>
+                            @foreach($levels as $key=>$value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                {!! Form::button('Szűrés', ['class' => 'btn btn-light btnFilter d-block mt-3 w-50', 'onclick' => 'NonFriendsFiltered()']) !!}
+            </div>
+            <table class="searchFriends">
+                <thead class="table-header">
+                    <tr>
+                        <th scope="col">Név</th>
+                        <th scope="col">Bejelöl</th>
+                        <th scope="col">Profil</th>
+                    </tr>
+                </thead>
+                <tbody class="table-content" id="nonFriendsTable">
+                </tbody>
+            </table>
         </div>
         <template>
             <tr>

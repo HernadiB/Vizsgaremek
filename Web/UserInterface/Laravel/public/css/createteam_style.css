@@ -21,6 +21,10 @@
     display: block;
 }
 
+.createTeamTitle{
+    text-align: center;
+}
+
 .createTeam{
     margin: 50px auto;
     display: block;

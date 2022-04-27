@@ -5,7 +5,7 @@
     --blue-color: #0077B6;
     --my-user-background: grey;
     --table-header-background: rgb(183, 201, 213);
-    --table-content-background: rgba(255, 255, 255, 0.8);
+    --table-content-background: rgb(204, 220, 234);
     --table-font-color: black;
     /*--table-border: 1px solid rgba(255, 255, 255, 0.3);*/
     --scroll-thumb: #0077B6;
@@ -27,17 +27,8 @@
 /*    --team-btn-text-color: black;*/
 /*}*/
 
-/*.simpleBg{*/
-/*    --main-background: #03045E;*/
-/*}*/
-
-/*.darkSimpleBg{*/
-/*    --simple-background: #464646FF;*/
-/*}*/
-
 body{
     background: var(--main-background);
-    /*background-color: var(--simple-background);*/
     animation: gradient 15s ease infinite;
     background-size: 400% 400%;
     padding-top: 100px;
@@ -72,17 +63,11 @@ table{
 
 table .table-header{
     background-color: var(--table-header-background);
-    /*border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
 }
 
 table .table-content{
-    /*border: var(--table-border);*/
     background-color: var(--table-content-background);
 }
-
-/*table tr{*/
-/*    padding: .35em;*/
-/*}*/
 
 table th, table td{
     padding: .625em;

@@ -37,7 +37,7 @@
                 <div class="row">
                     <label for="gender" class="col-lg-4 col-form-label">Nem*</label>
                     <div class="col-lg-8">
-                        <select name="gender" id="gender" class="form-select input"> //TODO: session gender selected
+                        <select name="gender" id="gender" class="form-select input">
                             <option value="M">Férfi</option>
                             <option value="F">Nő</option>
                         </select>
@@ -46,7 +46,7 @@
                 <div class="row">
                     <label for="profile_picture" class="col-lg-4 col-form-label">Profilkép</label>
                     <div class="col-lg-8">
-                        <input type="file" name="profile_picture" class="form-control input">
+                        <input type="file" name="profile_picture" class="form-control input file">
                     </div>
                 </div>
                 <div class="row">
@@ -69,4 +69,5 @@
             <button class="btn btn-danger btn_account_delete">Fiók törlése</button>
         {!! Form::close() !!}
     </div>
+    <script src="{{asset('js/profile.js')}}"></script>
 @endsection

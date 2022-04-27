@@ -4,8 +4,22 @@
     width: 60%;
 }
 
+.form-select{
+    margin-top: 20px;
+}
+
+.form-control{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .searchFriends{
     margin-top: 30px;
+}
+
+.btnFilter{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 992px){

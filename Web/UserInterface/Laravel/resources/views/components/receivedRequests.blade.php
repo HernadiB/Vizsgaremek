@@ -1,14 +1,14 @@
 @can('hasReceivedRequests', auth()->user())
     <table class="recievedRequests">
         <thead class="table-header">
-        <h3 class="text-center title">Beérkezett baráti jelölések</h3>
-        <tr>
-            <th scope="col">Felhasználónév</th>
-            <th scope="col">Csapat tagja</th>
-            <th scope="col">Baráti jelölés</th>
-            <th scope="col">Törlés a listából</th>
-            <th scope="col">Profil</th>
-        </tr>
+            <h3 class="text-center title">Beérkezett baráti jelölések</h3>
+            <tr>
+                <th scope="col">Felhasználónév</th>
+                <th scope="col">Csapat tagja</th>
+                <th scope="col">Baráti jelölés</th>
+                <th scope="col">Törlés a listából</th>
+                <th scope="col">Profil</th>
+            </tr>
         </thead>
         <tbody class="table-content">
         @foreach(auth()->user()->ReceivedRequests as $receivedRequest)

@@ -1,5 +1,4 @@
-function LoadNonFriends(users)
-{
+function LoadNonFriends(users) {
     let template = document.getElementsByTagName('template')[0].content;
     let tbody = document.body.querySelector("tbody#nonFriendsTable");
     tbody.innerHTML = "";
@@ -10,15 +9,21 @@ function LoadNonFriends(users)
         row.querySelector('button#btn_userProfile').onclick = function(){ GetUserByID(user.ID)}
         tbody.append(row);
         return {fullName: user.FullName, userName: user.Username, element: row}
-    })
+    });
 }
 
 let nonFriends = [];
-let searchbar = document.querySelector('#searchbar');
+let searchbar = document.querySelector('input.search');
 searchbar.addEventListener("input", e => {
     let value = e.target.value.toLowerCase();
     nonFriends.forEach(user => {
-        let isVisible = user.fullName.toLowerCase().includes(value) || user.userName.toLowerCase().includes(value)
-        user.element.classList.toggle("d-none", !isVisible)
-    })
+        let isVisible = user.fullName.toLowerCase().includes(value) || user.userName.toLowerCase().includes(value);
+        user.element.classList.toggle("d-none", !isVisible);
+    });
 })
+
+function FiltersVisible(){
+    let form = document.querySelector("div.filters");
+    form.classList.toggle("d-none");
+}
+

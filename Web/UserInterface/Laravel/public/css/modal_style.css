@@ -1,3 +1,7 @@
+.modal-content{
+    border: none;
+}
+
 .profImg{
     width: 150px;
     height: 150px;
@@ -9,22 +13,22 @@
 
 .teamRole{
     margin-bottom: 40px;
-
 }
 
 .modal-header{
-    background: #000000;
+    background: var(--table-header-background);
 }
 
 .modal-title{
-    color: #fff;
+    color: var(--font-black);
 }
 
 .modal-body{
-    background: grey;
+    background: var(--table-content-background);
     border: none;
+    color: var(--font-black);
 }
 
 .modal-footer{
-    background: #000000;
+    background: var(--table-header-background);
 }

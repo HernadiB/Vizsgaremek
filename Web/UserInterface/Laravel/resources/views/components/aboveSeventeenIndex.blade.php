@@ -4,12 +4,12 @@
     @if(count($taskReviews) != 0)
         <table class="tasksToReview mt-5">
             <thead class="table-header">
-            <tr>
-                <th scope="col">Felhasználónév</th>
-                <th scope="col">Feladat</th>
-                <th scope="col">Elfogad</th>
-                <th scope="col">Töröl</th>
-            </tr>
+                <tr>
+                    <th scope="col">Felhasználónév</th>
+                    <th scope="col">Feladat</th>
+                    <th scope="col">Elfogad</th>
+                    <th scope="col">Töröl</th>
+                </tr>
             </thead>
             <tbody class="table-content">
             @foreach($taskReviews as $taskReview)
