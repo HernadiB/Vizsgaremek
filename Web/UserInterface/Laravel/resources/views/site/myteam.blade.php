@@ -10,10 +10,10 @@
 @section('content')
     @can('isAdmin', auth()->user())
         <div class="row">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-12 text-center">
                 <button class="btn btn-dark myTeam" onclick="CsapatomShow()">Csapatom</button>
             </div>
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-12 text-center">
                 <button class="btn btn-dark myTeam" onclick="CsapattagFelvetelShow()">Csapattag felvétele</button>
             </div>
         </div>

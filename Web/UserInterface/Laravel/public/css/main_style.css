@@ -7,9 +7,8 @@
     --table-header-background: rgb(183, 201, 213);
     --table-content-background: rgb(204, 220, 234);
     --table-font-color: black;
-    /*--table-border: 1px solid rgba(255, 255, 255, 0.3);*/
     --scroll-thumb: #0077B6;
-    --team-btn-color: black;
+    --team-btn-color: #262626;
     --team-btn-text-color: white;
 }
 

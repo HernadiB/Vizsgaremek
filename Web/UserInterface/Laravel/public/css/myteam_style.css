@@ -1,42 +1,31 @@
-/*.admin{*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
-
-.leader{
-    text-decoration: none;
-}
-
-.card{
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .leaderDecription{
     margin-top: 50px;
     text-align: center;
     color: var(--font-black);
 }
 
-.teamMember{
+.teamMember, .leader{
     text-decoration: none;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.col-form-label{
+    margin-top: 10px;
 }
 
 .myTeam{
-    width: 400px;
+    width: 300px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    background: white;
-    color: white;
+    background: var(--team-btn-color);
+    color: var(--team-btn-text-color);
 }
 
 .card{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-body{
@@ -46,6 +35,7 @@
 .card:hover {
     transform: scale(1.07);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    border: none;
 }
 
 .form-section{
@@ -56,6 +46,7 @@
     border-radius: 0.25em;
     margin-right: auto;
     margin-top: 40px;
+    color: var(--font-black);
 }
 
 .form-section form{
@@ -90,5 +81,11 @@
         width: 100px;
     }
 
+}
+
+@media (max-width: 768px){
+    .leaderDecription{
+        margin-top: 30px;
+    }
 }
 
