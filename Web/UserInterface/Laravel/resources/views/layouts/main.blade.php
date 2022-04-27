@@ -17,6 +17,7 @@
 @yield('script')
 @include('components.nav')
     <div class="container">
+        @yield('weather')
         @if(session("success"))
             <div class="alert alert-success">{{session("success")}}</div>
         @endif
