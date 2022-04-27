@@ -31,8 +31,8 @@ body{
     animation: gradient 15s ease infinite;
     background-size: 400% 400%;
     padding-top: 100px;
-    height: 100vh;
-    margin-bottom: 100px;
+    padding-bottom: 20px;
+
 }
 
 @keyframes gradient{
