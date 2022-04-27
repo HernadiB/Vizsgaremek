@@ -66,4 +66,16 @@ class User extends Authenticatable
     {
         return $this->Team->Members()->orderByDesc('score');
     }
+    public function UserSettings()
+    {
+        return $this->hasOne(UserSettings::class);
+    }
+    public function BlockedPeople()
+    {
+        return $this->belongsToMany(User::class, "blockedpeople", "blocker_user_id", "blocked_user_id");
+    }
+    public function BlockedBy()
+    {
+        return $this->belongsToMany(User::class, "blockedpeople", "blocked_user_id", "blocker_user_id");
+    }
 }

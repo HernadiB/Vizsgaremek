@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TaskRequest;
 use App\Http\Resources\TaskResource;
+use App\Models\Level;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -111,6 +112,17 @@ class TaskController extends Controller
         $taskID = explode('.', $request->userAndTaskID)[1];
         $user = User::findorfail($userID);
         $user->ActualTasks()->updateExistingPivot($taskID, ['status' => 'finished']);
+        $user->score += Task::findorfail($taskID)->score;
+        $user->save();
+        if(count($user->RemainingTasks) == 0 && count($user->ActualTasks()->where('status', 'finished')->get()) == Task::where('level_id', $user->level_id)->count())
+        {
+            if ($user->level_id != Level::all()->count())
+            {
+                $user->level_id += 1;
+                $user->ActualTasks()->detach();
+                $user->save();
+            }
+        }
         return redirect()->back()->with('success', 'Elfogadva!');
     }
     public function RejectTask(Request $request)
