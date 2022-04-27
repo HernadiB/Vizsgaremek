@@ -31,7 +31,7 @@
             </tbody>
         </table>
     @else
-        <div class="title">Nincs beérkezett feladat</div>
+        <div class="title">Nincs beérkezett feladat.</div>
     @endif
 @else
     @include('components.createTeam')

@@ -43,5 +43,7 @@
             @endforeach
             </tbody>
         </table>
+    @else
+        <div class="alert alert-danger mt-5 mb-5 m-auto">Nincs aktuális feladatod, látogass el a <a href="{{route('home')}}">főoldalra</a>! Amint befejezted azokat, tovább léphetsz a következő szintre.</div>
     @endif
 @endsection
