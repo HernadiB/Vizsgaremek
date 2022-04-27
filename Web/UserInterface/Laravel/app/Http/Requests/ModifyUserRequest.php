@@ -31,7 +31,7 @@ class ModifyUserRequest extends FormRequest
             "birthdate" => ["required", "date"],
             "gender" => ["required", Rule::in(["M", "F"])],
             "password_new" => ["nullable", "string", "min:5", "max:255", "confirmed"],
-            "profile_picture" => ["nullable", "image", "size:2048"]
+            "profile_picture" => ["nullable", "file", "image"]
         ];
     }
 
@@ -46,7 +46,6 @@ class ModifyUserRequest extends FormRequest
             "in" => "A(z) :attribute a következő értékek egyike kell, hogy legyen: :values",
             "email" => "Az emailnek tartalmaznia kell a @ karaktert!",
             "image" => "A(z) :attribute formátuma nem megfelelő!",
-            "size" => "A(z) :attribute mérete maximum :size KB lehet",
             "password_new.confirmed" => "A megadott jelszavak nem egyeznek!",
         ];
     }
