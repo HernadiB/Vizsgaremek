@@ -99,10 +99,8 @@ class SiteController extends Controller
     }
     public function Levels()
     {
-        $tasks = Task::all()->sortBy('level_id');
         return view('site.levels', [
-            "title" => "Szintek",
-            "tasks" => $tasks
+            "title" => "Szintek"
         ]);
     }
     public function Login()

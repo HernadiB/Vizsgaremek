@@ -33,27 +33,4 @@ function ShowProfile(user)
     {
         teamRole.innerText = 'Még egyetlen csapatnak sem tagja';
     }
-
-}
-
-function ShowTask(task)
-{
-    console.log(task)
-    let modalBody = document.querySelector('div#exampleModal').querySelector('div.modal-body');
-    let taskPicture = document.createElement('img');
-    modalBody.innerHTML = "";
-    let taskDescription = document.createElement('h4');
-    taskDescription.innerText = 'Feladat leírása: ' + task.description;
-    let taskScore = document.createElement('h4');
-    taskScore.innerText = 'Feladat pontszáma: ' + task.score;
-
-    taskDescription.classList.add('text-dark');
-    taskScore.classList.add('text-dark');
-
-    taskPicture.classList.add('img-fluid', 'mx-auto', 'd-block');
-    taskPicture.style.width = "400px";
-    taskPicture.src = "./../" + task.image;
-    modalBody.append(taskPicture, taskDescription, taskScore);
-
-
 }

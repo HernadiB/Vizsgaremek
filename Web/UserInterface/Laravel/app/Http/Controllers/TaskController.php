@@ -93,11 +93,6 @@ class TaskController extends Controller
         //
     }
 
-    public function GetUsers($taskid)
-    {
-        $task = Task::findorfail($taskid);
-        return $task->Users;
-    }
     public function AcceptTask(Request $request)
     {
         $user = $request->session()->get('user');
