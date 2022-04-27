@@ -179,11 +179,11 @@ class UserController extends Controller
         $user->Friendships2()->detach($request->friendID);
         return redirect()->back()->with('success', 'Törölve!');
     }
-    public function InviteFriend(Request $request)
+    public function InviteFriend(Request $request, $id)
     {
-        $user = $request->session()->get('user');
-        $user->SentRequests()->attach($request->userID);
-        return redirect()->back()->with('success', 'Bejelölve!');
+        $senderUser = User::findorfail($request->session()->get('user.id'));
+        $senderUser->SentRequests()->attach($id);
+        return ["message" => "Bejelölve!"];
     }
     public function GetCountryLeaderboard()
     {
@@ -196,5 +196,34 @@ class UserController extends Controller
             $rank++;
         }
         return $leaderboardRanks;
+    }
+    public function GetNonFriends(Request $request)
+    {
+        $currentUser = User::findorfail($request->session()->get('user.id'));
+        $friends1 = $currentUser->Friendships1;
+        $friends2 = $currentUser->Friendships2;
+
+        $users = User::all();
+        $sentRequests = $currentUser->SentRequests;
+        $receivedRequests = $currentUser->ReceivedRequests;
+        $nonFriends = $users->diff($friends1->merge($friends2))->diff($sentRequests)->diff($receivedRequests)->where('id', '!=', $currentUser->id);
+
+        if($request->gender != null)
+        {
+            $nonFriends = $nonFriends->where('gender', $request->gender);
+        }
+        if($request->role != null)
+        {
+            $nonFriends = $nonFriends->where('role', $request->role);
+        }
+        if($request->team != null)
+        {
+            $nonFriends = $nonFriends->where('team_id', $request->team);
+        }
+        if($request->level != null)
+        {
+            $nonFriends = $nonFriends->where('level_id', $request->level);
+        }
+        return UserResource::collection($nonFriends);
     }
 }

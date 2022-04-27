@@ -7,6 +7,9 @@
 @endsection
 @section('title', $title)
 @section('content')
+    <script>
+        GetNonFriends()
+    </script>
     @if(count($friends) != 0)
         <h3 class="title">Barátaim</h3>
         <table class="friends">
@@ -19,7 +22,7 @@
                     <th scope="col">Profil</th>
                 </tr>
             </thead>
-            <tbody class="table-content">
+            <tbody class="table-content" id="friendsTable">
             @foreach($friends as $key => $value)
                 <tr @if ($value->id == auth()->user()->id) style="background: grey" @endif>
                     <td data-label="Helyezés">#{{$key}}</td>
@@ -46,12 +49,40 @@
     @endif
     <h4 class="title">Barátok keresése</h4>
         <div class="form-section">
-{{--                <div class="nev row">--}}
-{{--                    <label for="nev" class="col-lg-4 col-form-label">Felhasználó neve</label>--}}
-{{--                    <div class="col-lg-8">--}}
-{{--                        <input type="text" name="nev" class="form-control input" placeholder="Alfréd Mihály">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+            <div class="row d-flex">
+                <input type="search" id="searchbar" class="form-control mb-4 m-auto w-50" placeholder="Keresés..." aria-label="Search" />
+
+{{--                <button class="btn btn-light float-right" style="height: 35px; width: 200px" onclick="FiltersVisible()">Részletes szűrő</button>--}}
+            </div>
+            <div class="row mb-4">
+                <div class="form-group">
+                    <select name="gender" id="gender">
+                        <option disabled hidden selected value> -- Válassz nemet -- </option>
+                        @foreach($genders as $key=>$value)
+                            <option value="{{$key}}">{{$value}}</option>
+                        @endforeach
+                    </select>
+                    <select name="role" id="role">
+                        <option disabled hidden selected value> -- Válassz hozzáférést -- </option>
+                        @foreach($roles as $role)
+                            <option value="{{$role}}">{{$role}}</option>
+                        @endforeach
+                    </select>
+                    <select name="team" id="team">
+                        <option disabled hidden selected value> -- Válassz csapatot -- </option>
+                        @foreach($teams as $key=>$value)
+                            <option value="{{$key}}">{{$value}}</option>
+                        @endforeach
+                    </select>
+                    <select name="level" id="level">
+                        <option disabled hidden selected value> -- Válassz rangot -- </option>
+                        @foreach($levels as $key=>$value)
+                            <option value="{{$key}}">{{$value}}</option>
+                        @endforeach
+                    </select>
+                    {!! Form::button('Szűrés', ['class' => 'btn btn-light mt-2 d-block', 'onclick' => 'NonFriendsFiltered()']) !!}
+                </div>
+            </div>
                 <table class="searchFriends">
                     <thead class="table-header">
                         <tr>
@@ -60,22 +91,21 @@
                             <th scope="col">Profil</th>
                         </tr>
                     </thead>
-                    <tbody class="table-content">
-                    @foreach($nonFriends as $user)
-                        <tr>
-                            <td data-label="Név">{{$user->username}}</td>
-                            {!! Form::open(['route' => 'friendInvite', 'method' => 'post']) !!}
-                            <td data-label="Bejelöl">
-                                <button name="userID" value="{{$user->id}}" class="btn btn-success">Bejelöl</button>
-                            </td>
-                            {!! Form::close() !!}
-                            <td data-label="Profil">
-                                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetUserByID({{$user->id}})">Megtekint</button>
-                            </td>
-                        </tr>
-                    @endforeach
+                    <tbody class="table-content" id="nonFriendsTable">
                     </tbody>
                 </table>
         </div>
+        <template>
+            <tr>
+                <td data-label="Név" id="userName"></td>
+                <td data-label="Bejelöl" id="userInvite">
+                    <button name="userID" id="btn_userInvite" class="btn btn-success">Bejelöl</button>
+                </td>
+                <td data-label="Profil" id="userProfile">
+                    <button class="btn btn-dark" id="btn_userProfile" data-bs-toggle="modal" data-bs-target="#exampleModal">Megtekint</button>
+                </td>
+            </tr>
+        </template>
     @include('components.modal')
+    <script src="{{asset('js/friends.js')}}"></script>
 @endsection

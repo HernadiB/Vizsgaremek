@@ -42,7 +42,7 @@ class SiteController extends Controller
     }
     public function Friends()
     {
-        $currentUser = User::where('id', session('user.id'))->first();
+        $currentUser = auth()->user();
         $friends1 = $currentUser->Friendships1;
         $friends2 = $currentUser->Friendships2;
         $friendsAll = $friends1->merge($friends2);
@@ -60,14 +60,13 @@ class SiteController extends Controller
         {
             $leaderboardRanks[array_search($user, $friendsAll->toarray())+1] = User::where('id', $user)->first();
         }
-        $users = User::all();
-        $sentrequests = $currentUser->SentRequests;
-        $receivedrequests = $currentUser->ReceivedRequests;
-        $nonfriends = $users->diff($friends1->merge($friends2))->diff($sentrequests)->diff($receivedrequests)->where('id', '!=', $currentUser->id);
         return view('site.friends', [
             "title" => "Barátaim",
             "friends" => $leaderboardRanks,
-            "nonFriends" => $nonfriends
+            "genders" => ["F" => "Nő", "M" => "Férfi"],
+            "roles" => ["admin", "user"],
+            "teams" => Team::all()->pluck("name", "id"),
+            "levels" => Level::all()->pluck("name", "id")
         ]);
     }
 

@@ -34,7 +34,7 @@
             <td id="levelname" data-label="Feladat szintje"></td>
             <td id="taskname" data-label="Feladat megnevezése"></td>
             <td id="view" data-label="Feladat paraméterei">
-                <button class="btn btn-secondary" id="btn_viewTask" data-bs-toggle="modal" data-bs-target="#exampleModal">Megtekint</button>
+                <button class="btn btn-dark" id="btn_viewTask" data-bs-toggle="modal" data-bs-target="#exampleModal">Megtekint</button>
             </td>
         </tr>
     </template>

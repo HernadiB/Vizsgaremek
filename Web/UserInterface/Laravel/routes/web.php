@@ -30,6 +30,7 @@ Route::post('/users/login', [\App\Http\Controllers\UserController::class, "Login
 Route::post('/users/update', [\App\Http\Controllers\UserController::class, "ModifyUser"])->name("userModify");
 Route::post('/users/delete', [\App\Http\Controllers\UserController::class, "DeleteUser"])->name("userDelete");
 Route::post('/users/logout', [\App\Http\Controllers\UserController::class, "LogoutUser"])->name("userLogout");
+Route::post('/users/nonfriends', [\App\Http\Controllers\UserController::class, "GetNonFriends"])->name("userNonFriends");
 
 Route::post('/friendinvite/accept', [\App\Http\Controllers\UserController::class, "AcceptInvitation"])->name("inviteAccept");
 Route::post('/friendinvite/reject', [\App\Http\Controllers\UserController::class, "RejectInvitation"])->name("inviteReject");
@@ -42,7 +43,7 @@ Route::post('/task/confirm', [\App\Http\Controllers\TaskController::class, "Conf
 Route::post('/task/reject', [\App\Http\Controllers\TaskController::class, "RejectTask"])->name("taskReject");
 
 Route::post('/friend/delete', [\App\Http\Controllers\UserController::class, "DeleteFriend"])->name("friendDelete");
-Route::post('/friend/invite', [\App\Http\Controllers\UserController::class, "InviteFriend"])->name("friendInvite");
+Route::post('/friend/invite/{id}', [\App\Http\Controllers\UserController::class, "InviteFriend"])->name("friendInvite");
 
 Route::post('/team/create', [\App\Http\Controllers\TeamController::class, "CreateTeam"])->name("teamCreate");
 Route::post('/team/addmember', [\App\Http\Controllers\TeamController::class, "AddMember"])->name("memberAdd");
