@@ -15,11 +15,11 @@
             <div class="toggler">
                 <div class="form-check form-switch">
                     <label class="form-check-label" for="simpleBackground">Smooth Háttér Be/Ki</label>
-                    <input class="form-check-input" type="checkbox" id="movingBackground" onclick="simpleBg()">
+                    <input class="form-check-input" type="checkbox" id="movingBackground">
                 </div>
                 <div class="form-check form-switch">
                     <label class="form-check-label" for="darkBackground">Dark mode Be/Ki</label>
-                    <input class="form-check-input" type="checkbox" id="darkBackground" onclick="changeMode()">
+                    <input class="form-check-input" type="checkbox" id="darkBackground" onclick="darkMode()">
                 </div>
                 <div class="form-check form-switch">
                     <label class="form-check-label" for="flexSwitchCheckDefault">Időjárás jelentő a főoldalon</label>

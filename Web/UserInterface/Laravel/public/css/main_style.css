@@ -12,19 +12,18 @@
     --team-btn-text-color: white;
 }
 
-/*:root{*/
-/*    --main-background: linear-gradient(-45deg, #7A7A7A, #575757, #464646, #343434, #232323, #111111) no-repeat fixed;*/
-/*    --background-white: white;*/
-/*    --font-black: white;*/
-/*    --blue-color: #575757;*/
-/*    --my-user-background: #7A7A7A;*/
-/*    --table-header-background: #343434;*/
-/*    --table-content-background: #7A7A7A;*/
-/*    !*--table-border: 1px solid rgba(255, 255, 255, 1);*!*/
-/*    --scroll-thumb: black;*/
-/*    --team-btn-color: white;*/
-/*    --team-btn-text-color: black;*/
-/*}*/
+.dark{
+    --main-background: linear-gradient(-45deg, #7A7A7A, #575757, #464646, #343434, #232323, #111111) no-repeat fixed;
+    --background-white: white;
+    --font-black: white;
+    --blue-color: #575757;
+    --my-user-background: #7A7A7A;
+    --table-header-background: #343434;
+    --table-content-background: #7A7A7A;
+    --scroll-thumb: black;
+    --team-btn-color: white;
+    --team-btn-text-color: black;
+}
 
 body{
     background: var(--main-background);
@@ -49,7 +48,6 @@ body{
 
 table{
     padding: 0;
-    width: 100%;
     table-layout: fixed;
     box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 4px;
     border-collapse: collapse;
@@ -120,7 +118,6 @@ table th{
     }
 
     table .table-header{
-        /*width: 90%;*/
         border: none;
         clip: rect(0 0 0 0);
         height: 1px;
@@ -129,11 +126,10 @@ table th{
         padding: 0;
         position: absolute;
         font-size: .6em;
-        /*background-color: rgba(0, 119, 182, 0.3);*/
     }
 
     table tr{
-        display: block;
+        /*display: block;*/
         margin-bottom: .625em;
         line-height: 38px;
         box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px 4px;
