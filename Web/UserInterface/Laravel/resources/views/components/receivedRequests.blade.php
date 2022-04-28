@@ -1,6 +1,5 @@
 @can('hasReceivedRequests', auth()->user())
     <h3 class="text-center title">Beérkezett baráti jelölések</h3>
-{{--    @if(count($receivedRequest) != 0)--}}
         <table class="recievedRequests">
             <thead class="table-header">
                 <tr>
@@ -33,8 +32,4 @@
                 @endforeach
             </tbody>
         </table>
-{{--    @else--}}
-{{--        <div class="title">Nincs beérkezett baráti kérelmed.</div>--}}
-{{--    @endif--}}
-
 @endcan

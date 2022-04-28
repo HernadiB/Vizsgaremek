@@ -17,10 +17,12 @@ let coordinates = [
     },
 ]
 
-coordinates.forEach(c => {
-    fetchWeather(c.lat, c.lon);
-});
-
+function showWeather(coordinates)
+{
+    coordinates.forEach(c => {
+        fetchWeather(c.lat, c.lon);
+    });
+}
 function fetchWeather(lat, lon)
 {
     let appid = "63b5461c73e5a9a6040a41694277ebd6";
@@ -35,22 +37,22 @@ function fetchWeather(lat, lon)
 function appendCarouselItem(data)
 {
     let carousel = document.body.querySelector('.carousel-inner');
-    let template = document.getElementById('weatherTemplate').content;
-    let row = document.importNode(template,true);
+    let templateContent = document.getElementById('weatherTemplate').content;
+    let template = document.importNode(templateContent,true);
 
-    row.querySelector('h4#location').innerHTML = data.name + " (" + data.coord.lat + ", " + data.coord.lon + ")";
-    row.querySelector('img#image').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    row.querySelector('h4#description').innerHTML = data.weather[0].description;
-    row.querySelector('h4#temperature').innerHTML = "Hőmérséklet: " + data.main.feels_like + "°";
-    row.querySelector('h4#humidity').innerHTML = "Páratartalom: " + data.main.humidity + "%";
-    row.querySelector('h4#windSpeed').innerHTML = "Szélsebesség: " + data.wind.speed + " m/s";
-    row.querySelector('h4#sunRise').innerHTML = "Napkelte: " + convertUnixTime(data.sys.sunrise);
-    row.querySelector('h4#sunSet').innerHTML = "Napnyugta: " + convertUnixTime(data.sys.sunset);
+    template.querySelector('h4#location').innerHTML = data.name + " (" + data.coord.lat + ", " + data.coord.lon + ")";
+    template.querySelector('img#image').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    template.querySelector('h4#description').innerHTML = data.weather[0].description;
+    template.querySelector('h4#temperature').innerHTML = "Hőmérséklet: " + data.main.feels_like + "°";
+    template.querySelector('h4#humidity').innerHTML = "Páratartalom: " + data.main.humidity + "%";
+    template.querySelector('h4#windSpeed').innerHTML = "Szélsebesség: " + data.wind.speed + " m/s";
+    template.querySelector('h4#sunRise').innerHTML = "Napkelte: " + convertUnixTime(data.sys.sunrise);
+    template.querySelector('h4#sunSet').innerHTML = "Napnyugta: " + convertUnixTime(data.sys.sunset);
     if(document.querySelector('div.carousel-item.active') == null)
     {
-        row.querySelector('div.carousel-item').classList.add('active');
+        template.querySelector('div.carousel-item').classList.add('active');
     }
-    carousel.append(row);
+    carousel.append(template);
 }
 function convertUnixTime(unix) {
     let a = new Date(unix * 1000),

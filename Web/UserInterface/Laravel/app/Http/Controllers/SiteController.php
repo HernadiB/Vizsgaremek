@@ -63,6 +63,8 @@ class SiteController extends Controller
         return view('site.friends', [
             "title" => "Barátaim",
             "friends" => $leaderboardRanks,
+            "sentRequests" => $currentUser->SentRequests,
+            "blockedPeople" => $currentUser->BlockedPeople,
             "genders" => ["F" => "Nő", "M" => "Férfi"],
             "roles" => ["admin", "user"],
             "teams" => Team::all()->pluck("name", "id"),
@@ -147,7 +149,8 @@ class SiteController extends Controller
     public function Profile()
     {
         return view('site.profile', [
-            "title" => "Profilom"
+            "title" => "Profilom",
+            "genders" => ["F" => "Nő", "M" => "Férfi"],
         ]);
     }
 }

@@ -8,7 +8,9 @@
 @endsection
 @section('title',$title)
 @section('weather')
-    @include('components.weather')
+    @can('viewWeather')
+        @include('components.weather')
+    @endcan
 @endsection
 @section('content')
     @can(['userIsBelowEighteen'], auth()->user())
@@ -16,6 +18,5 @@
     @else
         @include('components.aboveSeventeenIndex')
     @endif
-
-    @include('components.modal')
 @endsection
+@include('components.modal')

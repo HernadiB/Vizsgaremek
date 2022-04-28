@@ -38,8 +38,9 @@
                     <label for="gender" class="col-lg-4 col-form-label">Nem*</label>
                     <div class="col-lg-8">
                         <select name="gender" id="gender" class="form-select input">
-                            <option value="M">Férfi</option>
-                            <option value="F">Nő</option>
+                            @foreach($genders as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

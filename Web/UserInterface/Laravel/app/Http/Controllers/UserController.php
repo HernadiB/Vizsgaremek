@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AcceptInvitationRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\ModifyUserRequest;
 use App\Http\Requests\SignupRequest;
@@ -156,11 +157,12 @@ class UserController extends Controller
         return redirect()->route('site.login')->with('success', 'Sikeres kijelentkezés!');
     }
 
-    public function AcceptInvitation(Request $request)
+    public function AcceptInvitation(AcceptInvitationRequest $request)
     {
+        $data = $request->validated();
         $receiverUser = $request->session()->get('user');
-        $receiverUser->ReceivedRequests()->detach($request->senderUserID);
-        $receiverUser->Friendships1()->syncWithoutDetaching($request->senderUserID);
+        $receiverUser->ReceivedRequests()->detach($data["senderUserID"]);
+        $receiverUser->Friendships1()->syncWithoutDetaching($data["senderUserID"]);
         $request->session()->flash('success', 'Barát kérelem elfogadva!');
         return redirect()->back();
     }
@@ -168,6 +170,11 @@ class UserController extends Controller
     {
         $receiverUser = $request->session()->get('user');
         $receiverUser->ReceivedRequests()->detach($request->senderUserID);
+        if($receiverUser->UserSettings->block_after_rejection == 1)
+        {
+            $receiverUser->BlockedPeople()->attach($request->senderUserID);
+            $request->session()->flash('success', 'Elutasítva, blokkolva!');
+        }
         $request->session()->flash('success', 'Barát kérelem elutasítva!');
         return redirect()->back();
     }
@@ -177,13 +184,39 @@ class UserController extends Controller
         $user = $request->session()->get('user');
         $user->Friendships1()->detach($request->friendID);
         $user->Friendships2()->detach($request->friendID);
+        if($user->UserSettings->block_after_delete == 1)
+        {
+            $user->BlockedPeople()->attach($request->friendID);
+            return redirect()->back()->with('success', 'Törölve, blokkolva!');
+        }
         return redirect()->back()->with('success', 'Törölve!');
+    }
+    public function DeleteSentRequest(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $user->SentRequests()->detach($request->personID);
+        return redirect()->back()->with('success', 'Törölve!');
+    }
+    public function ReleaseBlockedUser(Request $request)
+    {
+        $user = $request->session()->get('user');
+        $user->BlockedPeople()->detach($request->personID);
+        return redirect()->back()->with('success', 'Feloldva!');
     }
     public function InviteFriend(Request $request, $id)
     {
         $senderUser = User::findorfail($request->session()->get('user.id'));
-        $senderUser->SentRequests()->attach($id);
-        return ["message" => "Bejelölve!"];
+        $availablePeopleToInvite = $this->GetNonFriends($request);
+        if($senderUser->BlockedBy->pluck('id')->contains($id))
+        {
+            return ["message" => "Ez a felhasználó blokkolt téged!"];
+        }
+        if ($availablePeopleToInvite->pluck('id')->contains($id))
+        {
+            $senderUser->SentRequests()->attach($id);
+            return ["message" => "Bejelölve!"];
+        }
+        return ["message" => "Ezt a felhasználót nem tudod bejelölni!"];
     }
     public function GetCountryLeaderboard()
     {

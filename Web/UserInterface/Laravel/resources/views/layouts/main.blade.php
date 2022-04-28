@@ -18,13 +18,13 @@
 @yield('script')
 @include('components.nav')
     <div class="container">
-        @yield('weather')
         @if(session("success"))
             <div class="alert alert-success">{{session("success")}}</div>
         @endif
         @if(session("error"))
             <div class="alert alert-danger">{{session("error")}}</div>
         @endif
+        @yield('weather')
         @yield('content')
     </div>
 </body>

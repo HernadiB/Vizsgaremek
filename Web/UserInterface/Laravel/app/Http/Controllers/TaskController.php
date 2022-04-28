@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AcceptTaskRequest;
 use App\Http\Requests\TaskRequest;
 use App\Http\Resources\TaskResource;
 use App\Models\Level;
@@ -94,10 +95,11 @@ class TaskController extends Controller
         //
     }
 
-    public function AcceptTask(Request $request)
+    public function AcceptTask(AcceptTaskRequest $request)
     {
+        $data = $request->validated();
         $user = $request->session()->get('user');
-        $user->ActualTasks()->attach($request->taskID);
+        $user->ActualTasks()->attach($data["taskID"]);
         return redirect()->back()->with('success', 'Elvállalva!');
     }
     public function FinishTask(Request $request)

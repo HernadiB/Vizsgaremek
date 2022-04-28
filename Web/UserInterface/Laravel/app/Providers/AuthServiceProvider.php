@@ -41,5 +41,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('isAdmin', function (User $user){
             return $user->role == "admin";
         });
+        Gate::define('viewWeather', function (User $user){
+            return $user->UserSettings->weather;
+        });
     }
 }

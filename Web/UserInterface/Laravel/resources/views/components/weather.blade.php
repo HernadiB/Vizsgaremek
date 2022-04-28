@@ -29,3 +29,6 @@
         <h4 id="sunSet"></h4>
     </div>
 </template>
+<script>
+    showWeather(coordinates)
+</script>
