@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\UserSettings;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([LevelSeeder::class, TaskSeeder::class, TeamSeeder::class, UserSeeder::class, TeamModifierSeeder::class]);
+        $this->call([
+            LevelSeeder::class,
+            TaskSeeder::class,
+            TeamSeeder::class,
+            UserSeeder::class,
+            TeamModifierSeeder::class,
+            UserSettingsSeeder::class]);
     }
 }

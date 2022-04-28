@@ -1,3 +1,4 @@
+@include('components.validationErrors')
 <table class="data">
     <thead class="table-header">
     <tr>
