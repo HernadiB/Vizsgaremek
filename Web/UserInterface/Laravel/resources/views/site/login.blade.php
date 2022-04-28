@@ -13,7 +13,7 @@
             @csrf
             <div class="email">
                 <label for="email" class="form-label">E-mail cím</label>
-                <input type="text" name="email" class="form-control input" placeholder="alfred.mihaly@example.com">
+                <input type="text" name="email" class="form-control input" placeholder="alfred.mihaly@example.com" value="{{old('email')}}">
                 <span></span>
             </div>
             <div class="passwd">

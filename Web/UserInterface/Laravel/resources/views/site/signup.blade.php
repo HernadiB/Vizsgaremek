@@ -13,26 +13,26 @@
             @csrf
             <div class="nev">
                 <label for="full_name" class="form-label">Teljes név</label>
-                <input type="text" name="full_name" class="form-control input" placeholder="Alfréd Mihály">
+                <input type="text" name="full_name" class="form-control input" placeholder="Alfréd Mihály" value="{{old('full_name')}}">
             </div>
             <div class="felhnev">
                 <label for="username" class="form-label">Felhasználónév</label>
-                <input type="text" name="username" class="form-control input" placeholder="alfred.mihaly">
+                <input type="text" name="username" class="form-control input" placeholder="alfred.mihaly" value="{{old('username')}}">
             </div>
             <div class="szuldat">
                 <label for="birthdate" class="form-label">Születési dátum</label>
-                <input type="date" name="birthdate" class="form-control input">
+                <input type="date" name="birthdate" class="form-control input" value="{{old('birthdate')}}">
             </div>
             <div class="nemek">
                 <label for="gender" class="form-label">Nem</label>
                 <select name="gender" class="form-select input">
-                    <option value="M">Férfi</option>
+                    <option selected value="M">Férfi</option>
                     <option value="F">Nő</option>
                 </select>
             </div>
             <div class="email">
                 <label for="email" class="form-label">E-mail cím</label>
-                <input type="text" name="email" class="form-control input" placeholder="alfred.mihaly@example.com">
+                <input type="text" name="email" class="form-control input" placeholder="alfred.mihaly@example.com" value="{{old('email')}}">
                 <span></span>
             </div>
             <div class="passwd">
