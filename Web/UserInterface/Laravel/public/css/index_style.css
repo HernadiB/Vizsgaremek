@@ -3,7 +3,7 @@
 }
 
 .data{
-    max-width: 60%;
+    width: 60%;
 }
 
 @media (max-width: 800px){
@@ -13,7 +13,7 @@
     }
 
     .recievedRequests, .tasksToDo{
-        max-width: 85%;
+        width: 85%;
     }
 }
 @media (min-width: 800px) {
@@ -22,7 +22,7 @@
     }
 
     .recievedRequests, .tasksToDo{
-        max-width: 85%;
+        width: 85%;
         margin: 50px auto 50px;
     }
 

@@ -15,6 +15,7 @@
 
 .searchFriends{
     margin-top: 30px;
+    width: 100%;
 }
 
 .btnFilter{
@@ -33,14 +34,53 @@
 }
 
 @media (min-width: 992px){
-    /*.searchFriends{
-        display: block;
-        overflow-y: auto;
-        max-height: 350px;
-    }*/
+    @media screen and (min-width: 800px){
 
-    /*.searchFriends .table-header{
-        position: sticky;
-        top: 0;
-    }*/
+        .searchFriends tbody, .searchFriends th, .searchFriends td{
+            display: block;
+            width: 100%;
+        }
+
+        .searchFriends thead, .searchFriends tbody{
+            overflow-y: scroll;
+        }
+
+        .searchFriends thead{
+            -ms-overflow-style: none;
+        }
+
+        .searchFriends thead::-webkit-scrollbar{
+            visibility: hidden;
+        }
+
+        .searchFriends tbody{
+            max-height: 350px;
+            position: relative;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+
+        .searchFriends tr{
+            display: flex;
+        }
+    }
+
+    .friends th:nth-child(1){
+        width: 10%;
+    }
+
+    .friends th:nth-child(2){
+        width: 30%;
+    }
+
+    .friends th:nth-child(3){
+        width: 20%;
+    }
+
+    .friends th:nth-child(4){
+        width: 20%;
+    }
+
+    .friends th:nth-child(5){
+        width: 20%;
+    }
 }

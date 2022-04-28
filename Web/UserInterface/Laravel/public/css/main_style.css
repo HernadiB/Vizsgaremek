@@ -48,7 +48,6 @@ body{
 
 table{
     padding: 0;
-    width: 100%;
     table-layout: fixed;
     box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 4px;
     border-collapse: collapse;
@@ -167,8 +166,8 @@ table th{
         margin: 10px auto 50px;
     }
 
-    .orszagos, .levels{
-        width: 70%;
+    .country, .levels{
+        width: 80%;
         margin: 10px auto 50px;
     }
 
@@ -191,49 +190,9 @@ table th{
         border-bottom: 1px solid black;
     }
 
-    .friends, .csapatom, .country, .levels, .tasks{
+    .friends, .country, .levels, .tasks{
         width: 90%;
         margin: 50px auto;
-    }
-
-    .friends th:nth-child(1){
-        width: 10%;
-    }
-
-    .friends th:nth-child(2){
-        width: 30%;
-    }
-
-    .friends th:nth-child(3){
-        width: 20%;
-    }
-
-    .friends th:nth-child(4){
-        width: 20%;
-    }
-
-    .friends th:nth-child(5){
-        width: 20%;
-    }
-
-    .tasks th:nth-child(1){
-        width: 15%;
-    }
-
-    .tasks th:nth-child(2){
-        width: 30%;
-    }
-
-    .tasks th:nth-child(3){
-        width: 20%;
-    }
-
-    .tasks th:nth-child(4){
-        width: 20%;
-    }
-
-    .tasks th:nth-child(5){
-        width: 10%;
     }
 }
 

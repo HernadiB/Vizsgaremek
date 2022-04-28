@@ -1,5 +1,8 @@
 @extends('layouts.main')
 @section('title', $title)
+@section('js_css')
+    <link rel="stylesheet" href="{{asset("css/mytask_style.css")}}">
+@endsection
 @section('content')
     @if(count(auth()->user()->ActualTasks) != 0)
         <table class="tasks">

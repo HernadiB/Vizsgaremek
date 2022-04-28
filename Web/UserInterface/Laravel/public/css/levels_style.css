@@ -2,16 +2,33 @@
     background-color: rgba(0, 128, 0, 0.7);
 }
 
-/*@media screen and (min-width: 800px){
-    .levels{
-        overflow-y: auto;
-        height: 500px;
+@media screen and (min-width: 800px){
+
+     .levels tbody, .levels th, .levels td{
         display: block;
+        width: 100%;
     }
 
-    .levels .table-header{
-        position: sticky;
-        top: 0;
+    .levels thead, .levels tbody{
+        overflow-y: scroll;
     }
-}*/
+
+    .levels thead{
+        -ms-overflow-style: none;
+    }
+
+    .levels thead::-webkit-scrollbar{
+        visibility: hidden;
+    }
+
+    .levels tbody{
+        max-height: 450px;
+        position: relative;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .levels tr{
+        display: flex;
+    }
+}
 
