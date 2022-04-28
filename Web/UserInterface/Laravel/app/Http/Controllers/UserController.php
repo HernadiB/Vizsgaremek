@@ -10,6 +10,7 @@ use App\Http\Requests\TeamRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Team;
 use App\Models\User;
+use App\Models\UserSettings;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -90,6 +91,7 @@ class UserController extends Controller
         $validatedData['profile_picture'] = "images/profile_pictures/unknown.jpg";
 
         $user = User::create($validatedData);
+        $userSettings = UserSettings::create(['user_id' => $user->id]);
 
         $request->session()->put("user", $user);
 
