@@ -48,6 +48,7 @@ body{
 
 table{
     padding: 0;
+    width: 100%;
     table-layout: fixed;
     box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 4px;
     border-collapse: collapse;
@@ -129,7 +130,7 @@ table th{
     }
 
     table tr{
-        /*display: block;*/
+        display: block;
         margin-bottom: .625em;
         line-height: 38px;
         box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px 4px;
