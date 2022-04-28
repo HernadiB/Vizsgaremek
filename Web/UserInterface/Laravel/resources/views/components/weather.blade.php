@@ -20,7 +20,7 @@
 <template id="weatherTemplate">
     <div class="carousel-item">
         <h4 id="location"></h4>
-        <img src="" alt="Pic not found" id="image" style="width: 200px">
+        <img src="" alt="Pic not found" id="image">
         <h4 id="description"></h4>
         <h4 id="temperature"></h4>
         <h4 id="humidity"></h4>

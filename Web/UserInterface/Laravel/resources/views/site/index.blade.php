@@ -2,6 +2,7 @@
 @section('js_css')
     <link rel="stylesheet" href="{{asset("css/index_style.css")}}">
     <link rel="stylesheet" href="{{asset("/css/modal_style.css")}}">
+    <link rel="stylesheet" href="{{asset("/css/weather_style.css")}}">
     <script src="{{asset('js/modal.js')}}"></script>
     <script src="{{asset('js/fetch.js')}}"></script>
     <script src="{{asset('js/weather.js')}}"></script>
