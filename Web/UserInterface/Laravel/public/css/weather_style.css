@@ -1,3 +1,19 @@
-#location{
+.carousel-item{
+    padding: 30px;
+    margin-bottom: 45px;
+    border: 3px solid #212529;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px #212529;
+    background: #ccdcea;
+}
 
+.carousel-inner{
+    width: 50%;
+    margin: auto;
+}
+
+p{
+    margin-bottom: 0.2rem;
+    font-size: larger;
+    font-weight: 450;
 }

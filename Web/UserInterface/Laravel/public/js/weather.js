@@ -40,14 +40,15 @@ function appendCarouselItem(data)
     let templateContent = document.getElementById('weatherTemplate').content;
     let template = document.importNode(templateContent,true);
 
-    template.querySelector('h4#location').innerHTML = data.name + " (" + data.coord.lat + ", " + data.coord.lon + ")";
+
+    template.querySelector('h4#location').innerHTML = data.name + " (" + data.coord.lat + "°" + ", " + data.coord.lon + "°" + ")";
     template.querySelector('img#image').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    template.querySelector('h4#description').innerHTML = data.weather[0].description;
-    template.querySelector('h4#temperature').innerHTML = "Hőmérséklet: " + data.main.feels_like + "°";
-    template.querySelector('h4#humidity').innerHTML = "Páratartalom: " + data.main.humidity + "%";
-    template.querySelector('h4#windSpeed').innerHTML = "Szélsebesség: " + data.wind.speed + " m/s";
-    template.querySelector('h4#sunRise').innerHTML = "Napkelte: " + convertUnixTime(data.sys.sunrise);
-    template.querySelector('h4#sunSet').innerHTML = "Napnyugta: " + convertUnixTime(data.sys.sunset);
+    template.querySelector('p#description').innerHTML = data.weather[0].description;
+    template.querySelector('p#temperature').innerHTML = "Hőmérséklet: " + data.main.feels_like + "°";
+    template.querySelector('p#humidity').innerHTML = "Páratartalom: " + data.main.humidity + "%";
+    template.querySelector('p#windSpeed').innerHTML = "Szélsebesség: " + data.wind.speed + " m/s";
+    template.querySelector('p#sunRise').innerHTML = "Napkelte: " + convertUnixTime(data.sys.sunrise);
+    template.querySelector('p#sunSet').innerHTML = "Napnyugta: " + convertUnixTime(data.sys.sunset);
     if(document.querySelector('div.carousel-item.active') == null)
     {
         template.querySelector('div.carousel-item').classList.add('active');

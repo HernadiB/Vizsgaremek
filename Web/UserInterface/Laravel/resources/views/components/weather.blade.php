@@ -8,25 +8,17 @@
     <div class="carousel-inner">
 
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>
 <template id="weatherTemplate">
     <div class="carousel-item">
         <h4 id="location"></h4>
         <img src="" alt="Pic not found" id="image">
-        <h4 id="description"></h4>
-        <h4 id="temperature"></h4>
-        <h4 id="humidity"></h4>
-        <h4 id="windSpeed"></h4>
-        <h4 id="sunRise"></h4>
-        <h4 id="sunSet"></h4>
+        <p id="description"></p>
+        <p id="temperature"></p>
+        <p id="humidity"></p>
+        <p id="windSpeed"></p>
+        <p id="sunRise"></p>
+        <p id="sunSet"></p>
     </div>
 </template>
 <script>
