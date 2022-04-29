@@ -161,6 +161,7 @@ install.sh
 - [Követelmény specifikáció](https://docs.google.com/document/d/1A0QRimkK1UXkKKfk2Lq60_SSoSakkj6kAxHRRs-btn8/edit)
 - [Funkcionális specifikáció](https://docs.google.com/document/d/1MNaBvbd3mw4Clm1nx-DGGcet4M92TVrdYmEbd_CgdSk/edit)
 - [Program elvárások](https://docs.google.com/document/d/1LsFn5bHUQSGTNGgkdbWjd6KCK4ykbzVLim8lERvP11Y/edit)
+- [esztelési jelentés](https://docs.google.com/document/d/1Mw8-iW1jJNe9uCh6xftvkANOyZxBNmvKurSQXk8criQ/edit)
 
 
 ## A Szoftverhez tartozó tesztek linkjei :
