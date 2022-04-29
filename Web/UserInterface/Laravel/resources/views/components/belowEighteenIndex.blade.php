@@ -17,7 +17,7 @@
             <td data-label="Csapatom neve">{{auth()->user()->Team->name}}</td>
             <td data-label="Csapatom pontszáma">{{auth()->user()->Team->Score()}}</td>
         @endcan
-        <td data-label="Szintem">{{auth()->user()->Level->name}}</td>
+        <td data-label="Rangom">{{auth()->user()->Level->name}}</td>
     </tr>
     </tbody>
 </table>
