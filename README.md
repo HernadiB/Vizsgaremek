@@ -153,7 +153,7 @@ install.sh
 ```
 
 ---
-## Utolsó lépésel és dokumentációk
+## Utolsó lépések és dokumentációk
 
 Már csak az `images` mappát kell másolnunk a ./Web/Userinterface mappából a ./Web/Laravel/storage/app mappába.
 Ezzel a beüzemelés végére értünk.
