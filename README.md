@@ -120,7 +120,7 @@ php artisan storage:link
 
 ## Automaizált futtatás
 
- A projekt tartalmaz egy `install.bat`, egy `install.ps1` illetve egy `install.sh` fájlt amit ha futtatunk nem kell egyesével a kódokat beírni ehhez elég
+ A projekt tartalmaz egy `install.bat`, egy `install.ps1` illetve egy `install.sh` fájlt amit ha futtatunk nem kell egyesével a kódokat beírni ehhez elég beírni egyetlen sor kódot
 
 
 
