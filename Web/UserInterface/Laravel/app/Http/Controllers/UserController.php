@@ -144,6 +144,25 @@ class UserController extends Controller
             $fullPath = $validatedData['profile_picture']->store('images/profile_pictures');
             $validatedData['profile_picture'] = $fullPath;
         }
+        if(array_key_exists('birthdate', $validatedData))
+        {
+            if(date_diff(date_create(auth()->user()->birthdate), date_create('now'))->y > 18)
+            {
+                if(date_diff(date_create($validatedData['birthdate']), date_create('now'))->y < 18)
+                {
+                    $validatedData['level_id'] = 1;
+                    $validatedData['score'] = 0;
+                }
+            }
+            else
+            {
+                if(date_diff(date_create($validatedData['birthdate']), date_create('now'))->y > 18)
+                {
+                    $validatedData['level_id'] = null;
+                    $validatedData['score'] = null;
+                }
+            }
+        }
 
         $user = auth()->user();
         $user->update($validatedData);

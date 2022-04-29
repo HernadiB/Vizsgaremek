@@ -37,9 +37,10 @@
                 <div class="row">
                     <label for="gender" class="col-lg-4 col-form-label">Nem*</label>
                     <div class="col-lg-8">
+                        <?php $currentUserGender = auth()->user()->gender ?>
                         <select name="gender" id="gender" class="form-select input">
                             @foreach($genders as $key => $value)
-                                <option value="{{$key}}">{{$value}}</option>
+                                <option value="{{$key}}" @if($currentUserGender == $key) selected @endif>{{$value}}</option>
                             @endforeach
                         </select>
                     </div>
