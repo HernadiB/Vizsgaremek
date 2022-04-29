@@ -22,5 +22,10 @@
     @can('isAdmin', auth()->user())
         @include('components.addTeamMember')
     @endcan
+    @can('isAdmin', auth()->user())
+        {!! Form::open(['route' => 'teamDelete', 'method' => 'post']) !!}
+            <button class="btn btn-danger btn_team_delete">Csapat törlése</button>
+        {!! Form::close() !!}
+    @endcan
     @include('components.modal')
 @endsection

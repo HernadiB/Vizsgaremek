@@ -70,7 +70,7 @@ class TeamController extends Controller
     }
     public function CreateTeam(Request $request)
     {
-        $user = $request->session()->get('user');
+        $user = auth()->user();
         $teamAttributes['name'] = $request->name;
         $teamAttributes['description'] = $request->description;
         $teamAttributes['leader_id'] = $user->id;
@@ -86,13 +86,28 @@ class TeamController extends Controller
         $user->save();
         return redirect()->route('site.myteam');
     }
+    public function DeleteTeam(Request $request)
+    {
+        $user = auth()->user();
+        $team = $user->Team;
+        foreach ($team->Members as $member)
+        {
+            $member->Team()->dissociate();
+            $member->save();
+        }
+        $user->Team()->dissociate();
+        $user->role = "user";
+        $user->save();
+        $team->delete();
+        return redirect()->route('home')->with('success', 'Csapat törölve!');
+    }
     public function AddMember(Request $request)
     {
-        $user = $request->session()->get('user');
+        $user = auth()->user();
         $newTeamMember = User::findorfail($request->newTeamMember);
         $newTeamMember->Team()->associate($user->Team->id);
         $newTeamMember->save();
-        return redirect()->back()->with('Hozzáadva!');
+        return redirect()->back()->with('success','Hozzáadva!');
     }
     public function GetTeamMembers($teamid)
     {

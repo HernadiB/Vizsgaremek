@@ -18,7 +18,6 @@ class CreateUsertasksTable extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('task_id')->constrained('tasks');
             $table->string('status')->default("unfinished");
-            $table->string('attachment')->nullable();
             $table->timestamps();
         });
     }

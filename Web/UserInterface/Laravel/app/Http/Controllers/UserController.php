@@ -77,6 +77,7 @@ class UserController extends Controller
         $user->SentRequests()->detach();
         $user->ReceivedRequests()->detach();
         $user->ActualTasks()->detach();
+        $user->UserSettings()->delete();
         $user->delete();
     }
 
@@ -86,12 +87,20 @@ class UserController extends Controller
 
         $validatedData['password'] = bcrypt($request->password);
         $validatedData['role'] = "user";
-        $validatedData['level_id'] = 1;
-        $validatedData['score'] = 0;
+        if(date_diff(date_create($request->birthdate), date_create('now'))->y < 18)
+        {
+            $validatedData['level_id'] = 1;
+            $validatedData['score'] = 0;
+        }
+        else
+        {
+            $validatedData['level_id'] = null;
+            $validatedData['score'] = null;
+        }
         $validatedData['profile_picture'] = "images/profile_pictures/unknown.jpg";
 
         $user = User::create($validatedData);
-        $userSettings = UserSettings::create(['user_id' => $user->id]);
+        UserSettings::create(['user_id' => $user->id]);
 
         $request->session()->put("user", $user);
 
@@ -145,7 +154,12 @@ class UserController extends Controller
     }
     public function DeleteUser(Request $request)
     {
-        $this->destroy($request->session()->get('user.id'));
+        $user = auth()->user();
+        if ($user->role == "admin")
+        {
+            return redirect()->back()->with('error', 'Ha szeretnéd törölni a profilod, előbb a csapatodat töröld!');
+        }
+        $this->destroy(auth()->user()->id);
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
@@ -183,7 +197,7 @@ class UserController extends Controller
 
     public function DeleteFriend(Request $request)
     {
-        $user = $request->session()->get('user');
+        $user = auth()->user();
         $user->Friendships1()->detach($request->friendID);
         $user->Friendships2()->detach($request->friendID);
         if($user->UserSettings->block_after_delete == 1)
@@ -195,13 +209,13 @@ class UserController extends Controller
     }
     public function DeleteSentRequest(Request $request)
     {
-        $user = $request->session()->get('user');
+        $user = auth()->user();
         $user->SentRequests()->detach($request->personID);
         return redirect()->back()->with('success', 'Törölve!');
     }
     public function ReleaseBlockedUser(Request $request)
     {
-        $user = $request->session()->get('user');
+        $user = auth()->user();
         $user->BlockedPeople()->detach($request->personID);
         return redirect()->back()->with('success', 'Feloldva!');
     }

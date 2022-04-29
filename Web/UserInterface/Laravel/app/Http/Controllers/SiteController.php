@@ -13,7 +13,7 @@ class SiteController extends Controller
 {
     public function Country()
     {
-        $currentUser = User::where('id', session()->get('user.id'))->first();
+        $currentUser = auth()->user();
         $usersAll = User::where('role', 'user')->get()->sortByDesc('score')->pluck('id');
         $usersBelow18 = collect();
         foreach ($usersAll as $user)
@@ -76,7 +76,7 @@ class SiteController extends Controller
 
     public function Index()
     {
-        $user = User::where('id', session('user.id'))->first();
+        $user = auth()->user();
         $taskReviews = collect();
         $usersWithoutTeam = User::where('role', 'user')->where('team_id', null)->where('id','!=', $user->id)->get();
         $usersBelow18WithoutTeam = collect();

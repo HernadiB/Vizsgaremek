@@ -12,6 +12,12 @@
     margin-top: 10px;
 }
 
+.btn_team_delete{
+    width: 140px;
+    margin: 50px auto;
+    display: block;
+}
+
 .myTeam{
     width: 300px;
     margin-top: 20px;

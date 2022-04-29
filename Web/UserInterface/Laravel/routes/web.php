@@ -23,7 +23,7 @@ Route::get('/mytasks', [\App\Http\Controllers\SiteController::class, 'MyTasks'])
 Route::get('/signup', [\App\Http\Controllers\SiteController::class, 'Signup'])->name('site.signup');
 Route::get('/myteam', [\App\Http\Controllers\SiteController::class, 'MyTeam'])->middleware('auth', 'can:hasTeam')->name('site.myteam');
 Route::get('/profile', [\App\Http\Controllers\SiteController::class, 'Profile'])->middleware('auth')->name('site.profile');
-Route::get('/settings', [\App\Http\Controllers\SiteController::class, 'Settings'])->name('site.settings');
+Route::get('/settings', [\App\Http\Controllers\SiteController::class, 'Settings'])->middleware('auth')->name('site.settings');
 
 Route::post('/users/signup', [\App\Http\Controllers\UserController::class, "SignupUser"])->name("userSignup");
 Route::post('/users/login', [\App\Http\Controllers\UserController::class, "LoginUser"])->name("userLogin");;
@@ -50,6 +50,7 @@ Route::post('/friend/delete', [\App\Http\Controllers\UserController::class, "Del
 Route::post('/friend/invite/{id}', [\App\Http\Controllers\UserController::class, "InviteFriend"])->name("friendInvite");
 
 Route::post('/team/create', [\App\Http\Controllers\TeamController::class, "CreateTeam"])->name("teamCreate");
+Route::post('/team/delete', [\App\Http\Controllers\TeamController::class, "DeleteTeam"])->name("teamDelete");
 Route::post('/team/addmember', [\App\Http\Controllers\TeamController::class, "AddMember"])->name("memberAdd");
 
 Route::post('/leaderboard/country', [\App\Http\Controllers\UserController::class, "GetCountryLeaderboard"])->name("leaderboardCountry");

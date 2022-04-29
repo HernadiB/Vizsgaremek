@@ -111,6 +111,8 @@ Ezt pedig a következő kóddal tudjuk megoldani
 php mkdir -p public/images
 ```
 
+Továbbá az ./Web/Userinterface mappában szereplő `images` mappát le kell másolnunk a ./Web/Laravel/storage/app mappába.
+
 Amennyiben ezzel is megvagyunk már csak annyi a dolgunk, hogy a linket kiküldjük a shell-ből.
 
 ```bash
@@ -153,17 +155,12 @@ install.sh
 ```
 
 ---
-## Utolsó lépések és dokumentációk
-
-Már csak az `images` mappát kell másolnunk a ./Web/Userinterface mappából a ./Web/Laravel/storage/app mappába.
-Ezzel a beüzemelés végére értünk.
 
 ## Linkek a további dokumentációhoz tartozó link: 
 - [Átfogó dokumentáció](https://docs.google.com/document/d/1rJbhp3xkCOQ58FM-NjkxjJBm-VZ9g-AMQw8iK-6CObc/edit)
 - [Követelmény specifikáció](https://docs.google.com/document/d/1A0QRimkK1UXkKKfk2Lq60_SSoSakkj6kAxHRRs-btn8/edit)
 - [Funkcionális specifikáció](https://docs.google.com/document/d/1MNaBvbd3mw4Clm1nx-DGGcet4M92TVrdYmEbd_CgdSk/edit)
 - [Program elvárások](https://docs.google.com/document/d/1LsFn5bHUQSGTNGgkdbWjd6KCK4ykbzVLim8lERvP11Y/edit)
-- [Felhasználói átadás teszt](https://docs.google.com/document/d/11TH1LzDd25P1w2dhKmMilNbb6uDLWKrldO0LjBNtF0Y/edit#)
 
 
 ## A Szoftverhez tartozó tesztek linkjei :
