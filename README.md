@@ -167,7 +167,7 @@ install.sh
 
 ## A Szoftverhez tartozó tesztek linkjei :
 
-Űrlapok teszt jegyzőkönyvei elérhetőek [EZEN](https://drive.google.com/drive/folders/164-jEiP4vM80p7J3rR_Jao7seB0O4jZ9?usp=sharing) a linken.
+A projekthez elkészült tesztek jegyzőkönyvei elérhetőek [EZEN](https://drive.google.com/drive/folders/164-jEiP4vM80p7J3rR_Jao7seB0O4jZ9?usp=sharing) a linken.
 
 A teszt jegyzőkönyvekhez tartozó teszteset fájlok megtalálhatóak [ITT](https://github.com/HernadiB/Vizsgaremek/tree/main/docs/Test).
 
