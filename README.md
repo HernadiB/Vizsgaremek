@@ -120,7 +120,7 @@ php artisan storage:link
 ```
 --- 
 
-## Automaizált futtatás
+## Automatizált futtatás
 
  A projekt tartalmaz egy `install.bat`, egy `install.ps1` illetve egy `install.sh` fájlt amit ha futtatunk nem kell egyesével a kódokat beírni ehhez elég beírni egyetlen sor kódot
 
@@ -156,8 +156,9 @@ install.sh
 
 ---
 
-## Linkek a további dokumentációhoz tartozó link: 
+## További dokumentációhoz tartozó linkek: 
 - [Átfogó dokumentáció](https://docs.google.com/document/d/1rJbhp3xkCOQ58FM-NjkxjJBm-VZ9g-AMQw8iK-6CObc/edit)
+- [Fejlesztői dokumentáció](https://docs.google.com/document/d/1pvqvb6A-6GUKe8qrS2tPRnYMjQeAJy4K5cVyzHKfSXU/edit)
 - [Követelmény specifikáció](https://docs.google.com/document/d/1A0QRimkK1UXkKKfk2Lq60_SSoSakkj6kAxHRRs-btn8/edit)
 - [Funkcionális specifikáció](https://docs.google.com/document/d/1MNaBvbd3mw4Clm1nx-DGGcet4M92TVrdYmEbd_CgdSk/edit)
 - [Program elvárások](https://docs.google.com/document/d/1LsFn5bHUQSGTNGgkdbWjd6KCK4ykbzVLim8lERvP11Y/edit)
@@ -169,3 +170,9 @@ install.sh
 Űrlapok teszt jegyzőkönyvei elérhetőek [EZEN](https://drive.google.com/drive/folders/164-jEiP4vM80p7J3rR_Jao7seB0O4jZ9?usp=sharing) a linken.
 
 A teszt jegyzőkönyvekhez tartozó teszteset fájlok megtalálhatóak [ITT](https://github.com/HernadiB/Vizsgaremek/tree/main/docs/Test).
+
+---
+
+## Adatbázis
+
+Az adatbázishoz készült Entity-Relation Diagram, illetve az adatbázis export-fájl megtalálható [ITT](https://github.com/HernadiB/Vizsgaremek/tree/main/Web/Adatb%C3%A1zis)

@@ -1,32 +1,32 @@
 [
     {
-        "name": "Előkészületi tevékenység",
-        "description": "Tábor témája és részleteinek megosztása.",
-        "score": 2,
+        "nev": "Előkészületi tevékenység",
+        "leiras": "Tábor témája és részleteinek megosztása.",
+        "pontszam": 2,
         "level": "Tisztes"
     },
     {
-        "name": "Tervezési tevékenység",
-        "description": "Feladatok kidolgozása, azok beosztása.",
-        "score": 2,
+        "nev": "Tervezési tevékenység",
+        "leiras": "Feladatok kidolgozása, azok beosztása.",
+        "pontszam": 2,
         "level": "Tisztes"
     },
     {
-        "name": "Menü",
-        "description": "Menü kidolgozása napokra lebontva.",
-        "score": 3,
+        "nev": "Menü",
+        "leiras": "Menü kidolgozása napokra lebontva.",
+        "pontszam": 3,
         "level": "Tisztes"
     },
     {
-        "name": "Óvni a környezetet",
-        "description": "Vizek tisztán tartása",
-        "score": 4,
+        "nev": "Óvni a környezetet",
+        "leiras": "Vizek tisztán tartása",
+        "pontszam": 4,
         "level": "Tisztes"
     },
     {
-        "name": "Fizikai erőnléti terv készítése",
-        "description": "Menj el túrázni vagy kerékpározni vagy más tevékenység által fejleszd magad",
-        "score": 4,
+        "nev": "Fizikai erőnléti terv készítése",
+        "leiras": "Menj el túrázni vagy kerékpározni vagy más tevékenység által fejleszd magad",
+        "pontszam": 4,
         "level": "Tisztes"
     },
     {
@@ -61,7 +61,7 @@
     },
     {
         "nev": "Csapatjáték szervezés",
-        "leiras": "Szervezz csapatjátékot mint példáu a foci, röplabda vagy kosárabda.",
+        "leiras": "Szervezz csapatjátékot mint például a foci, röplabda vagy kosárabda.",
         "pontszam": 5,
         "level": "Zászlós"
     },
@@ -72,7 +72,7 @@
         "level": "Zászlós"
     },
     {
-        "nev": "Szklamászás - ereszkedés",
+        "nev": "Sziklamászás - ereszkedés",
         "leiras": "Próbáld ki a sziklamászást és az ereszkedést.",
         "pontszam": 5,
         "level": "Zászlós"
