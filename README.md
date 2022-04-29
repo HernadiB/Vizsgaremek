@@ -154,6 +154,8 @@ install.sh
 
 ---
 
+Már csak az `images` mappát kell másolnunk a ./Web/Userinterface mappából a ./Web/Laravel/storage/app mappába.
+
 ## A Szoftverhez tartozó tesztek linkjei :
 
 Űrlapok tesztjegyzőkönyvei elérhetőek [EZEN](https://drive.google.com/drive/folders/164-jEiP4vM80p7J3rR_Jao7seB0O4jZ9?usp=sharing) a linken.
