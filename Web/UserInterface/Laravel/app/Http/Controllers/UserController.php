@@ -190,6 +190,7 @@ class UserController extends Controller
         {
             $receiverUser->BlockedPeople()->attach($request->senderUserID);
             $request->session()->flash('success', 'Elutasítva, blokkolva!');
+            return redirect()->back();
         }
         $request->session()->flash('success', 'Barát kérelem elutasítva!');
         return redirect()->back();
@@ -274,5 +275,16 @@ class UserController extends Controller
             $nonFriends = $nonFriends->where('level_id', $request->level);
         }
         return UserResource::collection($nonFriends);
+    }
+    public function SaveSettings(Request $request)
+    {
+        $user = auth()->user();
+        $attributes['user_id'] = $user->id;
+        $attributes['dark_mode'] = $request->has('dark_mode');
+        $attributes['weather'] = $request->has('weather');
+        $attributes['block_after_rejection'] = $request->has('block_after_rejection');
+        $attributes['block_after_delete'] = $request->has('block_after_delete');
+        $user->UserSettings()->update($attributes);
+        return redirect()->back()->with('success', 'Módosítva');
     }
 }

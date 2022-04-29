@@ -39,6 +39,12 @@
     border-radius: 50px ;
 }
 
+.btn_save_settings{
+    width: 200px;
+    margin: auto;
+    display: block;
+}
+
 @media screen and (max-width: 400px){
     .form-section{
         width: 85%;
