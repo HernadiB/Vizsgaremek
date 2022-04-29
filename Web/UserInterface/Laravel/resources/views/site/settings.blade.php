@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-check form-switch">
                     <label class="form-check-label" for="darkBackground">Felhasználó tiltása kérelem elutasítás után</label>
-                    <input class="form-check-input" type="checkbox" @if($settings->block_after_rejection) checked @endif name="block_after_rejection">
+                    <input class="form-check-input userBlock" type="checkbox" @if($settings->block_after_rejection) checked @endif name="block_after_rejection">
                 </div>
                 <div class="form-check form-switch">
                     <label class="form-check-label" for="darkBackground">Barát tiltása törlés után</label>

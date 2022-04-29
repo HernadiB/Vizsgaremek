@@ -39,10 +39,8 @@
     border-radius: 50px ;
 }
 
-.btn_save_settings{
-    width: 200px;
-    margin: auto;
-    display: block;
+.userBlock{
+    margin-top: 15px;
 }
 
 @media screen and (max-width: 400px){
@@ -52,6 +50,13 @@
 
     form p{
         margin-left: 30px;
+    }
+}
+
+@media screen and (min-width: 400px){
+    .btn_save_settings{
+        width: 200px;
+        margin-left: 35px;
     }
 }
 
