@@ -163,6 +163,7 @@ install.sh
 - [Funkcionális specifikáció](https://docs.google.com/document/d/1MNaBvbd3mw4Clm1nx-DGGcet4M92TVrdYmEbd_CgdSk/edit)
 - [Program elvárások](https://docs.google.com/document/d/1LsFn5bHUQSGTNGgkdbWjd6KCK4ykbzVLim8lERvP11Y/edit)
 - [Tesztelési jelentés](https://docs.google.com/document/d/1Mw8-iW1jJNe9uCh6xftvkANOyZxBNmvKurSQXk8criQ/edit)
+- [Tesztelési terv](https://docs.google.com/document/d/18bBNLE0fV8S815fAStYoJOUvFy-CnA-waySWnXYwjF8/edit)
 
 
 ## A Szoftverhez tartozó tesztek linkjei :
