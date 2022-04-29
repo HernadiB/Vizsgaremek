@@ -157,7 +157,12 @@ install.sh
 Már csak az `images` mappát kell másolnunk a ./Web/Userinterface mappából a ./Web/Laravel/storage/app mappába.
 Ezzel a beüzemelés végére értünk.
 
-## Linkek a további dokumentációhoz [ITT](https://docs.google.com/document/d/1rJbhp3xkCOQ58FM-NjkxjJBm-VZ9g-AMQw8iK-6CObc/edit) érhető el.
+## Linkek a további dokumentációhoz tartozó link: 
+- [Átfogó dokumentáció](https://docs.google.com/document/d/1rJbhp3xkCOQ58FM-NjkxjJBm-VZ9g-AMQw8iK-6CObc/edit)
+- [Követelmény specifikáció](https://docs.google.com/document/d/1A0QRimkK1UXkKKfk2Lq60_SSoSakkj6kAxHRRs-btn8/edit)
+- [Funkcionális specifikáció](https://docs.google.com/document/d/1MNaBvbd3mw4Clm1nx-DGGcet4M92TVrdYmEbd_CgdSk/edit)
+- [Program elvárások](https://docs.google.com/document/d/1LsFn5bHUQSGTNGgkdbWjd6KCK4ykbzVLim8lERvP11Y/edit)
+
 
 ## A Szoftverhez tartozó tesztek linkjei :
 
