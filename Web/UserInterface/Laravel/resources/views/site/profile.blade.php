@@ -31,7 +31,7 @@
                 <div class="row">
                     <label for="birthdate" class="col-lg-4 col-form-label">Születési dátum*</label>
                     <div class="col-lg-8">
-                        <input type="date" name="birthdate" class="form-control input" value="{{auth()->user()->birthdate}}" id="input">
+                        <input type="date" name="birthdate" class="form-control input" value="{{auth()->user()->birthdate}}">
                     </div>
                 </div>
                 <div class="row">

@@ -13,7 +13,7 @@
     margin-right: auto;
 }
 
-.searchFriends{
+.searchFriends, .sentRequests, .blockedUsers{
     margin-top: 30px;
     width: 100%;
 }
@@ -36,30 +36,30 @@
 @media (min-width: 992px){
     @media screen and (min-width: 800px){
 
-        .searchFriends tbody, .searchFriends th, .searchFriends td{
+        .searchFriends .table-content, .sentRequests .table-content, .blockedUsers .table-content, .searchFriends th, .sentRequests th, .blockedUsers th, .searchFriends td, .sentRequests td, .blockedUsers td{
             display: block;
             width: 100%;
         }
 
-        .searchFriends thead, .searchFriends tbody{
+        .searchFriends .table-header, .sentRequests .table-header, .blockedUsers .table-header, .searchFriends .table-content, .sentRequests .table-content, .blockedUsers .table-content{
             overflow-y: scroll;
         }
 
-        .searchFriends thead{
+        .searchFriends .table-header, .sentRequests .table-header, .blockedUsers .table-header{
             -ms-overflow-style: none;
         }
 
-        .searchFriends thead::-webkit-scrollbar{
+        .searchFriends .table-header::-webkit-scrollbar, .sentRequests .table-header::-webkit-scrollbar, .blockedUsers .table-header::-webkit-scrollbar{
             visibility: hidden;
         }
 
-        .searchFriends tbody{
+        .searchFriends .table-content, .sentRequests .table-content, .blockedUsers .table-content{
             max-height: 350px;
             position: relative;
             -ms-overflow-style: -ms-autohiding-scrollbar;
         }
 
-        .searchFriends tr{
+        .searchFriends tr, .sentRequests tr, .blockedUsers tr{
             display: flex;
         }
     }

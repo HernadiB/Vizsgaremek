@@ -107,61 +107,62 @@
                 <tbody class="table-content" id="nonFriendsTable">
                 </tbody>
             </table>
+            @if(count($sentRequests) != 0)
+                <h3 class="title">Elküldött baráti kérelmek</h3>
+                <table class="sentRequests">
+                    <thead class="table-header">
+                    <tr>
+                        <th scope="col">Név</th>
+                        <th scope="col">Kérelem törlése</th>
+                        <th scope="col">Profil</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-content" id="sentRequestsTable">
+                    @foreach($sentRequests as $key => $value)
+                        <tr>
+                            <td data-label="Név">{{$value->username}}</td>
+                            {!! Form::open(['route' => 'sentRequestDelete', 'method' => 'post']) !!}
+                            <td data-label="Törlés">
+                                <button name="personID" value="{{$value->id}}" class="btn btn-danger">Törlés</button>
+                            </td>
+                            {!! Form::close() !!}
+                            <td data-label="Profil">
+                                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetUserByID({{$value->id}})">Megtekint</button>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            @endif
+            @if(count($blockedPeople) != 0)
+                <h3 class="title">Blokkolt felhasználók</h3>
+                <table class="blockedUsers">
+                    <thead class="table-header">
+                    <tr>
+                        <th scope="col">Név</th>
+                        <th scope="col">Felhasználó feloldása</th>
+                        <th scope="col">Profil</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-content" id="blockedUsersTable">
+                    @foreach($blockedPeople as $key => $value)
+                        <tr>
+                            <td data-label="Név">{{$value->username}}</td>
+                            {!! Form::open(['route' => 'userBlockRelease', 'method' => 'post']) !!}
+                            <td data-label="Feloldás">
+                                <button name="personID" value="{{$value->id}}" class="btn btn-danger">Feloldás</button>
+                            </td>
+                            {!! Form::close() !!}
+                            <td data-label="Profil">
+                                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetUserByID({{$value->id}})">Megtekint</button>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            @endif
         </div>
-    @if(count($sentRequests) != 0)
-        <h3 class="title">Elküldött baráti kérelmek</h3>
-        <table class="sentRequests">
-            <thead class="table-header">
-            <tr>
-                <th scope="col">Név</th>
-                <th scope="col">Kérelem törlése</th>
-                <th scope="col">Profil</th>
-            </tr>
-            </thead>
-            <tbody class="table-content" id="sentRequestsTable">
-            @foreach($sentRequests as $key => $value)
-                <tr>
-                    <td data-label="Név">{{$value->username}}</td>
-                    {!! Form::open(['route' => 'sentRequestDelete', 'method' => 'post']) !!}
-                    <td data-label="Törlés">
-                        <button name="personID" value="{{$value->id}}" class="btn btn-danger">Törlés</button>
-                    </td>
-                    {!! Form::close() !!}
-                    <td data-label="Profil">
-                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetUserByID({{$value->id}})">Megtekint</button>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-    @endif
-    @if(count($blockedPeople) != 0)
-        <h3 class="title">Blokkolt felhasználók</h3>
-        <table class="blockedUsers">
-            <thead class="table-header">
-            <tr>
-                <th scope="col">Név</th>
-                <th scope="col">Felhasználó feloldása</th>
-                <th scope="col">Profil</th>
-            </tr>
-            </thead>
-            <tbody class="table-content" id="blockedUsersTable">
-            @foreach($blockedPeople as $key => $value)
-                <tr>
-                    <td data-label="Név">{{$value->username}}</td>
-                    {!! Form::open(['route' => 'userBlockRelease', 'method' => 'post']) !!}
-                    <td data-label="Feloldás">
-                        <button name="personID" value="{{$value->id}}" class="btn btn-danger">Feloldás</button>
-                    </td>
-                    {!! Form::close() !!}
-                    <td data-label="Profil">
-                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetUserByID({{$value->id}})">Megtekint</button>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-    @endif
+
         <template>
             <tr>
                 <td data-label="Név" id="userName"></td>
