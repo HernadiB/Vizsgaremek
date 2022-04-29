@@ -163,6 +163,7 @@ Ezzel a beüzemelés végére értünk.
 - [Követelmény specifikáció](https://docs.google.com/document/d/1A0QRimkK1UXkKKfk2Lq60_SSoSakkj6kAxHRRs-btn8/edit)
 - [Funkcionális specifikáció](https://docs.google.com/document/d/1MNaBvbd3mw4Clm1nx-DGGcet4M92TVrdYmEbd_CgdSk/edit)
 - [Program elvárások](https://docs.google.com/document/d/1LsFn5bHUQSGTNGgkdbWjd6KCK4ykbzVLim8lERvP11Y/edit)
+- [Felhasználói átadás teszt](https://docs.google.com/document/d/11TH1LzDd25P1w2dhKmMilNbb6uDLWKrldO0LjBNtF0Y/edit#)
 
 
 ## A Szoftverhez tartozó tesztek linkjei :
