@@ -14,15 +14,19 @@ class SiteController extends Controller
     public function Country()
     {
         $currentUser = User::where('id', session()->get('user.id'))->first();
-//        $usersAll = DB::table('users')
-//            ->whereRaw(DATEDIFF(year, birthdate, now) < 18)
-//            ->get();
-//        $usersAll = User::where(date_diff(date_create('birthdate'), date_create('now'))->y, '<', 18)->get()->sortByDesc('score')->pluck('id');
         $usersAll = User::where('role', 'user')->get()->sortByDesc('score')->pluck('id');
-        $usersTop10 = $usersAll->take(10);
+        $usersBelow18 = collect();
+        foreach ($usersAll as $user)
+        {
+            if (date_diff(date_create(User::findorfail($user)->birthdate), date_create('now'))->y < 18)
+            {
+                $usersBelow18->push($user);
+            }
+        }
+        $usersTop10 = $usersBelow18->take(10);
         if(auth()->check())
         {
-            if($currentUser->role != 'admin')
+            if($currentUser->role != 'admin' && date_diff(date_create($currentUser->birthdate), date_create('now'))->y < 18)
             {
                 if (!$usersTop10->contains('id', $currentUser['id']))
                 {
@@ -49,12 +53,10 @@ class SiteController extends Controller
         $friendsAll = $friendsAll->push(User::where('id', $currentUser['id'])->first());
         $friendsAll = $friendsAll->sortByDesc('score')->pluck('id');
         $friendsTop10 = $friendsAll->take(10);
-        if($currentUser->role != 'admin')
+
+        if (!$friendsTop10->contains('id', $currentUser['id']))
         {
-            if (!$friendsTop10->contains('id', $currentUser['id']))
-            {
-                $friendsTop10->push(User::where('id', $currentUser['id'])->first()->id);
-            }
+            $friendsTop10->push(User::where('id', $currentUser['id'])->first()->id);
         }
         foreach ($friendsTop10 as $user)
         {
@@ -76,7 +78,15 @@ class SiteController extends Controller
     {
         $user = User::where('id', session('user.id'))->first();
         $taskReviews = collect();
-        $usersWithoutTeam = User::where('role', 'user')->where('team_id', null)->get();
+        $usersWithoutTeam = User::where('role', 'user')->where('team_id', null)->where('id','!=', $user->id)->get();
+        $usersBelow18WithoutTeam = collect();
+        foreach($usersWithoutTeam as $user)
+        {
+            if (date_diff(date_create($user->birthdate), date_create('now'))->y < 18)
+            {
+                $usersBelow18WithoutTeam->push($user);
+            }
+        }
         if ($user->role == "admin")
         {
             if ($user->Team != null)
@@ -95,7 +105,7 @@ class SiteController extends Controller
         return view('site.index', [
             "title" => "Főoldal",
             "taskReviews" => $taskReviews,
-            "usersWithoutTeam" => $usersWithoutTeam
+            "usersBelow18WithoutTeam" => $usersBelow18WithoutTeam
         ]);
     }
     public function Levels()

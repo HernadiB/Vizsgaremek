@@ -104,7 +104,11 @@ class TaskController extends Controller
     }
     public function FinishTask(Request $request)
     {
-        $user = $request->session()->get('user');
+        $user = auth()->user();
+        if ($user->Team == null)
+        {
+            return redirect()->back()->with('error', 'Feladat leadásához csapatban kell lenned!');
+        }
         $user->ActualTasks()->updateExistingPivot($request->taskID, ['status' => 'underReview']);
         return redirect()->back()->with('success', 'Feladat leadva!');
     }

@@ -17,12 +17,6 @@
                     <input type="text" name="description" class="form-control input" placeholder="...">
                 </div>
             </div>
-{{--            <div class="csapattag row">--}}
-{{--                <label for="csapattag" class="col-lg-4 col-form-label">Csapattagok</label>--}}
-{{--                <div class="col-lg-8">--}}
-{{--                    <input type="text" name="tag" class="form-control input" placeholder="Alfréd Mihály">--}}
-{{--                </div>--}}
-{{--            </div>--}}
 
                 <table class="table teamTable">
                     <thead class="table-header">
@@ -33,7 +27,7 @@
                         </tr>
                     </thead>
                     <tbody class="table-content">
-                    @foreach($usersWithoutTeam as $user)
+                    @foreach($usersBelow18WithoutTeam as $user)
                         <tr>
                             <td data-label="Név">{{$user->username}}</td>
                             <td data-label="Profil">
