@@ -13,7 +13,8 @@
         "tasks": null,
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Fábián Richárd",
@@ -29,7 +30,8 @@
         "tasks": null,
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Surány Norbert",
@@ -45,7 +47,8 @@
         "tasks": null,
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Bognár Ármin",
@@ -59,9 +62,10 @@
         "team_id": 4,
         "level_id": null,
         "tasks": null,
-        "friendships": null,
-        "sent_requests": null,
-        "received_requests": null
+        "friendships": [1],
+        "sent_requests": [3],
+        "received_requests": [2],
+        "blocked_people": null
     },
     {
         "full_name": "Pásztor Mihály",
@@ -75,9 +79,10 @@
         "team_id": 5,
         "level_id": null,
         "tasks": null,
-        "friendships": null,
-        "sent_requests": null,
-        "received_requests": null
+        "friendships": [4],
+        "sent_requests": [1],
+        "received_requests": [2,3],
+        "blocked_people": null
     },
     {
         "full_name": "Orosz Soma",
@@ -97,7 +102,8 @@
         },
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Sándor Benjamin",
@@ -117,7 +123,8 @@
         },
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Illés Géza",
@@ -137,7 +144,8 @@
         },
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Lengyel Erik",
@@ -157,7 +165,8 @@
         },
         "friendships": [2,3,4],
         "sent_requests": [1,5],
-        "received_requests": [7,8]
+        "received_requests": [7,8],
+        "blocked_people": [6]
     },
     {
         "full_name": "Rácz Tamás",
@@ -177,7 +186,8 @@
         },
         "friendships": [4,5,6],
         "sent_requests": [8,9],
-        "received_requests": [2,3]
+        "received_requests": [2,3],
+        "blocked_people": [1]
     },
     {
         "full_name": "Molnár Evelin",
@@ -197,7 +207,8 @@
         },
         "friendships": [5,7,9],
         "sent_requests": [6,8],
-        "received_requests": [4,2]
+        "received_requests": [4,2],
+        "blocked_people": null
     },
     {
         "full_name": "Lengyel Elizabet",
@@ -217,7 +228,8 @@
         },
         "friendships": [8,10,11],
         "sent_requests": [1,2],
-        "received_requests": [3,4]
+        "received_requests": [3,4],
+        "blocked_people": null
     },
     {
         "full_name": "Bács Tamara",
@@ -237,7 +249,8 @@
         },
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Somogyi Brigitta",
@@ -257,7 +270,8 @@
         },
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Bakos Dóra",
@@ -277,7 +291,8 @@
         },
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Kovács Réka",
@@ -295,9 +310,10 @@
             "13": "unfinished",
             "15": "unfinished"
         },
-        "friendships": null,
-        "sent_requests": null,
-        "received_requests": null
+        "friendships": [8,9],
+        "sent_requests": [6,7],
+        "received_requests": [10,11],
+        "blocked_people": [1,2]
     },
     {
         "full_name": "Vass Szabina",
@@ -315,9 +331,10 @@
             "18": "unfinished",
             "19": "unfinished"
         },
-        "friendships": null,
-        "sent_requests": null,
-        "received_requests": null
+        "friendships": [6,7],
+        "sent_requests": [12,13],
+        "received_requests": [14,15],
+        "blocked_people": [3,4]
     },
     {
         "full_name": "Jakab Vanessza",
@@ -337,27 +354,25 @@
         },
         "friendships": null,
         "sent_requests": null,
-        "received_requests": null
+        "received_requests": null,
+        "blocked_people": null
     },
     {
         "full_name": "Veres Tímea",
         "username": "WolfStickSlash",
-        "birthdate": "2008-11-02",
+        "birthdate": "2000-11-02",
         "gender": "F",
         "email": "verestimea@gmail.com",
         "password": "$5N)bSy`",
         "role": "user",
-        "score": 20,
+        "score": null,
         "team_id": null,
-        "level_id": 4,
-        "tasks": {
-            "15": "finished",
-            "16": "unfinished",
-            "20": "unfinished"
-        },
-        "friendships": null,
-        "sent_requests": null,
-        "received_requests": null
+        "level_id": null,
+        "tasks": null,
+        "friendships": [1,2],
+        "sent_requests": [3,4],
+        "received_requests": [5,6],
+        "blocked_people": [10,11]
     },
     {
         "full_name": "Bogdán Ramóna",
@@ -371,8 +386,9 @@
         "team_id": null,
         "level_id": null,
         "tasks": null,
-        "friendships": null,
-        "sent_requests": null,
-        "received_requests": null
+        "friendships": [7,8],
+        "sent_requests": [9,10],
+        "received_requests": [11,12],
+        "blocked_people": [13,14]
     }
 ]

@@ -19,7 +19,7 @@ class CreateUsersettingsTable extends Migration
             $table->boolean('block_after_rejection')->default(false);
             $table->boolean('block_after_delete')->default(false);
             $table->boolean('weather')->default(true);
-            $table->boolean('dark_mode')->default(true);
+            $table->boolean('dark_mode')->default(false);
             $table->timestamps();
         });
     }

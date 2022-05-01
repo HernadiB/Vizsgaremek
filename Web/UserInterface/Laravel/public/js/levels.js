@@ -38,7 +38,7 @@ function ScrollToTask(taskID)
         .then(result => {
             LoadAllTasks(result.data);
             let element = document.getElementById(`${taskID}`);
-                element.style.background = "grey";
+                element.style.background = "#adacac";
                 element.scrollIntoView({
                     behavior: 'auto',
                     block: 'center',

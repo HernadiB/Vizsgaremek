@@ -34,7 +34,7 @@ docker run -it --rm -v (pwd):/git alpine/git clone \
 ---
 ## Laravel projekt felépítése
 
-Ezt követően lépjünk be a gyökérkönyvtárba (ami a `./Web/UserInterface/Laravel` mappában található) hogy a következő kódokat tudjuk használni.
+Ezt követően lépjünk be a gyökérkönyvtárba hogy a következő kódokat tudjuk használni.
 Szükség lesz egy `.env` fájl létrehozására, mivel nincsen csak egy `.env.example` fájlunk így annak a másolásával lesz lehetőség erre.
 
 **Windows - CMD:**
@@ -177,3 +177,25 @@ A teszt jegyzőkönyvekhez tartozó teszteset fájlok megtalálhatóak [ITT](htt
 ## Adatbázis
 
 Az adatbázishoz készült Entity-Relation Diagram, illetve az adatbázis export-fájl megtalálható [ITT](https://github.com/HernadiB/Vizsgaremek/tree/main/Web/Adatb%C3%A1zis)
+
+---
+
+## A teszteléshez használható felhasználókra néhány példa:
+
+**18 év alatti felhasználó csapattal**
+- E-mail: lengyelerik@gmail.com, jelszó: =W6k(Z>{
+- E-mail: racztamas@gmail.com, jelszó: {sL.G2#Z
+
+**18 év alatti felhasználó csapat nélkül**
+- E-mail: kovacsreka@gmail.com, jelszó: vr)b6NFK
+- E-mail: vassszabina@gmail.com, jelszó: 9q>GSZ-m
+
+**18 év feletti felhasználó csapat nélkül**
+- E-mail: verestimea@gmail.com, jelszó: $5N)bSy`
+- E-mail: bogdanramona@gmail.com, jelszó: U5pv8>#]
+
+**18 év feletti felhasználó csapattal (csapatvezető)**
+- E-mail: bognaradam@gmail.com, jelszó: (Sb2,RB*
+- E-mail: pasztormihaly@gmail.com, jelszó: ?k35TZ*!
+
+Az összes adatbázisban szereplő felhasználó megtalálható JSON formátumban ITT(https://github.com/HernadiB/Vizsgaremek/blob/main/Web/Adatb%C3%A1zis/users.json) vagy ITT(https://github.com/HernadiB/Vizsgaremek/blob/main/Web/UserInterface/Laravel/database/data/users.json)

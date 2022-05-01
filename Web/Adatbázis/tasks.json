@@ -2,150 +2,175 @@
     {
         "nev": "Előkészületi tevékenység",
         "leiras": "Tábor témája és részleteinek megosztása.",
+        "kep": "images/tasks/1.jpg",
         "pontszam": 2,
         "level": "Tisztes"
     },
     {
         "nev": "Tervezési tevékenység",
         "leiras": "Feladatok kidolgozása, azok beosztása.",
+        "kep": "images/tasks/2.png",
         "pontszam": 2,
         "level": "Tisztes"
     },
     {
         "nev": "Menü",
         "leiras": "Menü kidolgozása napokra lebontva.",
+        "kep": "images/tasks/3.jpg",
         "pontszam": 3,
         "level": "Tisztes"
     },
     {
         "nev": "Óvni a környezetet",
         "leiras": "Vizek tisztán tartása",
+        "kep": "images/tasks/4.jpg",
         "pontszam": 4,
         "level": "Tisztes"
     },
     {
         "nev": "Fizikai erőnléti terv készítése",
         "leiras": "Menj el túrázni vagy kerékpározni vagy más tevékenység által fejleszd magad",
+        "kep": "images/tasks/5.jpg",
         "pontszam": 4,
         "level": "Tisztes"
     },
     {
         "nev": "Tábori áhitat tervezés",
         "leiras": "Tervezz minden napra tábori áhitatokat.",
+        "kep": "images/tasks/6.jpg",
         "pontszam": 4,
         "level": "Altiszt"
     },
     {
         "nev": "Misszó",
         "leiras": "Készülj fel a misszióra, misszionárius tanulmányozása",
+        "kep": "images/tasks/7.jpg",
         "pontszam": 3,
         "level": "Altiszt"
     },
     {
         "nev": "Családtörténeti munka",
         "leiras": "Végezz családtörténeti munkát azáltal, hogy történeteket mesélsz, főzöl.",
+        "kep": "images/tasks/8.webp",
         "pontszam": 3,
         "level": "Altiszt"
     },
     {
         "nev": "Zenés est",
         "leiras": "Tarts egy felemelő zenés estet.",
+        "kep": "images/tasks/9.jpg",
         "pontszam": 4,
         "level": "Altiszt"
     },
     {
         "nev": "Játsszatok színdarabot vagy jelenetet",
         "leiras": "Játsszatok olyan színdarabot vagy jelenetet mely egy szentírásról vagy evangéliumról tanít.",
+        "kep": "images/tasks/10.jpeg",
         "pontszam": 4,
         "level": "Altiszt"
     },
     {
         "nev": "Csapatjáték szervezés",
         "leiras": "Szervezz csapatjátékot mint például a foci, röplabda vagy kosárabda.",
+        "kep": "images/tasks/11.jpg",
         "pontszam": 5,
         "level": "Zászlós"
     },
     {
         "nev": "Vadvízi evezés",
         "leiras": "Szervezz vadvízi evezést.",
+        "kep": "images/tasks/12.jpg",
         "pontszam": 5,
         "level": "Zászlós"
     },
     {
         "nev": "Sziklamászás - ereszkedés",
         "leiras": "Próbáld ki a sziklamászást és az ereszkedést.",
+        "kep": "images/tasks/13.jpg",
         "pontszam": 5,
         "level": "Zászlós"
     },
     {
         "nev": "Egészséges életmódterv",
         "leiras": "Állíts össze egy egészséges életmódtervet",
+        "kep": "images/tasks/14.jpg",
         "pontszam": 5,
         "level": "Zászlós"
     },
     {
         "nev": "Többnapos túra",
         "leiras": "Tervezz egy hosszabb vagy többnapos hátizsákos túrát.",
+        "kep": "images/tasks/15.jpg",
         "pontszam": 4,
         "level": "Zászlós"
     },
     {
         "nev": "Vészhelyzet - elsősegély",
         "leiras": "Hívjatok meg egy képzett szakembert, hogy tanítson az alapszintű elsősegélyről vagy a vészhelyzeti tennivalókról.",
+        "kep": "images/tasks/16.webp",
         "pontszam": 5,
         "level": "Tiszt"
     },
     {
         "nev": "Elsősegélycsomag",
         "leiras": "Tanuljátok meg, hogyan kell összeállítani és naprakészen tartani egy elsősegélycsomagot.",
+        "kep": "images/tasks/17.jpeg",
         "pontszam": 3,
         "level": "Tiszt"
     },
     {
         "nev": "Tűzrakás",
         "leiras": "Tanuljátok meg hogyan kell biztonságosan tüzet rakni és azt táplálni.",
+        "kep": "images/tasks/18.jpg",
         "pontszam": 5,
         "level": "Tiszt"
     },
     {
         "nev": "Szabadtéri túlélési készségek",
         "leiras": "Sajátítsatok el alapvető szabadtéri túlélési készségeket.",
+        "kep": "images/tasks/19.jpg",
         "pontszam": 6,
         "level": "Tiszt"
     },
     {
         "nev": "Vészhelyzet",
         "leiras": "Építsetek vészhelyzeti menedéket.",
+        "kep": "images/tasks/20.png",
         "pontszam": 7,
         "level": "Tiszt"
     },
     {
         "nev": "Tábortűz",
         "leiras": "Szervezz esti programokat a tábortűznél.",
+        "kep": "images/tasks/21.jpg",
         "pontszam": 8,
         "level": "Tábornok"
     },
     {
         "nev": "Vezénylés",
         "leiras": "Gyakoroljátok a vezénylést.",
+        "kep": "images/tasks/22.jpg",
         "pontszam": 7,
         "level": "Tábornok"
     },
     {
         "nev": "Újrahasznosítás és továbbhasznosítás.",
         "leiras": "Tanuljátok meg, hogyan lehet egyes tárgyakat újrahasznosítani és továbbhasznosítani.",
+        "kep": "images/tasks/23.jpg",
         "pontszam": 8,
         "level": "Tábornok"
     },
     {
         "nev": "Költségvetés",
         "leiras": "Ismerjétek meg a költségvetés és a források kezelésének alapjait.",
+        "kep": "images/tasks/24.jpg",
         "pontszam": 9,
         "level": "Tábornok"
     },
     {
         "nev": "Kézműves tevékenység",
         "leiras": "Gyakoroljatok különféle kézműves készségeket, mint például a kosárfonás, a festés, a szobrászat vagy a kötés.",
+        "kep": "images/tasks/25.jpg",
         "pontszam": 10,
         "level": "Tábornok"
     }

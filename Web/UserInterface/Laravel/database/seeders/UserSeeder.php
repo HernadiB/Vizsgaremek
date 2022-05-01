@@ -36,6 +36,7 @@ class UserSeeder extends Seeder
             $user->Friendships1()->sync($value->friendships);
             $user->SentRequests()->sync($value->sent_requests);
             $user->ReceivedRequests()->sync($value->received_requests);
+            $user->BlockedPeople()->sync($value->blocked_people);
             if ($value->tasks != null)
             {
                 foreach ($value->tasks as $key=>$value)

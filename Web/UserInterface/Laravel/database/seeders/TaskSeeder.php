@@ -23,6 +23,7 @@ class TaskSeeder extends Seeder
             Task::create([
                 "name" => $value->nev,
                 "description" => $value->leiras,
+                "image" => $value->kep,
                 "score" => $value->pontszam,
                 "level_id" => Level::where("name", $value->level)->first()->id
             ]);
