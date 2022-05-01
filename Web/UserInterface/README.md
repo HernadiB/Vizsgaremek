@@ -1,5 +1,3 @@
-# Bejelentkezés, regisztráció, adatmódoítás message-ek megfelelőek :white_check_mark:
-
 ## User felület (HTML, CSS, BS, JS, PHP)
 
 ### User age < 18 (user)
@@ -20,19 +18,18 @@
     - Feladat megtekintése :white_check_mark:
     - Feladat beadás :white_check_mark:
 - Profil oldal :white_check_mark:
-- Csapatom oldal :x: 
+- Csapatom oldal :white_check_mark:
 - Szintek - feladatok oldal :white_check_mark:
-- Beállítások :x:
-    - Sötét mód Be/Ki :x:
-    - Időjárás jelentő a főoldalon :x:
-    - Barát törlés utan tiltás :x:
-    - Barát jelölés után tiltás :x:
+- Beállítások :white_check_mark:
+    - Sötét mód Be/Ki :white_check_mark:
+    - Időjárás jelentő a főoldalon :white_check_mark:
+    - Barát törlés utan tiltás :white_check_mark:
+    - Barát jelölés után tiltás :white_check_mark:
 - Kijelentkezés :white_check_mark:
 
 ###  User age > 18 (admin)
 
 - Főoldal :white_check_mark:
-    - Ha nincs beérkezett baráti jelölés akkor legyen olyan üzenet mint a beérkezett feladatok felülvizsgálatánál :x:
     - Baráti jelölés elfogadás :white_check_mark:
     - Barát törlése a listából :white_check_mark:
     - Beérkezett feladatok felülvizsgálata
@@ -45,11 +42,11 @@
     - Új barát profil megtekintése :white_check_mark:
 - Országos lista oldal :white_check_mark:
 - Profil oldal :white_check_mark:
-- Csapatom oldal :x: 
+- Csapatom oldal :white_check_mark:
 - Szintek - feladatok oldal :white_check_mark:
-- Beállítások :x:
-    - Sötét mód Be/Ki :x:
-    - Időjárás jelentő a főoldalon :x:
-    - Barát törlés utan tiltás :x:
-    - Barát jelölés után tiltás :x:
+- Beállítások :white_check_mark:
+    - Sötét mód Be/Ki :white_check_mark:
+    - Időjárás jelentő a főoldalon :white_check_mark:
+    - Barát törlés utan tiltás :white_check_mark:
+    - Barát jelölés után tiltás :white_check_mark:
 - Kijelentkezés :white_check_mark:

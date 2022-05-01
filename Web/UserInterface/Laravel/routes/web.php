@@ -31,13 +31,11 @@ Route::post('/users/update', [\App\Http\Controllers\UserController::class, "Modi
 Route::post('/users/delete', [\App\Http\Controllers\UserController::class, "DeleteUser"])->name("userDelete");
 Route::post('/users/logout', [\App\Http\Controllers\UserController::class, "LogoutUser"])->name("userLogout");
 Route::post('/users/nonfriends', [\App\Http\Controllers\UserController::class, "GetNonFriends"])->name("userNonFriends");
-
 Route::post('/users/friendinvite/accept', [\App\Http\Controllers\UserController::class, "AcceptInvitation"])->name("inviteAccept");
 Route::post('/users/friendinvite/reject', [\App\Http\Controllers\UserController::class, "RejectInvitation"])->name("inviteReject");
-
 Route::post('/users/friendrequest/delete', [\App\Http\Controllers\UserController::class, "DeleteSentRequest"])->name("sentRequestDelete");
-
 Route::post('/users/block/release', [\App\Http\Controllers\UserController::class, "ReleaseBlockedUser"])->name("userBlockRelease");
+Route::post('users/settings/save', [\App\Http\Controllers\UserController::class, "SaveSettings"])->name("settingsSave");
 
 Route::post('/task/accept', [\App\Http\Controllers\TaskController::class, "AcceptTask"])->name("taskAccept");
 Route::post('/task/finish', [\App\Http\Controllers\TaskController::class, "FinishTask"])->name("taskFinish");

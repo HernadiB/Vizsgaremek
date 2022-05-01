@@ -136,7 +136,8 @@ class SiteController extends Controller
     public function Settings()
     {
         return view('site.settings', [
-            "title" => "Beállítások"
+            "title" => "Beállítások",
+            "settings" => auth()->user()->UserSettings
         ]);
     }
 
