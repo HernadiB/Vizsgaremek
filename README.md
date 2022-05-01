@@ -34,7 +34,7 @@ docker run -it --rm -v (pwd):/git alpine/git clone \
 ---
 ## Laravel projekt felépítése
 
-Ezt követően lépjünk be a gyökérkönyvtárba hogy a következő kódokat tudjuk használni.
+Ezt követően lépjünk be a gyökérkönyvtárba (ami a `./Web/UserInterface/Laravel` mappában található) hogy a következő kódokat tudjuk használni.
 Szükség lesz egy `.env` fájl létrehozására, mivel nincsen csak egy `.env.example` fájlunk így annak a másolásával lesz lehetőség erre.
 
 **Windows - CMD:**
