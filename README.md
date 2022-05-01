@@ -198,4 +198,4 @@ Az adatbázishoz készült Entity-Relation Diagram, illetve az adatbázis export
 - E-mail: bognaradam@gmail.com, jelszó: (Sb2,RB*
 - E-mail: pasztormihaly@gmail.com, jelszó: ?k35TZ*!
 
-Az összes adatbázisban szereplő felhasználó megtalálható JSON formátumban ITT(https://github.com/HernadiB/Vizsgaremek/blob/main/Web/Adatb%C3%A1zis/users.json) vagy ITT(https://github.com/HernadiB/Vizsgaremek/blob/main/Web/UserInterface/Laravel/database/data/users.json)
+Az összes adatbázisban szereplő felhasználó megtalálható JSON formátumban [ITT](https://github.com/HernadiB/Vizsgaremek/blob/main/Web/Adatb%C3%A1zis/users.json) vagy [ITT](https://github.com/HernadiB/Vizsgaremek/blob/main/Web/UserInterface/Laravel/database/data/users.json)
