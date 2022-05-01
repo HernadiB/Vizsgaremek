@@ -1,157 +1,33 @@
 # Országos Pontgyűjtő Szoftver Felhasználói Dokumentáció
 
-## Szerver előkészítése
+Az alap laravel beüzemelésére írt útmutató [ITT](https://github.com/HernadiB/Vizsgaremek/blob/main/Web/UserInterface/Laravel/README.md) található. (szerző: Rostagni Csaba)
 
-A `https://github.com/HernadiB/Vizsgaremek` egy olyan alap projektet tartalmaz, ami egy a  `https://github.com/rcsnjszg/laravel-alap` oldalon található laravel egy változata.
-
-A tároló klónozásával töltsük le a repositoryt.
-
-```bash
-git clone https://github.com/HernadiB/Vizsgaremek.git Vizsgaremek
-```
-
-Amennyiben nem lenne git a gépünkön telepítve, az előbbi műveletet docker segítségével is megtehetjük:
-
-**Windows - CMD:**
-
-```bat
-docker run -it --rm -v %cd%:/git alpine/git clone ^
-    https://github.com/HernadiB/Vizsgaremek.git Vizsgaremek
-```
-
-**Windows - Power Shell**
-
-```powershell
-docker run -it --rm -v ${PWD}:/git alpine/git clone \
-    https://github.com/HernadiB/Vizsgaremek.git Vizsgaremek
-```
-**Mac és Linux - bash, zsh**
-
-```bash
-docker run -it --rm -v (pwd):/git alpine/git clone \
-    https://github.com/HernadiB/Vizsgaremek.git Vizsgaremek
-```
----
-## Laravel projekt felépítése
-
-Ezt követően lépjünk be a gyökérkönyvtárba hogy a következő kódokat tudjuk használni.
-Szükség lesz egy `.env` fájl létrehozására, mivel nincsen csak egy `.env.example` fájlunk így annak a másolásával lesz lehetőség erre.
-
-**Windows - CMD:**
-
-```bat
-copy .env.example .env
-```
-
-**Windows - Power Shell**
-
-```powershell
-Copy-Item .env.example .env
-```
-**Mac és Linux - bash, zsh**
-
-```bash
-cp .env.example .env
-```
-
-Ha megvan az `.env` fájl akkor fel kell építeni a docker container-t.
-```bash
-docker-compose build
-```
----
-## Laravel projekt elindítása
-Ezt követően el kell indítanunk a szerverünket amit docker 
-segítségével tudunk megtenni.
-
-```bash
-docker-compose up -d
-```
-Kelleni fog nekünk a `composer` ami előre megírt osztályokat használ.
-
-```bash
-docker-compose exec php composer install
-```
-
-Ahhoz hogya laravel működjön szükségünk lesz egy egyedi API kulcshoz ezt a `key:generate` tudja számunkra lehetővé tenni.
-
-```bash
-docker-compose exec php php artisan key:generate
-```
----
-## Friendly Interactive Shell (Fish)
-
-A `Dockerfile` tartalmazza a fisht így nekünk egyszerűbb lesz azzal dolgozni.
-Írjuk be a következő kódot ami elindítja a shellt.
-
-```bash
-docker-compose exec php fish
-```
-Kulcsot generálni fish-ben is tudunk. 
-
-```bash
-php artisan key:generate
-```
-
-Itt kell nekünk a migrációs fájlokat is futtatni: 
+Amint ezzel megvagyunk, következő lépés a táblák migrálása az adatbázisba.
+A dockerben lévő php containerben futtassuk le a következő parancsot:
 
 ```bash
 php artisan migrate:fresh
 ```
 
-Illetve a seedereket is itt kell futtatnunk:
+Illetve a seedereket is itt kell futtatnunk, ez fogja az adatbázist feltölteni adatokkal:
 
 ```bash
 php artisan db:seed
 ```
 
 A storage link használhatósága érdekében kell nekünk egy `images` mappa a publicon belül.
-Ezt pedig a következő kóddal tudjuk megoldani 
+Ezt pedig a következő kóddal tudjuk megoldani:
 
 ```bash
 php mkdir -p public/images
 ```
 
-Továbbá az ./Web/Userinterface mappában szereplő `images` mappát le kell másolnunk a ./Web/Laravel/storage/app mappába.
+A ./Web/Userinterface mappában szereplő `images` mappát le kell másolnunk a ./Web/Laravel/storage/app mappába.
 
-Amennyiben ezzel is megvagyunk már csak annyi a dolgunk, hogy a linket kiküldjük a shell-ből.
+Amennyiben ezzel is megvagyunk már csak annyi a dolgunk, hogy a mappákat összekötő linket kiküldjük a shell-ből.
 
 ```bash
 php artisan storage:link 
-```
---- 
-
-## Automatizált futtatás
-
- A projekt tartalmaz egy `install.bat`, egy `install.ps1` illetve egy `install.sh` fájlt amit ha futtatunk nem kell egyesével a kódokat beírni ehhez elég beírni egyetlen sor kódot
-
-
-
-
-**Windows - CMD:**
-Az `install.bat` fájl tartalma:
-
-futtatás:
-```bash
-install.bat
-```
-
-**Windows - Power Shell**
-
-Az `install.ps1` fájl tartalma:
-
-futtatás:
-```powershell
-install.ps
-```
-
-**Mac és Linux - bash, zsh**
-
-Az `install.sh` fájl tartalma:
-
-
-futtatás:
-```bash
-install.sh
 ```
 
 ---

@@ -14,7 +14,7 @@
                 @foreach(auth()->user()->ReceivedRequests as $receivedRequest)
                     <tr>
                         <td data-label="Felhasználónév">{{$receivedRequest->username}}</td>
-                        <td data-label="Csapat tagja">{{\App\Models\Team::where('id', $receivedRequest->team_id)->first()->name}}</td>
+                        <td data-label="Csapat tagja">{{\App\Models\Team::where('id', $receivedRequest->team_id)->first()->name ?? "-"}}</td>
                         {!! Form::open(['route' => 'inviteAccept', 'method' => 'post']) !!}
                         <td data-label="Baráti jelölés">
                             <button name="senderUserID" value="{{$receivedRequest->id}}" class="btn btn-success">Elfogad</button>

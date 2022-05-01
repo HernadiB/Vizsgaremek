@@ -77,6 +77,7 @@ class UserController extends Controller
         $user->SentRequests()->detach();
         $user->ReceivedRequests()->detach();
         $user->ActualTasks()->detach();
+        $user->BlockedPeople()->detach();
         $user->UserSettings()->delete();
         $user->delete();
     }
