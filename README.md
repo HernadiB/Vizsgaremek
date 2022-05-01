@@ -24,7 +24,7 @@ docker-compose exec php mkdir -p public/images
 
 A ./Web/Userinterface mappában szereplő `images` mappát le kell másolnunk a ./Web/Laravel/storage/app mappába.
 
-Amennyiben ezzel is megvagyunk már csak annyi a dolgunk, hogy a mappákat összekötő linket kiküldjük a shell-ből.
+Amennyiben ezzel is megvagyunk már csak annyi a dolgunk, hogy kiküldjük a mappákat összekötő linket.
 
 ```bash
 docker-compose exec php php artisan storage:link
