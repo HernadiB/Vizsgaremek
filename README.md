@@ -3,23 +3,23 @@
 Az alap laravel beüzemelésére írt útmutató [ITT](https://github.com/HernadiB/Vizsgaremek/blob/main/Web/UserInterface/Laravel/README.md) található. (szerző: Rostagni Csaba)
 
 Amint ezzel megvagyunk, következő lépés a táblák migrálása az adatbázisba.
-A dockerben lévő php containerben futtassuk le a következő parancsot:
+Futtassuk le a következő parancsot:
 
 ```bash
-php artisan migrate:fresh
+docker-compose exec php php artisan migrate:fresh
 ```
 
-Illetve a seedereket is itt kell futtatnunk, ez fogja az adatbázist feltölteni adatokkal:
+Illetve seedereket is kell futtatnunk, ez fogja az adatbázist feltölteni adatokkal:
 
 ```bash
-php artisan db:seed
+docker-compose exec php php artisan db:seed
 ```
 
 A storage link használhatósága érdekében kell nekünk egy `images` mappa a publicon belül.
 Ezt pedig a következő kóddal tudjuk megoldani:
 
 ```bash
-php mkdir -p public/images
+docker-compose exec php mkdir -p public/images
 ```
 
 A ./Web/Userinterface mappában szereplő `images` mappát le kell másolnunk a ./Web/Laravel/storage/app mappába.
@@ -27,7 +27,7 @@ A ./Web/Userinterface mappában szereplő `images` mappát le kell másolnunk a 
 Amennyiben ezzel is megvagyunk már csak annyi a dolgunk, hogy a mappákat összekötő linket kiküldjük a shell-ből.
 
 ```bash
-php artisan storage:link 
+docker-compose exec php php artisan storage:link
 ```
 ---
 
