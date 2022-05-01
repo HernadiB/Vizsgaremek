@@ -1,0 +1,94 @@
+{
+  "id": "31830c38-59c8-40a9-bbc6-bf9dfae1ba34",
+  "version": "2.0",
+  "name": "BRB-Pontgyujto bejelentkezes felulet",
+  "url": "http://localhost:8881",
+  "tests": [{
+    "id": "ce7c4002-47b3-4b40-82b2-15431c6fdbc1",
+    "name": "Lengyel Erik",
+    "commands": [{
+      "id": "508e757e-a5af-4d8d-97b9-b51b50ec9aa9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ae8d207-cfa1-4e0b-ab4d-5732fdec1ab4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dfac80f8-a610-4e3d-a63a-164fef092d6d",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16fbaf5c-899d-421a-b19c-b48227510ae9",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.email > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "lengyelerik@gmail.com"
+    }, {
+      "id": "7daa396b-c155-46f1-8b77-4e5b78aa5625",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ddbc1d2-789e-423b-a1fc-0e8cb7f7c02d",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.passwd > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "=W6k(Z>{"
+    }, {
+      "id": "e2c286eb-a8a4-4d1a-bcba-4e5fc71f4ad7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(4)",
+      "targets": [
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Bejelentkezés')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "884f1beb-cb3f-4018-b59a-922035b77ac7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ce7c4002-47b3-4b40-82b2-15431c6fdbc1"]
+  }],
+  "urls": ["http://localhost:8881/"],
+  "plugins": []
+}
