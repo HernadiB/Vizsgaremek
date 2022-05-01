@@ -29,6 +29,35 @@ Amennyiben ezzel is megvagyunk már csak annyi a dolgunk, hogy a mappákat össz
 ```bash
 php artisan storage:link 
 ```
+---
+
+## Automatizált futtatás
+
+ A [Laravel](https://github.com/HernadiB/Vizsgaremek/tree/main/Web/UserInterface/Laravel) projekt tartalmaz egy `install.bat`, egy `install.ps1` illetve egy `install.sh` fájlt amit ha futtatunk nem kell egyesével a kódokat beírni, ehhez elég egyetlen sor kódot beírni
+
+
+**Windows - CMD:**
+
+futtatás:
+```bash
+install.bat
+```
+
+**Windows - Power Shell**
+
+futtatás:
+```powershell
+install.ps
+```
+
+**Mac és Linux - bash, zsh**
+
+futtatás:
+```bash
+install.sh
+```
+
+Ezen felül a ./Web/Userinterface mappában szereplő `images` mappát ugyanúgy le kell másolnunk a ./Web/Laravel/storage/app mappába, mint ha manuálisan konfigurálnánk.
 
 ---
 
